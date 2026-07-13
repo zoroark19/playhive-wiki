@@ -69,15 +69,14 @@
 .media-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1px;
+  gap: 14px;
   margin: 14px 0 22px;
-  background: var(--border-soft);
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius);
-  overflow: hidden;
 }
 .media-card {
   background: #2d2c2f;
+  border: 1px solid var(--border-soft);
+  /* border-radius: var(--radius); */
+  overflow: hidden;
   text-align: center;
 }
 .media-card img {
