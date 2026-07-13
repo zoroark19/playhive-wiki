@@ -150,19 +150,32 @@
   align-items: center;
 }
 
+.owner-entry a,
+.owner-entry a:link,
+.owner-entry a:visited,
+.owner-entry a:hover,
+.owner-entry a:active,
+.owner-entry a:focus {
+  text-decoration: none;
+}
+.owner-entry a:hover,
+.owner-entry a:focus-visible {
+  text-decoration: underline;
+}
+
 /* §e yellow — Hive, Owner, CM */
 .rank-hive {
-  color: #ffff55;
+  color: #ffff55 !important;
 }
 /* §3 dark aqua — Helper */
 .rank-helper {
-  color: #00aaaa;
+  color: #00aaaa !important;
 }
 /* §d light purple — VIP, Streamer, TikTok */
 .rank-vip {
-  color: #ff55ff;
+  color: #ff55ff !important;
 }
 /* §c red — YT */
 .rank-yt {
-  color: #ff5555;
+  color: #ff5555 !important;
 }
