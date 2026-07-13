@@ -66,7 +66,7 @@
   var SEARCH_INDEX = [
     { title: "Main Page", url: "{{root}}index.html", category: "Navigation", keywords: "home main hive wiki overview" },
     { title: "Herald the Guide", url: "{{root}}pages/npc.html", category: "NPCs & Lore", keywords: "npc herald guide lobby dialogue lore" },
-    { title: "Hoverboard Costume", url: "{{root}}pages/hoverboard.html", category: "Store & Cosmetics", keywords: "hoverboard costume unreleased cosmetic bundle speed demon super fruit minecoins hub title" },
+    { title: "Hoverboard Costume", url: "{{root}}costumes/unreleased/hoverboard/", category: "Store & Cosmetics", keywords: "hoverboard costume unreleased cosmetic bundle speed demon super fruit minecoins hub title" },
     { title: "BedWars", url: "#", category: "Games", keywords: "bedwars team pvp bed defend" },
     { title: "SkyWars", url: "#", category: "Games", keywords: "skywars party game island loot" },
     { title: "Survival Games", url: "#", category: "Games", keywords: "survival games battle royale deathmatch tribute" },
