@@ -168,7 +168,7 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-from style.css so it matches the nav box exactly. Each entry
+/* from style.css so it matches the nav box exactly. Each entry
    is rendered like real in-game /nick text: gamertag + rank tag
    both colored per rank, brackets in §8 dark gray, using the
    .mc-render/.mc-font/.mc-* classes above.
