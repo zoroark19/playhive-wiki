@@ -1,0 +1,103 @@
+/* =========================================================
+   cosmetic.css — page-specific styling for cosmetic/costume
+   articles (costumes, avatars, hub titles, unreleased content).
+   Loaded after style.css.
+   ========================================================= */
+
+/* Pixelify Sans (Google Fonts, free/CDN-hosted) — used as a real
+   working stand-in for the blocky Minecraft in-game typeface.
+   The self-hosted @font-face below (Minecraft-Sevenv2) is kept as
+   the first choice in case a genuine Minecraft-Seven_v2.woff2/woff
+   file is ever added to ../fonts/ — right now that file
+   doesn't exist on the server, so without this import the browser
+   was silently falling back to plain monospace. */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+/* Real Minecraft webfont, self-hosted (Mojang's official site font,
+   "Minecraft Seven v2") — drop Minecraft-Seven_v2.woff2 /
+   Minecraft-Seven_v2.woff into ../fonts/ to have this take
+   priority over the Pixelify Sans fallback above. */
+@font-face {
+  font-family: "Minecraft-Sevenv2";
+  src: url("../fonts/Minecraft-Seven_v2.woff2") format("woff2"),
+       url("../fonts/Minecraft-Seven_v2.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* In-game text rendered with §-code coloring, shown as it would
+   appear in The Hive's UI (dark backing, Minecraft typeface) */
+.mc-render {
+  display: inline-block;
+  background: #000000;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.mc-font {
+  font-family: "Minecraft-Sevenv2", "Pixelify Sans", monospace;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* Minecraft §-code color palette */
+.mc-light-purple { color: #FF55FF; }
+.mc-aqua { color: #55FFFF; }
+.mc-yellow { color: #FFFF55; }
+.mc-green { color: #55FF55; }
+.mc-gray { color: #AAAAAA; }
+.mc-white { color: #FFFFFF; }
+.mc-red { color: #FF5555; }
+.mc-gold { color: #FFAA00; }
+
+/* ---------------------------------------------------------
+   Status label for unreleased / removed content — kept in
+   line with the rest of the pill styling, no alarm colors
+   --------------------------------------------------------- */
+.pill.muted {
+  color: var(--hg-ink-dim);
+  border-color: var(--border-soft);
+  background: var(--hg-card-bg-alt);
+}
+
+/* ---------------------------------------------------------
+   Bundle contents media grid
+   --------------------------------------------------------- */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  margin: 14px 0 22px;
+  background: var(--border-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.media-card {
+  background: #2d2c2f;
+  text-align: center;
+}
+.media-card img {
+  width: auto;
+  max-width: 100%;
+  height: 140px;
+  object-fit: contain;
+  margin: 0 auto;
+  margin-top: 20px;
+  background: #2d2c2f;
+}
+.media-card .media-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--hg-title);
+  padding: 10px 8px 12px;
+}
+
+/* Infobox price row */
+.infobox td.price-row {
+  font-weight: 700;
+  color: var(--hg-title-dark);
+}
