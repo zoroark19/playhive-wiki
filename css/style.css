@@ -642,7 +642,6 @@ img { max-width: 100%; display: block; }
 }
 .infobox__image img {
   margin: 0 auto;
-  image-rendering: pixelated;
 }
 .infobox__image .caption {
   font-size: 14px;
