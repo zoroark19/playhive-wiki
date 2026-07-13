@@ -69,6 +69,12 @@
 .mc-gold {
   color: #ffaa00;
 }
+.mc-dark-aqua {
+  color: #00aaaa;
+}
+.mc-dark-gray {
+  color: #555555;
+}
 
 /* ---------------------------------------------------------
    Status label for unreleased / removed content — kept in
@@ -114,11 +120,49 @@
 .media-card .media-thumb.fill img {
   height: 100%;
   object-fit: cover;
-  image-rendering: pixelated;
+}
+
+.media-card .media-thumb.avatar img {
+  height: 226.69px;
 }
 
 /* Infobox price row */
 .infobox td.price-row {
   font-weight: 700;
   color: var(--hg-title-dark);
+}
+
+/* ---------------------------------------------------------
+   Current Owners — reuses .navbox/.navbox__title/.navbox__links
+   from style.css so it matches the nav box exactly. Each entry
+   is rendered like real in-game /nick text: gamertag + rank tag
+   both colored per rank, brackets in §8 dark gray, using the
+   .mc-render/.mc-font/.mc-* classes above.
+   --------------------------------------------------------- */
+.owners-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+
+.owner-entry {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* §e yellow — Hive, Owner, CM */
+.rank-hive {
+  color: #ffff55;
+}
+/* §3 dark aqua — Helper */
+.rank-helper {
+  color: #00aaaa;
+}
+/* §d light purple — VIP, Streamer, TikTok */
+.rank-vip {
+  color: #ff55ff;
+}
+/* §c red — YT */
+.rank-yt {
+  color: #ff5555;
 }
