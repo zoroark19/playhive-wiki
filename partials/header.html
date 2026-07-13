@@ -68,9 +68,12 @@
       <a href="#" data-topnav="rules">Rules</a>
     </nav>
     <div class="topbar__cta">
-      <form class="topbar__search" action="#" onsubmit="return false;">
-        <input type="text" placeholder="Search the wiki...">
-      </form>
+      <div class="topbar__search-wrap">
+        <form class="topbar__search" action="#" onsubmit="return false;" autocomplete="off">
+          <input type="text" id="wikiSearchInput" placeholder="Search the wiki..." aria-label="Search the wiki" aria-expanded="false" aria-controls="wikiSearchResults" role="combobox">
+        </form>
+        <div class="search-results" id="wikiSearchResults" role="listbox"></div>
+      </div>
       <a href="#" class="btn btn-outline">Discord</a>
     </div>
   </header>

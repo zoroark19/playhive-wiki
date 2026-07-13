@@ -57,6 +57,156 @@
     });
   }
 
+  /* =========================================================
+     Search index — one entry per real page/section on the wiki.
+     "url" uses {{root}} the same way partials do; "#" means the
+     page doesn't exist yet. Add an entry here any time a new
+     page is added to the wiki.
+     ========================================================= */
+  var SEARCH_INDEX = [
+    { title: "Main Page", url: "{{root}}index.html", category: "Navigation", keywords: "home main hive wiki overview" },
+    { title: "Herald the Guide", url: "{{root}}pages/npc.html", category: "NPCs & Lore", keywords: "npc herald guide lobby dialogue lore" },
+    { title: "Hoverboard Costume", url: "{{root}}pages/hoverboard.html", category: "Store & Cosmetics", keywords: "hoverboard costume unreleased cosmetic bundle speed demon super fruit minecoins hub title" },
+    { title: "BedWars", url: "#", category: "Games", keywords: "bedwars team pvp bed defend" },
+    { title: "SkyWars", url: "#", category: "Games", keywords: "skywars party game island loot" },
+    { title: "Survival Games", url: "#", category: "Games", keywords: "survival games battle royale deathmatch tribute" },
+    { title: "Murder Mystery", url: "#", category: "Games", keywords: "murder mystery social deduction sheriff innocents" },
+    { title: "Ground Wars", url: "#", category: "Games", keywords: "ground wars team pvp eggs defenses" },
+    { title: "Hide and Seek", url: "#", category: "Games", keywords: "hide and seek disguise block seeker" },
+    { title: "Rules & Guidelines", url: "#", category: "Navigation", keywords: "rules guidelines editing conduct" },
+    { title: "Ranks & Perks", url: "#", category: "Navigation", keywords: "ranks perks vip mvp" },
+    { title: "Shopkeepers", url: "#", category: "NPCs & Lore", keywords: "shopkeepers npc store vendor" },
+    { title: "Hive Lore", url: "#", category: "NPCs & Lore", keywords: "lore story history hive" },
+    { title: "Costumes", url: "#", category: "Store & Cosmetics", keywords: "costumes cosmetics store bundles" },
+    { title: "Unreleased Content", url: "#", category: "Store & Cosmetics", keywords: "unreleased cancelled cut content" }
+  ];
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function highlight(text, query) {
+    var idx = text.toLowerCase().indexOf(query.toLowerCase());
+    if (idx === -1) return escapeHtml(text);
+    return (
+      escapeHtml(text.slice(0, idx)) +
+      "<mark>" + escapeHtml(text.slice(idx, idx + query.length)) + "</mark>" +
+      escapeHtml(text.slice(idx + query.length))
+    );
+  }
+
+  function searchIndex(query) {
+    var q = query.trim().toLowerCase();
+    if (!q) return [];
+    return SEARCH_INDEX.filter(function (item) {
+      return (
+        item.title.toLowerCase().indexOf(q) !== -1 ||
+        item.keywords.toLowerCase().indexOf(q) !== -1
+      );
+    }).slice(0, 8);
+  }
+
+  function wireSearch(container, root) {
+    var input = container.querySelector("#wikiSearchInput");
+    var results = container.querySelector("#wikiSearchResults");
+    if (!input || !results) return;
+
+    var activeIndex = -1;
+    var currentItems = [];
+
+    function closeResults() {
+      results.classList.remove("is-open");
+      input.setAttribute("aria-expanded", "false");
+      activeIndex = -1;
+    }
+
+    function render(query) {
+      var matches = searchIndex(query);
+      currentItems = matches;
+      activeIndex = -1;
+
+      if (!query.trim()) {
+        closeResults();
+        return;
+      }
+
+      if (!matches.length) {
+        results.innerHTML =
+          '<div class="search-results__empty">No results for "' + escapeHtml(query) + '"</div>';
+        results.classList.add("is-open");
+        input.setAttribute("aria-expanded", "true");
+        return;
+      }
+
+      var byCategory = {};
+      matches.forEach(function (item) {
+        (byCategory[item.category] = byCategory[item.category] || []).push(item);
+      });
+
+      var html = "";
+      Object.keys(byCategory).forEach(function (cat) {
+        html += '<div class="search-results__group-label">' + escapeHtml(cat) + "</div>";
+        byCategory[cat].forEach(function (item) {
+          var href = item.url.split("{{root}}").join(root);
+          html +=
+            '<a class="search-results__item" href="' + href + '" role="option">' +
+            highlight(item.title, query) +
+            "</a>";
+        });
+      });
+
+      results.innerHTML = html;
+      results.classList.add("is-open");
+      input.setAttribute("aria-expanded", "true");
+    }
+
+    input.addEventListener("input", function () {
+      render(input.value);
+    });
+
+    input.addEventListener("focus", function () {
+      if (input.value.trim()) render(input.value);
+    });
+
+    input.addEventListener("keydown", function (e) {
+      var items = results.querySelectorAll(".search-results__item");
+      if (!items.length) return;
+
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        activeIndex = Math.min(activeIndex + 1, items.length - 1);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        activeIndex = Math.max(activeIndex - 1, 0);
+      } else if (e.key === "Enter") {
+        if (activeIndex >= 0 && items[activeIndex]) {
+          e.preventDefault();
+          window.location.href = items[activeIndex].getAttribute("href");
+        }
+        return;
+      } else if (e.key === "Escape") {
+        closeResults();
+        input.blur();
+        return;
+      } else {
+        return;
+      }
+
+      items.forEach(function (it, i) {
+        it.classList.toggle("is-active", i === activeIndex);
+      });
+      items[activeIndex].scrollIntoView({ block: "nearest" });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!results.contains(e.target) && e.target !== input) {
+        closeResults();
+      }
+    });
+  }
+
   function loadInclude(el) {
     var name = el.getAttribute("data-include");
     var url = root + "partials/" + name + ".html";
@@ -77,6 +227,7 @@
         if (name === "header") {
           markActive(document);
           wireDropdown(document);
+          wireSearch(document, root);
         }
       })
       .catch(function (err) {

@@ -160,18 +160,88 @@ img { max-width: 100%; display: block; }
   gap: 12px;
 }
 
+.topbar__cta .btn {
+  height: 38px;
+  padding: 0 1.4em;
+}
+
+.topbar__search-wrap {
+  position: relative;
+}
+
 .topbar__search input {
+  box-sizing: border-box;
+  height: 38px;
   background: hsla(0,0%,100%,.08);
   border: 1px solid hsla(0,0%,100%,.16);
   border-radius: 4px;
   color: #fff;
-  padding: 8px 16px;
+  padding: 0 16px;
   font-size: 13px;
   width: 170px;
   outline: none;
 }
 .topbar__search input::placeholder { color: hsla(0,0%,100%,.5); }
 .topbar__search input:focus { border-color: var(--hg-gold); }
+
+/* =========================================================
+   Search results dropdown
+   ========================================================= */
+.search-results {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 300px;
+  max-height: 360px;
+  overflow-y: auto;
+  background: var(--hg-masthead);
+  border: 1px solid hsla(0,0%,100%,.14);
+  border-radius: 6px;
+  box-shadow: 0 20px 40px -12px rgba(0,0,0,.7);
+  padding: 6px;
+  z-index: 200;
+}
+.search-results.is-open { display: block; }
+
+.search-results__group-label {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  color: var(--hg-title-dark);
+  padding: 8px 10px 4px;
+}
+
+.search-results__item {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: var(--hg-text-dim);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.search-results__item:hover,
+.search-results__item.is-active {
+  background: hsla(0,0%,100%,.08);
+  color: #fff;
+  text-decoration: none;
+}
+.search-results__item mark {
+  background: rgba(252,226,103,.35);
+  color: inherit;
+  border-radius: 2px;
+}
+
+.search-results__empty {
+  padding: 14px 10px;
+  font-size: 13px;
+  color: var(--hg-ink-dim);
+  text-align: center;
+}
 
 .btn {
   display: inline-flex;
@@ -566,7 +636,7 @@ img { max-width: 100%; display: block; }
 
 .infobox__image {
   background: rgb(45, 44, 47);
-  padding: 4px;
+  padding: 10px;
   text-align: center;
   border-bottom: 1px solid var(--border-soft);
 }
@@ -577,6 +647,7 @@ img { max-width: 100%; display: block; }
 .infobox__image .caption {
   font-size: 14px;
   font-weight: bold;
+  margin-top: 5px;
   color: var(--hg-title);
 }
 
