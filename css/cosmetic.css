@@ -133,8 +133,42 @@
 }
 
 /* ---------------------------------------------------------
-   Current Owners — reuses .navbox/.navbox__title/.navbox__links
-   from style.css so it matches the nav box exactly. Each entry
+   Infobox — multi-image tab switcher (name links under the
+   image that swap infobox__image__img's src on click)
+   --------------------------------------------------------- */
+.infobox__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 14px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.infobox__tab {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 2px 0;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hg-title-dark);
+  cursor: pointer;
+  text-decoration: none;
+}
+.infobox__tab:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.infobox__tab.is-active {
+  color: #fff;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+from style.css so it matches the nav box exactly. Each entry
    is rendered like real in-game /nick text: gamertag + rank tag
    both colored per rank, brackets in §8 dark gray, using the
    .mc-render/.mc-font/.mc-* classes above.

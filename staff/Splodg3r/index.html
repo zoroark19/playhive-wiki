@@ -20,12 +20,39 @@
         <div class="with-infobox">
           <aside class="infobox">
             <div class="infobox__header">Splodg3r</div>
-            <div class="infobox__image">
+            <div class="infobox__image" id="infobox-image">
               <img
                 src="../../../assets/staff/splodg3r/default.png"
-                alt="Render of the Mini Pirate Costume"
+                alt="Render of Splodg3r"
                 width="200"
+                id="infobox-image__img"
               />
+              <div class="infobox__tabs" id="infobox-image__tabs">
+                <button
+                  type="button"
+                  class="infobox__tab is-active"
+                  data-image="../../../assets/staff/splodg3r/default.png"
+                  data-alt="Render of Splodg3r Regular Skin"
+                >
+                  Default
+                </button>
+                <button
+                  type="button"
+                  class="infobox__tab"
+                  data-image="../../../assets/staff/splodg3r/pride.png"
+                  data-alt="Render of Splodg3r Pride Month Skin"
+                >
+                  Pride
+                </button>
+                <button
+                  type="button"
+                  class="infobox__tab"
+                  data-image="../../../assets/staff/splodg3r/zombie.png"
+                  data-alt="Render of Splodg3r Halloween Skin"
+                >
+                  Halloween
+                </button>
+              </div>
             </div>
             <table>
               <tr>
@@ -52,18 +79,21 @@
 
             <h2 id="trivia">Trivia</h2>
             <ul>
-              <li>
-                The costume has the internal name of
-                hive.costume.mini.piratetest therefor being a test costume.
-              </li>
-              <li>
-                The texture of the costume is an edited version of a Pirate Boy
-                skin.
-              </li>
+              <li>Placeholder text, Placeholder text, Placeholder text.</li>
+              <li>Placeholder text, Placeholder text, Placeholder text.</li>
             </ul>
 
             <h2 id="gallery">Gallery</h2>
             <div class="media-grid">
+              <div class="media-card">
+                <div class="media-thumb">
+                  <img
+                    src="../../../assets/images/splodg3r-cubee.png"
+                    alt="Cubee Pet"
+                  />
+                </div>
+                <div class="media-label">Pet</div>
+              </div>
               <div class="media-card">
                 <div class="media-thumb">
                   <img
@@ -110,5 +140,27 @@
     <div data-include="footer"></div>
 
     <script src="../../../js/partials.js"></script>
+    <script>
+      (function () {
+        var tabsWrap = document.getElementById("infobox-image__tabs");
+        var img = document.getElementById("infobox-image__img");
+        if (!tabsWrap || !img) return;
+
+        tabsWrap.addEventListener("click", function (e) {
+          var btn = e.target.closest(".infobox__tab");
+          if (!btn || !tabsWrap.contains(btn)) return;
+
+          var src = btn.getAttribute("data-image");
+          var alt = btn.getAttribute("data-alt");
+          if (src) img.src = src;
+          if (alt) img.alt = alt;
+
+          tabsWrap.querySelectorAll(".infobox__tab").forEach(function (t) {
+            t.classList.remove("is-active");
+          });
+          btn.classList.add("is-active");
+        });
+      })();
+    </script>
   </body>
 </html>
