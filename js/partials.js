@@ -302,7 +302,14 @@
 
   function loadInclude(el) {
     var name = el.getAttribute("data-include");
-    var url = root + "partials/" + name + ".html";
+    var isNavbox = name.indexOf("navbox:") === 0;
+    var url;
+    if (isNavbox) {
+      var navboxName = name.slice("navbox:".length);
+      url = root + "partials/navboxes/" + navboxName + ".html";
+    } else {
+      url = root + "partials/" + name + ".html";
+    }
     return fetch(url)
       .then(function (res) {
         if (!res.ok) throw new Error("Failed to load partial: " + url);
