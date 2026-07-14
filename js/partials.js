@@ -302,11 +302,12 @@
 
   function loadInclude(el) {
     var name = el.getAttribute("data-include");
-    var isNavbox = name.indexOf("navbox:") === 0;
+    var colonIdx = name.indexOf(":");
     var url;
-    if (isNavbox) {
-      var navboxName = name.slice("navbox:".length);
-      url = root + "partials/navboxes/" + navboxName + ".html";
+    if (colonIdx !== -1) {
+      var namespace = name.slice(0, colonIdx);
+      var partialName = name.slice(colonIdx + 1);
+      url = root + "partials/" + namespace + "s/" + partialName + ".html";
     } else {
       url = root + "partials/" + name + ".html";
     }
