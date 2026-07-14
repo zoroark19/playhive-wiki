@@ -734,7 +734,7 @@ img {
   background: var(--hg-card-bg-alt);
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-sm);
-  padding: 28px 16px;
+  padding: 16px 16px;
   text-align: center;
   transition:
     transform 0.16s ease,
@@ -764,6 +764,14 @@ img {
   font-weight: 700;
   font-size: 14.5px;
   color: var(--hg-title-dark);
+}
+.category-tile .category-tile__tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--hg-ink-dim);
+  margin-top: -20px;
 }
 
 /* =========================================================

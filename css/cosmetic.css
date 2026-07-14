@@ -32,8 +32,9 @@
 .mc-render {
   display: inline-block;
   background: #000000;
-  padding: 6px 10px;
-  border-radius: var(--radius-sm);
+  padding: 0px 4px;
+  /* padding: 6px 10px; */
+  /* border-radius: var(--radius-sm); */
   white-space: nowrap;
 }
 
@@ -45,23 +46,8 @@
 }
 
 /* Minecraft §-code color palette */
-.mc-light-purple {
-  color: #ff55ff;
-}
-.mc-aqua {
-  color: #55ffff;
-}
-.mc-yellow {
-  color: #ffff55;
-}
-.mc-green {
-  color: #55ff55;
-}
-.mc-gray {
-  color: #aaaaaa;
-}
-.mc-white {
-  color: #ffffff;
+.mc-dark-red {
+  color: #aa0000;
 }
 .mc-red {
   color: #ff5555;
@@ -69,11 +55,44 @@
 .mc-gold {
   color: #ffaa00;
 }
+.mc-yellow {
+  color: #ffff55;
+}
+.mc-dark-green {
+  color: #00aa00;
+}
+.mc-green {
+  color: #55ff55;
+}
+.mc-aqua {
+  color: #55ffff;
+}
 .mc-dark-aqua {
   color: #00aaaa;
 }
+.mc-dark-blue {
+  color: #0000aa;
+}
+.mc-blue {
+  color: #5555ff;
+}
+.mc-light-purple {
+  color: #ff55ff;
+}
+.mc-dark-purple {
+  color: #aa00aa;
+}
+.mc-white {
+  color: #ffffff;
+}
+.mc-gray {
+  color: #aaaaaa;
+}
 .mc-dark-gray {
   color: #555555;
+}
+.mc-black {
+  color: #000000;
 }
 
 /* ---------------------------------------------------------
