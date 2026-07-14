@@ -482,7 +482,7 @@ img {
   font-size: 15.5px;
   font-weight: 500;
   margin: 8px 0 26px;
-  max-width: 640px;
+  /* max-width: 640px; I dont know why this is capped. */
 }
 
 .article-body h2 {

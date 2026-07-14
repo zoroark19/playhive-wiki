@@ -64,26 +64,108 @@
      page is added to the wiki.
      ========================================================= */
   var SEARCH_INDEX = [
-    { title: "Main Page", url: "{{root}}index.html", category: "Navigation", keywords: "home main hive wiki overview" },
-    { title: "Herald the Guide", url: "{{root}}pages/npc.html", category: "NPCs & Lore", keywords: "npc herald guide lobby dialogue lore" },
-    { title: "Hoverboard Costume", url: "{{root}}costumes/unreleased/hoverboard/", category: "Store & Cosmetics", keywords: "hoverboard costume unreleased cosmetic bundle speed demon super fruit minecoins hub title" },
-    { title: "BedWars", url: "#", category: "Games", keywords: "bedwars team pvp bed defend" },
-    { title: "SkyWars", url: "#", category: "Games", keywords: "skywars party game island loot" },
-    { title: "Survival Games", url: "#", category: "Games", keywords: "survival games battle royale deathmatch tribute" },
-    { title: "Murder Mystery", url: "#", category: "Games", keywords: "murder mystery social deduction sheriff innocents" },
-    { title: "Ground Wars", url: "#", category: "Games", keywords: "ground wars team pvp eggs defenses" },
-    { title: "Hide and Seek", url: "#", category: "Games", keywords: "hide and seek disguise block seeker" },
-    { title: "Rules & Guidelines", url: "#", category: "Navigation", keywords: "rules guidelines editing conduct" },
-    { title: "Ranks & Perks", url: "#", category: "Navigation", keywords: "ranks perks vip mvp" },
-    { title: "Shopkeepers", url: "#", category: "NPCs & Lore", keywords: "shopkeepers npc store vendor" },
-    { title: "Hive Lore", url: "#", category: "NPCs & Lore", keywords: "lore story history hive" },
-    { title: "Costumes", url: "#", category: "Store & Cosmetics", keywords: "costumes cosmetics store bundles" },
-    { title: "Unreleased Content", url: "#", category: "Store & Cosmetics", keywords: "unreleased cancelled cut content" }
+    {
+      title: "Main Page",
+      url: "{{root}}index.html",
+      category: "Navigation",
+      keywords: "home main hive wiki overview",
+    },
+    {
+      title: "Herald the Guide",
+      url: "{{root}}pages/npc.html",
+      category: "NPCs & Lore",
+      keywords: "npc herald guide lobby dialogue lore",
+    },
+    {
+      title: "Hoverboard Costume",
+      url: "{{root}}costumes/misc/hoverboard/",
+      category: "Store & Cosmetics",
+      keywords:
+        "hoverboard costume unreleased cosmetic bundle speed demon super fruit minecoins hub title",
+    },
+    {
+      title: "BedWars",
+      url: "#",
+      category: "Games",
+      keywords: "bedwars team pvp bed defend",
+    },
+    {
+      title: "SkyWars",
+      url: "#",
+      category: "Games",
+      keywords: "skywars party game island loot",
+    },
+    {
+      title: "Survival Games",
+      url: "#",
+      category: "Games",
+      keywords: "survival games battle royale deathmatch tribute",
+    },
+    {
+      title: "Murder Mystery",
+      url: "#",
+      category: "Games",
+      keywords: "murder mystery social deduction sheriff innocents",
+    },
+    {
+      title: "Ground Wars",
+      url: "#",
+      category: "Games",
+      keywords: "ground wars team pvp eggs defenses",
+    },
+    {
+      title: "Hide and Seek",
+      url: "#",
+      category: "Games",
+      keywords: "hide and seek disguise block seeker",
+    },
+    {
+      title: "Rules & Guidelines",
+      url: "#",
+      category: "Navigation",
+      keywords: "rules guidelines editing conduct",
+    },
+    {
+      title: "Ranks & Perks",
+      url: "#",
+      category: "Navigation",
+      keywords: "ranks perks vip mvp",
+    },
+    {
+      title: "Shopkeepers",
+      url: "#",
+      category: "NPCs & Lore",
+      keywords: "shopkeepers npc store vendor",
+    },
+    {
+      title: "Hive Lore",
+      url: "#",
+      category: "NPCs & Lore",
+      keywords: "lore story history hive",
+    },
+    {
+      title: "Costumes",
+      url: "#",
+      category: "Store & Cosmetics",
+      keywords: "costumes cosmetics store bundles",
+    },
+    {
+      title: "Unreleased Content",
+      url: "#",
+      category: "Store & Cosmetics",
+      keywords: "unreleased cancelled cut content",
+    },
   ];
 
   function escapeHtml(str) {
     return str.replace(/[&<>"']/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+      return {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      }[c];
     });
   }
 
@@ -92,7 +174,9 @@
     if (idx === -1) return escapeHtml(text);
     return (
       escapeHtml(text.slice(0, idx)) +
-      "<mark>" + escapeHtml(text.slice(idx, idx + query.length)) + "</mark>" +
+      "<mark>" +
+      escapeHtml(text.slice(idx, idx + query.length)) +
+      "</mark>" +
       escapeHtml(text.slice(idx + query.length))
     );
   }
@@ -134,7 +218,9 @@
 
       if (!matches.length) {
         results.innerHTML =
-          '<div class="search-results__empty">No results for "' + escapeHtml(query) + '"</div>';
+          '<div class="search-results__empty">No results for "' +
+          escapeHtml(query) +
+          '"</div>';
         results.classList.add("is-open");
         input.setAttribute("aria-expanded", "true");
         return;
@@ -142,16 +228,23 @@
 
       var byCategory = {};
       matches.forEach(function (item) {
-        (byCategory[item.category] = byCategory[item.category] || []).push(item);
+        (byCategory[item.category] = byCategory[item.category] || []).push(
+          item,
+        );
       });
 
       var html = "";
       Object.keys(byCategory).forEach(function (cat) {
-        html += '<div class="search-results__group-label">' + escapeHtml(cat) + "</div>";
+        html +=
+          '<div class="search-results__group-label">' +
+          escapeHtml(cat) +
+          "</div>";
         byCategory[cat].forEach(function (item) {
           var href = item.url.split("{{root}}").join(root);
           html +=
-            '<a class="search-results__item" href="' + href + '" role="option">' +
+            '<a class="search-results__item" href="' +
+            href +
+            '" role="option">' +
             highlight(item.title, query) +
             "</a>";
         });
