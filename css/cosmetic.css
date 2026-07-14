@@ -467,3 +467,124 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ---------------------------------------------------------
+   Quest chain — reward cards with sub-task checklists,
+   used for ticket/quest-line breakdowns like Anomaly Breach.
+   Structure:
+   <div class="quest-chain">
+     <div class="quest-card">
+       <div class="quest-card__head">
+         <img class="quest-card__icon" src="..." alt="">
+         <div class="quest-card__title">
+           <div class="quest-card__reward">Reward Name</div>
+           <div class="quest-card__progress-label">0/3 tasks</div>
+         </div>
+       </div>
+       <div class="quest-card__bar">
+         <div class="quest-card__bar-fill" style="width: 0%"></div>
+       </div>
+       <ul class="quest-card__tasks">
+         <li class="quest-task">
+           <span class="quest-task__check"></span>
+           <span class="quest-task__label">Win 25 BedWars games</span>
+           <span class="quest-task__count">0/25</span>
+         </li>
+       </ul>
+     </div>
+     ...
+   </div>
+   --------------------------------------------------------- */
+.quest-chain {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+  margin: 16px 0 24px;
+}
+
+.quest-card {
+  background: var(--hg-card-bg-alt);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quest-card__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quest-card__icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+  background: #2d2c2f;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+}
+
+.quest-card__title {
+  min-width: 0;
+  flex: 1;
+}
+
+.quest-card__reward {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13.5px;
+  color: var(--hg-title-dark);
+  line-height: 1.25;
+}
+
+.quest-card__progress-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--hg-ink-dim);
+  margin-top: 1px;
+}
+
+.quest-card__tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 6px 16px 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.quest-task {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--hg-ink-dim);
+}
+
+.quest-task__check {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid var(--border-soft);
+  background: #2d2c2f;
+}
+
+.quest-task__label {
+  flex: 1;
+  line-height: 1.35;
+}
+
+.quest-task__count {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--hg-ink-dim);
+  font-variant-numeric: tabular-nums;
+}
