@@ -510,13 +510,13 @@ img {
   color: var(--hg-ink);
 }
 
-.article-body ul,
-.article-body ol {
+.article-body ul:not(.quest-card__tasks),
+.article-body ol:not(.quest-card__tasks) {
   margin: 0 0 14px;
   padding-left: 20px;
   color: var(--hg-ink);
 }
-.article-body li {
+.article-body li:not(.quest-task) {
   margin-bottom: 5px;
 }
 
