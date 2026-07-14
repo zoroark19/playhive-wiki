@@ -715,6 +715,53 @@ img {
 }
 
 /* =========================================================
+   Category icon grid — square icon tiles with a gold label,
+   used by hub/category landing pages (e.g. Events)
+   ========================================================= */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 34px;
+}
+
+.category-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--hg-card-bg-alt);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 0px 16px;
+  text-align: center;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    background 0.16s ease;
+}
+.category-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px -14px rgba(60, 30, 110, 0.35);
+  background: var(--hg-card-bg);
+  text-decoration: none;
+}
+.category-tile img,
+.category-tile svg {
+  width: 100%;
+  height: 50%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.category-tile .category-tile__label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--hg-gold);
+}
+
+/* =========================================================
    Infobox
    ========================================================= */
 .infobox {
@@ -751,7 +798,7 @@ img {
   font-size: 14px;
   font-weight: bold;
   margin-top: 5px;
-  color: var(--hg-title);
+  color: var(--hg-ink);
 }
 
 .infobox table {
