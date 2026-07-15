@@ -79,6 +79,16 @@
               Costume Gifts.
             </p>
 
+            <div class="toc">
+              <div class="toc__title">Contents</div>
+              <ol>
+                <li><a href="#quest-costumes">Quest Costumes</a></li>
+                <li><a href="#tickets">Tickets</a></li>
+                <li><a href="#anomaly-breach">Anomaly Breach</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+              </ol>
+            </div>
+
             <table class="data-table dialogue-table" data-dialogue></table>
             <script src="../js/dialogue-table.js"></script>
             <script>
@@ -114,415 +124,424 @@
               ]);
             </script>
 
-            <h2 id="gallery">Gallery</h2>
-            <div class="media-grid">
-              <div class="media-card">
-                <div class="media-thumb">
-                  <img
-                    src="../assets/images/Quest Master-cubee.png"
-                    alt="Cubee Pet"
-                  />
+            <h2 id="quest-costumes" class="visually-hidden">Quest Costumes</h2>
+            <section
+              class="costume-section"
+              data-quest-costumes
+              data-total="{total-amount}"
+            ></section>
+
+            <div class="article-body">
+              <h2 id="tickets">Tickets</h2>
+              <p>
+                Tickets can be purchased from the Hive Store or Gift Menu and
+                give the player special quests to unlock ticket related
+                cosmetics after completion.
+              </p>
+              <h2 id="anomaly-breach">Anomaly Breach</h2>
+              <div class="quest-chain">
+                <div class="quest-card">
+                  <div class="quest-card__head">
+                    <img
+                      class="quest-card__icon"
+                      src="https://cdn.playhive.com/icons/locker/bed/banner/backrooms.png"
+                      alt=""
+                    />
+                    <div class="quest-card__title">
+                      <div class="quest-card__reward">
+                        Backrooms Island Banner
+                      </div>
+                      <div class="quest-card__progress-label">0/3 tasks</div>
+                    </div>
+                  </div>
+                  <ul class="quest-card__tasks">
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label">Win BedWars games</span>
+                      <span class="quest-task__count">0/25</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Purchase team upgrades in BedWars</span
+                      >
+                      <span class="quest-task__count">0/50</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Place blocks in BedWars</span
+                      >
+                      <span class="quest-task__count">0/1000</span>
+                    </li>
+                  </ul>
                 </div>
-                <div class="media-label">Pet</div>
-              </div>
-              <div class="media-card">
-                <div class="media-thumb">
-                  <img
-                    src="../assets/quests/quest-master-2-skin.png"
-                    alt="Default Skin"
-                  />
+
+                <div class="quest-card">
+                  <div class="quest-card__head">
+                    <img
+                      class="quest-card__icon"
+                      src="https://cdn.playhive.com/icons/locker/dr/deathskin/camera-creature.png"
+                      alt=""
+                    />
+                    <div class="quest-card__title">
+                      <div class="quest-card__reward">
+                        DR Camera Creature DeathSkin
+                      </div>
+                      <div class="quest-card__progress-label">0/6 tasks</div>
+                    </div>
+                  </div>
+                  <ul class="quest-card__tasks">
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Get a double kill in DeathRun</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Get a triple kill in DeathRun</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Get a quadruple kill in DeathRun</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Get a mega kill in DeathRun</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Get an ultra kill in DeathRun</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Get a monster kill in DeathRun</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                  </ul>
                 </div>
-                <div class="media-label">Default Skin</div>
-              </div>
-              <div class="media-card">
-                <div class="media-thumb">
-                  <img
-                    src="../assets/quests/quest-master-2kin.png"
-                    alt="Pride Skin"
-                  />
+
+                <div class="quest-card">
+                  <div class="quest-card__head">
+                    <img
+                      class="quest-card__icon"
+                      src="../assets/icons/heads/biohazard.png"
+                      alt=""
+                    />
+                    <div class="quest-card__title">
+                      <div class="quest-card__reward">Biohazard Costume</div>
+                      <div class="quest-card__progress-label">0/1 tasks</div>
+                    </div>
+                  </div>
+                  <ul class="quest-card__tasks">
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Collect sludge canister coins in Murder Mystery</span
+                      >
+                      <span class="quest-task__count">0/150</span>
+                    </li>
+                  </ul>
                 </div>
-                <div class="media-label">Pride Skin</div>
-              </div>
-              <div class="media-card">
-                <div class="media-thumb">
-                  <img
-                    src="../assets/quests/quest-master-2skin.png"
-                    alt="Zombie Skin"
-                  />
+
+                <div class="quest-card">
+                  <div class="quest-card__head">
+                    <img
+                      class="quest-card__icon"
+                      src="https://cdn.playhive.com/avatars/backbling-dark-broadcast.png"
+                      alt=""
+                    />
+                    <div class="quest-card__title">
+                      <div class="quest-card__reward">
+                        Dark Broadcast BB (Computer)
+                      </div>
+                      <div class="quest-card__progress-label">0/8 tasks</div>
+                    </div>
+                  </div>
+                  <ul class="quest-card__tasks">
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Win a game of BedWars</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Win a game of SkyWars</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Win a game of Murder Mystery</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Win a game of Capture the Flag</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Win a game of DeathRun</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Win a game of The Bridge</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Win a game of Ground Wars</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Win a game of Hide and Seek</span
+                      >
+                      <span class="quest-task__count">0/1</span>
+                    </li>
+                  </ul>
                 </div>
-                <div class="media-label">Zombie Skin</div>
+
+                <div class="quest-card">
+                  <div class="quest-card__head">
+                    <img
+                      class="quest-card__icon"
+                      src="https://support.playhive.com/content/images/2025/04/win_celebration_icon.png"
+                      alt=""
+                    />
+                    <div class="quest-card__title">
+                      <div class="quest-card__reward">
+                        Zombie Stomp Win Celebration
+                      </div>
+                      <div class="quest-card__progress-label">0/1 tasks</div>
+                    </div>
+                  </div>
+                  <ul class="quest-card__tasks">
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Win rounds of any game</span
+                      >
+                      <span class="quest-task__count">0/250</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="quest-card">
+                  <div class="quest-card__head">
+                    <img
+                      class="quest-card__icon"
+                      src="https://cdn.playhive.com/icons/locker/locked.png"
+                      alt=""
+                    />
+                    <div class="quest-card__title">
+                      <div class="quest-card__reward">
+                        Found Footage Gravestone
+                      </div>
+                      <div class="quest-card__progress-label">0/3 tasks</div>
+                    </div>
+                  </div>
+                  <ul class="quest-card__tasks">
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Collect super (purple) coins in Murder Mystery</span
+                      >
+                      <span class="quest-task__count">0/5</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Use interactables in Murder Mystery</span
+                      >
+                      <span class="quest-task__count">0/50</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Play rounds of Murder Mystery</span
+                      >
+                      <span class="quest-task__count">0/30</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="quest-card">
+                  <div class="quest-card__head">
+                    <img
+                      class="quest-card__icon"
+                      src="https://cdn.playhive.com/icons/locker/locked.png"
+                      alt=""
+                    />
+                    <div class="quest-card__title">
+                      <div class="quest-card__reward">
+                        SKY Containment Breach Flag
+                      </div>
+                      <div class="quest-card__progress-label">0/3 tasks</div>
+                    </div>
+                  </div>
+                  <ul class="quest-card__tasks">
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Mine gold ore in SkyWars</span
+                      >
+                      <span class="quest-task__count">0/100</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Mine emerald in SkyWars</span
+                      >
+                      <span class="quest-task__count">0/100</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Mine diamond ore in SkyWars</span
+                      >
+                      <span class="quest-task__count">0/100</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="quest-card">
+                  <div class="quest-card__head">
+                    <img
+                      class="quest-card__icon"
+                      src="https://cdn.playhive.com/avatars/mount-mothmare.png"
+                      alt=""
+                    />
+                    <div class="quest-card__title">
+                      <div class="quest-card__reward">
+                        Mothmare Blacklight Mount
+                      </div>
+                      <div class="quest-card__progress-label">0/1 tasks</div>
+                    </div>
+                  </div>
+                  <ul class="quest-card__tasks">
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Collect sludge canister coins in Murder Mystery</span
+                      >
+                      <span class="quest-task__count">0/300</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="quest-card">
+                  <div class="quest-card__head">
+                    <img
+                      class="quest-card__icon"
+                      src="https://cdn.playhive.com/icons/locker/bed/topper/bed-dweller.png"
+                      alt=""
+                    />
+                    <div class="quest-card__title">
+                      <div class="quest-card__reward">Bed Dweller Topper</div>
+                      <div class="quest-card__progress-label">0/3 tasks</div>
+                    </div>
+                  </div>
+                  <ul class="quest-card__tasks">
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Destroy beds in BedWars</span
+                      >
+                      <span class="quest-task__count">0/13</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Drink potions in BedWars</span
+                      >
+                      <span class="quest-task__count">0/13</span>
+                    </li>
+                    <li class="quest-task">
+                      <span class="quest-task__check"></span>
+                      <span class="quest-task__label"
+                        >Poison players in BedWars</span
+                      >
+                      <span class="quest-task__count">0/13</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
 
-          <section
-            class="costume-section"
-            data-quest-costumes
-            data-total="{total-amount}"
-          ></section>
-
-          <div class="article-body">
-            <h2 id="tickets">Tickets</h2>
-            <p>
-              Tickets can be purchased from the Hive Store or Gift Menu and give
-              the player special quests to unlock ticket related cosmetics after
-              completion.
-            </p>
-            <h2 id="anomaly-breach">Anomaly Breach</h2>
-            <div class="quest-chain">
-              <div class="quest-card">
-                <div class="quest-card__head">
-                  <img
-                    class="quest-card__icon"
-                    src="https://cdn.playhive.com/icons/locker/bed/banner/backrooms.png"
-                    alt=""
-                  />
-                  <div class="quest-card__title">
-                    <div class="quest-card__reward">
-                      Backrooms Island Banner
-                    </div>
-                    <div class="quest-card__progress-label">0/3 tasks</div>
+            <div class="article-body">
+              <h2 id="gallery">Gallery</h2>
+              <div class="media-grid">
+                <div class="media-card">
+                  <div class="media-thumb">
+                    <img
+                      src="../assets/images/Quest Master-cubee.png"
+                      alt="Cubee Pet"
+                    />
+                  </div>
+                  <div class="media-label">Pet</div>
+                </div>
+                <div class="media-card">
+                  <div class="media-thumb">
+                    <img
+                      src="../assets/quests/quest-master-2-skin.png"
+                      alt="Default Skin"
+                    />
+                  </div>
+                  <div class="media-label">Default Skin</div>
+                </div>
+                <div class="media-card">
+                  <div class="media-thumb">
+                    <img
+                      src="../assets/quests/quest-master-2kin.png"
+                      alt="Pride Skin"
+                    />
+                  </div>
+                  <div class="media-label">Pride Skin</div>
+                </div>
+                <div class="media-card">
+                  <div class="media-thumb fill">
+                    <img
+                      src="https://www.minecraft.net/content/dam/minecraftnet/archive/b357811cc299909769d243e38f60c3b5-Four.jpeg"
+                      alt="Quest Master in a Minecraft article"
+                    />
+                  </div>
+                  <div class="media-label">
+                    Quest Master in a Minecraft article
                   </div>
                 </div>
-                <ul class="quest-card__tasks">
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label">Win BedWars games</span>
-                    <span class="quest-task__count">0/25</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Purchase team upgrades in BedWars</span
-                    >
-                    <span class="quest-task__count">0/50</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Place blocks in BedWars</span
-                    >
-                    <span class="quest-task__count">0/1000</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="quest-card">
-                <div class="quest-card__head">
-                  <img
-                    class="quest-card__icon"
-                    src="https://cdn.playhive.com/icons/locker/dr/deathskin/camera-creature.png"
-                    alt=""
-                  />
-                  <div class="quest-card__title">
-                    <div class="quest-card__reward">
-                      DR Camera Creature DeathSkin
-                    </div>
-                    <div class="quest-card__progress-label">0/6 tasks</div>
-                  </div>
-                </div>
-                <ul class="quest-card__tasks">
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Get a double kill in DeathRun</span
-                    >
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Get a triple kill in DeathRun</span
-                    >
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Get a quadruple kill in DeathRun</span
-                    >
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Get a mega kill in DeathRun</span
-                    >
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Get an ultra kill in DeathRun</span
-                    >
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Get a monster kill in DeathRun</span
-                    >
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="quest-card">
-                <div class="quest-card__head">
-                  <img
-                    class="quest-card__icon"
-                    src="../assets/icons/heads/biohazard.png"
-                    alt=""
-                  />
-                  <div class="quest-card__title">
-                    <div class="quest-card__reward">Biohazard Costume</div>
-                    <div class="quest-card__progress-label">0/1 tasks</div>
-                  </div>
-                </div>
-                <ul class="quest-card__tasks">
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Collect sludge canister coins in Murder Mystery</span
-                    >
-                    <span class="quest-task__count">0/150</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="quest-card">
-                <div class="quest-card__head">
-                  <img
-                    class="quest-card__icon"
-                    src="https://cdn.playhive.com/avatars/backbling-dark-broadcast.png"
-                    alt=""
-                  />
-                  <div class="quest-card__title">
-                    <div class="quest-card__reward">
-                      Dark Broadcast BB (Computer)
-                    </div>
-                    <div class="quest-card__progress-label">0/8 tasks</div>
-                  </div>
-                </div>
-                <ul class="quest-card__tasks">
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label">Win a game of BedWars</span>
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label">Win a game of SkyWars</span>
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Win a game of Murder Mystery</span
-                    >
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Win a game of Capture the Flag</span
-                    >
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Win a game of DeathRun</span
-                    >
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Win a game of The Bridge</span
-                    >
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Win a game of Ground Wars</span
-                    >
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Win a game of Hide and Seek</span
-                    >
-                    <span class="quest-task__count">0/1</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="quest-card">
-                <div class="quest-card__head">
-                  <img
-                    class="quest-card__icon"
-                    src="https://support.playhive.com/content/images/2025/04/win_celebration_icon.png"
-                    alt=""
-                  />
-                  <div class="quest-card__title">
-                    <div class="quest-card__reward">
-                      Zombie Stomp Win Celebration
-                    </div>
-                    <div class="quest-card__progress-label">0/1 tasks</div>
-                  </div>
-                </div>
-                <ul class="quest-card__tasks">
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Win rounds of any game</span
-                    >
-                    <span class="quest-task__count">0/250</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="quest-card">
-                <div class="quest-card__head">
-                  <img
-                    class="quest-card__icon"
-                    src="https://cdn.playhive.com/icons/locker/locked.png"
-                    alt=""
-                  />
-                  <div class="quest-card__title">
-                    <div class="quest-card__reward">
-                      Found Footage Gravestone
-                    </div>
-                    <div class="quest-card__progress-label">0/3 tasks</div>
-                  </div>
-                </div>
-                <ul class="quest-card__tasks">
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Collect super (purple) coins in Murder Mystery</span
-                    >
-                    <span class="quest-task__count">0/5</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Use interactables in Murder Mystery</span
-                    >
-                    <span class="quest-task__count">0/50</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Play rounds of Murder Mystery</span
-                    >
-                    <span class="quest-task__count">0/30</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="quest-card">
-                <div class="quest-card__head">
-                  <img
-                    class="quest-card__icon"
-                    src="https://cdn.playhive.com/icons/locker/locked.png"
-                    alt=""
-                  />
-                  <div class="quest-card__title">
-                    <div class="quest-card__reward">
-                      SKY Containment Breach Flag
-                    </div>
-                    <div class="quest-card__progress-label">0/3 tasks</div>
-                  </div>
-                </div>
-                <ul class="quest-card__tasks">
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Mine gold ore in SkyWars</span
-                    >
-                    <span class="quest-task__count">0/100</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Mine emerald in SkyWars</span
-                    >
-                    <span class="quest-task__count">0/100</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Mine diamond ore in SkyWars</span
-                    >
-                    <span class="quest-task__count">0/100</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="quest-card">
-                <div class="quest-card__head">
-                  <img
-                    class="quest-card__icon"
-                    src="https://cdn.playhive.com/avatars/mount-mothmare.png"
-                    alt=""
-                  />
-                  <div class="quest-card__title">
-                    <div class="quest-card__reward">
-                      Mothmare Blacklight Mount
-                    </div>
-                    <div class="quest-card__progress-label">0/1 tasks</div>
-                  </div>
-                </div>
-                <ul class="quest-card__tasks">
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Collect sludge canister coins in Murder Mystery</span
-                    >
-                    <span class="quest-task__count">0/300</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="quest-card">
-                <div class="quest-card__head">
-                  <img
-                    class="quest-card__icon"
-                    src="https://cdn.playhive.com/icons/locker/bed/topper/bed-dweller.png"
-                    alt=""
-                  />
-                  <div class="quest-card__title">
-                    <div class="quest-card__reward">Bed Dweller Topper</div>
-                    <div class="quest-card__progress-label">0/3 tasks</div>
-                  </div>
-                </div>
-                <ul class="quest-card__tasks">
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Destroy beds in BedWars</span
-                    >
-                    <span class="quest-task__count">0/13</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Drink potions in BedWars</span
-                    >
-                    <span class="quest-task__count">0/13</span>
-                  </li>
-                  <li class="quest-task">
-                    <span class="quest-task__check"></span>
-                    <span class="quest-task__label"
-                      >Poison players in BedWars</span
-                    >
-                    <span class="quest-task__count">0/13</span>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>

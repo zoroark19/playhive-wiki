@@ -512,7 +512,7 @@ img {
 
 .article-body ul:not(.quest-card__tasks),
 .article-body ol:not(.quest-card__tasks) {
-  margin: 0 0 14px;
+  /* margin: 0 0 14px; */
   padding-left: 20px;
   color: var(--hg-ink);
 }
@@ -944,6 +944,21 @@ blockquote.dialogue {
   margin: 18px 0 24px;
   display: inline-block;
   min-width: 210px;
+}
+h2[id] {
+  scroll-margin-top: 90px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 .toc__title {
   font-family: var(--font-display);

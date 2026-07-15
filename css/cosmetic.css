@@ -537,6 +537,7 @@
 .dialogue-table {
   outline: 2px solid var(--border-soft);
   border-radius: var(--radius-sm);
+  overflow: hidden;
 }
 .dialogue-table td:first-child {
   line-height: 1.5;
