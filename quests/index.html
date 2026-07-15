@@ -79,38 +79,40 @@
               Costume Gifts.
             </p>
 
-            <h2 id="dialogue">Dialogue</h2>
-            <ul>
-              <li>
-                Howdy, {Gamertag}! I've got some fine quests available for you.
-                Which one do you want to do?
-              </li>
-              <li>
-                You're about to start the following quest:
-                <br />{quest}<br />
-                Once accepted, you can't cancel this quest for 10 minutes. Are
-                you sure you want to accept this quest?
-              </li>
-              <li>
-                How's your quest going, {Gamertag}? Come back once you've
-                completed it to claim your reward!
-              </li>
-              <li>
-                Cancelling your current quest will allow you to pick a different
-                quest, but any progress towards your current quest will be lost.
-                Are you sure?
-              </li>
-              <li>
-                Howdy, {Gamertag}!
-                <br />You can view the progress of your special quest(s), or
-                activate an additional daily quest.<br />
-                What would you like to do?
-              </li>
-              <li>
-                You have multiple active quests. Select a quest for more
-                details.
-              </li>
-            </ul>
+            <table class="data-table dialogue-table" data-dialogue></table>
+            <script src="../js/dialogue-table.js"></script>
+            <script>
+              renderDialogueTable(document.querySelector("[data-dialogue]"), [
+                {
+                  body: "§7Howdy, §aSteve§7! I've got some fine quests available for you. §fWhich one do you want to do?",
+                  condition: "§8Pick Quest",
+                },
+                {
+                  body: "§fYou're about to start the following quest:\n\n§bPlay any 5 games §8(§a10§dQP§8)\n\n§eOnce accepted, you can't cancel this quest for 10 minutes. §fAre you sure you want to accept this quest?",
+                  condition: "Confirm Quest",
+                },
+                {
+                  body: "§7How's your quest going, Steve? §fCome back once you've completed it to claim your reward!",
+                  condition: "§8Quest in progress",
+                },
+                {
+                  body: "Cancelling your current quest will allow you to pick a different quest, but any progress towards your current quest will be lost. Are you sure?",
+                  condition: "Cancel Quest",
+                },
+                {
+                  body: "§7Great work as always, Steve! §fReady to finish your quest?\n\n§bReward:\n§3§a10§dQP\n",
+                  condition: "§aQuest Complete!",
+                },
+                {
+                  body: "§jHowdy, §mSteve§j!\n\n§7You can view the progress of your special quest(s), or activate an additional daily quest.\n\n§fWhat would you like to do?",
+                  condition: "§8Pick Quest",
+                },
+                {
+                  body: "§mYou have multiple active quests. §fSelect a quest for more details.",
+                  condition: "§dQuests In Progress",
+                },
+              ]);
+            </script>
 
             <h2 id="gallery">Gallery</h2>
             <div class="media-grid">

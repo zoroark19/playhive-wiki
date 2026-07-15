@@ -45,54 +45,111 @@
   line-height: 1;
 }
 
-/* Minecraft §-code color palette */
-.mc-dark-red {
-  color: #aa0000;
+/* ---------------------------------------------------------
+   Minecraft §-code color palette, keyed by code letter so
+   dialogue-parser.js (see dialogue-table below) can map
+   "§a" -> .mc-code-a directly. Vanilla 16 (§0-§9, §a-§f)
+   plus The Hive's custom codes (§h,§i,§j,§m,§n,§p,§q,§s,§t,§u).
+   The old name-based classes (.mc-red, .mc-gold, etc.) are
+   kept as aliases so any existing markup keeps working.
+   TODO: swap placeholder hexes on the Hive-custom codes
+   (h,i,j,m,n,p,q,s,t,u) for the real values once provided.
+   --------------------------------------------------------- */
+.mc-code-0,
+.mc-black {
+  color: #000000;
 }
-.mc-red {
-  color: #ff5555;
-}
-.mc-gold {
-  color: #ffaa00;
-}
-.mc-yellow {
-  color: #ffff55;
-}
-.mc-dark-green {
-  color: #00aa00;
-}
-.mc-green {
-  color: #55ff55;
-}
-.mc-aqua {
-  color: #55ffff;
-}
-.mc-dark-aqua {
-  color: #00aaaa;
-}
+.mc-code-1,
 .mc-dark-blue {
   color: #0000aa;
 }
-.mc-blue {
-  color: #5555ff;
+.mc-code-2,
+.mc-dark-green {
+  color: #00aa00;
 }
-.mc-light-purple {
-  color: #ff55ff;
+.mc-code-3,
+.mc-dark-aqua {
+  color: #00aaaa;
 }
+.mc-code-4,
+.mc-dark-red {
+  color: #aa0000;
+}
+.mc-code-5,
 .mc-dark-purple {
   color: #aa00aa;
 }
-.mc-white {
-  color: #ffffff;
+.mc-code-6,
+.mc-gold {
+  color: #ffaa00;
 }
+.mc-code-7,
 .mc-gray {
   color: #aaaaaa;
 }
+.mc-code-8,
 .mc-dark-gray {
   color: #555555;
 }
-.mc-black {
-  color: #000000;
+.mc-code-9,
+.mc-blue {
+  color: #5555ff;
+}
+.mc-code-a,
+.mc-green {
+  color: #55ff55;
+}
+.mc-code-b,
+.mc-aqua {
+  color: #55ffff;
+}
+.mc-code-c,
+.mc-red {
+  color: #ff5555;
+}
+.mc-code-d,
+.mc-light-purple {
+  color: #ff55ff;
+}
+.mc-code-e,
+.mc-yellow {
+  color: #ffff55;
+}
+.mc-code-f,
+.mc-white {
+  color: #ffffff;
+}
+
+/* Hive-custom codes — placeholder hexes, awaiting real values */
+.mc-code-h {
+  color: #ff69b4; /* Pink (placeholder) */
+}
+.mc-code-i {
+  color: #8f00ff; /* Violet (placeholder) */
+}
+.mc-code-j {
+  color: #00bfff; /* Sky Blue (placeholder) */
+}
+.mc-code-m {
+  color: #00ff7f; /* Spring Green (placeholder) */
+}
+.mc-code-n {
+  color: #bfff00; /* Lime (placeholder) */
+}
+.mc-code-p {
+  color: #d1e231; /* Pear (placeholder) */
+}
+.mc-code-q {
+  color: #d2b48c; /* Tan (placeholder) */
+}
+.mc-code-s {
+  color: #ff8c00; /* Ember (placeholder) */
+}
+.mc-code-t {
+  color: #ff4040; /* Coral Red (placeholder) */
+}
+.mc-code-u {
+  color: #d3d3d3; /* Light Grey (placeholder) */
 }
 
 /* ---------------------------------------------------------
@@ -464,6 +521,37 @@
 @media (max-width: 640px) {
   .costume-preview-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------------------------------------------------------
+   Dialogue table — uses .data-table as a base, adds a fixed
+   Conditions column so long dialogue lines don't push it
+   around, and lets dialogue keep its <br> line breaks
+   Structure:
+   <table class="data-table dialogue-table">
+     <tr><th>Dialogue</th><th>Conditions</th></tr>
+     <tr><td>{Body}</td><td>Owns Ticket</td></tr>
+   </table>
+   --------------------------------------------------------- */
+.dialogue-table {
+  outline: 2px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+}
+.dialogue-table td:first-child {
+  line-height: 1.5;
+  padding: 10px 12px;
+}
+.dialogue-table th:last-child,
+.dialogue-table td:last-child {
+  width: 180px;
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .dialogue-table th:last-child,
+  .dialogue-table td:last-child {
+    width: auto;
+    white-space: normal;
   }
 }
 
