@@ -1,0 +1,410 @@
+{
+  "description": "Quest costumes are limited to each month and do not return.",
+  "items": [
+    {
+      "slug": "cacti-bandit",
+      "name": "Cacti Bandit",
+      "date": "July 1, 2026"
+    },
+    {
+      "slug": "make-a-lotl",
+      "name": "Make-a-lotl",
+      "date": "June 1, 2026"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "May 1, 2026"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "April 1, 2026"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "March 1, 2026"
+    },
+    {
+      "slug": "granny-ghosty",
+      "name": "Granny Ghosty",
+      "date": "February 1, 2026"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "January 1, 2026"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "December 1, 2025"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "November 1, 2025"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "October 1, 2025"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "September 1, 2025"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "August 1, 2025"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "July 1, 2025"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "June 1, 2025"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "May 1, 2025"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "March 31, 2025"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "March 1, 2025"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "February 1, 2025"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "January 1, 2025"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "December 1, 2024"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "November 1, 2024"
+    },
+    {
+      "slug": "NULL",
+      "name": "NULL",
+      "date": "October 1, 2024"
+    },
+    {
+      "slug": "pumpkin-spice",
+      "name": "Pumpkin Spice",
+      "date": "September 1, 2024"
+    },
+    {
+      "slug": "dragon-fruit",
+      "name": "Dragon Fruit",
+      "date": "August 1, 2024"
+    },
+    {
+      "slug": "battle-gnome",
+      "name": "Battle Gnome",
+      "date": "July 1, 2024"
+    },
+    {
+      "slug": "buff-axolotl",
+      "name": "Buff Axolotl",
+      "date": "June 1, 2024"
+    },
+    {
+      "slug": "corn-dog",
+      "name": "Corn Dog",
+      "date": "May 1, 2024"
+    },
+    {
+      "slug": "richard",
+      "name": "Richard",
+      "date": "March 31, 2024"
+    },
+    {
+      "slug": "hopper",
+      "name": "Hopper",
+      "date": "March 1, 2024"
+    },
+    {
+      "slug": "runic-golem",
+      "name": "Runic Golem",
+      "date": "February 1, 2024"
+    },
+    {
+      "slug": "red-bot",
+      "name": "Red Bot",
+      "date": "January 1, 2024"
+    },
+    {
+      "slug": "rubber-chicken",
+      "name": "Rubber Chicken",
+      "date": "December 1, 2023"
+    },
+    {
+      "slug": "enchanter",
+      "name": "Enchanter",
+      "date": "November 1, 2023"
+    },
+    {
+      "slug": "spectral-seafarer",
+      "name": "Spectral Seafarer",
+      "date": "October 1, 2023"
+    },
+    {
+      "slug": "burrito-buddy",
+      "name": "Burrito Buddy",
+      "date": "September 1, 2023"
+    },
+    {
+      "slug": "robo-hammy",
+      "name": "Robo Hammy",
+      "date": "August 1, 2023"
+    },
+    {
+      "slug": "straw-barry",
+      "name": "Straw Barry",
+      "date": "July 1, 2023"
+    },
+    {
+      "slug": "business-monkey",
+      "name": "Business Monkey",
+      "date": "June 1, 2023"
+    },
+    {
+      "slug": "sandstorm",
+      "name": "Sandstorm",
+      "date": "May 1, 2023"
+    },
+    {
+      "slug": "drowned",
+      "name": "Drowned",
+      "date": "April 1, 2023"
+    },
+    {
+      "slug": "stinky",
+      "name": "Stinky",
+      "date": "March 1, 2023"
+    },
+    {
+      "slug": "heart-hoodie",
+      "name": "Heart Hoodie",
+      "date": "February 1, 2023"
+    },
+    {
+      "slug": "hot-cocoa",
+      "name": "Hot Cocoa",
+      "date": "January 1, 2023"
+    },
+    {
+      "slug": "ugly-sweater-bee",
+      "name": "Ugly Sweater Bee",
+      "date": "December 1, 2022"
+    },
+    {
+      "slug": "gobbles",
+      "name": "Gobbles",
+      "date": "November 1, 2022"
+    },
+    {
+      "slug": "pumpkin-farmer",
+      "name": "Pumpkin Farmer",
+      "date": "October 1, 2022"
+    },
+    {
+      "slug": "treasure-goblin",
+      "name": "Treasure Goblin",
+      "date": "September 1, 2022"
+    },
+    {
+      "slug": "the-warden",
+      "name": "The Warden",
+      "date": "August 1, 2022"
+    },
+    {
+      "slug": "summer-skelly",
+      "name": "Summer Skelly",
+      "date": "July 1, 2022"
+    },
+    {
+      "slug": "toucan",
+      "name": "Toucan",
+      "date": "June 1, 2022"
+    },
+    {
+      "slug": "moss-knight",
+      "name": "Moss Knight",
+      "date": "May 1, 2022"
+    },
+    {
+      "slug": "moai",
+      "name": "Moai",
+      "date": "March 31, 2022"
+    },
+    {
+      "slug": "snailly",
+      "name": "Snailly",
+      "date": "March 1, 2022"
+    },
+    {
+      "slug": "heart-teddy",
+      "name": "Heart Teddy",
+      "date": "February 1, 2022"
+    },
+    {
+      "slug": "soda-can",
+      "name": "Soda Can",
+      "date": "January 1, 2022"
+    },
+    {
+      "slug": "present-head",
+      "name": "Present Head",
+      "date": "December 1, 2021"
+    },
+    {
+      "slug": "buff-doge",
+      "name": "Buff Doge",
+      "date": "November 1, 2021"
+    },
+    {
+      "slug": "business-pumpkin",
+      "name": "Business Pumpkin",
+      "date": "October 1, 2021"
+    },
+    {
+      "slug": "flompa",
+      "name": "Flompa",
+      "date": "September 1, 2021"
+    },
+    {
+      "slug": "moobloom",
+      "name": "Moobloom",
+      "date": "August 2, 2021"
+    },
+    {
+      "slug": "mailbot",
+      "name": "Mailbot",
+      "date": "July 1, 2021"
+    },
+    {
+      "slug": "pizza-box",
+      "name": "Pizza Box",
+      "date": "June 1, 2021"
+    },
+    {
+      "slug": "rocky",
+      "name": "Rocky",
+      "date": "May 1, 2021"
+    },
+    {
+      "slug": "flippy",
+      "name": "Flippy",
+      "date": "April 1, 2021"
+    },
+    {
+      "slug": "baguette",
+      "name": "Baguette",
+      "date": "March 1, 2021"
+    },
+    {
+      "slug": "battle-beans",
+      "name": "Battle Beans",
+      "date": "February 1, 2021"
+    },
+    {
+      "slug": "minotaur",
+      "name": "Minotaur",
+      "date": "January 1, 2021"
+    },
+    {
+      "slug": "whippy",
+      "name": "Whippy",
+      "date": "December 1, 2020"
+    },
+    {
+      "slug": "ghoul-bandit",
+      "name": "Ghoul Bandit",
+      "date": "November 1, 2020"
+    },
+    {
+      "slug": "al-the-alien",
+      "name": "Al The Alien",
+      "date": "October 1, 2020"
+    },
+    {
+      "slug": "fish-in-a-suit",
+      "name": "Fish in a Suit",
+      "date": "September 1, 2020"
+    },
+    {
+      "slug": "sentai",
+      "name": "Sentai",
+      "date": "August 1, 2020"
+    },
+    {
+      "slug": "pinchy",
+      "name": "Pinchy",
+      "date": "July 1, 2020"
+    },
+    {
+      "slug": "hammy-the-hamster",
+      "name": "Hammy The Hamster",
+      "date": "June 1, 2020"
+    },
+    {
+      "slug": "cheeky-monkey",
+      "name": "Cheeky Monkey",
+      "date": "May 1, 2020"
+    },
+    {
+      "slug": "the-secretary",
+      "name": "The Secretary",
+      "date": "April 1, 2020"
+    },
+    {
+      "slug": "neon-tiger",
+      "name": "Neon Tiger",
+      "date": "March 1, 2020"
+    },
+    {
+      "slug": "toxic",
+      "name": "Toxic",
+      "date": "February 1, 2020"
+    },
+    {
+      "slug": "winter-ferret",
+      "name": "Winter Ferret",
+      "date": "January 1, 2020"
+    },
+    {
+      "slug": "gingerbread-man",
+      "name": "Gingerbread Man",
+      "date": "December 1, 2019"
+    },
+    {
+      "slug": "rubber-ducky",
+      "name": "Rubber Ducky",
+      "date": "September 20, 2019"
+    }
+  ]
+}

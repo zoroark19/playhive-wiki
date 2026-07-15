@@ -64,22 +64,7 @@
             <table>
               <tr>
                 <th>Placeholder</th>
-                <td>October 16, 2018</td>
-              </tr>
-              <tr>
-                <th>Server</th>
-                <td>The Hive</td>
-              </tr>
-              <tr>
-                <th>Hub Title</th>
-                <td>
-                  <span class="mc-render">
-                    <span class="mc-font"
-                      ><span class="mc-aqua">Just a </span
-                      ><span class="mc-yellow">chill guy</span></span
-                    >
-                  </span>
-                </td>
+                <td>Placeholder</td>
               </tr>
             </table>
           </aside>
@@ -94,10 +79,37 @@
               Costume Gifts.
             </p>
 
-            <h2 id="trivia">Trivia</h2>
+            <h2 id="dialogue">Dialogue</h2>
             <ul>
-              <li>Placeholder text, Placeholder text, Placeholder text.</li>
-              <li>Placeholder text, Placeholder text, Placeholder text.</li>
+              <li>
+                Howdy, {Gamertag}! I've got some fine quests available for you.
+                Which one do you want to do?
+              </li>
+              <li>
+                You're about to start the following quest:
+                <br />{quest}<br />
+                Once accepted, you can't cancel this quest for 10 minutes. Are
+                you sure you want to accept this quest?
+              </li>
+              <li>
+                How's your quest going, {Gamertag}? Come back once you've
+                completed it to claim your reward!
+              </li>
+              <li>
+                Cancelling your current quest will allow you to pick a different
+                quest, but any progress towards your current quest will be lost.
+                Are you sure?
+              </li>
+              <li>
+                Howdy, {Gamertag}!
+                <br />You can view the progress of your special quest(s), or
+                activate an additional daily quest.<br />
+                What would you like to do?
+              </li>
+              <li>
+                You have multiple active quests. Select a quest for more
+                details.
+              </li>
             </ul>
 
             <h2 id="gallery">Gallery</h2>
@@ -141,15 +153,18 @@
             </div>
           </div>
 
-          <div data-include="section:quest-costumes"></div>
+          <section
+            class="costume-section"
+            data-quest-costumes
+            data-total="{total-amount}"
+          ></section>
 
           <div class="article-body">
             <h2 id="tickets">Tickets</h2>
             <p>
-              The Quest Master has been part of hive since beta, where players
-              can speak with him to do daily quests in exchange for QP(Quest
-              Points) and can redeem them for Boosters, Quest Costumes, or
-              Costume Gifts.
+              Tickets can be purchased from the Hive Store or Gift Menu and give
+              the player special quests to unlock ticket related cosmetics after
+              completion.
             </p>
             <h2 id="anomaly-breach">Anomaly Breach</h2>
             <div class="quest-chain">
@@ -526,6 +541,7 @@
     <div data-include="footer"></div>
 
     <script src="../js/partials.js"></script>
+    <script src="../js/quest-costumes.js"></script>
     <script>
       (function () {
         var tabsWrap = document.getElementById("infobox-image__tabs");
@@ -550,9 +566,9 @@
 
       /* Auto-fill quest card progress: reads each task's "x/y"
          count, marks it complete when x >= y, and sets the
-         card's overall bar width + "n/total tasks" label from
-         how many of its tasks are complete. Edit the numbers in
-         .quest-task__count — everything else updates itself. */
+         card's "n/total tasks" label from how many of its tasks
+         are complete. Edit the numbers in .quest-task__count —
+         everything else updates itself. */
       (function () {
         document.querySelectorAll(".quest-card").forEach(function (card) {
           var tasks = card.querySelectorAll(".quest-task");
@@ -573,10 +589,6 @@
           });
 
           var total = tasks.length;
-          var pct = total ? Math.round((done / total) * 100) : 0;
-
-          var fill = card.querySelector(".quest-card__bar-fill");
-          if (fill) fill.style.width = pct + "%";
 
           var label = card.querySelector(".quest-card__progress-label");
           if (label) label.textContent = done + "/" + total + " tasks";
