@@ -525,6 +525,99 @@
 }
 
 /* ---------------------------------------------------------
+   Reward showcase — single panel housing both Immediate and
+   Unlockable rewards, split into two labeled tiers. Only the
+   item name is a hyperlink (not the thumbnail/tile) out to
+   its cosmetic-type category page (hat -> /hats, avatar ->
+   /avatars, mount -> /mounts, etc.).
+   Structure:
+   <div class="reward-showcase">
+     <div class="reward-tier">
+       <div class="reward-tier__label">Immediate</div>
+       <div class="reward-tier__grid">
+         <div class="reward-item">
+           <div class="reward-item__thumb">
+             <img src="..." alt="Behind You Avatar">
+           </div>
+           <a class="reward-item__name" href="/avatars">Behind You Avatar</a>
+         </div>
+         ...
+       </div>
+     </div>
+     <div class="reward-tier">
+       <div class="reward-tier__label">Unlockable</div>
+       <div class="reward-tier__grid">...</div>
+     </div>
+   </div>
+   --------------------------------------------------------- */
+.reward-showcase {
+  background: var(--hg-card-bg-alt);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px 20px;
+  margin: 14px 0 22px;
+}
+
+.reward-tier + .reward-tier {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.reward-tier__label {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--hg-title-dark);
+  margin-bottom: 12px;
+}
+
+.reward-tier__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  gap: 14px;
+}
+
+.reward-item {
+  text-align: center;
+}
+
+.reward-item__thumb {
+  background: #2d2c2f;
+  border: 1px solid var(--border-soft);
+  overflow: hidden;
+}
+.reward-item__thumb img {
+  width: 100%;
+  height: 110px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  margin: 0 auto;
+  background: #2d2c2f;
+}
+
+.reward-item__name {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--hg-title-dark);
+  line-height: 1.3;
+}
+.reward-item__name:hover {
+  color: var(--hg-title-dark);
+  text-decoration: underline;
+}
+
+.reward-item__type {
+  font-size: 11px;
+  color: var(--hg-ink-dim);
+  line-height: 1.3;
+}
+
+/* ---------------------------------------------------------
    Dialogue table — uses .data-table as a base, adds a fixed
    Conditions column so long dialogue lines don't push it
    around, and lets dialogue keep its <br> line breaks
