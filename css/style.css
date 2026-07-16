@@ -1056,6 +1056,126 @@ h2[id] {
 }
 
 /* =========================================================
+   Spoiler Box
+   ========================================================= */
+.spoiler-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: hsla(0, 70%, 50%, 0.08);
+  border: 1px solid hsla(0, 70%, 55%, 0.35);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin: 18px 0 12px;
+  color: var(--hg-ink);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.spoiler-warning__icon {
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.spoiler-box {
+  background: var(--hg-card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  margin: 0 0 22px;
+  overflow: hidden;
+}
+
+.spoiler-box summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--hg-text);
+  background: var(--hg-card-bg-alt);
+  user-select: none;
+}
+
+.spoiler-box summary::-webkit-details-marker {
+  display: none;
+}
+
+.spoiler-box summary::before {
+  content: "►";
+  font-size: 10px;
+  color: var(--hg-ink-dim);
+  transition: transform 0.15s ease;
+}
+
+.spoiler-box[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.spoiler-box summary .spoiler-box__actions {
+  margin-left: auto;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--hg-pill-to);
+}
+
+.spoiler-box__content {
+  padding: 16px 18px;
+  border-top: 1px solid var(--border-soft);
+  color: var(--hg-text-dim);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.spoiler-box__content p {
+  margin: 0 0 12px;
+}
+
+.spoiler-box__content p:last-child {
+  margin-bottom: 0;
+}
+
+.spoiler-box__content:has(.spoiler-box__media) {
+  overflow: hidden; /* clearfix so the box grows with the floated thumb */
+}
+
+.spoiler-box__media {
+  float: right;
+  width: 180px;
+  margin: 0 0 12px 16px;
+  background: rgb(45, 44, 47);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.spoiler-box__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.spoiler-box__media figcaption {
+  padding: 6px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--hg-ink);
+  border-top: 1px solid var(--border-soft);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .spoiler-box__media {
+    float: none;
+    width: 100%;
+    margin: 0 0 14px;
+  }
+}
+
+/* =========================================================
    Responsive
    ========================================================= */
 @media (max-width: 900px) {

@@ -58,17 +58,10 @@
               <cite>— Marketplace description</cite>
             </div>
 
-            <h2 id="trivia">Trivia</h2>
-            <ul>
-              <li>
-                Apon collecting all 300 sludge canister coins in Murder Mystery,
-                they will no longer spawn.
-              </li>
-              <li>
-                Sludge canister coins in Murder Mystery can still be collected
-                even while dead.
-              </li>
-            </ul>
+            <h2 id="placeholder">placeholder</h2>
+            <p>
+              Placeholder body text that needs to be put here about the ticket.
+            </p>
 
             <h2 id="rewards">Rewards</h2>
             <div class="reward-showcase">
@@ -620,6 +613,107 @@
                 </ul>
               </div>
             </div>
+            <div class="spoiler-warning">
+              <span class="spoiler-warning__icon">⚠️</span>
+              <span>
+                <strong>Spoiler warning!</strong> This section contains detailed
+                information about the <em>Secret Reward</em>
+                that may spoil your enjoyment of it. Read at your own risk!
+              </span>
+            </div>
+            <details class="spoiler-box">
+              <summary>
+                H█t: █V T▯rr█r (C███on S░gn⧫l V▮ri⟒nt)
+                <span class="spoiler-box__actions">Expand</span>
+              </summary>
+              <div class="spoiler-box__content">
+                <figure class="spoiler-box__media">
+                  <img
+                    src="../../assets/tickets/blinking-light.gif"
+                    alt="Anomaly Breach Morse Code Light"
+                  />
+                </figure>
+                <p>
+                  To obtain the Secret Reward, you will need to head over to the
+                  Anomaly Breach Ticket in The Hub, next you will need to watch
+                  how long and how many times the Light on the Portal flashes.
+                  You can learn more about how to read
+                  <a href="https://en.wikipedia.org/wiki/Morse_code"
+                    >Morse code</a
+                  >
+                  here.<br />
+                  <br />
+                  The sequence comes out as:<br />
+                  --.- .... --. -- .. ..-.<br />Which translates to:<br />Q H G
+                  M I F<br />So the code would be: qhgmif
+                </p>
+                <p>
+                  <figure class="spoiler-box__media">
+                    <img
+                      src="../../assets/tickets/backrooms-hub-window.png"
+                      alt="Anomaly Breach Morse Code Light"
+                    />
+                    <img
+                      src="../../assets/tickets/backrooms-hub-computer.png"
+                      alt="Anomaly Breach Morse Code Light"
+                    />
+                  </figure>
+                  Once you have decoded your code, join a game of
+                  <a href="../../gamemodes/murder/">Murder Mystery</a> and vote
+                  for
+                  <a href="../../gamemodes/murder/backrooms/">Backrooms</a>
+                  until you load into the one with
+                  <a href="../../hubs/hivehub/">The Hub</a> on the other side of
+                  the window, next head to the left down the hall and make a
+                  right, you will then see a On Computer, interact with it and
+                  input your code.<br /><br />
+                  If you enter the wrong code you will be met with a message as
+                  follows:<br />
+                  <span class="mc-render">
+                    <span class="mc-font"
+                      ><span class="mc-red">» </span
+                      ><span class="mc-light-purple">ANOMALY PROTOCOL </span
+                      ><span class="mc-red">// Access Denied.</span></span
+                    >
+                    <!-- §c§l» §r§dANOMALY PROTOCOL§c // Access Denied. --> </span
+                  ><br /><br />
+                  Attempting this on a Custom Server will result in the
+                  following message:<br />
+                  <span class="mc-render">
+                    <span class="mc-font"
+                      ><span class="mc-red">» </span
+                      ><span class="mc-white"
+                        >QCSI // PROTOCOL LOCKDOWN. SHELTER IN PLACE.
+                        TERMINATING CONNECTION.</span
+                      ></span
+                    >
+                    <!-- §c§l» §rQCSI // PROTOCOL LOCKDOWN. SHELTER IN PLACE. TERMINATING CONNECTION. -->
+                  </span>
+                </p>
+
+                <table class="data-table dialogue-table" data-dialogue></table>
+                <script src="../../js/dialogue-table.js"></script>
+                <script>
+                  renderDialogueTable(
+                    document.querySelector("[data-dialogue]"),
+                    [
+                      {
+                        body: "[INCOMING TRANSMISSION]\n\nDot dash, the light flash, dot dot dash, light fl...\n\n[TRANSMISSION TERMINATED]\n\n",
+                        condition: "ANOMALY PROTOCOL - 0x364",
+                      },
+                      {
+                        body: "Anomaly override has been activated.\n\nAnomaly samples will be assigned to your staff inventory.\n\n§aSecret reward granted:\n§iCrimson Signal TV Terror Hat",
+                        condition: "OVERRIDE ENABLED",
+                      },
+                      {
+                        body: "[ERROR]\n\nAnomaly division security policy not met.\n\nUnauthorized.",
+                        condition: "Ticket not purchased",
+                      },
+                    ],
+                  );
+                </script>
+              </div>
+            </details>
 
             <h2 id="trivia">Trivia</h2>
             <ul>
@@ -650,36 +744,36 @@
                 <div class="media-thumb">
                   <img
                     src="https://playhive.com/content/images/size/w1600/2025/10/2025-10-17-16-00-14.png"
-                    alt="The Anomaly Breach Ad in the hub."
+                    alt="The Anomaly Breach Ad in The Hub."
                   />
                 </div>
-                <div class="media-label">The Anomaly Breach Ad in the hub</div>
+                <div class="media-label">The Anomaly Breach Ad in The Hub.</div>
               </div>
               <div class="media-card">
                 <div class="media-thumb">
                   <img
                     src="../../assets/tickets/anomaly-breach-prop.png"
-                    alt="Anomaly Breach Hub Prop (Ad)"
+                    alt="Anomaly Breach Prop (Ad)"
                   />
                 </div>
                 <div class="media-label">
-                  Anomaly Breach Hub Prop that teleports the player infront of
-                  the ticket display.
+                  Anomaly Breach Prop that teleports the player infront of the
+                  display.
                 </div>
               </div>
               <div class="media-card">
                 <div class="media-thumb">
                   <img
                     src="../../assets/tickets/anomaly-breach-structure.png"
-                    alt="Anomaly Breach display (Ad)"
+                    alt="Anomaly Breach (Ad)"
                   />
                 </div>
-                <div class="media-label">Anomaly Breach display (Ad)</div>
+                <div class="media-label">Anomaly Breach (Ad)</div>
               </div>
               <div class="media-card">
                 <div class="media-thumb">
                   <img
-                    src="../../assets/tickets/anomaly-breach-mini.png"
+                    src="../../assets/tickets/anomaly-breach-structure-mini.png"
                     alt="Anomaly Breach Mini (Ad)"
                   />
                 </div>
