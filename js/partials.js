@@ -71,19 +71,6 @@
       keywords: "home main hive wiki overview",
     },
     {
-      title: "Herald the Guide",
-      url: "{{root}}pages/npc.html",
-      category: "NPCs & Lore",
-      keywords: "npc herald guide lobby dialogue lore",
-    },
-    {
-      title: "Hoverboard Costume",
-      url: "{{root}}costumes/misc/hoverboard/",
-      category: "Store & Cosmetics",
-      keywords:
-        "hoverboard costume unreleased cosmetic bundle speed demon super fruit minecoins hub title",
-    },
-    {
       title: "BedWars",
       url: "#",
       category: "Games",
@@ -120,39 +107,39 @@
       keywords: "hide and seek disguise block seeker",
     },
     {
-      title: "Rules & Guidelines",
-      url: "#",
-      category: "Navigation",
-      keywords: "rules guidelines editing conduct",
-    },
-    {
       title: "Ranks & Perks",
       url: "#",
       category: "Navigation",
       keywords: "ranks perks vip mvp",
     },
     {
-      title: "Shopkeepers",
-      url: "#",
-      category: "NPCs & Lore",
-      keywords: "shopkeepers npc store vendor",
-    },
-    {
-      title: "Hive Lore",
-      url: "#",
-      category: "NPCs & Lore",
-      keywords: "lore story history hive",
-    },
-    {
       title: "Costumes",
       url: "{{root}}costumes/index.html",
-      category: "Store & Cosmetics",
+      category: "Navigation",
       keywords: "costumes cosmetics store bundles",
+    },
+    {
+      title: "Alien Costume",
+      url: "{{root}}costumes/store/alien/index.html",
+      category: "Costumes / Store",
+      keywords: "alien costume cosmetic store old",
+    },
+    {
+      title: "Mini Pirate Costume",
+      url: "{{root}}costumes/misc/mini-pirate/index.html",
+      category: "Costumes / Misc",
+      keywords: "mini pirate costume misc old",
+    },
+    {
+      title: "Hoverboard Costume",
+      url: "{{root}}costumes/misc/hoverboard/",
+      category: "Costumes / Misc",
+      keywords: "hoverboard costume unreleased old",
     },
     {
       title: "Unreleased Content",
       url: "#",
-      category: "Store & Cosmetics",
+      category: "Costumes",
       keywords: "unreleased cancelled cut content",
     },
     {
@@ -165,20 +152,8 @@
     {
       title: "Anomaly Breach",
       url: "{{root}}tickets/anomaly-breach/index.html",
-      category: "Store & Cosmetics",
+      category: "Tickets",
       keywords: "anomaly breach ticket minecoins tokens hive server",
-    },
-    {
-      title: "Mini Pirate Costume",
-      url: "{{root}}costumes/misc/mini-pirate/index.html",
-      category: "Store & Cosmetics",
-      keywords: "mini pirate costume cosmetic misc",
-    },
-    {
-      title: "Alien Costume",
-      url: "{{root}}costumes/store/alien/index.html",
-      category: "Store & Cosmetics",
-      keywords: "alien costume store cosmetic super fruit",
     },
     {
       title: "Events",

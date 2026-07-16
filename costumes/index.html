@@ -13,7 +13,7 @@
     <div class="wiki-shell">
       <main class="content">
         <div class="breadcrumb">
-          <a href="../index.html">Main Page</a> &nbsp;›&nbsp; Costumes
+          <a href="../">Home</a> &nbsp;›&nbsp; Costumes
         </div>
 
         <h1 class="page-title">Costumes</h1>
@@ -32,7 +32,7 @@
             </h2>
             <a class="costume-section__more" href="store/">View all →</a>
           </div>
-          <p>{Store-Costume-Description}</p>
+          <p>Store Costumes that can be purchased any time.</p>
           <div class="costume-preview-grid">
             <a class="costume-preview" href="store/bitter-kitty">
               <div class="costume-preview__thumb">
@@ -101,8 +101,11 @@
           </div>
         </section>
 
-        <div data-include="section:quest-costumes"></div>
-
+        <section
+          class="costume-section"
+          data-quest-costumes
+          data-total="{total-amount}"
+        ></section>
         <!-- ============ UNLOCKABLE ============ -->
         <section class="costume-section">
           <div class="costume-section__head">
@@ -138,7 +141,10 @@
             </h2>
             <a class="costume-section__more" href="unobtainable/">View all →</a>
           </div>
-          <p>{Unobtainable-Costume-Description}</p>
+          <p>
+            Unobtainable Costumes are limited time Costumes that could be
+            obtained from completing Events or Limited time gamemodes.
+          </p>
           <div class="costume-preview-grid">
             <a class="costume-preview" href="unobtainable/enchanted-spirit/">
               <div class="costume-preview__thumb">
@@ -158,12 +164,14 @@
           <div class="costume-section__head">
             <h2>
               Miscellaneous Costumes<span class="costume-section__count"
-                >{total-amount}</span
+                >5</span
               >
             </h2>
-            <a class="costume-section__more" href="misc/">View all →</a>
           </div>
-          <p>{Misc-Costume-Description}</p>
+          <p>
+            Miscellaneous Costumes are a collection of Staff and Unreleased
+            Costumes.
+          </p>
           <div class="costume-preview-grid">
             <a class="costume-preview" href="misc/skelly-banana/">
               <div class="costume-preview__thumb">
@@ -173,27 +181,7 @@
                 />
               </div>
               <div class="costume-preview__name">Skelly Banana</div>
-              <div class="costume-preview__date">VIP/YT</div>
-            </a>
-            <a class="costume-preview" href="misc/murder-spacesuit/">
-              <div class="costume-preview__thumb">
-                <img
-                  src="../assets/costume/misc/murder-spacesuit.png"
-                  alt="Spacesuit"
-                />
-              </div>
-              <div class="costume-preview__name">Spacesuit</div>
-              <div class="costume-preview__date">Gamemode</div>
-            </a>
-            <a class="costume-preview" href="misc/murder-chicken/">
-              <div class="costume-preview__thumb">
-                <img
-                  src="../assets/costume/misc/murder-chicken.png"
-                  alt="Chicken"
-                />
-              </div>
-              <div class="costume-preview__name">Chicken</div>
-              <div class="costume-preview__date">Gamemode</div>
+              <div class="costume-preview__date">Unreleased</div>
             </a>
             <a class="costume-preview" href="misc/hoverboard/">
               <div class="costume-preview__thumb">
@@ -213,21 +201,21 @@
                 />
               </div>
               <div class="costume-preview__name">Mini Pirate</div>
-              <div class="costume-preview__date">Developer</div>
+              <div class="costume-preview__date">Unobtainable</div>
             </a>
             <a class="costume-preview" href="misc/skeleton/">
               <div class="costume-preview__thumb">
                 <img src="../assets/costume/misc/skeleton.png" alt="Skeleton" />
               </div>
               <div class="costume-preview__name">Skeleton</div>
-              <div class="costume-preview__date">Developer</div>
+              <div class="costume-preview__date">Unobtainable</div>
             </a>
             <a class="costume-preview" href="misc/pirate/">
               <div class="costume-preview__thumb">
                 <img src="../assets/costume/misc/pirate.png" alt="Pirate" />
               </div>
               <div class="costume-preview__name">Pirate</div>
-              <div class="costume-preview__date">Developer</div>
+              <div class="costume-preview__date">Unobtainable</div>
             </a>
           </div>
         </section>
@@ -237,5 +225,6 @@
     <div data-include="footer"></div>
 
     <script src="../js/partials.js"></script>
+    <script src="../js/quest-costumes.js"></script>
   </body>
 </html>
