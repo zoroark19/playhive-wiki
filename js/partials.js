@@ -352,12 +352,17 @@ document.addEventListener("click", function (e) {
   // Skip icons/logos in chrome (topbar, footer) — only wiki content images
   if (img.closest(".topbar, .site-footer, .hexmark")) return;
 
+  // Skip images that are already wrapped in a link — let the link's
+  // own href handle the click instead of overriding it with the raw image
+  if (img.closest("a")) return;
+
   window.open(img.currentSrc || img.src, "_blank", "noopener");
 });
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("img").forEach(function (img) {
     if (img.closest(".topbar, .site-footer, .hexmark")) return;
+    if (img.closest("a")) return;
     img.style.cursor = "zoom-in";
   });
 });

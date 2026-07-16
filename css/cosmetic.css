@@ -180,6 +180,10 @@
   border: 1px solid var(--border-soft);
   overflow: hidden;
 }
+.media-card .media-thumb a {
+  display: block;
+  cursor: pointer;
+}
 .media-card img {
   width: 100%;
   max-width: 100%;
