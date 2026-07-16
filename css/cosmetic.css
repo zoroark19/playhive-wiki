@@ -170,6 +170,7 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 14px;
   margin: 14px 0 22px;
+  clear: both;
 }
 .media-card {
   text-align: center;
@@ -556,6 +557,7 @@
   border-radius: var(--radius-sm);
   padding: 18px 20px 20px;
   margin: 14px 0 22px;
+  clear: both;
 }
 
 .reward-tier + .reward-tier {
@@ -681,6 +683,7 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 14px;
   margin: 16px 0 24px;
+  clear: both;
 }
 
 .quest-card {

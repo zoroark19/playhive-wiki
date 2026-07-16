@@ -523,6 +523,11 @@ img {
 .with-infobox {
   position: relative;
 }
+.with-infobox::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .with-infobox .infobox {
   float: right;
   margin: 6px 0 24px 40px;
