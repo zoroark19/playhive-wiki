@@ -521,16 +521,72 @@ img {
 }
 
 .with-infobox {
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 300px);
+  grid-template-areas:
+    "title infobox"
+    "body  infobox";
+  column-gap: 40px;
+  align-items: start;
 }
-.with-infobox::after {
+.with-infobox .infobox {
+  grid-area: infobox;
+  margin: 6px 0 24px;
+  /* No float. The grid column is a hard boundary — content can
+     never overlap it, and the infobox is never pushed around by
+     variable-length article text. Works the same on every page
+     regardless of how much content is above/below it. */
+}
+.with-infobox > .page-title {
+  grid-area: title;
+}
+.with-infobox > .article-body {
+  grid-area: body;
+}
+
+/* -----------------------------------------------------------
+   --flow modifier: use on pages where you WANT later sections
+   (e.g. a "Rewards" grid) to wrap up into the empty space below
+   a short infobox, instead of the grid reserving a full-height
+   column for it. Opt-in only — default .with-infobox above stays
+   the safe choice for long, text-heavy articles.
+
+   Structure is the same three children (infobox, page-title,
+   article-body), just add `with-infobox--flow`:
+
+     <div class="with-infobox with-infobox--flow">
+       <aside class="infobox">...</aside>
+       <h1 class="page-title">...</h1>
+       <div class="article-body">...</div>
+     </div>
+
+   Everything inside .article-body — headings, paragraphs, the
+   rewards grid, whatever — flows normally and wraps around the
+   floated infobox until it clears past the bottom of it.
+   ----------------------------------------------------------- */
+.with-infobox--flow {
+  display: block;
+}
+.with-infobox--flow::after {
   content: "";
   display: table;
   clear: both;
 }
-.with-infobox .infobox {
+.with-infobox--flow .infobox {
   float: right;
-  margin: 6px 0 24px 40px;
+  margin: 0 0 24px 40px;
+}
+.with-infobox--flow > .page-title,
+.with-infobox--flow > .article-body {
+  /* plain flow — no clear here on purpose, so content wraps
+     around the float instead of dropping below it */
+}
+/* Utility: put this on any element inside .article-body (e.g. the
+   Rewards section) that should always start full-width, once the
+   infobox has been passed — use it instead of letting a grid/card
+   layout risk squeezing narrow next to the float. */
+.clear-infobox {
+  clear: right;
 }
 
 /* =========================================================
@@ -1190,10 +1246,19 @@ h2[id] {
   .two-col {
     grid-template-columns: 1fr;
   }
+  .with-infobox {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "infobox"
+      "title"
+      "body";
+  }
   .with-infobox .infobox {
-    float: none;
     margin: 0 0 22px 0;
     width: 100%;
+  }
+  .with-infobox--flow .infobox {
+    float: none;
   }
   .topbar__nav {
     display: flex;

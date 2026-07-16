@@ -145,7 +145,7 @@
     },
     {
       title: "Costumes",
-      url: "#",
+      url: "{{root}}costumes/index.html",
       category: "Store & Cosmetics",
       keywords: "costumes cosmetics store bundles",
     },
@@ -154,6 +154,38 @@
       url: "#",
       category: "Store & Cosmetics",
       keywords: "unreleased cancelled cut content",
+    },
+    {
+      title: "Quests",
+      url: "{{root}}quests/index.html",
+      category: "NPCs & Lore",
+      keywords:
+        "quest master quests qp quest points daily quest costumes tickets anomaly breach npc",
+    },
+    {
+      title: "Anomaly Breach",
+      url: "{{root}}tickets/anomaly-breach/index.html",
+      category: "Store & Cosmetics",
+      keywords: "anomaly breach ticket minecoins tokens hive server",
+    },
+    {
+      title: "Mini Pirate Costume",
+      url: "{{root}}costumes/misc/mini-pirate/index.html",
+      category: "Store & Cosmetics",
+      keywords: "mini pirate costume cosmetic misc",
+    },
+    {
+      title: "Alien Costume",
+      url: "{{root}}costumes/store/alien/index.html",
+      category: "Store & Cosmetics",
+      keywords: "alien costume store cosmetic super fruit",
+    },
+    {
+      title: "Events",
+      url: "{{root}}events/index.html",
+      category: "Navigation",
+      keywords:
+        "events hive-o-ween winterfest lunar new year easter egg hunt golden cubee hunt sonic",
     },
   ];
 
