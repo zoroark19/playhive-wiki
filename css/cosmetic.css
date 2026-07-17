@@ -207,6 +207,11 @@
   height: 226.69px;
 }
 
+.media-grid--fixed {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 220px));
+  justify-content: start;
+}
+
 /* Infobox price row */
 .infobox td.price-row {
   font-weight: 700;
