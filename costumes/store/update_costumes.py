@@ -6,15 +6,15 @@ Walks a directory tree of costume wiki HTML pages and, for each file:
   2. Finds the paragraph (whitespace/line-ending tolerant):
        <p>
          Aside from the costume itself, purchasing grants the player
-         the following items:
+         the following cosmetics:
        </p>
      and rewrites it to insert the costume name after "purchasing":
        <p>
          Aside from the costume itself, purchasing <NAME> grants the player
-         the following items:
+         the following cosmetics:
        </p>
 Matching is done against the exact wording ("Aside from the costume itself,
-purchasing grants the player the following items:") but is tolerant of
+purchasing grants the player the following cosmetics:") but is tolerant of
 whitespace differences (spaces/newlines/CRLF vs LF) between words, since the
 actual files use CRLF line endings and slightly different line-wrapping than
 originally pasted. Files that don't match this exact wording are skipped and
@@ -39,7 +39,7 @@ from pathlib import Path
 OLD_P_RE = re.compile(
     r'<p>\s*'
     r'Aside from the costume itself,\s*purchasing\s*grants the player\s*'
-    r'the\s*following items:\s*'
+    r'the\s*following cosmetics:\s*'
     r'</p>',
     re.DOTALL,
 )
@@ -74,7 +74,7 @@ def process_file(path: Path):
     new_block = (
         "<p>\n"
         f"              Aside from the costume itself, purchasing {name} grants the player\n"
-        "              the following items:\n"
+        "              the following cosmetics:\n"
         "            </p>"
     )
 
