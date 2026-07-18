@@ -58,7 +58,7 @@
   // loads this single model and gets its own look via a per-cape PNG
   // texture applied on top. Backblings are unaffected and keep loading
   // their own unique per-item .glb via item.model as before.
-  const SHARED_CAPE_MODEL_URL = "/store/cape.glb";
+  const SHARED_CAPE_MODEL_URL = "store/cape.glb";
 
   // Derive a cape item's texture URL, mirroring player.html's
   // getCapeTextureUrl(): "/models/{name}.png". Prefers an explicit
