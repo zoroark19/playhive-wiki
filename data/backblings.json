@@ -1,0 +1,18 @@
+{
+  "description": "Backbling cosmetics available on the marketplace.",
+  "items": [
+    {
+      "slug": "turtle-shell",
+      "name": "Turtle Shell",
+      "date": "March 3, 2024",
+      "availability": "paid",
+      "price": 120,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-turtle-shell.png",
+      "model": "backblings/turtle-shell/model.glb",
+      "page": "backblings/turtle-shell/",
+      "tags": [
+        "weapon"
+      ]
+    }
+  ]
+}

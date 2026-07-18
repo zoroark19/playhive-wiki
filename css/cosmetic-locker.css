@@ -1,0 +1,448 @@
+/* =========================================================
+   Cosmetic Locker widget — browsable 3D cosmetic viewer with
+   Costume / Hat / Cape&Backbling equip slots.
+   Pairs with /js/cosmetic-locker.js. Follows the same visual
+   language as .map-widget (see cosmetic.css).
+   ========================================================= */
+
+.locker {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 18px 0 20px;
+}
+
+.locker__searchbar {
+  display: flex;
+  gap: 10px;
+}
+
+.locker__search {
+  flex: 1;
+  background: var(--hg-masthead);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  color: var(--hg-ink);
+  font-size: 13.5px;
+  padding: 10px 14px;
+}
+.locker__search::placeholder {
+  color: var(--hg-ink-dim);
+}
+.locker__search:focus {
+  outline: none;
+  border-color: var(--hg-title);
+}
+
+.locker__sort {
+  background: var(--hg-masthead);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  color: var(--hg-ink);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 12px;
+}
+
+.locker__layout {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  grid-template-areas: "filters stage equipped";
+  gap: 14px;
+  align-items: start;
+}
+
+.locker__filters {
+  grid-area: filters;
+}
+
+.locker__stage-col {
+  grid-area: stage;
+}
+
+.locker__equipped {
+  grid-area: equipped;
+}
+
+/* ---------- Left: filters ---------- */
+.locker__filters {
+  background: var(--hg-masthead);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-height: 640px;
+  overflow-y: auto;
+}
+
+.locker__filter-group h4 {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--hg-title-dark);
+  margin: 0 0 8px;
+}
+
+.locker__radio-list,
+.locker__check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.locker__radio,
+.locker__check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--hg-text-dim);
+  cursor: pointer;
+  justify-content: space-between;
+}
+.locker__radio:hover,
+.locker__check:hover {
+  color: #fff;
+}
+.locker__radio input,
+.locker__check input {
+  accent-color: var(--hg-gold);
+  margin: 0 8px 0 0;
+}
+.locker__radio-label,
+.locker__check-label {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.locker__count {
+  color: var(--hg-ink-dim);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.locker__category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.locker__category-thumb {
+  position: relative;
+  border: 2px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  background: #2d2c2f;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1;
+  padding: 0;
+}
+.locker__category-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+  display: block;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.locker__category-thumb:hover {
+  border-color: var(--hg-title-dark);
+}
+.locker__category-thumb.is-active {
+  border-color: var(--hg-gold);
+}
+.locker__category-name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: #fff;
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 10px 4px 3px;
+  line-height: 1.2;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.locker__tag-filter {
+  background: var(--hg-card-bg-alt);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  color: var(--hg-ink);
+  font-size: 12.5px;
+  padding: 7px 10px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+.locker__tag-filter::placeholder {
+  color: var(--hg-ink-dim);
+}
+
+/* ---------- Middle: viewport + browse grid ---------- */
+.locker__stage-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.locker__count-line {
+  font-size: 13px;
+  color: var(--hg-text-dim);
+}
+.locker__count-line strong {
+  color: #fff;
+}
+.locker__count-line .locker__count-accent {
+  color: var(--hg-title-dark);
+  font-weight: 700;
+}
+
+.locker__stage {
+  position: relative;
+  background: #0a0714;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 460px;
+  box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.6);
+}
+.locker__stage canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+  cursor: grab;
+}
+.locker__stage canvas:active {
+  cursor: grabbing;
+}
+
+.locker__hint {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  pointer-events: none;
+  background: hsla(10, 15%, 5%, 0.55);
+  border: 1px solid hsla(0, 0%, 100%, 0.12);
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--hg-text-dim);
+  z-index: 5;
+}
+
+.locker__stage-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hg-ink-dim);
+  font-size: 13px;
+  text-align: center;
+  padding: 20px;
+}
+
+.locker__browse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.locker__item-thumb {
+  position: relative;
+  border: 2px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  background: #2d2c2f;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1;
+  padding: 0;
+  text-align: left;
+}
+.locker__item-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  display: block;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.locker__item-thumb:hover {
+  border-color: var(--hg-title-dark);
+}
+.locker__item-thumb.is-equipped {
+  border-color: var(--hg-gold);
+}
+.locker__item-name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 12px 5px 4px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.locker__item-sub {
+  position: absolute;
+  left: 5px;
+  bottom: 3px;
+  color: var(--hg-ink-dim);
+  font-size: 9px;
+}
+
+/* ---------- Right: equipped panel (compact, fits stage height) ---------- */
+.locker__equipped {
+  background: var(--hg-masthead);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.locker__equipped h4 {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--hg-title-dark);
+  margin: 0;
+  text-align: center;
+}
+
+.locker__equipped-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.locker__slot-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.locker__slot {
+  background: var(--hg-card-bg-alt);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.locker__slot-thumb {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  background: #2d2c2f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.locker__slot-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.locker__slot-placeholder {
+  color: var(--hg-ink-dim);
+  font-size: 9px;
+  text-align: center;
+  padding: 4px;
+  line-height: 1.2;
+}
+.locker__slot-clear {
+  flex: 0 0 auto;
+  align-self: center;
+  margin-right: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  background: hsla(0, 0%, 0%, 0.35);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1;
+  cursor: pointer;
+  border: none;
+}
+.locker__slot-clear:hover {
+  background: hsla(0, 0%, 0%, 0.6);
+}
+
+.locker__slot-info {
+  flex: 1;
+  min-width: 0;
+  padding: 5px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.locker__slot-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.locker__slot-price {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #ffe28a;
+  margin-top: 3px;
+}
+.locker__slot-label {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--hg-ink-dim);
+  padding: 0 2px 2px;
+}
+
+@media (max-width: 900px) {
+  .locker__layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "filters"
+      "stage"
+      "equipped";
+  }
+  .locker__filters {
+    max-height: none;
+  }
+  .locker__stage {
+    height: 340px;
+  }
+}

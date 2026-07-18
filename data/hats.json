@@ -1,0 +1,18 @@
+{
+  "description": "Hat cosmetics available on the marketplace.",
+  "items": [
+    {
+      "slug": "shark-hat",
+      "name": "Shark Hat",
+      "date": "March 3, 2024",
+      "availability": "paid",
+      "price": 120,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-shark-hat.png",
+      "model": "hats/shark-hat/model.glb",
+      "page": "hats/shark-hat/",
+      "tags": [
+        "character"
+      ]
+    }
+  ]
+}

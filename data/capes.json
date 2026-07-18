@@ -1,0 +1,16 @@
+{
+  "description": "Cape cosmetics available on the marketplace.",
+  "items": [
+    {
+      "slug": "copper-knight-cape",
+      "name": "Gear - Copper Knight Cape",
+      "date": "March 3, 2024",
+      "availability": "paid",
+      "author": "@capellastudio",
+      "thumbnail": "capes/copper-knight-cape/copper-knight-cape.png",
+      "model": "capes/copper-knight-cape/model.glb",
+      "page": "capes/copper-knight-cape/",
+      "tags": ["creature"]
+    }
+  ]
+}
