@@ -195,18 +195,6 @@
   gap: 12px;
 }
 
-.locker__count-line {
-  font-size: 13px;
-  color: var(--hg-text-dim);
-}
-.locker__count-line strong {
-  color: #fff;
-}
-.locker__count-line .locker__count-accent {
-  color: var(--hg-title-dark);
-  font-weight: 700;
-}
-
 .locker__stage {
   position: relative;
   background: #0a0714;

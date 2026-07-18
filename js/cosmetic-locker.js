@@ -220,7 +220,6 @@
           </aside>
 
           <div class="locker__stage-col">
-            <div class="locker__count-line" data-role="count-line"></div>
             <div class="locker__stage">
               <div class="locker__stage-empty" data-role="stage-empty" style="display:none">
                 Select a costume, hat, or cape/backbling to preview it here.
@@ -257,7 +256,6 @@
         categories: this.rootEl.querySelector('[data-role="categories"]'),
         tagFilter: this.rootEl.querySelector('[data-role="tag-filter"]'),
         tags: this.rootEl.querySelector('[data-role="tags"]'),
-        countLine: this.rootEl.querySelector('[data-role="count-line"]'),
         stageEmpty: this.rootEl.querySelector('[data-role="stage-empty"]'),
         canvas: this.rootEl.querySelector('[data-role="canvas"]'),
         browseGrid: this.rootEl.querySelector('[data-role="browse-grid"]'),
@@ -455,7 +453,6 @@
 
     _renderBrowseGrid() {
       const items = this._filteredItems();
-      this.$.countLine.innerHTML = `<strong>${items.length}</strong> <span class="locker__count-accent">cosmetics</span>`;
 
       if (!items.length) {
         this.$.browseGrid.innerHTML = `<div style="grid-column:1/-1;color:var(--hg-ink-dim);font-size:13px;padding:20px 0;">No cosmetics match these filters.</div>`;
