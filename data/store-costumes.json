@@ -1,0 +1,2575 @@
+{
+  "description": "Costumes purchasable in the store.",
+  "items": [
+    {
+      "slug": "abyssal-angler",
+      "name": "Abyssal Angler",
+      "date": "June 11, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/abyssal-angler/abyssal-angler.png",
+      "model": "costumes/store/abyssal-angler/model.glb",
+      "page": "costumes/store/abyssal-angler/",
+      "tags": []
+    },
+    {
+      "slug": "alien",
+      "name": "Alien",
+      "date": "January 19, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/alien/alien.png",
+      "model": "costumes/store/alien/model.glb",
+      "page": "costumes/store/alien/",
+      "tags": []
+    },
+    {
+      "slug": "archy",
+      "name": "Archy",
+      "date": "July 3, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/archy/archy.png",
+      "model": "costumes/store/archy/model.glb",
+      "page": "costumes/store/archy/",
+      "tags": []
+    },
+    {
+      "slug": "axolotl",
+      "name": "Axolotl",
+      "date": "April 3, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/axolotl/axolotl.png",
+      "model": "costumes/store/axolotl/model.glb",
+      "page": "costumes/store/axolotl/",
+      "tags": []
+    },
+    {
+      "slug": "bamboo-bandit",
+      "name": "Bamboo Bandit",
+      "date": "January 30, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/bamboo-bandit/bamboo-bandit.png",
+      "model": "costumes/store/bamboo-bandit/model.glb",
+      "page": "costumes/store/bamboo-bandit/",
+      "tags": []
+    },
+    {
+      "slug": "banana",
+      "name": "Banana",
+      "date": "April 7, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/banana/banana.png",
+      "model": "costumes/store/banana/model.glb",
+      "page": "costumes/store/banana/",
+      "tags": []
+    },
+    {
+      "slug": "bandit",
+      "name": "Bandit",
+      "date": "June 23, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/bandit/bandit.png",
+      "model": "costumes/store/bandit/model.glb",
+      "page": "costumes/store/bandit/",
+      "tags": []
+    },
+    {
+      "slug": "battle-biscuit",
+      "name": "Battle Biscuit",
+      "date": "December 12, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/battle-biscuit/battle-biscuit.png",
+      "model": "costumes/store/battle-biscuit/model.glb",
+      "page": "costumes/store/battle-biscuit/",
+      "tags": []
+    },
+    {
+      "slug": "battle-burger",
+      "name": "Battle Burger",
+      "date": "January 9, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/battle-burger/battle-burger.png",
+      "model": "costumes/store/battle-burger/model.glb",
+      "page": "costumes/store/battle-burger/",
+      "tags": []
+    },
+    {
+      "slug": "battle-cat",
+      "name": "Battle Cat",
+      "date": "September 15, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/battle-cat/battle-cat.png",
+      "model": "costumes/store/battle-cat/model.glb",
+      "page": "costumes/store/battle-cat/",
+      "tags": []
+    },
+    {
+      "slug": "battle-unicorn",
+      "name": "Battle Unicorn",
+      "date": "April 16, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/battle-unicorn/battle-unicorn.png",
+      "model": "costumes/store/battle-unicorn/model.glb",
+      "page": "costumes/store/battle-unicorn/",
+      "tags": []
+    },
+    {
+      "slug": "beach-monkey",
+      "name": "Beach Monkey",
+      "date": "July 30, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/beach-monkey/beach-monkey.png",
+      "model": "costumes/store/beach-monkey/model.glb",
+      "page": "costumes/store/beach-monkey/",
+      "tags": []
+    },
+    {
+      "slug": "bear",
+      "name": "Bear",
+      "date": "March 31, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/bear/bear.png",
+      "model": "costumes/store/bear/model.glb",
+      "page": "costumes/store/bear/",
+      "tags": []
+    },
+    {
+      "slug": "beepo",
+      "name": "Beepo",
+      "date": "March 15, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/beepo/beepo.png",
+      "model": "costumes/store/beepo/model.glb",
+      "page": "costumes/store/beepo/",
+      "tags": []
+    },
+    {
+      "slug": "billy",
+      "name": "Billy",
+      "date": "June 9, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/billy/billy.png",
+      "model": "costumes/store/billy/model.glb",
+      "page": "costumes/store/billy/",
+      "tags": []
+    },
+    {
+      "slug": "black-knight",
+      "name": "Black Knight",
+      "date": "February 3, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/black-knight/black-knight.png",
+      "model": "costumes/store/black-knight/model.glb",
+      "page": "costumes/store/black-knight/",
+      "tags": []
+    },
+    {
+      "slug": "blink",
+      "name": "Blink",
+      "date": "November 1, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/blink/blink.png",
+      "model": "costumes/store/blink/model.glb",
+      "page": "costumes/store/blink/",
+      "tags": []
+    },
+    {
+      "slug": "bunny-mage",
+      "name": "Bunny Mage",
+      "date": "July 24, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/bunny-mage/bunny-mage.png",
+      "model": "costumes/store/bunny-mage/model.glb",
+      "page": "costumes/store/bunny-mage/",
+      "tags": []
+    },
+    {
+      "slug": "burger",
+      "name": "Burger Chef",
+      "date": "January 27, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/burger/burger.png",
+      "model": "costumes/store/burger/model.glb",
+      "page": "costumes/store/burger/",
+      "tags": []
+    },
+    {
+      "slug": "burger-gold-edition",
+      "name": "Burger: Gold Edition",
+      "date": "June 23, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/burger-gold-edition/burger-gold-edition.png",
+      "model": "costumes/store/burger-gold-edition/model.glb",
+      "page": "costumes/store/burger-gold-edition/",
+      "tags": []
+    },
+    {
+      "slug": "burple",
+      "name": "Burple",
+      "date": "October 27, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/burple/burple.png",
+      "model": "costumes/store/burple/model.glb",
+      "page": "costumes/store/burple/",
+      "tags": []
+    },
+    {
+      "slug": "cactus",
+      "name": "Cactus",
+      "date": "March 24, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/cactus/cactus.png",
+      "model": "costumes/store/cactus/model.glb",
+      "page": "costumes/store/cactus/",
+      "tags": []
+    },
+    {
+      "slug": "calico",
+      "name": "Calico",
+      "date": "February 26, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/calico/calico.png",
+      "model": "costumes/store/calico/model.glb",
+      "page": "costumes/store/calico/",
+      "tags": []
+    },
+    {
+      "slug": "camella",
+      "name": "Camella",
+      "date": "July 2, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/camella/camella.png",
+      "model": "costumes/store/camella/model.glb",
+      "page": "costumes/store/camella/",
+      "tags": []
+    },
+    {
+      "slug": "cammy",
+      "name": "Cammy",
+      "date": "May 15, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/cammy/cammy.png",
+      "model": "costumes/store/cammy/model.glb",
+      "page": "costumes/store/cammy/",
+      "tags": []
+    },
+    {
+      "slug": "captain-bones",
+      "name": "Captain Bones",
+      "date": "May 8, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/captain-bones/captain-bones.png",
+      "model": "costumes/store/captain-bones/model.glb",
+      "page": "costumes/store/captain-bones/",
+      "tags": []
+    },
+    {
+      "slug": "captain-fox",
+      "name": "Captain Fox",
+      "date": "June 30, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/captain-fox/captain-fox.png",
+      "model": "costumes/store/captain-fox/model.glb",
+      "page": "costumes/store/captain-fox/",
+      "tags": []
+    },
+    {
+      "slug": "captain-octopus",
+      "name": "Captain Octopus",
+      "date": "September 10, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/captain-octopus/captain-octopus.png",
+      "model": "costumes/store/captain-octopus/model.glb",
+      "page": "costumes/store/captain-octopus/",
+      "tags": []
+    },
+    {
+      "slug": "carrot",
+      "name": "Carrot",
+      "date": "April 21, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/carrot/carrot.png",
+      "model": "costumes/store/carrot/model.glb",
+      "page": "costumes/store/carrot/",
+      "tags": []
+    },
+    {
+      "slug": "catbot",
+      "name": "CatBot",
+      "date": "August 28, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/catbot/catbot.png",
+      "model": "costumes/store/catbot/model.glb",
+      "page": "costumes/store/catbot/",
+      "tags": []
+    },
+    {
+      "slug": "catbox",
+      "name": "CatBox",
+      "date": "January 22, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/catbox/catbox.png",
+      "model": "costumes/store/catbox/model.glb",
+      "page": "costumes/store/catbox/",
+      "tags": []
+    },
+    {
+      "slug": "chicken",
+      "name": "Chicken",
+      "date": "April 14, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/chicken/chicken.png",
+      "model": "costumes/store/chicken/model.glb",
+      "page": "costumes/store/chicken/",
+      "tags": []
+    },
+    {
+      "slug": "chillager",
+      "name": "Chillager",
+      "date": "December 26, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/chillager/chillager.png",
+      "model": "costumes/store/chillager/model.glb",
+      "page": "costumes/store/chillager/",
+      "tags": []
+    },
+    {
+      "slug": "chocolate",
+      "name": "Chocolate",
+      "date": "April 21, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/chocolate/chocolate.png",
+      "model": "costumes/store/chocolate/model.glb",
+      "page": "costumes/store/chocolate/",
+      "tags": []
+    },
+    {
+      "slug": "christmas-creeper",
+      "name": "Christmas Creeper",
+      "date": "December 22, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/christmas-creeper/christmas-creeper.png",
+      "model": "costumes/store/christmas-creeper/model.glb",
+      "page": "costumes/store/christmas-creeper/",
+      "tags": []
+    },
+    {
+      "slug": "circuit",
+      "name": "Circuit",
+      "date": "August 16, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/circuit/circuit.png",
+      "model": "costumes/store/circuit/model.glb",
+      "page": "costumes/store/circuit/",
+      "tags": []
+    },
+    {
+      "slug": "cloak",
+      "name": "Cloak",
+      "date": "May 3, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/cloak/cloak.png",
+      "model": "costumes/store/cloak/model.glb",
+      "page": "costumes/store/cloak/",
+      "tags": []
+    },
+    {
+      "slug": "clown",
+      "name": "Clown",
+      "date": "March 3, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/clown/clown.png",
+      "model": "costumes/store/clown/model.glb",
+      "page": "costumes/store/clown/",
+      "tags": []
+    },
+    {
+      "slug": "cool-cream",
+      "name": "Cool Cream",
+      "date": "August 13, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/cool-cream/cool-cream.png",
+      "model": "costumes/store/cool-cream/model.glb",
+      "page": "costumes/store/cool-cream/",
+      "tags": []
+    },
+    {
+      "slug": "cool-goose",
+      "name": "Cool Goose",
+      "date": "June 4, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/cool-goose/cool-goose.png",
+      "model": "costumes/store/cool-goose/model.glb",
+      "page": "costumes/store/cool-goose/",
+      "tags": []
+    },
+    {
+      "slug": "coolconut",
+      "name": "Coolconut",
+      "date": "June 19, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/coolconut/coolconut.png",
+      "model": "costumes/store/coolconut/model.glb",
+      "page": "costumes/store/coolconut/",
+      "tags": []
+    },
+    {
+      "slug": "coral-queen",
+      "name": "Coral Queen",
+      "date": "November 21, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/coral-queen/coral-queen.png",
+      "model": "costumes/store/coral-queen/model.glb",
+      "page": "costumes/store/coral-queen/",
+      "tags": []
+    },
+    {
+      "slug": "corn",
+      "name": "Corn",
+      "date": "August 16, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/corn/corn.png",
+      "model": "costumes/store/corn/model.glb",
+      "page": "costumes/store/corn/",
+      "tags": []
+    },
+    {
+      "slug": "cosmic-knight",
+      "name": "Cosmic Knight",
+      "date": "August 11, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/cosmic-knight/cosmic-knight.png",
+      "model": "costumes/store/cosmic-knight/model.glb",
+      "page": "costumes/store/cosmic-knight/",
+      "tags": []
+    },
+    {
+      "slug": "croc",
+      "name": "Croc",
+      "date": "November 24, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/croc/croc.png",
+      "model": "costumes/store/croc/model.glb",
+      "page": "costumes/store/croc/",
+      "tags": []
+    },
+    {
+      "slug": "cuddles",
+      "name": "Cuddles",
+      "date": "November 6, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/cuddles/cuddles.png",
+      "model": "costumes/store/cuddles/model.glb",
+      "page": "costumes/store/cuddles/",
+      "tags": []
+    },
+    {
+      "slug": "cupcake",
+      "name": "Cupcake",
+      "date": "June 30, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/cupcake/cupcake.png",
+      "model": "costumes/store/cupcake/model.glb",
+      "page": "costumes/store/cupcake/",
+      "tags": []
+    },
+    {
+      "slug": "cupid-squad-leader",
+      "name": "Cupid Squad Leader",
+      "date": "February 10, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/cupid-squad-leader/cupid-squad-leader.png",
+      "model": "costumes/store/cupid-squad-leader/model.glb",
+      "page": "costumes/store/cupid-squad-leader/",
+      "tags": []
+    },
+    {
+      "slug": "cursed-oak",
+      "name": "Cursed Oak",
+      "date": "October 10, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/cursed-oak/cursed-oak.png",
+      "model": "costumes/store/cursed-oak/model.glb",
+      "page": "costumes/store/cursed-oak/",
+      "tags": []
+    },
+    {
+      "slug": "dark-elf",
+      "name": "Dark Elf",
+      "date": "February 13, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/dark-elf/dark-elf.png",
+      "model": "costumes/store/dark-elf/model.glb",
+      "page": "costumes/store/dark-elf/",
+      "tags": []
+    },
+    {
+      "slug": "dark-wraith",
+      "name": "Dark Wraith",
+      "date": "October 2, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/dark-wraith/dark-wraith.png",
+      "model": "costumes/store/dark-wraith/model.glb",
+      "page": "costumes/store/dark-wraith/",
+      "tags": []
+    },
+    {
+      "slug": "deer",
+      "name": "Deer",
+      "date": "March 22, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/deer/deer.png",
+      "model": "costumes/store/deer/model.glb",
+      "page": "costumes/store/deer/",
+      "tags": []
+    },
+    {
+      "slug": "detective-platypus",
+      "name": "Detective Platypus",
+      "date": "February 17, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/detective-platypus/detective-platypus.png",
+      "model": "costumes/store/detective-platypus/model.glb",
+      "page": "costumes/store/detective-platypus/",
+      "tags": []
+    },
+    {
+      "slug": "detective-sloth",
+      "name": "Detective Sloth",
+      "date": "February 17, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/detective-sloth/detective-sloth.png",
+      "model": "costumes/store/detective-sloth/model.glb",
+      "page": "costumes/store/detective-sloth/",
+      "tags": []
+    },
+    {
+      "slug": "dino",
+      "name": "Dino",
+      "date": "February 3, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/dino/dino.png",
+      "model": "costumes/store/dino/model.glb",
+      "page": "costumes/store/dino/",
+      "tags": []
+    },
+    {
+      "slug": "dinoroar",
+      "name": "Dinoroar",
+      "date": "June 9, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/dinoroar/dinoroar.png",
+      "model": "costumes/store/dinoroar/model.glb",
+      "page": "costumes/store/dinoroar/",
+      "tags": []
+    },
+    {
+      "slug": "doge",
+      "name": "Doge",
+      "date": "July 14, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/doge/doge.png",
+      "model": "costumes/store/doge/model.glb",
+      "page": "costumes/store/doge/",
+      "tags": []
+    },
+    {
+      "slug": "dolphin",
+      "name": "Dolphin",
+      "date": "March 24, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/dolphin/dolphin.png",
+      "model": "costumes/store/dolphin/model.glb",
+      "page": "costumes/store/dolphin/",
+      "tags": []
+    },
+    {
+      "slug": "donut",
+      "name": "Donut",
+      "date": "January 19, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/donut/donut.png",
+      "model": "costumes/store/donut/model.glb",
+      "page": "costumes/store/donut/",
+      "tags": []
+    },
+    {
+      "slug": "doomsday",
+      "name": "Doomsday",
+      "date": "June 1, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/doomsday/doomsday.png",
+      "model": "costumes/store/doomsday/model.glb",
+      "page": "costumes/store/doomsday/",
+      "tags": []
+    },
+    {
+      "slug": "dragon",
+      "name": "Dragon",
+      "date": "March 10, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/dragon/dragon.png",
+      "model": "costumes/store/dragon/model.glb",
+      "page": "costumes/store/dragon/",
+      "tags": []
+    },
+    {
+      "slug": "dread",
+      "name": "Dread",
+      "date": "October 25, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/dread/dread.png",
+      "model": "costumes/store/dread/model.glb",
+      "page": "costumes/store/dread/",
+      "tags": []
+    },
+    {
+      "slug": "ducky",
+      "name": "Ducky",
+      "date": "March 3, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/ducky/ducky.png",
+      "model": "costumes/store/ducky/model.glb",
+      "page": "costumes/store/ducky/",
+      "tags": []
+    },
+    {
+      "slug": "elephant",
+      "name": "Elephant",
+      "date": "March 29, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/elephant/elephant.png",
+      "model": "costumes/store/elephant/model.glb",
+      "page": "costumes/store/elephant/",
+      "tags": []
+    },
+    {
+      "slug": "end-assassin",
+      "name": "End Assassin",
+      "date": "May 12, 2024",
+      "availability": "paid",
+      "thumbnail": "costumes/store/end-assassin/end-assassin.png",
+      "model": "costumes/store/end-assassin/model.glb",
+      "page": "costumes/store/end-assassin/",
+      "tags": []
+    },
+    {
+      "slug": "end-crystal",
+      "name": "End Crystal",
+      "date": "August 27, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/end-crystal/end-crystal.png",
+      "model": "costumes/store/end-crystal/model.glb",
+      "page": "costumes/store/end-crystal/",
+      "tags": []
+    },
+    {
+      "slug": "enderfox",
+      "name": "Enderfox",
+      "date": "December 1, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/enderfox/enderfox.png",
+      "model": "costumes/store/enderfox/model.glb",
+      "page": "costumes/store/enderfox/",
+      "tags": []
+    },
+    {
+      "slug": "endersaur",
+      "name": "Endersaur",
+      "date": "January 19, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/endersaur/endersaur.png",
+      "model": "costumes/store/endersaur/model.glb",
+      "page": "costumes/store/endersaur/",
+      "tags": []
+    },
+    {
+      "slug": "endolotl",
+      "name": "Endolotl",
+      "date": "November 7, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/endolotl/endolotl.png",
+      "model": "costumes/store/endolotl/model.glb",
+      "page": "costumes/store/endolotl/",
+      "tags": []
+    },
+    {
+      "slug": "fineapple",
+      "name": "Fineapple",
+      "date": "July 26, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/fineapple/fineapple.png",
+      "model": "costumes/store/fineapple/model.glb",
+      "page": "costumes/store/fineapple/",
+      "tags": []
+    },
+    {
+      "slug": "fire-dragon",
+      "name": "Fire Dragon",
+      "date": "July 14, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/fire-dragon/fire-dragon.png",
+      "model": "costumes/store/fire-dragon/model.glb",
+      "page": "costumes/store/fire-dragon/",
+      "tags": []
+    },
+    {
+      "slug": "fire-queen",
+      "name": "Fire Queen",
+      "date": "March 20, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/fire-queen/fire-queen.png",
+      "model": "costumes/store/fire-queen/model.glb",
+      "page": "costumes/store/fire-queen/",
+      "tags": []
+    },
+    {
+      "slug": "flame",
+      "name": "Flame",
+      "date": "February 2, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/flame/flame.png",
+      "model": "costumes/store/flame/model.glb",
+      "page": "costumes/store/flame/",
+      "tags": []
+    },
+    {
+      "slug": "flowerlotl",
+      "name": "Flowerlotl",
+      "date": "July 31, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/flowerlotl/flowerlotl.png",
+      "model": "costumes/store/flowerlotl/model.glb",
+      "page": "costumes/store/flowerlotl/",
+      "tags": []
+    },
+    {
+      "slug": "fox",
+      "name": "Fox",
+      "date": "January 19, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/fox/fox.png",
+      "model": "costumes/store/fox/model.glb",
+      "page": "costumes/store/fox/",
+      "tags": []
+    },
+    {
+      "slug": "friender-dragon",
+      "name": "Friender Dragon",
+      "date": "April 17, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/friender-dragon/friender-dragon.png",
+      "model": "costumes/store/friender-dragon/model.glb",
+      "page": "costumes/store/friender-dragon/",
+      "tags": []
+    },
+    {
+      "slug": "friendly-dragon",
+      "name": "Friendly Dragon",
+      "date": "February 21, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/friendly-dragon/friendly-dragon.png",
+      "model": "costumes/store/friendly-dragon/model.glb",
+      "page": "costumes/store/friendly-dragon/",
+      "tags": []
+    },
+    {
+      "slug": "froag",
+      "name": "Froag",
+      "date": "February 25, 2024",
+      "availability": "paid",
+      "thumbnail": "costumes/store/froag/froag.png",
+      "model": "costumes/store/froag/model.glb",
+      "page": "costumes/store/froag/",
+      "tags": []
+    },
+    {
+      "slug": "frost-banana",
+      "name": "Frost Banana",
+      "date": "January 23, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/frost-banana/frost-banana.png",
+      "model": "costumes/store/frost-banana/model.glb",
+      "page": "costumes/store/frost-banana/",
+      "tags": []
+    },
+    {
+      "slug": "frost-bee",
+      "name": "Frost Bee",
+      "date": "December 5, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/frost-bee/frost-bee.png",
+      "model": "costumes/store/frost-bee/model.glb",
+      "page": "costumes/store/frost-bee/",
+      "tags": []
+    },
+    {
+      "slug": "frost-kitsune",
+      "name": "Frost Kitsune",
+      "date": "November 20, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/frost-kitsune/frost-kitsune.png",
+      "model": "costumes/store/frost-kitsune/model.glb",
+      "page": "costumes/store/frost-kitsune/",
+      "tags": []
+    },
+    {
+      "slug": "frost-moose",
+      "name": "Frost Moose",
+      "date": "December 12, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/frost-moose/frost-moose.png",
+      "model": "costumes/store/frost-moose/model.glb",
+      "page": "costumes/store/frost-moose/",
+      "tags": []
+    },
+    {
+      "slug": "galaxy",
+      "name": "Galaxy",
+      "date": "May 3, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/galaxy/galaxy.png",
+      "model": "costumes/store/galaxy/model.glb",
+      "page": "costumes/store/galaxy/",
+      "tags": []
+    },
+    {
+      "slug": "gargoyle",
+      "name": "Gargoyle",
+      "date": "October 28, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/gargoyle/gargoyle.png",
+      "model": "costumes/store/gargoyle/model.glb",
+      "page": "costumes/store/gargoyle/",
+      "tags": []
+    },
+    {
+      "slug": "genie",
+      "name": "Genie",
+      "date": "March 10, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/genie/genie.png",
+      "model": "costumes/store/genie/model.glb",
+      "page": "costumes/store/genie/",
+      "tags": []
+    },
+    {
+      "slug": "ghosty",
+      "name": "Ghosty",
+      "date": "October 20, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/ghosty/ghosty.png",
+      "model": "costumes/store/ghosty/model.glb",
+      "page": "costumes/store/ghosty/",
+      "tags": []
+    },
+    {
+      "slug": "ginger",
+      "name": "Ginger",
+      "date": "May 25, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/ginger/ginger.png",
+      "model": "costumes/store/ginger/model.glb",
+      "page": "costumes/store/ginger/",
+      "tags": []
+    },
+    {
+      "slug": "ginger-cat",
+      "name": "Ginger Cat",
+      "date": "September 15, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/ginger-cat/ginger-cat.png",
+      "model": "costumes/store/ginger-cat/model.glb",
+      "page": "costumes/store/ginger-cat/",
+      "tags": []
+    },
+    {
+      "slug": "giraffe",
+      "name": "Giraffe",
+      "date": "March 24, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/giraffe/giraffe.png",
+      "model": "costumes/store/giraffe/model.glb",
+      "page": "costumes/store/giraffe/",
+      "tags": []
+    },
+    {
+      "slug": "globey",
+      "name": "Globey",
+      "date": "April 24, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/globey/globey.png",
+      "model": "costumes/store/globey/model.glb",
+      "page": "costumes/store/globey/",
+      "tags": []
+    },
+    {
+      "slug": "gloomy",
+      "name": "Gloomy",
+      "date": "March 6, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/gloomy/gloomy.png",
+      "model": "costumes/store/gloomy/model.glb",
+      "page": "costumes/store/gloomy/",
+      "tags": []
+    },
+    {
+      "slug": "glowbot",
+      "name": "Glowbot",
+      "date": "July 7, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/glowbot/glowbot.png",
+      "model": "costumes/store/glowbot/model.glb",
+      "page": "costumes/store/glowbot/",
+      "tags": []
+    },
+    {
+      "slug": "gnome",
+      "name": "Gnome",
+      "date": "February 3, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/gnome/gnome.png",
+      "model": "costumes/store/gnome/model.glb",
+      "page": "costumes/store/gnome/",
+      "tags": []
+    },
+    {
+      "slug": "goddess-of-night",
+      "name": "Goddess of Night",
+      "date": "June 16, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/goddess-of-night/goddess-of-night.png",
+      "model": "costumes/store/goddess-of-night/model.glb",
+      "page": "costumes/store/goddess-of-night/",
+      "tags": []
+    },
+    {
+      "slug": "golden-dragon",
+      "name": "Golden Dragon",
+      "date": "May 21, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/golden-dragon/golden-dragon.png",
+      "model": "costumes/store/golden-dragon/model.glb",
+      "page": "costumes/store/golden-dragon/",
+      "tags": []
+    },
+    {
+      "slug": "golden-skull",
+      "name": "Golden Skull",
+      "date": "March 15, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/golden-skull/golden-skull.png",
+      "model": "costumes/store/golden-skull/model.glb",
+      "page": "costumes/store/golden-skull/",
+      "tags": []
+    },
+    {
+      "slug": "goldfish",
+      "name": "Goldfish",
+      "date": "March 31, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/goldfish/goldfish.png",
+      "model": "costumes/store/goldfish/model.glb",
+      "page": "costumes/store/goldfish/",
+      "tags": []
+    },
+    {
+      "slug": "gremlin",
+      "name": "Gremlin",
+      "date": "December 22, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/gremlin/gremlin.png",
+      "model": "costumes/store/gremlin/model.glb",
+      "page": "costumes/store/gremlin/",
+      "tags": []
+    },
+    {
+      "slug": "grim-creeper",
+      "name": "Grim Creeper",
+      "date": "October 15, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/grim-creeper/grim-creeper.png",
+      "model": "costumes/store/grim-creeper/model.glb",
+      "page": "costumes/store/grim-creeper/",
+      "tags": []
+    },
+    {
+      "slug": "guardian-warrior",
+      "name": "Guardian Warrior",
+      "date": "May 1, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/guardian-warrior/guardian-warrior.png",
+      "model": "costumes/store/guardian-warrior/model.glb",
+      "page": "costumes/store/guardian-warrior/",
+      "tags": []
+    },
+    {
+      "slug": "hazmat",
+      "name": "HAZMAT",
+      "date": "May 25, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/hazmat/hazmat.png",
+      "model": "costumes/store/hazmat/model.glb",
+      "page": "costumes/store/hazmat/",
+      "tags": []
+    },
+    {
+      "slug": "hongo",
+      "name": "Hongo",
+      "date": "September 24, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/hongo/hongo.png",
+      "model": "costumes/store/hongo/model.glb",
+      "page": "costumes/store/hongo/",
+      "tags": []
+    },
+    {
+      "slug": "honk",
+      "name": "HONK",
+      "date": "October 13, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/honk/honk.png",
+      "model": "costumes/store/honk/model.glb",
+      "page": "costumes/store/honk/",
+      "tags": []
+    },
+    {
+      "slug": "hoodie-duck",
+      "name": "Hoodie Duck",
+      "date": "February 16, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/hoodie-duck/hoodie-duck.png",
+      "model": "costumes/store/hoodie-duck/model.glb",
+      "page": "costumes/store/hoodie-duck/",
+      "tags": []
+    },
+    {
+      "slug": "hoodie-pig",
+      "name": "Hoodie Pig",
+      "date": "February 2, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/hoodie-pig/hoodie-pig.png",
+      "model": "costumes/store/hoodie-pig/model.glb",
+      "page": "costumes/store/hoodie-pig/",
+      "tags": []
+    },
+    {
+      "slug": "hoodie-pug",
+      "name": "Hoodie Pug",
+      "date": "March 19, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/hoodie-pug/hoodie-pug.png",
+      "model": "costumes/store/hoodie-pug/model.glb",
+      "page": "costumes/store/hoodie-pug/",
+      "tags": []
+    },
+    {
+      "slug": "hoodie-wolf",
+      "name": "Hoodie Wolf",
+      "date": "November 13, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/hoodie-wolf/hoodie-wolf.png",
+      "model": "costumes/store/hoodie-wolf/model.glb",
+      "page": "costumes/store/hoodie-wolf/",
+      "tags": []
+    },
+    {
+      "slug": "hoppy",
+      "name": "Hoppy",
+      "date": "April 21, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/hoppy/hoppy.png",
+      "model": "costumes/store/hoppy/model.glb",
+      "page": "costumes/store/hoppy/",
+      "tags": []
+    },
+    {
+      "slug": "hotdog",
+      "name": "Hotdog",
+      "date": "March 29, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/hotdog/hotdog.png",
+      "model": "costumes/store/hotdog/model.glb",
+      "page": "costumes/store/hotdog/",
+      "tags": []
+    },
+    {
+      "slug": "ice-dragon",
+      "name": "Ice Dragon",
+      "date": "September 22, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/ice-dragon/ice-dragon.png",
+      "model": "costumes/store/ice-dragon/model.glb",
+      "page": "costumes/store/ice-dragon/",
+      "tags": []
+    },
+    {
+      "slug": "ice-king",
+      "name": "Ice King",
+      "date": "September 1, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/ice-king/ice-king.png",
+      "model": "costumes/store/ice-king/model.glb",
+      "page": "costumes/store/ice-king/",
+      "tags": []
+    },
+    {
+      "slug": "ice-mammoth",
+      "name": "Ice Mammoth",
+      "date": "January 2, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/ice-mammoth/ice-mammoth.png",
+      "model": "costumes/store/ice-mammoth/model.glb",
+      "page": "costumes/store/ice-mammoth/",
+      "tags": []
+    },
+    {
+      "slug": "ice-queen",
+      "name": "Ice Queen",
+      "date": "December 20, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/ice-queen/ice-queen.png",
+      "model": "costumes/store/ice-queen/model.glb",
+      "page": "costumes/store/ice-queen/",
+      "tags": []
+    },
+    {
+      "slug": "ice-summoner",
+      "name": "Ice Summoner",
+      "date": "April 23, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/ice-summoner/ice-summoner.png",
+      "model": "costumes/store/ice-summoner/model.glb",
+      "page": "costumes/store/ice-summoner/",
+      "tags": []
+    },
+    {
+      "slug": "icebloom",
+      "name": "Icebloom",
+      "date": "December 20, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/icebloom/icebloom.png",
+      "model": "costumes/store/icebloom/model.glb",
+      "page": "costumes/store/icebloom/",
+      "tags": []
+    },
+    {
+      "slug": "icecap-shroomy",
+      "name": "Icecap Shroomy",
+      "date": "December 4, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/icecap-shroomy/icecap-shroomy.png",
+      "model": "costumes/store/icecap-shroomy/model.glb",
+      "page": "costumes/store/icecap-shroomy/",
+      "tags": []
+    },
+    {
+      "slug": "icedeer",
+      "name": "Icedeer",
+      "date": "December 29, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/icedeer/icedeer.png",
+      "model": "costumes/store/icedeer/model.glb",
+      "page": "costumes/store/icedeer/",
+      "tags": []
+    },
+    {
+      "slug": "iceolotl",
+      "name": "Iceolotl",
+      "date": "December 5, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/iceolotl/iceolotl.png",
+      "model": "costumes/store/iceolotl/model.glb",
+      "page": "costumes/store/iceolotl/",
+      "tags": []
+    },
+    {
+      "slug": "inferno",
+      "name": "Inferno",
+      "date": "August 18, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/inferno/inferno.png",
+      "model": "costumes/store/inferno/model.glb",
+      "page": "costumes/store/inferno/",
+      "tags": []
+    },
+    {
+      "slug": "inky",
+      "name": "Inky",
+      "date": "May 5, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/inky/inky.png",
+      "model": "costumes/store/inky/model.glb",
+      "page": "costumes/store/inky/",
+      "tags": []
+    },
+    {
+      "slug": "jade-queen",
+      "name": "Jade Queen",
+      "date": "November 26, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/jade-queen/jade-queen.png",
+      "model": "costumes/store/jade-queen/model.glb",
+      "page": "costumes/store/jade-queen/",
+      "tags": []
+    },
+    {
+      "slug": "jellyfish",
+      "name": "JellyFish",
+      "date": "August 6, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/jellyfish/jellyfish.png",
+      "model": "costumes/store/jellyfish/model.glb",
+      "page": "costumes/store/jellyfish/",
+      "tags": []
+    },
+    {
+      "slug": "juicy",
+      "name": "Juicy",
+      "date": "January 19, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/juicy/juicy.png",
+      "model": "costumes/store/juicy/model.glb",
+      "page": "costumes/store/juicy/",
+      "tags": []
+    },
+    {
+      "slug": "kitsune",
+      "name": "Kitsune",
+      "date": "July 17, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/kitsune/kitsune.png",
+      "model": "costumes/store/kitsune/model.glb",
+      "page": "costumes/store/kitsune/",
+      "tags": []
+    },
+    {
+      "slug": "koala",
+      "name": "Koala",
+      "date": "July 21, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/koala/koala.png",
+      "model": "costumes/store/koala/model.glb",
+      "page": "costumes/store/koala/",
+      "tags": []
+    },
+    {
+      "slug": "koala-knight",
+      "name": "Koala Knight",
+      "date": "March 5, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/koala-knight/koala-knight.png",
+      "model": "costumes/store/koala-knight/model.glb",
+      "page": "costumes/store/koala-knight/",
+      "tags": []
+    },
+    {
+      "slug": "koffee",
+      "name": "Koffee",
+      "date": "January 16, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/koffee/koffee.png",
+      "model": "costumes/store/koffee/model.glb",
+      "page": "costumes/store/koffee/",
+      "tags": []
+    },
+    {
+      "slug": "laser-shark",
+      "name": "Laser Shark",
+      "date": "April 28, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/laser-shark/laser-shark.png",
+      "model": "costumes/store/laser-shark/model.glb",
+      "page": "costumes/store/laser-shark/",
+      "tags": []
+    },
+    {
+      "slug": "lava-golem",
+      "name": "Lava Golem",
+      "date": "July 26, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/lava-golem/lava-golem.png",
+      "model": "costumes/store/lava-golem/model.glb",
+      "page": "costumes/store/lava-golem/",
+      "tags": []
+    },
+    {
+      "slug": "leaf",
+      "name": "Leaf",
+      "date": "May 24, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/leaf/leaf.png",
+      "model": "costumes/store/leaf/model.glb",
+      "page": "costumes/store/leaf/",
+      "tags": []
+    },
+    {
+      "slug": "leopard",
+      "name": "Leopard",
+      "date": "November 17, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/leopard/leopard.png",
+      "model": "costumes/store/leopard/model.glb",
+      "page": "costumes/store/leopard/",
+      "tags": []
+    },
+    {
+      "slug": "leprechaun",
+      "name": "Leprechaun",
+      "date": "March 17, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/leprechaun/leprechaun.png",
+      "model": "costumes/store/leprechaun/model.glb",
+      "page": "costumes/store/leprechaun/",
+      "tags": []
+    },
+    {
+      "slug": "lion",
+      "name": "Lion",
+      "date": "March 17, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/lion/lion.png",
+      "model": "costumes/store/lion/model.glb",
+      "page": "costumes/store/lion/",
+      "tags": []
+    },
+    {
+      "slug": "llama",
+      "name": "Llama",
+      "date": "March 31, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/llama/llama.png",
+      "model": "costumes/store/llama/model.glb",
+      "page": "costumes/store/llama/",
+      "tags": []
+    },
+    {
+      "slug": "lunar-red-panda",
+      "name": "Lunar Red Panda",
+      "date": "January 29, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/lunar-red-panda/lunar-red-panda.png",
+      "model": "costumes/store/lunar-red-panda/model.glb",
+      "page": "costumes/store/lunar-red-panda/",
+      "tags": []
+    },
+    {
+      "slug": "mage",
+      "name": "Mage",
+      "date": "January 24, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/mage/mage.png",
+      "model": "costumes/store/mage/model.glb",
+      "page": "costumes/store/mage/",
+      "tags": []
+    },
+    {
+      "slug": "mageolotl",
+      "name": "Mageolotl",
+      "date": "November 12, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/mageolotl/mageolotl.png",
+      "model": "costumes/store/mageolotl/model.glb",
+      "page": "costumes/store/mageolotl/",
+      "tags": []
+    },
+    {
+      "slug": "magma-dragon",
+      "name": "Magma Dragon",
+      "date": "August 21, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/magma-dragon/magma-dragon.png",
+      "model": "costumes/store/magma-dragon/model.glb",
+      "page": "costumes/store/magma-dragon/",
+      "tags": []
+    },
+    {
+      "slug": "medusa",
+      "name": "Medusa",
+      "date": "November 1, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/medusa/medusa.png",
+      "model": "costumes/store/medusa/model.glb",
+      "page": "costumes/store/medusa/",
+      "tags": []
+    },
+    {
+      "slug": "meerkat-ranger",
+      "name": "Meerket Ranger",
+      "date": "April 21, 2024",
+      "availability": "paid",
+      "thumbnail": "costumes/store/meerkat-ranger/meerkat-ranger.png",
+      "model": "costumes/store/meerkat-ranger/model.glb",
+      "page": "costumes/store/meerkat-ranger/",
+      "tags": []
+    },
+    {
+      "slug": "miner-pig",
+      "name": "Miner Pig",
+      "date": "April 10, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/miner-pig/miner-pig.png",
+      "model": "costumes/store/miner-pig/model.glb",
+      "page": "costumes/store/miner-pig/",
+      "tags": []
+    },
+    {
+      "slug": "miss-bunny",
+      "name": "Miss Bunny",
+      "date": "October 25, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/miss-bunny/miss-bunny.png",
+      "model": "costumes/store/miss-bunny/model.glb",
+      "page": "costumes/store/miss-bunny/",
+      "tags": []
+    },
+    {
+      "slug": "moo",
+      "name": "Moo",
+      "date": "April 28, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/moo/moo.png",
+      "model": "costumes/store/moo/model.glb",
+      "page": "costumes/store/moo/",
+      "tags": []
+    },
+    {
+      "slug": "mr-grump",
+      "name": "Mr Grump",
+      "date": "April 7, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/mr-grump/mr-grump.png",
+      "model": "costumes/store/mr-grump/model.glb",
+      "page": "costumes/store/mr-grump/",
+      "tags": []
+    },
+    {
+      "slug": "mr-pickles",
+      "name": "Mr Pickles",
+      "date": "September 29, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/mr-pickles/mr-pickles.png",
+      "model": "costumes/store/mr-pickles/model.glb",
+      "page": "costumes/store/mr-pickles/",
+      "tags": []
+    },
+    {
+      "slug": "muddy-pig",
+      "name": "Muddy Pig",
+      "date": "February 5, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/muddy-pig/muddy-pig.png",
+      "model": "costumes/store/muddy-pig/model.glb",
+      "page": "costumes/store/muddy-pig/",
+      "tags": []
+    },
+    {
+      "slug": "narwhal",
+      "name": "Narwhal",
+      "date": "December 15, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/narwhal/narwhal.png",
+      "model": "costumes/store/narwhal/model.glb",
+      "page": "costumes/store/narwhal/",
+      "tags": []
+    },
+    {
+      "slug": "nether-skull",
+      "name": "Nether Skull",
+      "date": "October 20, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/nether-skull/nether-skull.png",
+      "model": "costumes/store/nether-skull/model.glb",
+      "page": "costumes/store/nether-skull/",
+      "tags": []
+    },
+    {
+      "slug": "night-crow",
+      "name": "Night Crow",
+      "date": "June 23, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/night-crow/night-crow.png",
+      "model": "costumes/store/night-crow/model.glb",
+      "page": "costumes/store/night-crow/",
+      "tags": []
+    },
+    {
+      "slug": "night-stalker",
+      "name": "Night Stalker",
+      "date": "October 23, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/night-stalker/night-stalker.png",
+      "model": "costumes/store/night-stalker/model.glb",
+      "page": "costumes/store/night-stalker/",
+      "tags": []
+    },
+    {
+      "slug": "night-star",
+      "name": "Night Star",
+      "date": "November 24, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/night-star/night-star.png",
+      "model": "costumes/store/night-star/model.glb",
+      "page": "costumes/store/night-star/",
+      "tags": []
+    },
+    {
+      "slug": "officer-11",
+      "name": "Officer 11",
+      "date": "May 24, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/officer-11/officer-11.png",
+      "model": "costumes/store/officer-11/model.glb",
+      "page": "costumes/store/officer-11/",
+      "tags": []
+    },
+    {
+      "slug": "old-town-horse",
+      "name": "Old Town Horse",
+      "date": "August 4, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/old-town-horse/old-town-horse.png",
+      "model": "costumes/store/old-town-horse/model.glb",
+      "page": "costumes/store/old-town-horse/",
+      "tags": []
+    },
+    {
+      "slug": "orange-juice",
+      "name": "Orange Juice",
+      "date": "April 9, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/orange-juice/orange-juice.png",
+      "model": "costumes/store/orange-juice/model.glb",
+      "page": "costumes/store/orange-juice/",
+      "tags": []
+    },
+    {
+      "slug": "orbit",
+      "name": "Orbit",
+      "date": "February 20, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/orbit/orbit.png",
+      "model": "costumes/store/orbit/model.glb",
+      "page": "costumes/store/orbit/",
+      "tags": []
+    },
+    {
+      "slug": "otto",
+      "name": "Otto",
+      "date": "May 5, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/otto/otto.png",
+      "model": "costumes/store/otto/model.glb",
+      "page": "costumes/store/otto/",
+      "tags": []
+    },
+    {
+      "slug": "owl",
+      "name": "Owl",
+      "date": "December 29, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/owl/owl.png",
+      "model": "costumes/store/owl/model.glb",
+      "page": "costumes/store/owl/",
+      "tags": []
+    },
+    {
+      "slug": "panda",
+      "name": "Panda",
+      "date": "March 10, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/panda/panda.png",
+      "model": "costumes/store/panda/model.glb",
+      "page": "costumes/store/panda/",
+      "tags": []
+    },
+    {
+      "slug": "parrot",
+      "name": "Parrot",
+      "date": "April 7, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/parrot/parrot.png",
+      "model": "costumes/store/parrot/model.glb",
+      "page": "costumes/store/parrot/",
+      "tags": []
+    },
+    {
+      "slug": "paws",
+      "name": "Paws",
+      "date": "June 16, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/paws/paws.png",
+      "model": "costumes/store/paws/model.glb",
+      "page": "costumes/store/paws/",
+      "tags": []
+    },
+    {
+      "slug": "penguin",
+      "name": "Penguin",
+      "date": "June 16, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/penguin/penguin.png",
+      "model": "costumes/store/penguin/model.glb",
+      "page": "costumes/store/penguin/",
+      "tags": []
+    },
+    {
+      "slug": "phoenix",
+      "name": "Phoenix",
+      "date": "August 7, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/phoenix/phoenix.png",
+      "model": "costumes/store/phoenix/model.glb",
+      "page": "costumes/store/phoenix/",
+      "tags": []
+    },
+    {
+      "slug": "piggy",
+      "name": "Piggy",
+      "date": "April 14, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/piggy/piggy.png",
+      "model": "costumes/store/piggy/model.glb",
+      "page": "costumes/store/piggy/",
+      "tags": []
+    },
+    {
+      "slug": "pinata-llama",
+      "name": "Pinata Llama",
+      "date": "April 2, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/pinata-llama/pinata-llama.png",
+      "model": "costumes/store/pinata-llama/model.glb",
+      "page": "costumes/store/pinata-llama/",
+      "tags": []
+    },
+    {
+      "slug": "pizza-time",
+      "name": "Pizza Time",
+      "date": "March 22, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/pizza-time/pizza-time.png",
+      "model": "costumes/store/pizza-time/model.glb",
+      "page": "costumes/store/pizza-time/",
+      "tags": []
+    },
+    {
+      "slug": "plague-doctor",
+      "name": "Plague Doctor",
+      "date": "October 23, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/plague-doctor/plague-doctor.png",
+      "model": "costumes/store/plague-doctor/model.glb",
+      "page": "costumes/store/plague-doctor/",
+      "tags": []
+    },
+    {
+      "slug": "potter",
+      "name": "Potter",
+      "date": "February 21, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/potter/potter.png",
+      "model": "costumes/store/potter/model.glb",
+      "page": "costumes/store/potter/",
+      "tags": []
+    },
+    {
+      "slug": "pumpkin-lord",
+      "name": "Pumpkin Lord",
+      "date": "October 17, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/pumpkin-lord/pumpkin-lord.png",
+      "model": "costumes/store/pumpkin-lord/model.glb",
+      "page": "costumes/store/pumpkin-lord/",
+      "tags": []
+    },
+    {
+      "slug": "pumpkin-paladin",
+      "name": "Pumpkin Paladin",
+      "date": "October 16, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/pumpkin-paladin/pumpkin-paladin.png",
+      "model": "costumes/store/pumpkin-paladin/model.glb",
+      "page": "costumes/store/pumpkin-paladin/",
+      "tags": []
+    },
+    {
+      "slug": "punch",
+      "name": "Punch",
+      "date": "July 7, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/punch/punch.png",
+      "model": "costumes/store/punch/model.glb",
+      "page": "costumes/store/punch/",
+      "tags": []
+    },
+    {
+      "slug": "pyjama-banana",
+      "name": "Pyjama Banana",
+      "date": "February 16, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/pyjama-banana/pyjama-banana.png",
+      "model": "costumes/store/pyjama-banana/model.glb",
+      "page": "costumes/store/pyjama-banana/",
+      "tags": []
+    },
+    {
+      "slug": "ravage",
+      "name": "Ravage",
+      "date": "August 18, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/ravage/ravage.png",
+      "model": "costumes/store/ravage/model.glb",
+      "page": "costumes/store/ravage/",
+      "tags": []
+    },
+    {
+      "slug": "raven",
+      "name": "Raven",
+      "date": "September 17, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/raven/raven.png",
+      "model": "costumes/store/raven/model.glb",
+      "page": "costumes/store/raven/",
+      "tags": []
+    },
+    {
+      "slug": "recon-agent",
+      "name": "Recon Agent",
+      "date": "October 8, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/recon-agent/recon-agent.png",
+      "model": "costumes/store/recon-agent/model.glb",
+      "page": "costumes/store/recon-agent/",
+      "tags": []
+    },
+    {
+      "slug": "red-panda",
+      "name": "Red Panda",
+      "date": "July 21, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/red-panda/red-panda.png",
+      "model": "costumes/store/red-panda/model.glb",
+      "page": "costumes/store/red-panda/",
+      "tags": []
+    },
+    {
+      "slug": "reindeer",
+      "name": "Reindeer",
+      "date": "December 20, 2018",
+      "availability": "paid",
+      "thumbnail": "costumes/store/reindeer/reindeer.png",
+      "model": "costumes/store/reindeer/model.glb",
+      "page": "costumes/store/reindeer/",
+      "tags": []
+    },
+    {
+      "slug": "royal-corgi",
+      "name": "Royal Corgi",
+      "date": "February 27, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/royal-corgi/royal-corgi.png",
+      "model": "costumes/store/royal-corgi/model.glb",
+      "page": "costumes/store/royal-corgi/",
+      "tags": []
+    },
+    {
+      "slug": "royal-pegasus",
+      "name": "Royal Pegasus",
+      "date": "November 19, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/royal-pegasus/royal-pegasus.png",
+      "model": "costumes/store/royal-pegasus/model.glb",
+      "page": "costumes/store/royal-pegasus/",
+      "tags": []
+    },
+    {
+      "slug": "royal-unicorn",
+      "name": "Royal Unicorn",
+      "date": "March 15, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/royal-unicorn/royal-unicorn.png",
+      "model": "costumes/store/royal-unicorn/model.glb",
+      "page": "costumes/store/royal-unicorn/",
+      "tags": []
+    },
+    {
+      "slug": "rufus",
+      "name": "Rufus",
+      "date": "September 22, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/rufus/rufus.png",
+      "model": "costumes/store/rufus/model.glb",
+      "page": "costumes/store/rufus/",
+      "tags": []
+    },
+    {
+      "slug": "rusty",
+      "name": "Rusty",
+      "date": "March 13, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/rusty/rusty.png",
+      "model": "costumes/store/rusty/model.glb",
+      "page": "costumes/store/rusty/",
+      "tags": []
+    },
+    {
+      "slug": "school-fox",
+      "name": "School Fox",
+      "date": "April 13, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/school-fox/school-fox.png",
+      "model": "costumes/store/school-fox/model.glb",
+      "page": "costumes/store/school-fox/",
+      "tags": []
+    },
+    {
+      "slug": "sculk-wolf",
+      "name": "Sculk Wolf",
+      "date": "August 20, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/sculk-wolf/sculk-wolf.png",
+      "model": "costumes/store/sculk-wolf/model.glb",
+      "page": "costumes/store/sculk-wolf/",
+      "tags": []
+    },
+    {
+      "slug": "sculk-wraith",
+      "name": "Sculk Wraith",
+      "date": "August 20, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/sculk-wraith/sculk-wraith.png",
+      "model": "costumes/store/sculk-wraith/model.glb",
+      "page": "costumes/store/sculk-wraith/",
+      "tags": []
+    },
+    {
+      "slug": "sculkolotl",
+      "name": "Sculkolotl",
+      "date": "July 9, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/sculkolotl/sculkolotl.png",
+      "model": "costumes/store/sculkolotl/model.glb",
+      "page": "costumes/store/sculkolotl/",
+      "tags": []
+    },
+    {
+      "slug": "sea-doge",
+      "name": "Sea Doge",
+      "date": "May 22, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/sea-doge/sea-doge.png",
+      "model": "costumes/store/sea-doge/model.glb",
+      "page": "costumes/store/sea-doge/",
+      "tags": []
+    },
+    {
+      "slug": "sergei",
+      "name": "Sergei",
+      "date": "May 25, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/sergei/sergei.png",
+      "model": "costumes/store/sergei/model.glb",
+      "page": "costumes/store/sergei/",
+      "tags": []
+    },
+    {
+      "slug": "shroomy",
+      "name": "Shroomy",
+      "date": "November 14, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/shroomy/shroomy.png",
+      "model": "costumes/store/shroomy/model.glb",
+      "page": "costumes/store/shroomy/",
+      "tags": []
+    },
+    {
+      "slug": "sir-creeper",
+      "name": "Sir Creeper",
+      "date": "April 28, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/sir-creeper/sir-creeper.png",
+      "model": "costumes/store/sir-creeper/model.glb",
+      "page": "costumes/store/sir-creeper/",
+      "tags": []
+    },
+    {
+      "slug": "skeleclaus",
+      "name": "Skeleclaus",
+      "date": "December 22, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/skeleclaus/skeleclaus.png",
+      "model": "costumes/store/skeleclaus/model.glb",
+      "page": "costumes/store/skeleclaus/",
+      "tags": []
+    },
+    {
+      "slug": "skelelotl",
+      "name": "Skelelotl",
+      "date": "October 9, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/skelelotl/skelelotl.png",
+      "model": "costumes/store/skelelotl/model.glb",
+      "page": "costumes/store/skelelotl/",
+      "tags": []
+    },
+    {
+      "slug": "skellington",
+      "name": "Skellington",
+      "date": "October 25, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/skellington/skellington.png",
+      "model": "costumes/store/skellington/model.glb",
+      "page": "costumes/store/skellington/",
+      "tags": []
+    },
+    {
+      "slug": "slimey",
+      "name": "Slimey",
+      "date": "March 22, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/slimey/slimey.png",
+      "model": "costumes/store/slimey/model.glb",
+      "page": "costumes/store/slimey/",
+      "tags": []
+    },
+    {
+      "slug": "slimey-ice-edition",
+      "name": "Slimey Ice Edition",
+      "date": "December 20, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/slimey-ice-edition/slimey-ice-edition.png",
+      "model": "costumes/store/slimey-ice-edition/model.glb",
+      "page": "costumes/store/slimey-ice-edition/",
+      "tags": []
+    },
+    {
+      "slug": "slimo",
+      "name": "Slimo",
+      "date": "March 17, 2024",
+      "availability": "paid",
+      "thumbnail": "costumes/store/slimo/slimo.png",
+      "model": "costumes/store/slimo/model.glb",
+      "page": "costumes/store/slimo/",
+      "tags": []
+    },
+    {
+      "slug": "snowy",
+      "name": "Snowy",
+      "date": "June 1, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/snowy/snowy.png",
+      "model": "costumes/store/snowy/model.glb",
+      "page": "costumes/store/snowy/",
+      "tags": []
+    },
+    {
+      "slug": "snowy-dragon",
+      "name": "Snowy Dragon",
+      "date": "November 27, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/snowy-dragon/snowy-dragon.png",
+      "model": "costumes/store/snowy-dragon/model.glb",
+      "page": "costumes/store/snowy-dragon/",
+      "tags": []
+    },
+    {
+      "slug": "solar",
+      "name": "Solar",
+      "date": "July 26, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/solar/solar.png",
+      "model": "costumes/store/solar/model.glb",
+      "page": "costumes/store/solar/",
+      "tags": []
+    },
+    {
+      "slug": "space-corgi",
+      "name": "Space Corgi",
+      "date": "May 21, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/space-corgi/space-corgi.png",
+      "model": "costumes/store/space-corgi/model.glb",
+      "page": "costumes/store/space-corgi/",
+      "tags": []
+    },
+    {
+      "slug": "space-kitten",
+      "name": "Space Kitten",
+      "date": "May 14, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/space-kitten/space-kitten.png",
+      "model": "costumes/store/space-kitten/model.glb",
+      "page": "costumes/store/space-kitten/",
+      "tags": []
+    },
+    {
+      "slug": "space-ranger",
+      "name": "Space Ranger",
+      "date": "July 21, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/space-ranger/space-ranger.png",
+      "model": "costumes/store/space-ranger/model.glb",
+      "page": "costumes/store/space-ranger/",
+      "tags": []
+    },
+    {
+      "slug": "sparkles",
+      "name": "Sparkles",
+      "date": "June 1, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/sparkles/sparkles.png",
+      "model": "costumes/store/sparkles/model.glb",
+      "page": "costumes/store/sparkles/",
+      "tags": []
+    },
+    {
+      "slug": "spider-queen",
+      "name": "Spider Queen",
+      "date": "October 10, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/spider-queen/spider-queen.png",
+      "model": "costumes/store/spider-queen/model.glb",
+      "page": "costumes/store/spider-queen/",
+      "tags": []
+    },
+    {
+      "slug": "spikes",
+      "name": "Spikes",
+      "date": "February 12, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/spikes/spikes.png",
+      "model": "costumes/store/spikes/model.glb",
+      "page": "costumes/store/spikes/",
+      "tags": []
+    },
+    {
+      "slug": "sprinkles",
+      "name": "Sprinkles",
+      "date": "February 6, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/sprinkles/sprinkles.png",
+      "model": "costumes/store/sprinkles/model.glb",
+      "page": "costumes/store/sprinkles/",
+      "tags": []
+    },
+    {
+      "slug": "storm-queen",
+      "name": "Storm Queen",
+      "date": "February 18, 2024",
+      "availability": "paid",
+      "thumbnail": "costumes/store/storm-queen/storm-queen.png",
+      "model": "costumes/store/storm-queen/model.glb",
+      "page": "costumes/store/storm-queen/",
+      "tags": []
+    },
+    {
+      "slug": "strawbee",
+      "name": "Strawbee",
+      "date": "December 26, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/strawbee/strawbee.png",
+      "model": "costumes/store/strawbee/model.glb",
+      "page": "costumes/store/strawbee/",
+      "tags": []
+    },
+    {
+      "slug": "strongman",
+      "name": "Strongman",
+      "date": "March 17, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/strongman/strongman.png",
+      "model": "costumes/store/strongman/model.glb",
+      "page": "costumes/store/strongman/",
+      "tags": []
+    },
+    {
+      "slug": "summer-banana",
+      "name": "Summer Banana",
+      "date": "July 30, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/summer-banana/summer-banana.png",
+      "model": "costumes/store/summer-banana/model.glb",
+      "page": "costumes/store/summer-banana/",
+      "tags": []
+    },
+    {
+      "slug": "summer-bee",
+      "name": "Summer Bee",
+      "date": "June 26, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/summer-bee/summer-bee.png",
+      "model": "costumes/store/summer-bee/model.glb",
+      "page": "costumes/store/summer-bee/",
+      "tags": []
+    },
+    {
+      "slug": "summer-doge",
+      "name": "Summer Doge",
+      "date": "June 20, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/summer-doge/summer-doge.png",
+      "model": "costumes/store/summer-doge/model.glb",
+      "page": "costumes/store/summer-doge/",
+      "tags": []
+    },
+    {
+      "slug": "summer-fox",
+      "name": "Summer Fox",
+      "date": "July 19, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/summer-fox/summer-fox.png",
+      "model": "costumes/store/summer-fox/model.glb",
+      "page": "costumes/store/summer-fox/",
+      "tags": []
+    },
+    {
+      "slug": "summer-leopard",
+      "name": "Summer Leopard",
+      "date": "July 30, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/summer-leopard/summer-leopard.png",
+      "model": "costumes/store/summer-leopard/model.glb",
+      "page": "costumes/store/summer-leopard/",
+      "tags": []
+    },
+    {
+      "slug": "summer-melon",
+      "name": "Summer Melon",
+      "date": "March 10, 2024",
+      "availability": "paid",
+      "thumbnail": "costumes/store/summer-melon/summer-melon.png",
+      "model": "costumes/store/summer-melon/model.glb",
+      "page": "costumes/store/summer-melon/",
+      "tags": []
+    },
+    {
+      "slug": "summer-unicorn",
+      "name": "Summer Unicorn",
+      "date": "July 19, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/summer-unicorn/summer-unicorn.png",
+      "model": "costumes/store/summer-unicorn/model.glb",
+      "page": "costumes/store/summer-unicorn/",
+      "tags": []
+    },
+    {
+      "slug": "summerlotl",
+      "name": "Summerlotl",
+      "date": "August 6, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/summerlotl/summerlotl.png",
+      "model": "costumes/store/summerlotl/model.glb",
+      "page": "costumes/store/summerlotl/",
+      "tags": []
+    },
+    {
+      "slug": "summoner",
+      "name": "Summoner",
+      "date": "October 24, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/summoner/summoner.png",
+      "model": "costumes/store/summoner/model.glb",
+      "page": "costumes/store/summoner/",
+      "tags": []
+    },
+    {
+      "slug": "sunny",
+      "name": "Sunny",
+      "date": "August 14, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/sunny/sunny.png",
+      "model": "costumes/store/sunny/model.glb",
+      "page": "costumes/store/sunny/",
+      "tags": []
+    },
+    {
+      "slug": "swampy",
+      "name": "Swampy",
+      "date": "May 5, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/swampy/swampy.png",
+      "model": "costumes/store/swampy/model.glb",
+      "page": "costumes/store/swampy/",
+      "tags": []
+    },
+    {
+      "slug": "taco-time",
+      "name": "Taco Time",
+      "date": "November 17, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/taco-time/taco-time.png",
+      "model": "costumes/store/taco-time/model.glb",
+      "page": "costumes/store/taco-time/",
+      "tags": []
+    },
+    {
+      "slug": "tanuki",
+      "name": "Tanuki",
+      "date": "November 5, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/tanuki/tanuki.png",
+      "model": "costumes/store/tanuki/model.glb",
+      "page": "costumes/store/tanuki/",
+      "tags": []
+    },
+    {
+      "slug": "teddy-bear",
+      "name": "Teddy Bear",
+      "date": "February 10, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/teddy-bear/teddy-bear.png",
+      "model": "costumes/store/teddy-bear/model.glb",
+      "page": "costumes/store/teddy-bear/",
+      "tags": []
+    },
+    {
+      "slug": "television",
+      "name": "Television",
+      "date": "April 14, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/television/television.png",
+      "model": "costumes/store/television/model.glb",
+      "page": "costumes/store/television/",
+      "tags": []
+    },
+    {
+      "slug": "the-assassin",
+      "name": "The Assassin",
+      "date": "October 13, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/the-assassin/the-assassin.png",
+      "model": "costumes/store/the-assassin/model.glb",
+      "page": "costumes/store/the-assassin/",
+      "tags": []
+    },
+    {
+      "slug": "the-night-phantom",
+      "name": "The Night Phantom",
+      "date": "July 14, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/the-night-phantom/the-night-phantom.png",
+      "model": "costumes/store/the-night-phantom/model.glb",
+      "page": "costumes/store/the-night-phantom/",
+      "tags": []
+    },
+    {
+      "slug": "the-oni",
+      "name": "The Oni",
+      "date": "May 29, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/the-oni/the-oni.png",
+      "model": "costumes/store/the-oni/model.glb",
+      "page": "costumes/store/the-oni/",
+      "tags": []
+    },
+    {
+      "slug": "the-overseer",
+      "name": "The Overseer",
+      "date": "August 18, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/the-overseer/the-overseer.png",
+      "model": "costumes/store/the-overseer/model.glb",
+      "page": "costumes/store/the-overseer/",
+      "tags": []
+    },
+    {
+      "slug": "the-traveler",
+      "name": "The Traveler",
+      "date": "August 11, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/the-traveler/the-traveler.png",
+      "model": "costumes/store/the-traveler/model.glb",
+      "page": "costumes/store/the-traveler/",
+      "tags": []
+    },
+    {
+      "slug": "toastie",
+      "name": "Toastie",
+      "date": "May 21, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/toastie/toastie.png",
+      "model": "costumes/store/toastie/model.glb",
+      "page": "costumes/store/toastie/",
+      "tags": []
+    },
+    {
+      "slug": "toy-soldier",
+      "name": "Toy Soldier",
+      "date": "June 9, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/toy-soldier/toy-soldier.png",
+      "model": "costumes/store/toy-soldier/model.glb",
+      "page": "costumes/store/toy-soldier/",
+      "tags": []
+    },
+    {
+      "slug": "toybot",
+      "name": "ToyBot",
+      "date": "September 25, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/toybot/toybot.png",
+      "model": "costumes/store/toybot/model.glb",
+      "page": "costumes/store/toybot/",
+      "tags": []
+    },
+    {
+      "slug": "trader-llama",
+      "name": "Trader Llama",
+      "date": "March 31, 2024",
+      "availability": "paid",
+      "thumbnail": "costumes/store/trader-llama/trader-llama.png",
+      "model": "costumes/store/trader-llama/model.glb",
+      "page": "costumes/store/trader-llama/",
+      "tags": []
+    },
+    {
+      "slug": "uncle-banana",
+      "name": "Uncle Banana",
+      "date": "July 4, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/uncle-banana/uncle-banana.png",
+      "model": "costumes/store/uncle-banana/model.glb",
+      "page": "costumes/store/uncle-banana/",
+      "tags": []
+    },
+    {
+      "slug": "unicorn",
+      "name": "Unicorn",
+      "date": "January 27, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/unicorn/unicorn.png",
+      "model": "costumes/store/unicorn/model.glb",
+      "page": "costumes/store/unicorn/",
+      "tags": []
+    },
+    {
+      "slug": "unicorn-gold-edition",
+      "name": "Unicorn: Gold Edition",
+      "date": "August 4, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/unicorn-gold-edition/unicorn-gold-edition.png",
+      "model": "costumes/store/unicorn-gold-edition/model.glb",
+      "page": "costumes/store/unicorn-gold-edition/",
+      "tags": []
+    },
+    {
+      "slug": "unipug",
+      "name": "Unipug",
+      "date": "March 15, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/unipug/unipug.png",
+      "model": "costumes/store/unipug/model.glb",
+      "page": "costumes/store/unipug/",
+      "tags": []
+    },
+    {
+      "slug": "vampiric-rabbit",
+      "name": "Vampiric Rabbit",
+      "date": "October 28, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/vampiric-rabbit/vampiric-rabbit.png",
+      "model": "costumes/store/vampiric-rabbit/model.glb",
+      "page": "costumes/store/vampiric-rabbit/",
+      "tags": []
+    },
+    {
+      "slug": "villager-007",
+      "name": "Villager 007",
+      "date": "February 23, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/villager-007/villager-007.png",
+      "model": "costumes/store/villager-007/model.glb",
+      "page": "costumes/store/villager-007/",
+      "tags": []
+    },
+    {
+      "slug": "virus",
+      "name": "Virus",
+      "date": "October 1, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/virus/virus.png",
+      "model": "costumes/store/virus/model.glb",
+      "page": "costumes/store/virus/",
+      "tags": []
+    },
+    {
+      "slug": "waddles",
+      "name": "Waddles",
+      "date": "December 12, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/waddles/waddles.png",
+      "model": "costumes/store/waddles/model.glb",
+      "page": "costumes/store/waddles/",
+      "tags": []
+    },
+    {
+      "slug": "walrus",
+      "name": "Walrus",
+      "date": "September 1, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/walrus/walrus.png",
+      "model": "costumes/store/walrus/model.glb",
+      "page": "costumes/store/walrus/",
+      "tags": []
+    },
+    {
+      "slug": "warrior-croc",
+      "name": "Warrior Croc",
+      "date": "September 3, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/warrior-croc/warrior-croc.png",
+      "model": "costumes/store/warrior-croc/model.glb",
+      "page": "costumes/store/warrior-croc/",
+      "tags": []
+    },
+    {
+      "slug": "werewolf",
+      "name": "Werewolf",
+      "date": "October 27, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/werewolf/werewolf.png",
+      "model": "costumes/store/werewolf/model.glb",
+      "page": "costumes/store/werewolf/",
+      "tags": []
+    },
+    {
+      "slug": "winter-husky",
+      "name": "Winter Husky",
+      "date": "December 11, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/winter-husky/winter-husky.png",
+      "model": "costumes/store/winter-husky/model.glb",
+      "page": "costumes/store/winter-husky/",
+      "tags": []
+    },
+    {
+      "slug": "winter-witch",
+      "name": "Winter Witch",
+      "date": "December 19, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/winter-witch/winter-witch.png",
+      "model": "costumes/store/winter-witch/model.glb",
+      "page": "costumes/store/winter-witch/",
+      "tags": []
+    },
+    {
+      "slug": "wolf-knight",
+      "name": "Wolf Knight",
+      "date": "July 10, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/wolf-knight/wolf-knight.png",
+      "model": "costumes/store/wolf-knight/model.glb",
+      "page": "costumes/store/wolf-knight/",
+      "tags": []
+    },
+    {
+      "slug": "wolf-pack",
+      "name": "Wolf Pack",
+      "date": "February 17, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/wolf-pack/wolf-pack.png",
+      "model": "costumes/store/wolf-pack/model.glb",
+      "page": "costumes/store/wolf-pack/",
+      "tags": []
+    },
+    {
+      "slug": "wolfy",
+      "name": "Wolfy",
+      "date": "May 21, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/wolfy/wolfy.png",
+      "model": "costumes/store/wolfy/model.glb",
+      "page": "costumes/store/wolfy/",
+      "tags": []
+    },
+    {
+      "slug": "woody",
+      "name": "Woody",
+      "date": "March 27, 2022",
+      "availability": "paid",
+      "thumbnail": "costumes/store/woody/woody.png",
+      "model": "costumes/store/woody/model.glb",
+      "page": "costumes/store/woody/",
+      "tags": []
+    },
+    {
+      "slug": "wooly",
+      "name": "Wooly",
+      "date": "September 13, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/wooly/wooly.png",
+      "model": "costumes/store/wooly/model.glb",
+      "page": "costumes/store/wooly/",
+      "tags": []
+    },
+    {
+      "slug": "wooly-cow",
+      "name": "Wooly Cow",
+      "date": "March 10, 2024",
+      "availability": "paid",
+      "thumbnail": "costumes/store/wooly-cow/wooly-cow.png",
+      "model": "costumes/store/wooly-cow/model.glb",
+      "page": "costumes/store/wooly-cow/",
+      "tags": []
+    },
+    {
+      "slug": "yeti",
+      "name": "Yeti",
+      "date": "December 29, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/yeti/yeti.png",
+      "model": "costumes/store/yeti/model.glb",
+      "page": "costumes/store/yeti/",
+      "tags": []
+    },
+    {
+      "slug": "zebra",
+      "name": "Zebra",
+      "date": "September 29, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/zebra/zebra.png",
+      "model": "costumes/store/zebra/model.glb",
+      "page": "costumes/store/zebra/",
+      "tags": []
+    },
+    {
+      "slug": "zesty",
+      "name": "Zesty",
+      "date": "February 23, 2020",
+      "availability": "paid",
+      "thumbnail": "costumes/store/zesty/zesty.png",
+      "model": "costumes/store/zesty/model.glb",
+      "page": "costumes/store/zesty/",
+      "tags": []
+    },
+    {
+      "slug": "zombear",
+      "name": "Zombear",
+      "date": "October 28, 2023",
+      "availability": "paid",
+      "thumbnail": "costumes/store/zombear/zombear.png",
+      "model": "costumes/store/zombear/model.glb",
+      "page": "costumes/store/zombear/",
+      "tags": []
+    },
+    {
+      "slug": "zombee",
+      "name": "Zombee",
+      "date": "July 7, 2019",
+      "availability": "paid",
+      "thumbnail": "costumes/store/zombee/zombee.png",
+      "model": "costumes/store/zombee/model.glb",
+      "page": "costumes/store/zombee/",
+      "tags": []
+    },
+    {
+      "slug": "zompig",
+      "name": "Zompig",
+      "date": "October 31, 2021",
+      "availability": "paid",
+      "thumbnail": "costumes/store/zompig/zompig.png",
+      "model": "costumes/store/zompig/model.glb",
+      "page": "costumes/store/zompig/",
+      "tags": []
+    }
+  ]
+}

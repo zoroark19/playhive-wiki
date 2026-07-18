@@ -15,10 +15,20 @@
  * empty).
  *
  * Data files expected at (relative to data-root):
- *   data/costumes.json
+ *   data/store-costumes.json
+ *   data/quest-costumes.json
+ *   data/unlockable-costumes.json
+ *   data/unobtainable-costumes.json
+ *   data/misc-costumes.json
  *   data/hats.json
  *   data/capes.json
  *   data/backblings.json
+ *
+ * The 5 costume files above are all merged into a single "costume"
+ * category at runtime (see CATEGORY_FILES) — availability (Free / Paid /
+ * Quest / Unlockable / Unobtainable / Miscellaneous) is tracked per-item
+ * via each item's own `availability` field, not by which file it came
+ * from, so a file's items don't have to all share one tier.
  *
  * Each file: { "description": "...", "items": [ { slug, name, date,
  *   availability, price?, thumbnail, model, page?, tags? }, ... ] }
@@ -29,11 +39,37 @@
  */
 (function () {
   const CATEGORY_FILES = {
-    costume: { file: "costumes.json", label: "Costumes" },
-    hat: { file: "hats.json", label: "Hats" },
-    cape: { file: "capes.json", label: "Capes" },
-    backbling: { file: "backblings.json", label: "Backblings" },
+    // costume now loads from several files instead of one — each file
+    // corresponds to a costume availability tier. All are merged into a
+    // single "costume" category at runtime; the availability filter (see
+    // AVAILABILITY_OPTIONS) is what actually distinguishes them for the
+    // user, not which file they came from.
+    costume: {
+      files: [
+        "store-costumes.json",
+        "quest-costumes.json",
+        "unlockable-costumes.json",
+        "unobtainable-costumes.json",
+        "misc-costumes.json",
+      ],
+      label: "Costumes",
+    },
+    hat: { files: ["hats.json"], label: "Hats" },
+    cape: { files: ["capes.json"], label: "Capes" },
+    backbling: { files: ["backblings.json"], label: "Backblings" },
   };
+
+  // Availability tiers shown in the filter sidebar. Value is the lowercase
+  // string expected/matched against each item's `availability` field in the
+  // JSON data files; label is what's displayed to the user.
+  const AVAILABILITY_OPTIONS = [
+    ["free", "Free"],
+    ["paid", "Paid"],
+    ["quest", "Quest"],
+    ["unlockable", "Unlockable"],
+    ["unobtainable", "Unobtainable"],
+    ["miscellaneous", "Miscellaneous"],
+  ];
 
   // Which slot a category occupies. Cape + Backbling share one slot.
   const CATEGORY_SLOT = {
@@ -121,7 +157,7 @@
       this.dataRoot = rootEl.getAttribute("data-root") || "./";
       this.allItems = []; // flattened { ...item, category }
       this.equipped = { costume: null, hat: null, cape_backbling: null };
-      this.availability = "any"; // any | free | paid | showcase
+      this.availability = "any"; // any | free | paid | quest | unlockable | unobtainable | miscellaneous
       this.activeCategory = "all"; // all | costume | hat | cape | backbling
       this.activeTags = new Set();
       this.searchTerm = "";
@@ -186,7 +222,6 @@
           <div class="locker__stage-col">
             <div class="locker__count-line" data-role="count-line"></div>
             <div class="locker__stage">
-              <div class="locker__hint">Drag to orbit · scroll to zoom</div>
               <div class="locker__stage-empty" data-role="stage-empty" style="display:none">
                 Select a costume, hat, or cape/backbling to preview it here.
               </div>
@@ -250,8 +285,14 @@
     async _loadData() {
       const entries = await Promise.all(
         Object.entries(CATEGORY_FILES).map(async ([cat, meta]) => {
-          const data = await fetchJSON(`${this.dataRoot}data/${meta.file}`);
-          const items = (data && data.items) || [];
+          // Fetch every file configured for this category in parallel,
+          // then flatten them into one list of items tagged with `cat`.
+          // A category with only one file (hat/cape/backbling) behaves
+          // exactly as before; costume now merges 5 files together.
+          const perFile = await Promise.all(
+            meta.files.map((file) => fetchJSON(`${this.dataRoot}data/${file}`)),
+          );
+          const items = perFile.flatMap((data) => (data && data.items) || []);
           return items.map((item) => ({ ...item, category: cat }));
         }),
       );
@@ -310,23 +351,16 @@
 
     // ---------------------------------------------------------- filter UI
     _renderAvailabilityFilters() {
-      const counts = {
-        any: this.allItems.length,
-        free: 0,
-        paid: 0,
-        showcase: 0,
-      };
+      const counts = { any: this.allItems.length };
+      AVAILABILITY_OPTIONS.forEach(([val]) => {
+        counts[val] = 0;
+      });
       this.allItems.forEach((i) => {
         const a = (i.availability || "").toLowerCase();
         if (counts[a] !== undefined) counts[a]++;
       });
 
-      const opts = [
-        ["any", "Any"],
-        ["free", "Free"],
-        ["paid", "Paid"],
-        ["showcase", "Showcase"],
-      ];
+      const opts = [["any", "Any"], ...AVAILABILITY_OPTIONS];
 
       this.$.availability.innerHTML = opts
         .map(

@@ -227,21 +227,6 @@
   cursor: grabbing;
 }
 
-.locker__hint {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  pointer-events: none;
-  background: hsla(10, 15%, 5%, 0.55);
-  border: 1px solid hsla(0, 0%, 100%, 0.12);
-  border-radius: 4px;
-  padding: 6px 10px;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--hg-text-dim);
-  z-index: 5;
-}
-
 .locker__stage-empty {
   position: absolute;
   inset: 0;

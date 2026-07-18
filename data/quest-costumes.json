@@ -4,12 +4,22 @@
     {
       "slug": "cacti-bandit",
       "name": "Cacti Bandit",
-      "date": "July 1, 2026"
+      "date": "July 1, 2026",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/cacti-bandit/cacti-bandit.png",
+      "model": "costumes/quest/cacti-bandit/model.glb",
+      "page": "costumes/quest/cacti-bandit/",
+      "tags": []
     },
     {
       "slug": "make-a-lotl",
       "name": "Make-a-lotl",
-      "date": "June 1, 2026"
+      "date": "June 1, 2026",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/make-a-lotl/make-a-lotl.png",
+      "model": "costumes/quest/make-a-lotl/model.glb",
+      "page": "costumes/quest/make-a-lotl/",
+      "tags": []
     },
     {
       "slug": "NULL",
@@ -29,7 +39,12 @@
     {
       "slug": "granny-ghosty",
       "name": "Granny Ghosty",
-      "date": "February 1, 2026"
+      "date": "February 1, 2026",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/granny-ghosty/granny-ghosty.png",
+      "model": "costumes/quest/granny-ghosty/model.glb",
+      "page": "costumes/quest/granny-ghosty/",
+      "tags": []
     },
     {
       "slug": "NULL",
@@ -114,297 +129,592 @@
     {
       "slug": "pumpkin-spice",
       "name": "Pumpkin Spice",
-      "date": "September 1, 2024"
+      "date": "September 1, 2024",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/pumpkin-spice/pumpkin-spice.png",
+      "model": "costumes/quest/pumpkin-spice/model.glb",
+      "page": "costumes/quest/pumpkin-spice/",
+      "tags": []
     },
     {
       "slug": "dragon-fruit",
       "name": "Dragon Fruit",
-      "date": "August 1, 2024"
+      "date": "August 1, 2024",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/dragon-fruit/dragon-fruit.png",
+      "model": "costumes/quest/dragon-fruit/model.glb",
+      "page": "costumes/quest/dragon-fruit/",
+      "tags": []
     },
     {
       "slug": "battle-gnome",
       "name": "Battle Gnome",
-      "date": "July 1, 2024"
+      "date": "July 1, 2024",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/battle-gnome/battle-gnome.png",
+      "model": "costumes/quest/battle-gnome/model.glb",
+      "page": "costumes/quest/battle-gnome/",
+      "tags": []
     },
     {
       "slug": "buff-axolotl",
       "name": "Buff Axolotl",
-      "date": "June 1, 2024"
+      "date": "June 1, 2024",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/buff-axolotl/buff-axolotl.png",
+      "model": "costumes/quest/buff-axolotl/model.glb",
+      "page": "costumes/quest/buff-axolotl/",
+      "tags": []
     },
     {
       "slug": "corn-dog",
       "name": "Corn Dog",
-      "date": "May 1, 2024"
+      "date": "May 1, 2024",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/corn-dog/corn-dog.png",
+      "model": "costumes/quest/corn-dog/model.glb",
+      "page": "costumes/quest/corn-dog/",
+      "tags": []
     },
     {
       "slug": "richard",
       "name": "Richard",
-      "date": "March 31, 2024"
+      "date": "March 31, 2024",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/richard/richard.png",
+      "model": "costumes/quest/richard/model.glb",
+      "page": "costumes/quest/richard/",
+      "tags": []
     },
     {
       "slug": "hopper",
       "name": "Hopper",
-      "date": "March 1, 2024"
+      "date": "March 1, 2024",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/hopper/hopper.png",
+      "model": "costumes/quest/hopper/model.glb",
+      "page": "costumes/quest/hopper/",
+      "tags": []
     },
     {
       "slug": "runic-golem",
       "name": "Runic Golem",
-      "date": "February 1, 2024"
+      "date": "February 1, 2024",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/runic-golem/runic-golem.png",
+      "model": "costumes/quest/runic-golem/model.glb",
+      "page": "costumes/quest/runic-golem/",
+      "tags": []
     },
     {
       "slug": "red-bot",
       "name": "Red Bot",
-      "date": "January 1, 2024"
+      "date": "January 1, 2024",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/red-bot/red-bot.png",
+      "model": "costumes/quest/red-bot/model.glb",
+      "page": "costumes/quest/red-bot/",
+      "tags": []
     },
     {
       "slug": "rubber-chicken",
       "name": "Rubber Chicken",
-      "date": "December 1, 2023"
+      "date": "December 1, 2023",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/rubber-chicken/rubber-chicken.png",
+      "model": "costumes/quest/rubber-chicken/model.glb",
+      "page": "costumes/quest/rubber-chicken/",
+      "tags": []
     },
     {
       "slug": "enchanter",
       "name": "Enchanter",
-      "date": "November 1, 2023"
+      "date": "November 1, 2023",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/enchanter/enchanter.png",
+      "model": "costumes/quest/enchanter/model.glb",
+      "page": "costumes/quest/enchanter/",
+      "tags": []
     },
     {
       "slug": "spectral-seafarer",
       "name": "Spectral Seafarer",
-      "date": "October 1, 2023"
+      "date": "October 1, 2023",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/spectral-seafarer/spectral-seafarer.png",
+      "model": "costumes/quest/spectral-seafarer/model.glb",
+      "page": "costumes/quest/spectral-seafarer/",
+      "tags": []
     },
     {
       "slug": "burrito-buddy",
       "name": "Burrito Buddy",
-      "date": "September 1, 2023"
+      "date": "September 1, 2023",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/burrito-buddy/burrito-buddy.png",
+      "model": "costumes/quest/burrito-buddy/model.glb",
+      "page": "costumes/quest/burrito-buddy/",
+      "tags": []
     },
     {
       "slug": "robo-hammy",
       "name": "Robo Hammy",
-      "date": "August 1, 2023"
+      "date": "August 1, 2023",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/robo-hammy/robo-hammy.png",
+      "model": "costumes/quest/robo-hammy/model.glb",
+      "page": "costumes/quest/robo-hammy/",
+      "tags": []
     },
     {
       "slug": "straw-barry",
       "name": "Straw Barry",
-      "date": "July 1, 2023"
+      "date": "July 1, 2023",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/straw-barry/straw-barry.png",
+      "model": "costumes/quest/straw-barry/model.glb",
+      "page": "costumes/quest/straw-barry/",
+      "tags": []
     },
     {
       "slug": "business-monkey",
       "name": "Business Monkey",
-      "date": "June 1, 2023"
+      "date": "June 1, 2023",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/business-monkey/business-monkey.png",
+      "model": "costumes/quest/business-monkey/model.glb",
+      "page": "costumes/quest/business-monkey/",
+      "tags": []
     },
     {
       "slug": "sandstorm",
       "name": "Sandstorm",
-      "date": "May 1, 2023"
+      "date": "May 1, 2023",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/sandstorm/sandstorm.png",
+      "model": "costumes/quest/sandstorm/model.glb",
+      "page": "costumes/quest/sandstorm/",
+      "tags": []
     },
     {
       "slug": "drowned",
       "name": "Drowned",
-      "date": "April 1, 2023"
+      "date": "April 1, 2023",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/drowned/drowned.png",
+      "model": "costumes/quest/drowned/model.glb",
+      "page": "costumes/quest/drowned/",
+      "tags": []
     },
     {
       "slug": "stinky",
       "name": "Stinky",
-      "date": "March 1, 2023"
+      "date": "March 1, 2023",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/stinky/stinky.png",
+      "model": "costumes/quest/stinky/model.glb",
+      "page": "costumes/quest/stinky/",
+      "tags": []
     },
     {
       "slug": "heart-hoodie",
       "name": "Heart Hoodie",
-      "date": "February 1, 2023"
+      "date": "February 1, 2023",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/heart-hoodie/heart-hoodie.png",
+      "model": "costumes/quest/heart-hoodie/model.glb",
+      "page": "costumes/quest/heart-hoodie/",
+      "tags": []
     },
     {
       "slug": "hot-cocoa",
       "name": "Hot Cocoa",
-      "date": "January 1, 2023"
+      "date": "January 1, 2023",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/hot-cocoa/hot-cocoa.png",
+      "model": "costumes/quest/hot-cocoa/model.glb",
+      "page": "costumes/quest/hot-cocoa/",
+      "tags": []
     },
     {
       "slug": "ugly-sweater-bee",
       "name": "Ugly Sweater Bee",
-      "date": "December 1, 2022"
+      "date": "December 1, 2022",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/ugly-sweater-bee/ugly-sweater-bee.png",
+      "model": "costumes/quest/ugly-sweater-bee/model.glb",
+      "page": "costumes/quest/ugly-sweater-bee/",
+      "tags": []
     },
     {
       "slug": "gobbles",
       "name": "Gobbles",
-      "date": "November 1, 2022"
+      "date": "November 1, 2022",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/gobbles/gobbles.png",
+      "model": "costumes/quest/gobbles/model.glb",
+      "page": "costumes/quest/gobbles/",
+      "tags": []
     },
     {
       "slug": "pumpkin-farmer",
       "name": "Pumpkin Farmer",
-      "date": "October 1, 2022"
+      "date": "October 1, 2022",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/pumpkin-farmer/pumpkin-farmer.png",
+      "model": "costumes/quest/pumpkin-farmer/model.glb",
+      "page": "costumes/quest/pumpkin-farmer/",
+      "tags": []
     },
     {
       "slug": "treasure-goblin",
       "name": "Treasure Goblin",
-      "date": "September 1, 2022"
+      "date": "September 1, 2022",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/treasure-goblin/treasure-goblin.png",
+      "model": "costumes/quest/treasure-goblin/model.glb",
+      "page": "costumes/quest/treasure-goblin/",
+      "tags": []
     },
     {
       "slug": "the-warden",
       "name": "The Warden",
-      "date": "August 1, 2022"
+      "date": "August 1, 2022",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/the-warden/the-warden.png",
+      "model": "costumes/quest/the-warden/model.glb",
+      "page": "costumes/quest/the-warden/",
+      "tags": []
     },
     {
       "slug": "summer-skelly",
       "name": "Summer Skelly",
-      "date": "July 1, 2022"
+      "date": "July 1, 2022",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/summer-skelly/summer-skelly.png",
+      "model": "costumes/quest/summer-skelly/model.glb",
+      "page": "costumes/quest/summer-skelly/",
+      "tags": []
     },
     {
       "slug": "toucan",
       "name": "Toucan",
-      "date": "June 1, 2022"
+      "date": "June 1, 2022",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/toucan/toucan.png",
+      "model": "costumes/quest/toucan/model.glb",
+      "page": "costumes/quest/toucan/",
+      "tags": []
     },
     {
       "slug": "moss-knight",
       "name": "Moss Knight",
-      "date": "May 1, 2022"
+      "date": "May 1, 2022",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/moss-knight/moss-knight.png",
+      "model": "costumes/quest/moss-knight/model.glb",
+      "page": "costumes/quest/moss-knight/",
+      "tags": []
     },
     {
       "slug": "moai",
       "name": "Moai",
-      "date": "March 31, 2022"
+      "date": "March 31, 2022",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/moai/moai.png",
+      "model": "costumes/quest/moai/model.glb",
+      "page": "costumes/quest/moai/",
+      "tags": []
     },
     {
       "slug": "snailly",
       "name": "Snailly",
-      "date": "March 1, 2022"
+      "date": "March 1, 2022",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/snailly/snailly.png",
+      "model": "costumes/quest/snailly/model.glb",
+      "page": "costumes/quest/snailly/",
+      "tags": []
     },
     {
       "slug": "heart-teddy",
       "name": "Heart Teddy",
-      "date": "February 1, 2022"
+      "date": "February 1, 2022",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/heart-teddy/heart-teddy.png",
+      "model": "costumes/quest/heart-teddy/model.glb",
+      "page": "costumes/quest/heart-teddy/",
+      "tags": []
     },
     {
       "slug": "soda-can",
       "name": "Soda Can",
-      "date": "January 1, 2022"
+      "date": "January 1, 2022",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/soda-can/soda-can.png",
+      "model": "costumes/quest/soda-can/model.glb",
+      "page": "costumes/quest/soda-can/",
+      "tags": []
     },
     {
       "slug": "present-head",
       "name": "Present Head",
-      "date": "December 1, 2021"
+      "date": "December 1, 2021",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/present-head/present-head.png",
+      "model": "costumes/quest/present-head/model.glb",
+      "page": "costumes/quest/present-head/",
+      "tags": []
     },
     {
       "slug": "buff-doge",
       "name": "Buff Doge",
-      "date": "November 1, 2021"
+      "date": "November 1, 2021",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/buff-doge/buff-doge.png",
+      "model": "costumes/quest/buff-doge/model.glb",
+      "page": "costumes/quest/buff-doge/",
+      "tags": []
     },
     {
       "slug": "business-pumpkin",
       "name": "Business Pumpkin",
-      "date": "October 1, 2021"
+      "date": "October 1, 2021",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/business-pumpkin/business-pumpkin.png",
+      "model": "costumes/quest/business-pumpkin/model.glb",
+      "page": "costumes/quest/business-pumpkin/",
+      "tags": []
     },
     {
       "slug": "flompa",
       "name": "Flompa",
-      "date": "September 1, 2021"
+      "date": "September 1, 2021",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/flompa/flompa.png",
+      "model": "costumes/quest/flompa/model.glb",
+      "page": "costumes/quest/flompa/",
+      "tags": []
     },
     {
       "slug": "moobloom",
       "name": "Moobloom",
-      "date": "August 2, 2021"
+      "date": "August 2, 2021",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/moobloom/moobloom.png",
+      "model": "costumes/quest/moobloom/model.glb",
+      "page": "costumes/quest/moobloom/",
+      "tags": []
     },
     {
       "slug": "mailbot",
       "name": "Mailbot",
-      "date": "July 1, 2021"
+      "date": "July 1, 2021",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/mailbot/mailbot.png",
+      "model": "costumes/quest/mailbot/model.glb",
+      "page": "costumes/quest/mailbot/",
+      "tags": []
     },
     {
       "slug": "pizza-box",
       "name": "Pizza Box",
-      "date": "June 1, 2021"
+      "date": "June 1, 2021",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/pizza-box/pizza-box.png",
+      "model": "costumes/quest/pizza-box/model.glb",
+      "page": "costumes/quest/pizza-box/",
+      "tags": []
     },
     {
       "slug": "rocky",
       "name": "Rocky",
-      "date": "May 1, 2021"
+      "date": "May 1, 2021",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/rocky/rocky.png",
+      "model": "costumes/quest/rocky/model.glb",
+      "page": "costumes/quest/rocky/",
+      "tags": []
     },
     {
       "slug": "flippy",
       "name": "Flippy",
-      "date": "April 1, 2021"
+      "date": "April 1, 2021",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/flippy/flippy.png",
+      "model": "costumes/quest/flippy/model.glb",
+      "page": "costumes/quest/flippy/",
+      "tags": []
     },
     {
       "slug": "baguette",
       "name": "Baguette",
-      "date": "March 1, 2021"
+      "date": "March 1, 2021",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/baguette/baguette.png",
+      "model": "costumes/quest/baguette/model.glb",
+      "page": "costumes/quest/baguette/",
+      "tags": []
     },
     {
       "slug": "battle-beans",
       "name": "Battle Beans",
-      "date": "February 1, 2021"
+      "date": "February 1, 2021",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/battle-beans/battle-beans.png",
+      "model": "costumes/quest/battle-beans/model.glb",
+      "page": "costumes/quest/battle-beans/",
+      "tags": []
     },
     {
       "slug": "minotaur",
       "name": "Minotaur",
-      "date": "January 1, 2021"
+      "date": "January 1, 2021",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/minotaur/minotaur.png",
+      "model": "costumes/quest/minotaur/model.glb",
+      "page": "costumes/quest/minotaur/",
+      "tags": []
     },
     {
       "slug": "whippy",
       "name": "Whippy",
-      "date": "December 1, 2020"
+      "date": "December 1, 2020",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/whippy/whippy.png",
+      "model": "costumes/quest/whippy/model.glb",
+      "page": "costumes/quest/whippy/",
+      "tags": []
     },
     {
       "slug": "ghoul-bandit",
       "name": "Ghoul Bandit",
-      "date": "November 1, 2020"
+      "date": "November 1, 2020",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/ghoul-bandit/ghoul-bandit.png",
+      "model": "costumes/quest/ghoul-bandit/model.glb",
+      "page": "costumes/quest/ghoul-bandit/",
+      "tags": []
     },
     {
       "slug": "al-the-alien",
       "name": "Al The Alien",
-      "date": "October 1, 2020"
+      "date": "October 1, 2020",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/al-the-alien/al-the-alien.png",
+      "model": "costumes/quest/al-the-alien/model.glb",
+      "page": "costumes/quest/al-the-alien/",
+      "tags": []
     },
     {
       "slug": "fish-in-a-suit",
       "name": "Fish in a Suit",
-      "date": "September 1, 2020"
+      "date": "September 1, 2020",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/fish-in-a-suit/fish-in-a-suit.png",
+      "model": "costumes/quest/fish-in-a-suit/model.glb",
+      "page": "costumes/quest/fish-in-a-suit/",
+      "tags": []
     },
     {
       "slug": "sentai",
       "name": "Sentai",
-      "date": "August 1, 2020"
+      "date": "August 1, 2020",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/sentai/sentai.png",
+      "model": "costumes/quest/sentai/model.glb",
+      "page": "costumes/quest/sentai/",
+      "tags": []
     },
     {
       "slug": "pinchy",
       "name": "Pinchy",
-      "date": "July 1, 2020"
+      "date": "July 1, 2020",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/pinchy/pinchy.png",
+      "model": "costumes/quest/pinchy/model.glb",
+      "page": "costumes/quest/pinchy/",
+      "tags": []
     },
     {
       "slug": "hammy-the-hamster",
       "name": "Hammy The Hamster",
-      "date": "June 1, 2020"
+      "date": "June 1, 2020",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/hammy-the-hamster/hammy-the-hamster.png",
+      "model": "costumes/quest/hammy-the-hamster/model.glb",
+      "page": "costumes/quest/hammy-the-hamster/",
+      "tags": []
     },
     {
       "slug": "cheeky-monkey",
       "name": "Cheeky Monkey",
-      "date": "May 1, 2020"
+      "date": "May 1, 2020",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/cheeky-monkey/cheeky-monkey.png",
+      "model": "costumes/quest/cheeky-monkey/model.glb",
+      "page": "costumes/quest/cheeky-monkey/",
+      "tags": []
     },
     {
       "slug": "the-secretary",
       "name": "The Secretary",
-      "date": "April 1, 2020"
+      "date": "April 1, 2020",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/the-secretary/the-secretary.png",
+      "model": "costumes/quest/the-secretary/model.glb",
+      "page": "costumes/quest/the-secretary/",
+      "tags": []
     },
     {
       "slug": "neon-tiger",
       "name": "Neon Tiger",
-      "date": "March 1, 2020"
+      "date": "March 1, 2020",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/neon-tiger/neon-tiger.png",
+      "model": "costumes/quest/neon-tiger/model.glb",
+      "page": "costumes/quest/neon-tiger/",
+      "tags": []
     },
     {
       "slug": "toxic",
       "name": "Toxic",
-      "date": "February 1, 2020"
+      "date": "February 1, 2020",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/toxic/toxic.png",
+      "model": "costumes/quest/toxic/model.glb",
+      "page": "costumes/quest/toxic/",
+      "tags": []
     },
     {
       "slug": "winter-ferret",
       "name": "Winter Ferret",
-      "date": "January 1, 2020"
+      "date": "January 1, 2020",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/winter-ferret/winter-ferret.png",
+      "model": "costumes/quest/winter-ferret/model.glb",
+      "page": "costumes/quest/winter-ferret/",
+      "tags": []
     },
     {
       "slug": "gingerbread-man",
       "name": "Gingerbread Man",
-      "date": "December 1, 2019"
+      "date": "December 1, 2019",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/gingerbread-man/gingerbread-man.png",
+      "model": "costumes/quest/gingerbread-man/model.glb",
+      "page": "costumes/quest/gingerbread-man/",
+      "tags": []
     },
     {
       "slug": "rubber-ducky",
       "name": "Rubber Ducky",
-      "date": "September 20, 2019"
+      "date": "September 20, 2019",
+      "availability": "quest",
+      "thumbnail": "costumes/quest/rubber-ducky/rubber-ducky.png",
+      "model": "costumes/quest/rubber-ducky/model.glb",
+      "page": "costumes/quest/rubber-ducky/",
+      "tags": []
     }
   ]
 }
