@@ -1,16 +1,18 @@
 {
-  "description": "Cape cosmetics available on the marketplace.",
+  "description": "Purchasable and quest capes available on the marketplace. All capes share a single model (cape.glb) and are differentiated only by their texture.",
   "items": [
     {
-      "slug": "copper-knight-cape",
-      "name": "Gear - Copper Knight Cape",
-      "date": "March 3, 2024",
+      "slug": "Aquarium",
+      "name": "Aquarium Cape",
+      "date": "January 19, 2019",
       "availability": "paid",
-      "author": "@capellastudio",
-      "thumbnail": "capes/copper-knight-cape/copper-knight-cape.png",
-      "model": "capes/copper-knight-cape/model.glb",
-      "page": "capes/copper-knight-cape/",
-      "tags": ["creature"]
+      "price": "310 Minecoins",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/aquarium.png",
+      "texture": "gamemodes/dr/capes/Aquarium.png",
+      "page": "gamemodes/dr/",
+      "tags": [
+        "cape"
+      ]
     }
   ]
 }

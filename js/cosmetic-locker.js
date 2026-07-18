@@ -53,6 +53,22 @@
   // armor doesn't clip through the cape geometry.
   const CAPE_HIDDEN_NODE_NAMES = ["leftarmarmor", "rightarmarmor", "bodyarmor"];
 
+  // Capes all share ONE globally-used mesh (same approach as player.html /
+  // server.js): rather than each cape shipping its own .glb, every cape
+  // loads this single model and gets its own look via a per-cape PNG
+  // texture applied on top. Backblings are unaffected and keep loading
+  // their own unique per-item .glb via item.model as before.
+  const SHARED_CAPE_MODEL_URL = "/store/cape.glb";
+
+  // Derive a cape item's texture URL, mirroring player.html's
+  // getCapeTextureUrl(): "/models/{name}.png". Prefers an explicit
+  // item.texture field if the data provides one.
+  function getCapeTextureUrl(item) {
+    if (item.texture) return item.texture;
+    const name = item.slug || item.name;
+    return name ? `/models/${encodeURIComponent(name)}.png` : null;
+  }
+
   function el(tag, className, html) {
     const e = document.createElement(tag);
     if (className) e.className = className;
@@ -119,6 +135,15 @@
       // Original (unscaled) bone scaling cache, keyed by bone name, restored
       // when the corresponding hide condition (hat/cape) no longer applies.
       this._boneOriginalScales = null;
+
+      // The shared cape.glb is loaded once and reused for every Cape;
+      // texture swaps happen on the same mesh instance instead of
+      // reloading the model. Backblings still load their own unique .glb
+      // through the normal loadedNodes.cape_backbling / _loadSlotModel path.
+      this._sharedCapeMeshes = null; // Babylon Mesh[] once loaded
+      this._sharedCapeLoading = false;
+      this._sharedCapeMaterial = null;
+      this._pendingCapeItem = null; // item to apply once load finishes
 
       this._buildSkeleton();
       this._loadData();
@@ -441,10 +466,25 @@
     // -------------------------------------------------------------- equip
     _equip(item) {
       const slot = CATEGORY_SLOT[item.category];
+      const previous = this.equipped[slot];
       this.equipped[slot] = item;
       this._renderEquippedPanel();
       this._renderBrowseGrid();
-      this._loadSlotModel(slot, item);
+
+      if (item.category === "cape") {
+        // If a Backbling glb was previously loaded in this slot, dispose
+        // it. If a cape was already showing, leave loadedNodes alone —
+        // _showSharedCape reuses the existing shared mesh and just swaps
+        // its texture instead of reloading/disposing anything.
+        if (previous && previous.category === "backbling") {
+          this._clearSlotModel(slot);
+        }
+        this._showSharedCape(item);
+      } else {
+        if (slot === "cape_backbling") this._clearSharedCape();
+        this._loadSlotModel(slot, item);
+      }
+
       if (slot === "hat") this._syncHelmetVisibility();
       if (slot === "cape_backbling") this._syncCapeArmorVisibility();
     }
@@ -454,6 +494,7 @@
       this._renderEquippedPanel();
       this._renderBrowseGrid();
       this._clearSlotModel(slot);
+      if (slot === "cape_backbling") this._clearSharedCape();
       if (slot === "hat") this._syncHelmetVisibility();
       if (slot === "cape_backbling") this._syncCapeArmorVisibility();
     }
@@ -558,6 +599,28 @@
       this.$.stageEmpty.style.display = anyEquipped ? "none" : "flex";
     }
 
+    // Find the linked TransformNode for a named bone on the costume's
+    // skeleton (case-insensitive), or null if there's no skeleton loaded,
+    // no bone with that name, or the bone has no linked transform node.
+    // Bones (e.g. "body", "helmet") live inside Skeleton.bones and are NOT
+    // scene-graph Nodes, so scene.getNodeByName() can never find them —
+    // this is the correct way to get something mesh.parent can point at.
+    _getCostumeBoneTransformNode(boneName) {
+      const skeletons = this.loadedSkeletons.costume || [];
+      for (const skeleton of skeletons) {
+        const bone = skeleton.bones.find(
+          (b) => b.name && b.name.toLowerCase() === boneName.toLowerCase(),
+        );
+        if (!bone) continue;
+        const node =
+          typeof bone.getTransformNode === "function"
+            ? bone.getTransformNode()
+            : null;
+        if (node) return node;
+      }
+      return null;
+    }
+
     // Hide/show a named bone inside the costume's skeleton by scaling the
     // bone itself to (near) zero, or restoring its original scale. Used
     // both for the "helmet" bone (hidden when a Hat is equipped) and the
@@ -659,6 +722,200 @@
       this._refitCamera();
     }
 
+    // ---------------------------------------------------- shared cape.glb
+    // Capes all reuse one globally-loaded mesh instead of a per-item .glb;
+    // only the texture changes between capes. This mirrors player.html's
+    // showCapeOnPlayer()/applyTextureToCape() so the two viewers behave and
+    // look identical for capes.
+
+    _applyCapeTexture(textureUrl) {
+      if (!this.scene || !this._sharedCapeMeshes || !textureUrl) return;
+
+      const tex = new BABYLON.Texture(
+        resolveAsset(this.dataRoot, textureUrl),
+        this.scene,
+        false,
+        false,
+        BABYLON.Texture.NEAREST_SAMPLINGMODE,
+      );
+      tex.hasAlpha = true;
+      tex.vScale = 1;
+      tex.vOffset = 1;
+
+      this._sharedCapeMeshes.forEach((mesh, index) => {
+        // Always use our own StandardMaterial rather than reusing whatever
+        // material the glb shipped with. cape.glb imports with its own
+        // (untextured) PBRMaterial already attached, so relying on
+        // "!mesh.material" to decide whether to create one meant this
+        // branch was skipped and the texture assignments below landed on
+        // properties (albedoTexture etc.) that the imported material
+        // wasn't actually rendering from, silently doing nothing.
+        if (
+          !mesh.material ||
+          mesh.material.getClassName() !== "StandardMaterial"
+        ) {
+          mesh.material = new BABYLON.StandardMaterial(
+            `lockerCapeMaterial${index}`,
+            this.scene,
+          );
+        }
+        mesh.material.diffuseTexture = tex;
+        mesh.material.emissiveTexture = tex;
+        mesh.material.emissiveColor = new BABYLON.Color3(1, 1, 1);
+        mesh.material.specularColor = new BABYLON.Color3(0, 0, 0);
+        mesh.material.backFaceCulling = false;
+      });
+    }
+
+    _showSharedCape(item) {
+      const textureUrl = getCapeTextureUrl(item);
+      if (!textureUrl || !this.scene) return;
+
+      this._pendingCapeItem = item;
+
+      if (this._sharedCapeMeshes && this._sharedCapeMeshes.length) {
+        this._applyCapeTexture(textureUrl);
+        this.loadedNodes.cape_backbling = this._sharedCapeMeshes;
+        this._updateStageEmptyState();
+        this._refitCamera();
+        return;
+      }
+
+      if (this._sharedCapeLoading) return;
+      this._sharedCapeLoading = true;
+
+      const url = resolveAsset(this.dataRoot, SHARED_CAPE_MODEL_URL);
+      const dir = url.slice(0, url.lastIndexOf("/") + 1);
+      const file = url.slice(url.lastIndexOf("/") + 1);
+
+      BABYLON.SceneLoader.ImportMeshAsync(
+        null,
+        dir,
+        file,
+        this.scene,
+        null,
+        ".glb",
+      )
+        .then((result) => {
+          this._sharedCapeLoading = false;
+
+          // If the cape slot was unequipped or swapped again before this
+          // finished loading, discard the result instead of showing it.
+          if (
+            !this._pendingCapeItem ||
+            this._pendingCapeItem.slug !== item.slug
+          ) {
+            (result.meshes || []).forEach((mesh) => {
+              try {
+                mesh.dispose();
+              } catch {}
+            });
+            return;
+          }
+
+          const meshes = (result.meshes || []).filter(
+            (mesh) => mesh.getClassName && mesh.getClassName() === "Mesh",
+          );
+          if (!meshes.length) return;
+
+          // Parent the cape onto the costume's "body" bone. "body" is a
+          // skeleton bone (like "helmet"/"bodyArmor"), not a scene-graph
+          // Node, so scene.getNodeByName() can't find it — we have to look
+          // it up on the costume's skeleton and use its linked transform
+          // node, same approach as _setCostumeBoneHidden.
+          const parentNode =
+            this._getCostumeBoneTransformNode("body") ||
+            (this.loadedNodes.costume && this.loadedNodes.costume[0]) ||
+            null;
+          const parentedToBone = !!this._getCostumeBoneTransformNode("body");
+
+          meshes.forEach((mesh) => {
+            mesh.parent = parentNode;
+            // When parented directly to the body bone, keep the cape's own
+            // baked local offset (its origin is already authored to sit
+            // correctly relative to the body). Only fall back to the old
+            // bounding-box guess if there's no body bone to attach to.
+            if (!parentedToBone) {
+              let capeY = 0;
+              try {
+                const costumeRoot =
+                  this.loadedNodes.costume && this.loadedNodes.costume[0];
+                const bbox = costumeRoot?.getBoundingInfo?.().boundingBox;
+                capeY = bbox ? bbox.maximum.y - 24 : 0;
+              } catch {}
+              mesh.position = new BABYLON.Vector3(0, capeY, 0);
+            }
+            // No extra Y rotation here: the costume root is already
+            // flipped 180° to face the camera (see _loadSlotModel), and
+            // since the cape is parented onto a node inside that rotated
+            // hierarchy, it inherits the flip automatically. Adding
+            // player.html's own Math.PI on top would cancel it back out.
+            mesh.rotation.y = 0;
+          });
+
+          this._sharedCapeMeshes = meshes;
+          this.loadedNodes.cape_backbling = meshes;
+          this._applyCapeTexture(textureUrl);
+          this._updateStageEmptyState();
+          this._refitCamera();
+        })
+        .catch((exception) => {
+          this._sharedCapeLoading = false;
+          console.warn(
+            "cosmetic-locker: failed to load shared cape model",
+            url,
+            exception,
+          );
+        });
+    }
+
+    _clearSharedCape() {
+      this._pendingCapeItem = null;
+      if (this._sharedCapeMeshes) {
+        this._sharedCapeMeshes.forEach((mesh) => {
+          try {
+            mesh.dispose();
+          } catch {}
+        });
+      }
+      this._sharedCapeMeshes = null;
+      this._sharedCapeLoading = false;
+      this.loadedNodes.cape_backbling = [];
+      this._updateStageEmptyState();
+      this._refitCamera();
+    }
+
+    // Called after the costume model (re)loads, so an already-equipped
+    // cape follows the new costume's body node instead of being left
+    // parented to a disposed one.
+    _reattachSharedCape() {
+      if (!this._sharedCapeMeshes || !this._sharedCapeMeshes.length) return;
+
+      const parentNode =
+        this._getCostumeBoneTransformNode("body") ||
+        (this.loadedNodes.costume && this.loadedNodes.costume[0]) ||
+        null;
+      const parentedToBone = !!this._getCostumeBoneTransformNode("body");
+
+      this._sharedCapeMeshes.forEach((mesh) => {
+        mesh.parent = parentNode;
+        if (!parentedToBone) {
+          let capeY = 0;
+          try {
+            const costumeRoot =
+              this.loadedNodes.costume && this.loadedNodes.costume[0];
+            const bbox = costumeRoot?.getBoundingInfo?.().boundingBox;
+            capeY = bbox ? bbox.maximum.y - 24 : 0;
+          } catch {}
+          mesh.position = new BABYLON.Vector3(0, capeY, 0);
+        }
+        // See _showSharedCape: no extra rotation needed, the parent
+        // costume hierarchy is already flipped to face the camera.
+        mesh.rotation.y = 0;
+      });
+      this.loadedNodes.cape_backbling = this._sharedCapeMeshes;
+    }
+
     _loadSlotModel(slot, item) {
       if (!this.scene) return;
       this._clearSlotModel(slot);
@@ -679,6 +936,17 @@
           const meshes = result.meshes;
           const skeletons = result.skeletons || [];
           if (!meshes || !meshes.length) return;
+          // Source models face away from the camera by default; flip every
+          // top-level (parentless) node 180° around Y so they face forward
+          // instead. We rotate ALL root-level nodes rather than assuming
+          // meshes[0] is a single shared "__root__" wrapper, since that
+          // isn't guaranteed across every exported glb.
+          meshes.forEach((mesh) => {
+            if (!mesh.parent) {
+              mesh.rotationQuaternion = null;
+              mesh.rotation.y += Math.PI;
+            }
+          });
           meshes.forEach((mesh) => {
             if (mesh.material && mesh.material.albedoTexture) {
               mesh.material.emissiveTexture = mesh.material.albedoTexture;
@@ -690,6 +958,7 @@
           this._updateStageEmptyState();
           this._syncHelmetVisibility();
           this._syncCapeArmorVisibility();
+          if (slot === "costume") this._reattachSharedCape();
           this._refitCamera();
         })
         .catch((exception) => {
