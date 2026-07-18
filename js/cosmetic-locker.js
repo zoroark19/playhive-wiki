@@ -141,6 +141,11 @@
       // reloading the model. Backblings still load their own unique .glb
       // through the normal loadedNodes.cape_backbling / _loadSlotModel path.
       this._sharedCapeMeshes = null; // Babylon Mesh[] once loaded
+      // The top-most ancestor node of the cape's own local hierarchy (its
+      // "chain top") that actually gets parented onto the costume's body
+      // bone — see _showSharedCape for why this isn't the same as the
+      // leaf meshes in _sharedCapeMeshes.
+      this._sharedCapeChainTop = null;
       this._sharedCapeLoading = false;
       this._sharedCapeMaterial = null;
       this._pendingCapeItem = null; // item to apply once load finishes
@@ -567,9 +572,23 @@
         scene,
       );
       camera.attachControl(canvas, true);
-      camera.panningSensibility = 0;
+      camera.panningSensibility = 700;
       camera.wheelPrecision = 30;
       this.camera = camera;
+
+      // Babylon's own wheel handling zooms the camera, but doesn't stop
+      // the underlying page from also scrolling on the same wheel event.
+      // touch-action: none (see cosmetic-locker.css) blocks touch-drag
+      // page scroll, but has no effect on a desktop mouse wheel — so we
+      // need an explicit non-passive wheel listener here to preventDefault
+      // and stop the scroll from propagating past the canvas.
+      canvas.addEventListener(
+        "wheel",
+        (event) => {
+          event.preventDefault();
+        },
+        { passive: false },
+      );
 
       const light = new BABYLON.HemisphericLight(
         "lockerLight",
@@ -705,6 +724,26 @@
     }
 
     _clearSlotModel(slot) {
+      // If we're about to dispose the costume's skeleton/nodes, detach any
+      // currently-equipped shared cape first. The cape is parented (via
+      // its chain-top wrapper node) to a TransformNode linked to a bone on
+      // THIS skeleton (see _showSharedCape/_reattachSharedCape); disposing
+      // the skeleton out from under it orphans the cape and it silently
+      // stops rendering. Un-parenting (rather than disposing) keeps it
+      // alive so _reattachSharedCape() can re-parent it onto the next
+      // costume once that finishes loading.
+      //
+      // Important: un-parent the tracked chain-top wrapper, NOT the leaf
+      // meshes directly — the leaf's local position is only meaningful
+      // relative to that wrapper (see _showSharedCape), so detaching the
+      // leaf itself would silently corrupt the same offset this whole
+      // chain-top approach exists to preserve.
+      if (slot === "costume" && this._sharedCapeChainTop) {
+        try {
+          this._sharedCapeChainTop.parent = null;
+        } catch {}
+      }
+
       (this.loadedNodes[slot] || []).forEach((node) => {
         try {
           node.dispose();
@@ -813,10 +852,34 @@
             return;
           }
 
+          // cape.glb bakes its own small local hierarchy (leaf mesh ->
+          // one wrapper node -> the exporter's own body/waist/root chain).
+          // The leaf mesh's translation is only meaningful relative to
+          // that immediate wrapper — NOT relative to the costume's body
+          // bone directly. Re-parenting the leaf mesh alone (dropping the
+          // wrapper) silently discards part of the authored offset and
+          // collapses the cape toward the body origin, which is why it
+          // was rendering inside the costume instead of behind it.
+          //
+          // Fix: walk each leaf mesh up to the top-most ancestor whose OWN
+          // parent is not also part of this same imported result (i.e. the
+          // node the exporter's root would otherwise have parented), and
+          // re-parent THAT node onto the costume's body bone. This keeps
+          // the mesh's local translation relative to its original wrapper
+          // fully intact; only the top of the chain gets re-homed.
+          const importedNodeSet = new Set(result.meshes || []);
           const meshes = (result.meshes || []).filter(
             (mesh) => mesh.getClassName && mesh.getClassName() === "Mesh",
           );
           if (!meshes.length) return;
+
+          function topOfImportedChain(node) {
+            let current = node;
+            while (current.parent && importedNodeSet.has(current.parent)) {
+              current = current.parent;
+            }
+            return current;
+          }
 
           // Parent the cape onto the costume's "body" bone. "body" is a
           // skeleton bone (like "helmet"/"bodyArmor"), not a scene-graph
@@ -829,30 +892,48 @@
             null;
           const parentedToBone = !!this._getCostumeBoneTransformNode("body");
 
+          const reparentedChainTops = new Set();
           meshes.forEach((mesh) => {
-            mesh.parent = parentNode;
-            // When parented directly to the body bone, keep the cape's own
-            // baked local offset (its origin is already authored to sit
-            // correctly relative to the body). Only fall back to the old
-            // bounding-box guess if there's no body bone to attach to.
-            if (!parentedToBone) {
-              let capeY = 0;
-              try {
-                const costumeRoot =
-                  this.loadedNodes.costume && this.loadedNodes.costume[0];
-                const bbox = costumeRoot?.getBoundingInfo?.().boundingBox;
-                capeY = bbox ? bbox.maximum.y - 24 : 0;
-              } catch {}
-              mesh.position = new BABYLON.Vector3(0, capeY, 0);
+            const chainTop = topOfImportedChain(mesh);
+            // Only re-parent each chain's top node once, even if multiple
+            // leaf meshes share the same wrapper ancestor.
+            if (!reparentedChainTops.has(chainTop)) {
+              reparentedChainTops.add(chainTop);
+              // Track it so _reattachSharedCape can re-home this same
+              // wrapper on future costume swaps, instead of parenting the
+              // leaf mesh directly (which would drop the authored offset
+              // baked into the wrapper -> leaf relationship again).
+              this._sharedCapeChainTop = chainTop;
+              chainTop.parent = parentNode;
+              // Leave the chain top's own local position/rotation exactly
+              // as authored — it (and everything below it) is already
+              // baked to sit correctly once anchored at the body bone.
+              // Only fall back to a computed offset if there's no body
+              // bone to attach to at all (nothing authored to rely on).
+              if (!parentedToBone) {
+                let capeY = 0;
+                try {
+                  const costumeRoot =
+                    this.loadedNodes.costume && this.loadedNodes.costume[0];
+                  const bbox = costumeRoot?.getBoundingInfo?.().boundingBox;
+                  capeY = bbox ? bbox.maximum.y - 24 : 0;
+                } catch {}
+                chainTop.position = new BABYLON.Vector3(0, capeY, 0);
+              }
+              // No extra Y rotation here: the costume root is already
+              // flipped 180° to face the camera (see _loadSlotModel), and
+              // since the cape is parented onto a node inside that
+              // rotated hierarchy, it inherits the flip automatically.
+              // Adding player.html's own Math.PI on top would cancel it
+              // back out.
+              chainTop.rotation.y = 0;
             }
-            // No extra Y rotation here: the costume root is already
-            // flipped 180° to face the camera (see _loadSlotModel), and
-            // since the cape is parented onto a node inside that rotated
-            // hierarchy, it inherits the flip automatically. Adding
-            // player.html's own Math.PI on top would cancel it back out.
-            mesh.rotation.y = 0;
           });
 
+          // _applyCapeTexture / _refitCamera / etc. still operate on the
+          // flat list of leaf meshes (they need actual Mesh instances for
+          // materials and bounding boxes) — only the parenting/positioning
+          // above needed to walk up to the wrapper node.
           this._sharedCapeMeshes = meshes;
           this.loadedNodes.cape_backbling = meshes;
           this._applyCapeTexture(textureUrl);
@@ -871,6 +952,11 @@
 
     _clearSharedCape() {
       this._pendingCapeItem = null;
+      if (this._sharedCapeChainTop) {
+        try {
+          this._sharedCapeChainTop.dispose();
+        } catch {}
+      }
       if (this._sharedCapeMeshes) {
         this._sharedCapeMeshes.forEach((mesh) => {
           try {
@@ -879,6 +965,7 @@
         });
       }
       this._sharedCapeMeshes = null;
+      this._sharedCapeChainTop = null;
       this._sharedCapeLoading = false;
       this.loadedNodes.cape_backbling = [];
       this._updateStageEmptyState();
@@ -897,22 +984,30 @@
         null;
       const parentedToBone = !!this._getCostumeBoneTransformNode("body");
 
-      this._sharedCapeMeshes.forEach((mesh) => {
-        mesh.parent = parentNode;
-        if (!parentedToBone) {
-          let capeY = 0;
-          try {
-            const costumeRoot =
-              this.loadedNodes.costume && this.loadedNodes.costume[0];
-            const bbox = costumeRoot?.getBoundingInfo?.().boundingBox;
-            capeY = bbox ? bbox.maximum.y - 24 : 0;
-          } catch {}
-          mesh.position = new BABYLON.Vector3(0, capeY, 0);
-        }
-        // See _showSharedCape: no extra rotation needed, the parent
-        // costume hierarchy is already flipped to face the camera.
-        mesh.rotation.y = 0;
-      });
+      // Re-parent the tracked chain-top wrapper (not the leaf meshes) so
+      // the cape's authored local offset — baked into the wrapper -> leaf
+      // relationship inside cape.glb — stays intact across costume swaps.
+      // See _showSharedCape for why re-parenting the leaf mesh directly
+      // would be wrong here.
+      const node = this._sharedCapeChainTop || this._sharedCapeMeshes[0];
+      node.parent = parentNode;
+      // See _showSharedCape: leave the cape's authored local position
+      // untouched when parented to the body bone; only the no-bone
+      // fallback needs a computed offset.
+      if (!parentedToBone) {
+        let capeY = 0;
+        try {
+          const costumeRoot =
+            this.loadedNodes.costume && this.loadedNodes.costume[0];
+          const bbox = costumeRoot?.getBoundingInfo?.().boundingBox;
+          capeY = bbox ? bbox.maximum.y - 24 : 0;
+        } catch {}
+        node.position = new BABYLON.Vector3(0, capeY, 0);
+      }
+      // See _showSharedCape: no extra rotation needed, the parent
+      // costume hierarchy is already flipped to face the camera.
+      node.rotation.y = 0;
+
       this.loadedNodes.cape_backbling = this._sharedCapeMeshes;
     }
 

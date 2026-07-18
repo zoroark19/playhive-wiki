@@ -4,12 +4,350 @@
     {
       "slug": "Aquarium",
       "name": "Aquarium Cape",
-      "date": "January 19, 2019",
+      "date": "",
       "availability": "paid",
-      "price": "310 Minecoins",
+      "price": "",
       "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/aquarium.png",
-      "texture": "gamemodes/dr/capes/Aquarium.png",
-      "page": "gamemodes/dr/",
+      "texture": "assets/game-unlock/dr/cape/Aquarium.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Battle",
+      "name": "Battle Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/battle.png",
+      "texture": "assets/game-unlock/dr/cape/Battle.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Bee",
+      "name": "Bee Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/bee.png",
+      "texture": "assets/game-unlock/dr/cape/Bee.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Champion",
+      "name": "Champion Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/champion.png",
+      "texture": "assets/game-unlock/dr/cape/Champion.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Code",
+      "name": "Code Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/code.png",
+      "texture": "assets/game-unlock/dr/cape/Code.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Cranium",
+      "name": "Cranium Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/cranium.png",
+      "texture": "assets/game-unlock/dr/cape/Cranium.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Crescent_Moon",
+      "name": "Crescent Moon Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/crescent-moon.png",
+      "texture": "assets/game-unlock/dr/cape/Crescent_Moon.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Dimensions",
+      "name": "Dimensions Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/dimensions.png",
+      "texture": "assets/game-unlock/dr/cape/Dimensions.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Ender_Pearl",
+      "name": "Ender Pearl Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/ender-pearl.png",
+      "texture": "assets/game-unlock/dr/cape/Ender_Pearl.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "End_Portal",
+      "name": "End Portal Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/end-portal.png",
+      "texture": "assets/game-unlock/dr/cape/End_Portal.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Frozen",
+      "name": "Frozen Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/frozen.png",
+      "texture": "assets/game-unlock/dr/cape/Frozen.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Galaxy",
+      "name": "Galaxy Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/galaxy.png",
+      "texture": "assets/game-unlock/dr/cape/Galaxy.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Gameboy",
+      "name": "Gameboy Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/gameboy.png",
+      "texture": "assets/game-unlock/dr/cape/Gameboy.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Gingerbread",
+      "name": "Gingerbread Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/gingerbread.png",
+      "texture": "assets/game-unlock/dr/cape/Gingerbread.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Halloween_Vibes",
+      "name": "Halloween Vibes Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/halloween-vibes.png",
+      "texture": "assets/game-unlock/dr/cape/Halloween_Vibes.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Love",
+      "name": "Love Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/love.png",
+      "texture": "assets/game-unlock/dr/cape/Love.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Magma",
+      "name": "Magma Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/magma.png",
+      "texture": "assets/game-unlock/dr/cape/Magma.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Mr_Worldwide",
+      "name": "Mr Worldwide Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/mr-worldwide.png",
+      "texture": "assets/game-unlock/dr/cape/Mr_Worldwide.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Nether",
+      "name": "Nether Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/nether.png",
+      "texture": "assets/game-unlock/dr/cape/Nether.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Overgrown",
+      "name": "Overgrown Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/overgrown.png",
+      "texture": "assets/game-unlock/dr/cape/Overgrown.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Present",
+      "name": "Present Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/present.png",
+      "texture": "assets/game-unlock/dr/cape/Present.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Rose_Runner",
+      "name": "Rose Runner Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/rose-runner.png",
+      "texture": "assets/game-unlock/dr/cape/Rose_Runner.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Royal",
+      "name": "Royal Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/royal.png",
+      "texture": "assets/game-unlock/dr/cape/Royal.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Santas_Cape",
+      "name": "Santas Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/santas-cape.png",
+      "texture": "assets/game-unlock/dr/cape/Santas_Cape.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Science",
+      "name": "Science Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/science.png",
+      "texture": "assets/game-unlock/dr/cape/Science.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Tree_Runner",
+      "name": "Tree Runner Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/tree-runner.png",
+      "texture": "assets/game-unlock/dr/cape/Tree_Runner.png",
+      "page": "game-unlock/dr/cape/",
+      "tags": [
+        "cape"
+      ]
+    },
+    {
+      "slug": "Xmas",
+      "name": "Xmas Cape",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/icons/locker/dr/cape/xmas.png",
+      "texture": "assets/game-unlock/dr/cape/Xmas.png",
+      "page": "game-unlock/dr/cape/",
       "tags": [
         "cape"
       ]
