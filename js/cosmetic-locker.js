@@ -95,7 +95,7 @@
   // plain page-load default. The zoom multiplier is applied to the
   // normal auto-fit radius — < 1 zooms in tighter.
   const CAMERA_RESET_BETA_OFFSET = 0.12;
-  const CAMERA_RESET_ZOOM_MULTIPLIER = 0.85;
+  const CAMERA_RESET_ZOOM_MULTIPLIER = 0.65;
 
   // Capes all share ONE globally-used mesh (same approach as player.html /
   // server.js): rather than each cape shipping its own .glb, every cape
