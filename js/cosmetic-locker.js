@@ -607,6 +607,25 @@
     // matches. Returns true if at least one item from the URL was
     // equipped, so the caller knows whether to fall back to the default
     // random costume. Unknown/stale slugs are silently ignored.
+    //
+    // A slug is only guaranteed unique WITHIN its own category's data
+    // file(s), not globally — e.g. "rubber-ducky" is both a quest costume
+    // and an unrelated backbling. A naive allItems.find(slug) always
+    // returns whichever one happens to appear first once every category
+    // is flattened together, regardless of which one the link actually
+    // meant, silently equipping the wrong item into the wrong slot.
+    //
+    // Since a single URL can only ever carry one item per equip slot
+    // anyway (costume / hat / cape_backbling), we resolve ambiguous slugs
+    // by process of elimination against the OTHER tokens in the same URL
+    // — in two passes so the result doesn't depend on token order:
+    //   1. Every unambiguous token (slug used by exactly one item across
+    //      all categories) is resolved first and claims its slot.
+    //   2. Each ambiguous token then picks whichever of its candidates'
+    //      slots isn't already claimed — by an unambiguous token OR by
+    //      an ambiguous token resolved earlier in this same pass.
+    // A lone ambiguous slug with no other tokens to eliminate against
+    // still falls back to its first candidate, same as previous behavior.
     _applyEquippedFromURL() {
       const raw = (location.search || "").replace(/^\?/, "");
       if (!raw) return false;
@@ -623,9 +642,46 @@
         .filter(Boolean);
       if (!tokens.length) return false;
 
-      const matched = tokens
-        .map((slug) => this.allItems.find((i) => i.slug === slug))
-        .filter(Boolean);
+      // Group every item (across all categories) by slug once, so each
+      // token can see every same-slug candidate rather than just the
+      // first one Array.find would have stopped at.
+      const bySlug = new Map();
+      this.allItems.forEach((item) => {
+        if (!bySlug.has(item.slug)) bySlug.set(item.slug, []);
+        bySlug.get(item.slug).push(item);
+      });
+
+      const resolved = tokens.map((slug) => ({
+        slug,
+        candidates: bySlug.get(slug) || [],
+      }));
+
+      const claimedSlots = new Set();
+
+      // Pass 1: unambiguous tokens claim their slot first, independent of
+      // where they appear in the URL.
+      resolved.forEach((entry) => {
+        if (entry.candidates.length === 1) {
+          claimedSlots.add(CATEGORY_SLOT[entry.candidates[0].category]);
+        }
+      });
+
+      // Pass 2: resolve every token against the now-complete claimed set.
+      const matched = [];
+      resolved.forEach((entry) => {
+        if (!entry.candidates.length) return; // unknown slug
+
+        const item =
+          entry.candidates.length === 1
+            ? entry.candidates[0]
+            : entry.candidates.find(
+                (candidate) =>
+                  !claimedSlots.has(CATEGORY_SLOT[candidate.category]),
+              ) || entry.candidates[0];
+
+        matched.push(item);
+        claimedSlots.add(CATEGORY_SLOT[item.category]);
+      });
       if (!matched.length) return false;
 
       // Equip the costume (if any) before hat/cape/backbling, regardless
