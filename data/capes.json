@@ -2,8 +2,8 @@
   "description": "Purchasable and quest capes available on the marketplace. All capes share a single model (cape.glb) and are differentiated only by their texture.",
   "items": [
     {
-      "slug": "Aquarium",
-      "name": "Aquarium Cape",
+      "slug": "aquarium",
+      "name": "Aquarium",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -15,8 +15,8 @@
       ]
     },
     {
-      "slug": "Battle",
-      "name": "Battle Cape",
+      "slug": "battle",
+      "name": "Battle",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -28,8 +28,8 @@
       ]
     },
     {
-      "slug": "Bee",
-      "name": "Bee Cape",
+      "slug": "bee",
+      "name": "Bee",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -41,8 +41,8 @@
       ]
     },
     {
-      "slug": "Champion",
-      "name": "Champion Cape",
+      "slug": "champion",
+      "name": "Champion",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -54,8 +54,8 @@
       ]
     },
     {
-      "slug": "Code",
-      "name": "Code Cape",
+      "slug": "code",
+      "name": "Code",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -67,8 +67,8 @@
       ]
     },
     {
-      "slug": "Cranium",
-      "name": "Cranium Cape",
+      "slug": "cranium",
+      "name": "Cranium",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -80,8 +80,8 @@
       ]
     },
     {
-      "slug": "Crescent_Moon",
-      "name": "Crescent Moon Cape",
+      "slug": "crescent-moon",
+      "name": "Crescent Moon",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -93,8 +93,8 @@
       ]
     },
     {
-      "slug": "Dimensions",
-      "name": "Dimensions Cape",
+      "slug": "dimensions",
+      "name": "Dimensions",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -106,8 +106,8 @@
       ]
     },
     {
-      "slug": "Ender_Pearl",
-      "name": "Ender Pearl Cape",
+      "slug": "ender-pearl",
+      "name": "Ender Pearl",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -119,8 +119,8 @@
       ]
     },
     {
-      "slug": "End_Portal",
-      "name": "End Portal Cape",
+      "slug": "end-portal",
+      "name": "End Portal",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -132,8 +132,8 @@
       ]
     },
     {
-      "slug": "Frozen",
-      "name": "Frozen Cape",
+      "slug": "frozen",
+      "name": "Frozen",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -145,8 +145,8 @@
       ]
     },
     {
-      "slug": "Galaxy",
-      "name": "Galaxy Cape",
+      "slug": "galaxy",
+      "name": "Galaxy",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -158,8 +158,8 @@
       ]
     },
     {
-      "slug": "Gameboy",
-      "name": "Gameboy Cape",
+      "slug": "gameboy",
+      "name": "Gameboy",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -171,8 +171,8 @@
       ]
     },
     {
-      "slug": "Gingerbread",
-      "name": "Gingerbread Cape",
+      "slug": "gingerbread",
+      "name": "Gingerbread",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -184,8 +184,8 @@
       ]
     },
     {
-      "slug": "Halloween_Vibes",
-      "name": "Halloween Vibes Cape",
+      "slug": "halloween-vibes",
+      "name": "Halloween Vibes",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -197,8 +197,8 @@
       ]
     },
     {
-      "slug": "Love",
-      "name": "Love Cape",
+      "slug": "love",
+      "name": "Love",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -210,8 +210,8 @@
       ]
     },
     {
-      "slug": "Magma",
-      "name": "Magma Cape",
+      "slug": "magma",
+      "name": "Magma",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -223,8 +223,8 @@
       ]
     },
     {
-      "slug": "Mr_Worldwide",
-      "name": "Mr Worldwide Cape",
+      "slug": "mr-worldwide",
+      "name": "Mr Worldwide",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -236,8 +236,8 @@
       ]
     },
     {
-      "slug": "Nether",
-      "name": "Nether Cape",
+      "slug": "nether",
+      "name": "Nether",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -249,8 +249,8 @@
       ]
     },
     {
-      "slug": "Overgrown",
-      "name": "Overgrown Cape",
+      "slug": "overgrown",
+      "name": "Overgrown",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -262,8 +262,8 @@
       ]
     },
     {
-      "slug": "Present",
-      "name": "Present Cape",
+      "slug": "present",
+      "name": "Present",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -275,8 +275,8 @@
       ]
     },
     {
-      "slug": "Rose_Runner",
-      "name": "Rose Runner Cape",
+      "slug": "rose-runner",
+      "name": "Rose Runner",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -288,8 +288,8 @@
       ]
     },
     {
-      "slug": "Royal",
-      "name": "Royal Cape",
+      "slug": "royal",
+      "name": "Royal",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -301,8 +301,8 @@
       ]
     },
     {
-      "slug": "Santas_Cape",
-      "name": "Santas Cape",
+      "slug": "santas-cape",
+      "name": "Santa's Cape",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -314,8 +314,8 @@
       ]
     },
     {
-      "slug": "Science",
-      "name": "Science Cape",
+      "slug": "science",
+      "name": "Science",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -327,8 +327,8 @@
       ]
     },
     {
-      "slug": "Tree_Runner",
-      "name": "Tree Runner Cape",
+      "slug": "tree-runner",
+      "name": "Tree Runner",
       "date": "",
       "availability": "paid",
       "price": "",
@@ -340,8 +340,8 @@
       ]
     },
     {
-      "slug": "Xmas",
-      "name": "Xmas Cape",
+      "slug": "xmas",
+      "name": "Xmas",
       "date": "",
       "availability": "paid",
       "price": "",
