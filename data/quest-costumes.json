@@ -6,7 +6,7 @@
       "name": "Cacti Bandit",
       "date": "July 1, 2026",
       "availability": "quest",
-      "thumbnail": "costumes/quest/cacti-bandit/cacti-bandit.png",
+      "thumbnail": "costumes/quest/cacti-bandit/assistant-cacti-bandit.png",
       "model": "costumes/quest/cacti-bandit/model.glb",
       "page": "costumes/quest/cacti-bandit/",
       "tags": []
@@ -16,7 +16,7 @@
       "name": "Make-a-lotl",
       "date": "June 1, 2026",
       "availability": "quest",
-      "thumbnail": "costumes/quest/make-a-lotl/make-a-lotl.png",
+      "thumbnail": "costumes/quest/make-a-lotl/assistant-make-a-lotl.png",
       "model": "costumes/quest/make-a-lotl/model.glb",
       "page": "costumes/quest/make-a-lotl/",
       "tags": []
@@ -41,7 +41,7 @@
       "name": "Granny Ghosty",
       "date": "February 1, 2026",
       "availability": "quest",
-      "thumbnail": "costumes/quest/granny-ghosty/granny-ghosty.png",
+      "thumbnail": "costumes/quest/granny-ghosty/assistant-granny-ghosty.png",
       "model": "costumes/quest/granny-ghosty/model.glb",
       "page": "costumes/quest/granny-ghosty/",
       "tags": []
@@ -131,7 +131,7 @@
       "name": "Pumpkin Spice",
       "date": "September 1, 2024",
       "availability": "quest",
-      "thumbnail": "costumes/quest/pumpkin-spice/pumpkin-spice.png",
+      "thumbnail": "costumes/quest/pumpkin-spice/assistant-pumpkin-spice.png",
       "model": "costumes/quest/pumpkin-spice/model.glb",
       "page": "costumes/quest/pumpkin-spice/",
       "tags": []
@@ -141,7 +141,7 @@
       "name": "Dragon Fruit",
       "date": "August 1, 2024",
       "availability": "quest",
-      "thumbnail": "costumes/quest/dragon-fruit/dragon-fruit.png",
+      "thumbnail": "costumes/quest/dragon-fruit/assistant-dragon-fruit.png",
       "model": "costumes/quest/dragon-fruit/model.glb",
       "page": "costumes/quest/dragon-fruit/",
       "tags": []
@@ -151,7 +151,7 @@
       "name": "Battle Gnome",
       "date": "July 1, 2024",
       "availability": "quest",
-      "thumbnail": "costumes/quest/battle-gnome/battle-gnome.png",
+      "thumbnail": "costumes/quest/battle-gnome/assistant-battle-gnome.png",
       "model": "costumes/quest/battle-gnome/model.glb",
       "page": "costumes/quest/battle-gnome/",
       "tags": []
@@ -161,7 +161,7 @@
       "name": "Buff Axolotl",
       "date": "June 1, 2024",
       "availability": "quest",
-      "thumbnail": "costumes/quest/buff-axolotl/buff-axolotl.png",
+      "thumbnail": "costumes/quest/buff-axolotl/assistant-buff-axolotl.png",
       "model": "costumes/quest/buff-axolotl/model.glb",
       "page": "costumes/quest/buff-axolotl/",
       "tags": []
@@ -171,7 +171,7 @@
       "name": "Corn Dog",
       "date": "May 1, 2024",
       "availability": "quest",
-      "thumbnail": "costumes/quest/corn-dog/corn-dog.png",
+      "thumbnail": "costumes/quest/corn-dog/assistant-corn-dog.png",
       "model": "costumes/quest/corn-dog/model.glb",
       "page": "costumes/quest/corn-dog/",
       "tags": []
@@ -181,7 +181,7 @@
       "name": "Richard",
       "date": "March 31, 2024",
       "availability": "quest",
-      "thumbnail": "costumes/quest/richard/richard.png",
+      "thumbnail": "costumes/quest/richard/assistant-richard.png",
       "model": "costumes/quest/richard/model.glb",
       "page": "costumes/quest/richard/",
       "tags": []
@@ -191,7 +191,7 @@
       "name": "Hopper",
       "date": "March 1, 2024",
       "availability": "quest",
-      "thumbnail": "costumes/quest/hopper/hopper.png",
+      "thumbnail": "costumes/quest/hopper/assistant-hopper.png",
       "model": "costumes/quest/hopper/model.glb",
       "page": "costumes/quest/hopper/",
       "tags": []
@@ -201,7 +201,7 @@
       "name": "Runic Golem",
       "date": "February 1, 2024",
       "availability": "quest",
-      "thumbnail": "costumes/quest/runic-golem/runic-golem.png",
+      "thumbnail": "costumes/quest/runic-golem/assistant-runic-golem.png",
       "model": "costumes/quest/runic-golem/model.glb",
       "page": "costumes/quest/runic-golem/",
       "tags": []
@@ -211,7 +211,7 @@
       "name": "Red Bot",
       "date": "January 1, 2024",
       "availability": "quest",
-      "thumbnail": "costumes/quest/red-bot/red-bot.png",
+      "thumbnail": "costumes/quest/red-bot/assistant-red-bot.png",
       "model": "costumes/quest/red-bot/model.glb",
       "page": "costumes/quest/red-bot/",
       "tags": []
@@ -221,7 +221,7 @@
       "name": "Rubber Chicken",
       "date": "December 1, 2023",
       "availability": "quest",
-      "thumbnail": "costumes/quest/rubber-chicken/rubber-chicken.png",
+      "thumbnail": "costumes/quest/rubber-chicken/assistant-rubber-chicken.png",
       "model": "costumes/quest/rubber-chicken/model.glb",
       "page": "costumes/quest/rubber-chicken/",
       "tags": []
@@ -231,7 +231,7 @@
       "name": "Enchanter",
       "date": "November 1, 2023",
       "availability": "quest",
-      "thumbnail": "costumes/quest/enchanter/enchanter.png",
+      "thumbnail": "costumes/quest/enchanter/assistant-enchanter.png",
       "model": "costumes/quest/enchanter/model.glb",
       "page": "costumes/quest/enchanter/",
       "tags": []
@@ -241,7 +241,7 @@
       "name": "Spectral Seafarer",
       "date": "October 1, 2023",
       "availability": "quest",
-      "thumbnail": "costumes/quest/spectral-seafarer/spectral-seafarer.png",
+      "thumbnail": "costumes/quest/spectral-seafarer/assistant-spectral-seafarer.png",
       "model": "costumes/quest/spectral-seafarer/model.glb",
       "page": "costumes/quest/spectral-seafarer/",
       "tags": []
@@ -251,7 +251,7 @@
       "name": "Burrito Buddy",
       "date": "September 1, 2023",
       "availability": "quest",
-      "thumbnail": "costumes/quest/burrito-buddy/burrito-buddy.png",
+      "thumbnail": "costumes/quest/burrito-buddy/assistant-burrito-buddy.png",
       "model": "costumes/quest/burrito-buddy/model.glb",
       "page": "costumes/quest/burrito-buddy/",
       "tags": []
@@ -261,7 +261,7 @@
       "name": "Robo Hammy",
       "date": "August 1, 2023",
       "availability": "quest",
-      "thumbnail": "costumes/quest/robo-hammy/robo-hammy.png",
+      "thumbnail": "costumes/quest/robo-hammy/assistant-robo-hammy.png",
       "model": "costumes/quest/robo-hammy/model.glb",
       "page": "costumes/quest/robo-hammy/",
       "tags": []
@@ -271,7 +271,7 @@
       "name": "Straw Barry",
       "date": "July 1, 2023",
       "availability": "quest",
-      "thumbnail": "costumes/quest/straw-barry/straw-barry.png",
+      "thumbnail": "costumes/quest/straw-barry/assistant-straw-barry.png",
       "model": "costumes/quest/straw-barry/model.glb",
       "page": "costumes/quest/straw-barry/",
       "tags": []
@@ -281,7 +281,7 @@
       "name": "Business Monkey",
       "date": "June 1, 2023",
       "availability": "quest",
-      "thumbnail": "costumes/quest/business-monkey/business-monkey.png",
+      "thumbnail": "costumes/quest/business-monkey/assistant-business-monkey.png",
       "model": "costumes/quest/business-monkey/model.glb",
       "page": "costumes/quest/business-monkey/",
       "tags": []
@@ -291,7 +291,7 @@
       "name": "Sandstorm",
       "date": "May 1, 2023",
       "availability": "quest",
-      "thumbnail": "costumes/quest/sandstorm/sandstorm.png",
+      "thumbnail": "costumes/quest/sandstorm/assistant-sandstorm.png",
       "model": "costumes/quest/sandstorm/model.glb",
       "page": "costumes/quest/sandstorm/",
       "tags": []
@@ -301,7 +301,7 @@
       "name": "Drowned",
       "date": "April 1, 2023",
       "availability": "quest",
-      "thumbnail": "costumes/quest/drowned/drowned.png",
+      "thumbnail": "costumes/quest/drowned/assistant-drowned.png",
       "model": "costumes/quest/drowned/model.glb",
       "page": "costumes/quest/drowned/",
       "tags": []
@@ -311,7 +311,7 @@
       "name": "Stinky",
       "date": "March 1, 2023",
       "availability": "quest",
-      "thumbnail": "costumes/quest/stinky/stinky.png",
+      "thumbnail": "costumes/quest/stinky/assistant-stinky.png",
       "model": "costumes/quest/stinky/model.glb",
       "page": "costumes/quest/stinky/",
       "tags": []
@@ -321,7 +321,7 @@
       "name": "Heart Hoodie",
       "date": "February 1, 2023",
       "availability": "quest",
-      "thumbnail": "costumes/quest/heart-hoodie/heart-hoodie.png",
+      "thumbnail": "costumes/quest/heart-hoodie/assistant-heart-hoodie.png",
       "model": "costumes/quest/heart-hoodie/model.glb",
       "page": "costumes/quest/heart-hoodie/",
       "tags": []
@@ -331,7 +331,7 @@
       "name": "Hot Cocoa",
       "date": "January 1, 2023",
       "availability": "quest",
-      "thumbnail": "costumes/quest/hot-cocoa/hot-cocoa.png",
+      "thumbnail": "costumes/quest/hot-cocoa/assistant-hot-cocoa.png",
       "model": "costumes/quest/hot-cocoa/model.glb",
       "page": "costumes/quest/hot-cocoa/",
       "tags": []
@@ -341,7 +341,7 @@
       "name": "Ugly Sweater Bee",
       "date": "December 1, 2022",
       "availability": "quest",
-      "thumbnail": "costumes/quest/ugly-sweater-bee/ugly-sweater-bee.png",
+      "thumbnail": "costumes/quest/ugly-sweater-bee/assistant-ugly-sweater-bee.png",
       "model": "costumes/quest/ugly-sweater-bee/model.glb",
       "page": "costumes/quest/ugly-sweater-bee/",
       "tags": []
@@ -351,7 +351,7 @@
       "name": "Gobbles",
       "date": "November 1, 2022",
       "availability": "quest",
-      "thumbnail": "costumes/quest/gobbles/gobbles.png",
+      "thumbnail": "costumes/quest/gobbles/assistant-gobbles.png",
       "model": "costumes/quest/gobbles/model.glb",
       "page": "costumes/quest/gobbles/",
       "tags": []
@@ -361,7 +361,7 @@
       "name": "Pumpkin Farmer",
       "date": "October 1, 2022",
       "availability": "quest",
-      "thumbnail": "costumes/quest/pumpkin-farmer/pumpkin-farmer.png",
+      "thumbnail": "costumes/quest/pumpkin-farmer/assistant-pumpkin-farmer.png",
       "model": "costumes/quest/pumpkin-farmer/model.glb",
       "page": "costumes/quest/pumpkin-farmer/",
       "tags": []
@@ -371,7 +371,7 @@
       "name": "Treasure Goblin",
       "date": "September 1, 2022",
       "availability": "quest",
-      "thumbnail": "costumes/quest/treasure-goblin/treasure-goblin.png",
+      "thumbnail": "costumes/quest/treasure-goblin/assistant-treasure-goblin.png",
       "model": "costumes/quest/treasure-goblin/model.glb",
       "page": "costumes/quest/treasure-goblin/",
       "tags": []
@@ -381,7 +381,7 @@
       "name": "The Warden",
       "date": "August 1, 2022",
       "availability": "quest",
-      "thumbnail": "costumes/quest/the-warden/the-warden.png",
+      "thumbnail": "costumes/quest/the-warden/assistant-the-warden.png",
       "model": "costumes/quest/the-warden/model.glb",
       "page": "costumes/quest/the-warden/",
       "tags": []
@@ -391,7 +391,7 @@
       "name": "Summer Skelly",
       "date": "July 1, 2022",
       "availability": "quest",
-      "thumbnail": "costumes/quest/summer-skelly/summer-skelly.png",
+      "thumbnail": "costumes/quest/summer-skelly/assistant-summer-skelly.png",
       "model": "costumes/quest/summer-skelly/model.glb",
       "page": "costumes/quest/summer-skelly/",
       "tags": []
@@ -401,7 +401,7 @@
       "name": "Toucan",
       "date": "June 1, 2022",
       "availability": "quest",
-      "thumbnail": "costumes/quest/toucan/toucan.png",
+      "thumbnail": "costumes/quest/toucan/assistant-toucan.png",
       "model": "costumes/quest/toucan/model.glb",
       "page": "costumes/quest/toucan/",
       "tags": []
@@ -411,7 +411,7 @@
       "name": "Moss Knight",
       "date": "May 1, 2022",
       "availability": "quest",
-      "thumbnail": "costumes/quest/moss-knight/moss-knight.png",
+      "thumbnail": "costumes/quest/moss-knight/assistant-moss-knight.png",
       "model": "costumes/quest/moss-knight/model.glb",
       "page": "costumes/quest/moss-knight/",
       "tags": []
@@ -421,7 +421,7 @@
       "name": "Moai",
       "date": "March 31, 2022",
       "availability": "quest",
-      "thumbnail": "costumes/quest/moai/moai.png",
+      "thumbnail": "costumes/quest/moai/assistant-moai.png",
       "model": "costumes/quest/moai/model.glb",
       "page": "costumes/quest/moai/",
       "tags": []
@@ -431,7 +431,7 @@
       "name": "Snailly",
       "date": "March 1, 2022",
       "availability": "quest",
-      "thumbnail": "costumes/quest/snailly/snailly.png",
+      "thumbnail": "costumes/quest/snailly/assistant-snailly.png",
       "model": "costumes/quest/snailly/model.glb",
       "page": "costumes/quest/snailly/",
       "tags": []
@@ -441,7 +441,7 @@
       "name": "Heart Teddy",
       "date": "February 1, 2022",
       "availability": "quest",
-      "thumbnail": "costumes/quest/heart-teddy/heart-teddy.png",
+      "thumbnail": "costumes/quest/heart-teddy/assistant-heart-teddy.png",
       "model": "costumes/quest/heart-teddy/model.glb",
       "page": "costumes/quest/heart-teddy/",
       "tags": []
@@ -451,7 +451,7 @@
       "name": "Soda Can",
       "date": "January 1, 2022",
       "availability": "quest",
-      "thumbnail": "costumes/quest/soda-can/soda-can.png",
+      "thumbnail": "costumes/quest/soda-can/assistant-soda-can.png",
       "model": "costumes/quest/soda-can/model.glb",
       "page": "costumes/quest/soda-can/",
       "tags": []
@@ -461,7 +461,7 @@
       "name": "Present Head",
       "date": "December 1, 2021",
       "availability": "quest",
-      "thumbnail": "costumes/quest/present-head/present-head.png",
+      "thumbnail": "costumes/quest/present-head/assistant-present-head.png",
       "model": "costumes/quest/present-head/model.glb",
       "page": "costumes/quest/present-head/",
       "tags": []
@@ -471,7 +471,7 @@
       "name": "Buff Doge",
       "date": "November 1, 2021",
       "availability": "quest",
-      "thumbnail": "costumes/quest/buff-doge/buff-doge.png",
+      "thumbnail": "costumes/quest/buff-doge/assistant-buff-doge.png",
       "model": "costumes/quest/buff-doge/model.glb",
       "page": "costumes/quest/buff-doge/",
       "tags": []
@@ -481,7 +481,7 @@
       "name": "Business Pumpkin",
       "date": "October 1, 2021",
       "availability": "quest",
-      "thumbnail": "costumes/quest/business-pumpkin/business-pumpkin.png",
+      "thumbnail": "costumes/quest/business-pumpkin/assistant-business-pumpkin.png",
       "model": "costumes/quest/business-pumpkin/model.glb",
       "page": "costumes/quest/business-pumpkin/",
       "tags": []
@@ -491,7 +491,7 @@
       "name": "Flompa",
       "date": "September 1, 2021",
       "availability": "quest",
-      "thumbnail": "costumes/quest/flompa/flompa.png",
+      "thumbnail": "costumes/quest/flompa/assistant-flompa.png",
       "model": "costumes/quest/flompa/model.glb",
       "page": "costumes/quest/flompa/",
       "tags": []
@@ -501,7 +501,7 @@
       "name": "Moobloom",
       "date": "August 2, 2021",
       "availability": "quest",
-      "thumbnail": "costumes/quest/moobloom/moobloom.png",
+      "thumbnail": "costumes/quest/moobloom/assistant-moobloom.png",
       "model": "costumes/quest/moobloom/model.glb",
       "page": "costumes/quest/moobloom/",
       "tags": []
@@ -511,7 +511,7 @@
       "name": "Mailbot",
       "date": "July 1, 2021",
       "availability": "quest",
-      "thumbnail": "costumes/quest/mailbot/mailbot.png",
+      "thumbnail": "costumes/quest/mailbot/assistant-mailbot.png",
       "model": "costumes/quest/mailbot/model.glb",
       "page": "costumes/quest/mailbot/",
       "tags": []
@@ -521,7 +521,7 @@
       "name": "Pizza Box",
       "date": "June 1, 2021",
       "availability": "quest",
-      "thumbnail": "costumes/quest/pizza-box/pizza-box.png",
+      "thumbnail": "costumes/quest/pizza-box/assistant-pizza-box.png",
       "model": "costumes/quest/pizza-box/model.glb",
       "page": "costumes/quest/pizza-box/",
       "tags": []
@@ -531,7 +531,7 @@
       "name": "Rocky",
       "date": "May 1, 2021",
       "availability": "quest",
-      "thumbnail": "costumes/quest/rocky/rocky.png",
+      "thumbnail": "costumes/quest/rocky/assistant-rocky.png",
       "model": "costumes/quest/rocky/model.glb",
       "page": "costumes/quest/rocky/",
       "tags": []
@@ -541,7 +541,7 @@
       "name": "Flippy",
       "date": "April 1, 2021",
       "availability": "quest",
-      "thumbnail": "costumes/quest/flippy/flippy.png",
+      "thumbnail": "costumes/quest/flippy/assistant-flippy.png",
       "model": "costumes/quest/flippy/model.glb",
       "page": "costumes/quest/flippy/",
       "tags": []
@@ -551,7 +551,7 @@
       "name": "Baguette",
       "date": "March 1, 2021",
       "availability": "quest",
-      "thumbnail": "costumes/quest/baguette/baguette.png",
+      "thumbnail": "costumes/quest/baguette/assistant-baguette.png",
       "model": "costumes/quest/baguette/model.glb",
       "page": "costumes/quest/baguette/",
       "tags": []
@@ -561,7 +561,7 @@
       "name": "Battle Beans",
       "date": "February 1, 2021",
       "availability": "quest",
-      "thumbnail": "costumes/quest/battle-beans/battle-beans.png",
+      "thumbnail": "costumes/quest/battle-beans/assistant-battle-beans.png",
       "model": "costumes/quest/battle-beans/model.glb",
       "page": "costumes/quest/battle-beans/",
       "tags": []
@@ -571,7 +571,7 @@
       "name": "Minotaur",
       "date": "January 1, 2021",
       "availability": "quest",
-      "thumbnail": "costumes/quest/minotaur/minotaur.png",
+      "thumbnail": "costumes/quest/minotaur/assistant-minotaur.png",
       "model": "costumes/quest/minotaur/model.glb",
       "page": "costumes/quest/minotaur/",
       "tags": []
@@ -581,7 +581,7 @@
       "name": "Whippy",
       "date": "December 1, 2020",
       "availability": "quest",
-      "thumbnail": "costumes/quest/whippy/whippy.png",
+      "thumbnail": "costumes/quest/whippy/assistant-whippy.png",
       "model": "costumes/quest/whippy/model.glb",
       "page": "costumes/quest/whippy/",
       "tags": []
@@ -591,7 +591,7 @@
       "name": "Ghoul Bandit",
       "date": "November 1, 2020",
       "availability": "quest",
-      "thumbnail": "costumes/quest/ghoul-bandit/ghoul-bandit.png",
+      "thumbnail": "costumes/quest/ghoul-bandit/assistant-ghoul-bandit.png",
       "model": "costumes/quest/ghoul-bandit/model.glb",
       "page": "costumes/quest/ghoul-bandit/",
       "tags": []
@@ -601,7 +601,7 @@
       "name": "Al The Alien",
       "date": "October 1, 2020",
       "availability": "quest",
-      "thumbnail": "costumes/quest/al-the-alien/al-the-alien.png",
+      "thumbnail": "costumes/quest/al-the-alien/assistant-al-the-alien.png",
       "model": "costumes/quest/al-the-alien/model.glb",
       "page": "costumes/quest/al-the-alien/",
       "tags": []
@@ -611,7 +611,7 @@
       "name": "Fish in a Suit",
       "date": "September 1, 2020",
       "availability": "quest",
-      "thumbnail": "costumes/quest/fish-in-a-suit/fish-in-a-suit.png",
+      "thumbnail": "costumes/quest/fish-in-a-suit/assistant-fish-in-a-suit.png",
       "model": "costumes/quest/fish-in-a-suit/model.glb",
       "page": "costumes/quest/fish-in-a-suit/",
       "tags": []
@@ -621,7 +621,7 @@
       "name": "Sentai",
       "date": "August 1, 2020",
       "availability": "quest",
-      "thumbnail": "costumes/quest/sentai/sentai.png",
+      "thumbnail": "costumes/quest/sentai/assistant-sentai.png",
       "model": "costumes/quest/sentai/model.glb",
       "page": "costumes/quest/sentai/",
       "tags": []
@@ -631,7 +631,7 @@
       "name": "Pinchy",
       "date": "July 1, 2020",
       "availability": "quest",
-      "thumbnail": "costumes/quest/pinchy/pinchy.png",
+      "thumbnail": "costumes/quest/pinchy/assistant-pinchy.png",
       "model": "costumes/quest/pinchy/model.glb",
       "page": "costumes/quest/pinchy/",
       "tags": []
@@ -641,7 +641,7 @@
       "name": "Hammy The Hamster",
       "date": "June 1, 2020",
       "availability": "quest",
-      "thumbnail": "costumes/quest/hammy-the-hamster/hammy-the-hamster.png",
+      "thumbnail": "costumes/quest/hammy-the-hamster/assistant-hammy-the-hamster.png",
       "model": "costumes/quest/hammy-the-hamster/model.glb",
       "page": "costumes/quest/hammy-the-hamster/",
       "tags": []
@@ -651,7 +651,7 @@
       "name": "Cheeky Monkey",
       "date": "May 1, 2020",
       "availability": "quest",
-      "thumbnail": "costumes/quest/cheeky-monkey/cheeky-monkey.png",
+      "thumbnail": "costumes/quest/cheeky-monkey/assistant-cheeky-monkey.png",
       "model": "costumes/quest/cheeky-monkey/model.glb",
       "page": "costumes/quest/cheeky-monkey/",
       "tags": []
@@ -661,7 +661,7 @@
       "name": "The Secretary",
       "date": "April 1, 2020",
       "availability": "quest",
-      "thumbnail": "costumes/quest/the-secretary/the-secretary.png",
+      "thumbnail": "costumes/quest/the-secretary/assistant-the-secretary.png",
       "model": "costumes/quest/the-secretary/model.glb",
       "page": "costumes/quest/the-secretary/",
       "tags": []
@@ -671,7 +671,7 @@
       "name": "Neon Tiger",
       "date": "March 1, 2020",
       "availability": "quest",
-      "thumbnail": "costumes/quest/neon-tiger/neon-tiger.png",
+      "thumbnail": "costumes/quest/neon-tiger/assistant-neon-tiger.png",
       "model": "costumes/quest/neon-tiger/model.glb",
       "page": "costumes/quest/neon-tiger/",
       "tags": []
@@ -681,7 +681,7 @@
       "name": "Toxic",
       "date": "February 1, 2020",
       "availability": "quest",
-      "thumbnail": "costumes/quest/toxic/toxic.png",
+      "thumbnail": "costumes/quest/toxic/assistant-toxic.png",
       "model": "costumes/quest/toxic/model.glb",
       "page": "costumes/quest/toxic/",
       "tags": []
@@ -691,7 +691,7 @@
       "name": "Winter Ferret",
       "date": "January 1, 2020",
       "availability": "quest",
-      "thumbnail": "costumes/quest/winter-ferret/winter-ferret.png",
+      "thumbnail": "costumes/quest/winter-ferret/assistant-winter-ferret.png",
       "model": "costumes/quest/winter-ferret/model.glb",
       "page": "costumes/quest/winter-ferret/",
       "tags": []
@@ -701,7 +701,7 @@
       "name": "Gingerbread Man",
       "date": "December 1, 2019",
       "availability": "quest",
-      "thumbnail": "costumes/quest/gingerbread-man/gingerbread-man.png",
+      "thumbnail": "costumes/quest/gingerbread-man/assistant-gingerbread-man.png",
       "model": "costumes/quest/gingerbread-man/model.glb",
       "page": "costumes/quest/gingerbread-man/",
       "tags": []
@@ -711,7 +711,7 @@
       "name": "Rubber Ducky",
       "date": "September 20, 2019",
       "availability": "quest",
-      "thumbnail": "costumes/quest/rubber-ducky/rubber-ducky.png",
+      "thumbnail": "costumes/quest/rubber-ducky/assistant-rubber-ducky.png",
       "model": "costumes/quest/rubber-ducky/model.glb",
       "page": "costumes/quest/rubber-ducky/",
       "tags": []

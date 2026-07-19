@@ -7,7 +7,7 @@
       "date": "June 11, 2023",
       "availability": "paid",
       "price": "310",
-      "thumbnail": "costumes/store/abyssal-angler/abyssal-angler.png",
+      "thumbnail": "costumes/store/abyssal-angler/assistant-abyssal-angler.png",
       "model": "costumes/store/abyssal-angler/model.glb",
       "page": "costumes/store/abyssal-angler/",
       "tags": []
@@ -17,8 +17,7 @@
       "name": "Alien",
       "date": "January 19, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/alien/alien.png",
+      "thumbnail": "costumes/store/alien/assistant-alien.png",
       "model": "costumes/store/alien/model.glb",
       "page": "costumes/store/alien/",
       "tags": []
@@ -28,183 +27,183 @@
       "name": "Archy",
       "date": "July 3, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/archy/archy.png",
+      "thumbnail": "costumes/store/archy/assistant-archy.png",
       "model": "costumes/store/archy/model.glb",
       "page": "costumes/store/archy/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "axolotl",
       "name": "Axolotl",
       "date": "April 3, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/axolotl/axolotl.png",
+      "thumbnail": "costumes/store/axolotl/assistant-axolotl.png",
       "model": "costumes/store/axolotl/model.glb",
       "page": "costumes/store/axolotl/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "bamboo-bandit",
       "name": "Bamboo Bandit",
       "date": "January 30, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/bamboo-bandit/bamboo-bandit.png",
+      "thumbnail": "costumes/store/bamboo-bandit/assistant-bamboo-bandit.png",
       "model": "costumes/store/bamboo-bandit/model.glb",
       "page": "costumes/store/bamboo-bandit/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "banana",
       "name": "Banana",
       "date": "April 7, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/banana/banana.png",
+      "thumbnail": "costumes/store/banana/assistant-banana.png",
       "model": "costumes/store/banana/model.glb",
       "page": "costumes/store/banana/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "bandit",
       "name": "Bandit",
       "date": "June 23, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/bandit/bandit.png",
+      "thumbnail": "costumes/store/bandit/assistant-bandit.png",
       "model": "costumes/store/bandit/model.glb",
       "page": "costumes/store/bandit/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "battle-biscuit",
       "name": "Battle Biscuit",
       "date": "December 12, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/battle-biscuit/battle-biscuit.png",
+      "thumbnail": "costumes/store/battle-biscuit/assistant-battle-biscuit.png",
       "model": "costumes/store/battle-biscuit/model.glb",
       "page": "costumes/store/battle-biscuit/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "battle-burger",
       "name": "Battle Burger",
       "date": "January 9, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/battle-burger/battle-burger.png",
+      "thumbnail": "costumes/store/battle-burger/assistant-battle-burger.png",
       "model": "costumes/store/battle-burger/model.glb",
       "page": "costumes/store/battle-burger/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "battle-cat",
       "name": "Battle Cat",
       "date": "September 15, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/battle-cat/battle-cat.png",
+      "thumbnail": "costumes/store/battle-cat/assistant-battle-cat.png",
       "model": "costumes/store/battle-cat/model.glb",
       "page": "costumes/store/battle-cat/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "battle-unicorn",
       "name": "Battle Unicorn",
       "date": "April 16, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/battle-unicorn/battle-unicorn.png",
+      "thumbnail": "costumes/store/battle-unicorn/assistant-battle-unicorn.png",
       "model": "costumes/store/battle-unicorn/model.glb",
       "page": "costumes/store/battle-unicorn/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "beach-monkey",
       "name": "Beach Monkey",
       "date": "July 30, 2023",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/beach-monkey/beach-monkey.png",
+      "thumbnail": "costumes/store/beach-monkey/assistant-beach-monkey.png",
       "model": "costumes/store/beach-monkey/model.glb",
       "page": "costumes/store/beach-monkey/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "bear",
       "name": "Bear",
       "date": "March 31, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/bear/bear.png",
+      "thumbnail": "costumes/store/bear/assistant-bear.png",
       "model": "costumes/store/bear/model.glb",
       "page": "costumes/store/bear/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "beepo",
       "name": "Beepo",
       "date": "March 15, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/beepo/beepo.png",
+      "thumbnail": "costumes/store/beepo/assistant-beepo.png",
       "model": "costumes/store/beepo/model.glb",
       "page": "costumes/store/beepo/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "billy",
       "name": "Billy",
       "date": "June 9, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/billy/billy.png",
+      "thumbnail": "costumes/store/billy/assistant-billy.png",
       "model": "costumes/store/billy/model.glb",
       "page": "costumes/store/billy/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "black-knight",
       "name": "Black Knight",
       "date": "February 3, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/black-knight/black-knight.png",
+      "thumbnail": "costumes/store/black-knight/assistant-black-knight.png",
       "model": "costumes/store/black-knight/model.glb",
       "page": "costumes/store/black-knight/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "blink",
       "name": "Blink",
       "date": "November 1, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/blink/blink.png",
+      "thumbnail": "costumes/store/blink/assistant-blink.png",
       "model": "costumes/store/blink/model.glb",
       "page": "costumes/store/blink/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "bunny-mage",
       "name": "Bunny Mage",
       "date": "July 24, 2022",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/bunny-mage/bunny-mage.png",
+      "thumbnail": "costumes/store/bunny-mage/assistant-bunny-mage.png",
       "model": "costumes/store/bunny-mage/model.glb",
       "page": "costumes/store/bunny-mage/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "burger",
       "name": "Burger Chef",
       "date": "January 27, 2019",
       "availability": "paid",
-      "thumbnail": "costumes/store/burger/burger.png",
+      "thumbnail": "costumes/store/burger/assistant-burger-chef.png",
       "model": "costumes/store/burger/model.glb",
       "page": "costumes/store/burger/",
       "tags": []
@@ -214,436 +213,436 @@
       "name": "Burger: Gold Edition",
       "date": "June 23, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/burger-gold-edition/burger-gold-edition.png",
+      "thumbnail": "costumes/store/burger-gold-edition/assistant-burger-gold-edition.png",
       "model": "costumes/store/burger-gold-edition/model.glb",
       "page": "costumes/store/burger-gold-edition/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "burple",
       "name": "Burple",
       "date": "October 27, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/burple/burple.png",
+      "thumbnail": "costumes/store/burple/assistant-burple.png",
       "model": "costumes/store/burple/model.glb",
       "page": "costumes/store/burple/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "cactus",
       "name": "Cactus",
       "date": "March 24, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/cactus/cactus.png",
+      "thumbnail": "costumes/store/cactus/assistant-cactus.png",
       "model": "costumes/store/cactus/model.glb",
       "page": "costumes/store/cactus/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "calico",
       "name": "Calico",
       "date": "February 26, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/calico/calico.png",
+      "thumbnail": "costumes/store/calico/assistant-calico.png",
       "model": "costumes/store/calico/model.glb",
       "page": "costumes/store/calico/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "camella",
       "name": "Camella",
       "date": "July 2, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/camella/camella.png",
+      "thumbnail": "costumes/store/camella/assistant-camella.png",
       "model": "costumes/store/camella/model.glb",
       "page": "costumes/store/camella/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "cammy",
       "name": "Cammy",
       "date": "May 15, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/cammy/cammy.png",
+      "thumbnail": "costumes/store/cammy/assistant-cammy.png",
       "model": "costumes/store/cammy/model.glb",
       "page": "costumes/store/cammy/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "captain-bones",
       "name": "Captain Bones",
       "date": "May 8, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/captain-bones/captain-bones.png",
+      "thumbnail": "costumes/store/captain-bones/assistant-captain-bones.png",
       "model": "costumes/store/captain-bones/model.glb",
       "page": "costumes/store/captain-bones/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "captain-fox",
       "name": "Captain Fox",
       "date": "June 30, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/captain-fox/captain-fox.png",
+      "thumbnail": "costumes/store/captain-fox/assistant-captain-fox.png",
       "model": "costumes/store/captain-fox/model.glb",
       "page": "costumes/store/captain-fox/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "captain-octopus",
       "name": "Captain Octopus",
       "date": "September 10, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/captain-octopus/captain-octopus.png",
+      "thumbnail": "costumes/store/captain-octopus/assistant-captain-octopus.png",
       "model": "costumes/store/captain-octopus/model.glb",
       "page": "costumes/store/captain-octopus/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "carrot",
       "name": "Carrot",
       "date": "April 21, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/carrot/carrot.png",
+      "thumbnail": "costumes/store/carrot/assistant-carrot.png",
       "model": "costumes/store/carrot/model.glb",
       "page": "costumes/store/carrot/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "catbot",
       "name": "CatBot",
       "date": "August 28, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/catbot/catbot.png",
+      "thumbnail": "costumes/store/catbot/assistant-catbot.png",
       "model": "costumes/store/catbot/model.glb",
       "page": "costumes/store/catbot/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "catbox",
       "name": "CatBox",
       "date": "January 22, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/catbox/catbox.png",
+      "thumbnail": "costumes/store/catbox/assistant-catbox.png",
       "model": "costumes/store/catbox/model.glb",
       "page": "costumes/store/catbox/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "chicken",
       "name": "Chicken",
       "date": "April 14, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/chicken/chicken.png",
+      "thumbnail": "costumes/store/chicken/assistant-chicken.png",
       "model": "costumes/store/chicken/model.glb",
       "page": "costumes/store/chicken/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "chillager",
       "name": "Chillager",
       "date": "December 26, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/chillager/chillager.png",
+      "thumbnail": "costumes/store/chillager/assistant-chillager.png",
       "model": "costumes/store/chillager/model.glb",
       "page": "costumes/store/chillager/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "chocolate",
       "name": "Chocolate",
       "date": "April 21, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/chocolate/chocolate.png",
+      "thumbnail": "costumes/store/chocolate/assistant-chocolate.png",
       "model": "costumes/store/chocolate/model.glb",
       "page": "costumes/store/chocolate/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "christmas-creeper",
       "name": "Christmas Creeper",
       "date": "December 22, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/christmas-creeper/christmas-creeper.png",
+      "thumbnail": "costumes/store/christmas-creeper/assistant-christmas-creeper.png",
       "model": "costumes/store/christmas-creeper/model.glb",
       "page": "costumes/store/christmas-creeper/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "circuit",
       "name": "Circuit",
       "date": "August 16, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/circuit/circuit.png",
+      "thumbnail": "costumes/store/circuit/assistant-circuit.png",
       "model": "costumes/store/circuit/model.glb",
       "page": "costumes/store/circuit/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "cloak",
       "name": "Cloak",
       "date": "May 3, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/cloak/cloak.png",
+      "thumbnail": "costumes/store/cloak/assistant-cloak.png",
       "model": "costumes/store/cloak/model.glb",
       "page": "costumes/store/cloak/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "clown",
       "name": "Clown",
       "date": "March 3, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/clown/clown.png",
+      "thumbnail": "costumes/store/clown/assistant-clown.png",
       "model": "costumes/store/clown/model.glb",
       "page": "costumes/store/clown/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "cool-cream",
       "name": "Cool Cream",
       "date": "August 13, 2023",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/cool-cream/cool-cream.png",
+      "thumbnail": "costumes/store/cool-cream/assistant-cool-cream.png",
       "model": "costumes/store/cool-cream/model.glb",
       "page": "costumes/store/cool-cream/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "cool-goose",
       "name": "Cool Goose",
       "date": "June 4, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/cool-goose/cool-goose.png",
+      "thumbnail": "costumes/store/cool-goose/assistant-cool-goose.png",
       "model": "costumes/store/cool-goose/model.glb",
       "page": "costumes/store/cool-goose/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "coolconut",
       "name": "Coolconut",
       "date": "June 19, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/coolconut/coolconut.png",
+      "thumbnail": "costumes/store/coolconut/assistant-coolconut.png",
       "model": "costumes/store/coolconut/model.glb",
       "page": "costumes/store/coolconut/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "coral-queen",
       "name": "Coral Queen",
       "date": "November 21, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/coral-queen/coral-queen.png",
+      "thumbnail": "costumes/store/coral-queen/assistant-coral-queen.png",
       "model": "costumes/store/coral-queen/model.glb",
       "page": "costumes/store/coral-queen/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "corn",
       "name": "Corn",
       "date": "August 16, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/corn/corn.png",
+      "thumbnail": "costumes/store/corn/assistant-corn.png",
       "model": "costumes/store/corn/model.glb",
       "page": "costumes/store/corn/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "cosmic-knight",
       "name": "Cosmic Knight",
       "date": "August 11, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/cosmic-knight/cosmic-knight.png",
+      "thumbnail": "costumes/store/cosmic-knight/assistant-cosmic-knight.png",
       "model": "costumes/store/cosmic-knight/model.glb",
       "page": "costumes/store/cosmic-knight/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "croc",
       "name": "Croc",
       "date": "November 24, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/croc/croc.png",
+      "thumbnail": "costumes/store/croc/assistant-croc.png",
       "model": "costumes/store/croc/model.glb",
       "page": "costumes/store/croc/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "cuddles",
       "name": "Cuddles",
       "date": "November 6, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/cuddles/cuddles.png",
+      "thumbnail": "costumes/store/cuddles/assistant-cuddles.png",
       "model": "costumes/store/cuddles/model.glb",
       "page": "costumes/store/cuddles/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "cupcake",
       "name": "Cupcake",
       "date": "June 30, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/cupcake/cupcake.png",
+      "thumbnail": "costumes/store/cupcake/assistant-cupcake.png",
       "model": "costumes/store/cupcake/model.glb",
       "page": "costumes/store/cupcake/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "cupid-squad-leader",
       "name": "Cupid Squad Leader",
       "date": "February 10, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/cupid-squad-leader/cupid-squad-leader.png",
+      "thumbnail": "costumes/store/cupid-squad-leader/assistant-cupid-squad-leader.png",
       "model": "costumes/store/cupid-squad-leader/model.glb",
       "page": "costumes/store/cupid-squad-leader/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "cursed-oak",
       "name": "Cursed Oak",
       "date": "October 10, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/cursed-oak/cursed-oak.png",
+      "thumbnail": "costumes/store/cursed-oak/assistant-cursed-oak.png",
       "model": "costumes/store/cursed-oak/model.glb",
       "page": "costumes/store/cursed-oak/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "dark-elf",
       "name": "Dark Elf",
       "date": "February 13, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/dark-elf/dark-elf.png",
+      "thumbnail": "costumes/store/dark-elf/assistant-dark-elf.png",
       "model": "costumes/store/dark-elf/model.glb",
       "page": "costumes/store/dark-elf/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "dark-wraith",
       "name": "Dark Wraith",
       "date": "October 2, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/dark-wraith/dark-wraith.png",
+      "thumbnail": "costumes/store/dark-wraith/assistant-dark-wraith.png",
       "model": "costumes/store/dark-wraith/model.glb",
       "page": "costumes/store/dark-wraith/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "deer",
       "name": "Deer",
       "date": "March 22, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/deer/deer.png",
+      "thumbnail": "costumes/store/deer/assistant-deer.png",
       "model": "costumes/store/deer/model.glb",
       "page": "costumes/store/deer/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "detective-platypus",
       "name": "Detective Platypus",
       "date": "February 17, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/detective-platypus/detective-platypus.png",
+      "thumbnail": "costumes/store/detective-platypus/assistant-detective-platypus.png",
       "model": "costumes/store/detective-platypus/model.glb",
       "page": "costumes/store/detective-platypus/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "detective-sloth",
       "name": "Detective Sloth",
       "date": "February 17, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/detective-sloth/detective-sloth.png",
+      "thumbnail": "costumes/store/detective-sloth/assistant-detective-sloth.png",
       "model": "costumes/store/detective-sloth/model.glb",
       "page": "costumes/store/detective-sloth/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "dino",
       "name": "Dino",
       "date": "February 3, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/dino/dino.png",
+      "thumbnail": "costumes/store/dino/assistant-dino.png",
       "model": "costumes/store/dino/model.glb",
       "page": "costumes/store/dino/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "dinoroar",
       "name": "Dinoroar",
       "date": "June 9, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/dinoroar/dinoroar.png",
+      "thumbnail": "costumes/store/dinoroar/assistant-dinoroar.png",
       "model": "costumes/store/dinoroar/model.glb",
       "page": "costumes/store/dinoroar/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "doge",
       "name": "Doge",
       "date": "July 14, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/doge/doge.png",
+      "thumbnail": "costumes/store/doge/assistant-doge.png",
       "model": "costumes/store/doge/model.glb",
       "page": "costumes/store/doge/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "dolphin",
       "name": "Dolphin",
       "date": "March 24, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/dolphin/dolphin.png",
+      "thumbnail": "costumes/store/dolphin/assistant-dolphin.png",
       "model": "costumes/store/dolphin/model.glb",
       "page": "costumes/store/dolphin/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "donut",
       "name": "Donut",
       "date": "January 19, 2019",
       "availability": "paid",
-      "thumbnail": "costumes/store/donut/donut.png",
+      "thumbnail": "costumes/store/donut/assistant-donut.png",
       "model": "costumes/store/donut/model.glb",
       "page": "costumes/store/donut/",
       "tags": []
@@ -653,172 +652,172 @@
       "name": "Doomsday",
       "date": "June 1, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/doomsday/doomsday.png",
+      "thumbnail": "costumes/store/doomsday/assistant-doomsday.png",
       "model": "costumes/store/doomsday/model.glb",
       "page": "costumes/store/doomsday/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "dragon",
       "name": "Dragon",
       "date": "March 10, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/dragon/dragon.png",
+      "thumbnail": "costumes/store/dragon/assistant-dragon.png",
       "model": "costumes/store/dragon/model.glb",
       "page": "costumes/store/dragon/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "dread",
       "name": "Dread",
       "date": "October 25, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/dread/dread.png",
+      "thumbnail": "costumes/store/dread/assistant-dread.png",
       "model": "costumes/store/dread/model.glb",
       "page": "costumes/store/dread/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "ducky",
       "name": "Ducky",
       "date": "March 3, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/ducky/ducky.png",
+      "thumbnail": "costumes/store/ducky/assistant-ducky.png",
       "model": "costumes/store/ducky/model.glb",
       "page": "costumes/store/ducky/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "elephant",
       "name": "Elephant",
       "date": "March 29, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/elephant/elephant.png",
+      "thumbnail": "costumes/store/elephant/assistant-elephant.png",
       "model": "costumes/store/elephant/model.glb",
       "page": "costumes/store/elephant/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "end-assassin",
       "name": "End Assassin",
       "date": "May 12, 2024",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/end-assassin/end-assassin.png",
+      "thumbnail": "costumes/store/end-assassin/assistant-end-assassin.png",
       "model": "costumes/store/end-assassin/model.glb",
       "page": "costumes/store/end-assassin/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "end-crystal",
       "name": "End Crystal",
       "date": "August 27, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/end-crystal/end-crystal.png",
+      "thumbnail": "costumes/store/end-crystal/assistant-end-crystal.png",
       "model": "costumes/store/end-crystal/model.glb",
       "page": "costumes/store/end-crystal/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "enderfox",
       "name": "Enderfox",
       "date": "December 1, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/enderfox/enderfox.png",
+      "thumbnail": "costumes/store/enderfox/assistant-enderfox.png",
       "model": "costumes/store/enderfox/model.glb",
       "page": "costumes/store/enderfox/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "endersaur",
       "name": "Endersaur",
       "date": "January 19, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/endersaur/endersaur.png",
+      "thumbnail": "costumes/store/endersaur/assistant-endersaur.png",
       "model": "costumes/store/endersaur/model.glb",
       "page": "costumes/store/endersaur/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "endolotl",
       "name": "Endolotl",
       "date": "November 7, 2021",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/endolotl/endolotl.png",
+      "thumbnail": "costumes/store/endolotl/assistant-endolotl.png",
       "model": "costumes/store/endolotl/model.glb",
       "page": "costumes/store/endolotl/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "fineapple",
       "name": "Fineapple",
       "date": "July 26, 2020",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/fineapple/fineapple.png",
+      "thumbnail": "costumes/store/fineapple/assistant-fineapple.png",
       "model": "costumes/store/fineapple/model.glb",
       "page": "costumes/store/fineapple/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "fire-dragon",
       "name": "Fire Dragon",
       "date": "July 14, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/fire-dragon/fire-dragon.png",
+      "thumbnail": "costumes/store/fire-dragon/assistant-fire-dragon.png",
       "model": "costumes/store/fire-dragon/model.glb",
       "page": "costumes/store/fire-dragon/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "fire-queen",
       "name": "Fire Queen",
       "date": "March 20, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/fire-queen/fire-queen.png",
+      "thumbnail": "costumes/store/fire-queen/assistant-fire-queen.png",
       "model": "costumes/store/fire-queen/model.glb",
       "page": "costumes/store/fire-queen/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "flame",
       "name": "Flame",
       "date": "February 2, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/flame/flame.png",
+      "thumbnail": "costumes/store/flame/assistant-flame.png",
       "model": "costumes/store/flame/model.glb",
       "page": "costumes/store/flame/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "flowerlotl",
       "name": "Flowerlotl",
       "date": "July 31, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/flowerlotl/flowerlotl.png",
+      "thumbnail": "costumes/store/flowerlotl/assistant-flowerlotl.png",
       "model": "costumes/store/flowerlotl/model.glb",
       "page": "costumes/store/flowerlotl/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "fox",
       "name": "Fox",
       "date": "January 19, 2019",
       "availability": "paid",
-      "thumbnail": "costumes/store/fox/fox.png",
+      "thumbnail": "costumes/store/fox/assistant-fox.png",
       "model": "costumes/store/fox/model.glb",
       "page": "costumes/store/fox/",
       "tags": []
@@ -828,712 +827,711 @@
       "name": "Friender Dragon",
       "date": "April 17, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/friender-dragon/friender-dragon.png",
+      "thumbnail": "costumes/store/friender-dragon/assistant-friender-dragon.png",
       "model": "costumes/store/friender-dragon/model.glb",
       "page": "costumes/store/friender-dragon/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "friendly-dragon",
       "name": "Friendly Dragon",
       "date": "February 21, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/friendly-dragon/friendly-dragon.png",
+      "thumbnail": "costumes/store/friendly-dragon/assistant-friendly-dragon.png",
       "model": "costumes/store/friendly-dragon/model.glb",
       "page": "costumes/store/friendly-dragon/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "froag",
       "name": "Froag",
       "date": "February 25, 2024",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/froag/froag.png",
+      "thumbnail": "costumes/store/froag/assistant-froag.png",
       "model": "costumes/store/froag/model.glb",
       "page": "costumes/store/froag/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "frost-banana",
       "name": "Frost Banana",
       "date": "January 23, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/frost-banana/frost-banana.png",
+      "thumbnail": "costumes/store/frost-banana/assistant-frost-banana.png",
       "model": "costumes/store/frost-banana/model.glb",
       "page": "costumes/store/frost-banana/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "frost-bee",
       "name": "Frost Bee",
       "date": "December 5, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/frost-bee/frost-bee.png",
+      "thumbnail": "costumes/store/frost-bee/assistant-frost-bee.png",
       "model": "costumes/store/frost-bee/model.glb",
       "page": "costumes/store/frost-bee/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "frost-kitsune",
       "name": "Frost Kitsune",
       "date": "November 20, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/frost-kitsune/frost-kitsune.png",
+      "thumbnail": "costumes/store/frost-kitsune/assistant-frost-kitsune.png",
       "model": "costumes/store/frost-kitsune/model.glb",
       "page": "costumes/store/frost-kitsune/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "frost-moose",
       "name": "Frost Moose",
       "date": "December 12, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/frost-moose/frost-moose.png",
+      "thumbnail": "costumes/store/frost-moose/assistant-frost-moose.png",
       "model": "costumes/store/frost-moose/model.glb",
       "page": "costumes/store/frost-moose/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "galaxy",
       "name": "Galaxy",
       "date": "May 3, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/galaxy/galaxy.png",
+      "thumbnail": "costumes/store/galaxy/assistant-galaxy.png",
       "model": "costumes/store/galaxy/model.glb",
       "page": "costumes/store/galaxy/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "gargoyle",
       "name": "Gargoyle",
       "date": "October 28, 2023",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/gargoyle/gargoyle.png",
+      "thumbnail": "costumes/store/gargoyle/assistant-gargoyle.png",
       "model": "costumes/store/gargoyle/model.glb",
       "page": "costumes/store/gargoyle/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "genie",
       "name": "Genie",
       "date": "March 10, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/genie/genie.png",
+      "thumbnail": "costumes/store/genie/assistant-genie.png",
       "model": "costumes/store/genie/model.glb",
       "page": "costumes/store/genie/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "ghosty",
       "name": "Ghosty",
       "date": "October 20, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/ghosty/ghosty.png",
+      "thumbnail": "costumes/store/ghosty/assistant-ghosty.png",
       "model": "costumes/store/ghosty/model.glb",
       "page": "costumes/store/ghosty/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "ginger",
       "name": "Ginger",
       "date": "May 25, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/ginger/ginger.png",
+      "thumbnail": "costumes/store/ginger/assistant-ginger.png",
       "model": "costumes/store/ginger/model.glb",
       "page": "costumes/store/ginger/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "ginger-cat",
       "name": "Ginger Cat",
       "date": "September 15, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/ginger-cat/ginger-cat.png",
+      "thumbnail": "costumes/store/ginger-cat/assistant-ginger-cat.png",
       "model": "costumes/store/ginger-cat/model.glb",
       "page": "costumes/store/ginger-cat/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "giraffe",
       "name": "Giraffe",
       "date": "March 24, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/giraffe/giraffe.png",
+      "thumbnail": "costumes/store/giraffe/assistant-giraffe.png",
       "model": "costumes/store/giraffe/model.glb",
       "page": "costumes/store/giraffe/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "globey",
       "name": "Globey",
       "date": "April 24, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/globey/globey.png",
+      "thumbnail": "costumes/store/globey/assistant-globey.png",
       "model": "costumes/store/globey/model.glb",
       "page": "costumes/store/globey/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "gloomy",
       "name": "Gloomy",
       "date": "March 6, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/gloomy/gloomy.png",
+      "thumbnail": "costumes/store/gloomy/assistant-gloomy.png",
       "model": "costumes/store/gloomy/model.glb",
       "page": "costumes/store/gloomy/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "glowbot",
       "name": "Glowbot",
       "date": "July 7, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/glowbot/glowbot.png",
+      "thumbnail": "costumes/store/glowbot/assistant-glowbot.png",
       "model": "costumes/store/glowbot/model.glb",
       "page": "costumes/store/glowbot/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "gnome",
       "name": "Gnome",
       "date": "February 3, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/gnome/gnome.png",
+      "thumbnail": "costumes/store/gnome/assistant-gnome.png",
       "model": "costumes/store/gnome/model.glb",
       "page": "costumes/store/gnome/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "goddess-of-night",
       "name": "Goddess of Night",
       "date": "June 16, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/goddess-of-night/goddess-of-night.png",
+      "thumbnail": "costumes/store/goddess-of-night/assistant-goddess-of-night.png",
       "model": "costumes/store/goddess-of-night/model.glb",
       "page": "costumes/store/goddess-of-night/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "golden-dragon",
       "name": "Golden Dragon",
       "date": "May 21, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/golden-dragon/golden-dragon.png",
+      "thumbnail": "costumes/store/golden-dragon/assistant-golden-dragon.png",
       "model": "costumes/store/golden-dragon/model.glb",
       "page": "costumes/store/golden-dragon/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "golden-skull",
       "name": "Golden Skull",
       "date": "March 15, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/golden-skull/golden-skull.png",
+      "thumbnail": "costumes/store/golden-skull/assistant-golden-skull.png",
       "model": "costumes/store/golden-skull/model.glb",
       "page": "costumes/store/golden-skull/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "goldfish",
       "name": "Goldfish",
       "date": "March 31, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/goldfish/goldfish.png",
+      "thumbnail": "costumes/store/goldfish/assistant-goldfish.png",
       "model": "costumes/store/goldfish/model.glb",
       "page": "costumes/store/goldfish/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "gremlin",
       "name": "Gremlin",
       "date": "December 22, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/gremlin/gremlin.png",
+      "thumbnail": "costumes/store/gremlin/assistant-gremlin.png",
       "model": "costumes/store/gremlin/model.glb",
       "page": "costumes/store/gremlin/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "grim-creeper",
       "name": "Grim Creeper",
       "date": "October 15, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/grim-creeper/grim-creeper.png",
+      "thumbnail": "costumes/store/grim-creeper/assistant-grim-creeper.png",
       "model": "costumes/store/grim-creeper/model.glb",
       "page": "costumes/store/grim-creeper/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "guardian-warrior",
       "name": "Guardian Warrior",
       "date": "May 1, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/guardian-warrior/guardian-warrior.png",
+      "thumbnail": "costumes/store/guardian-warrior/assistant-guardian-warrior.png",
       "model": "costumes/store/guardian-warrior/model.glb",
       "page": "costumes/store/guardian-warrior/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "hazmat",
       "name": "HAZMAT",
       "date": "May 25, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/hazmat/hazmat.png",
+      "thumbnail": "costumes/store/hazmat/assistant-hazmat.png",
       "model": "costumes/store/hazmat/model.glb",
       "page": "costumes/store/hazmat/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "hongo",
       "name": "Hongo",
       "date": "September 24, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/hongo/hongo.png",
+      "thumbnail": "costumes/store/hongo/assistant-hongo.png",
       "model": "costumes/store/hongo/model.glb",
       "page": "costumes/store/hongo/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "honk",
       "name": "HONK",
       "date": "October 13, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/honk/honk.png",
+      "thumbnail": "costumes/store/honk/assistant-honk.png",
       "model": "costumes/store/honk/model.glb",
       "page": "costumes/store/honk/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "hoodie-duck",
       "name": "Hoodie Duck",
       "date": "February 16, 2020",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/hoodie-duck/hoodie-duck.png",
+      "thumbnail": "costumes/store/hoodie-duck/assistant-hoodie-duck.png",
       "model": "costumes/store/hoodie-duck/model.glb",
       "page": "costumes/store/hoodie-duck/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "hoodie-pig",
       "name": "Hoodie Pig",
       "date": "February 2, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/hoodie-pig/hoodie-pig.png",
+      "thumbnail": "costumes/store/hoodie-pig/assistant-hoodie-pig.png",
       "model": "costumes/store/hoodie-pig/model.glb",
       "page": "costumes/store/hoodie-pig/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "hoodie-pug",
       "name": "Hoodie Pug",
       "date": "March 19, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/hoodie-pug/hoodie-pug.png",
+      "thumbnail": "costumes/store/hoodie-pug/assistant-hoodie-pug.png",
       "model": "costumes/store/hoodie-pug/model.glb",
       "page": "costumes/store/hoodie-pug/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "hoodie-wolf",
       "name": "Hoodie Wolf",
       "date": "November 13, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/hoodie-wolf/hoodie-wolf.png",
+      "thumbnail": "costumes/store/hoodie-wolf/assistant-hoodie-wolf.png",
       "model": "costumes/store/hoodie-wolf/model.glb",
       "page": "costumes/store/hoodie-wolf/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "hoppy",
       "name": "Hoppy",
       "date": "April 21, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/hoppy/hoppy.png",
+      "thumbnail": "costumes/store/hoppy/assistant-hoppy.png",
       "model": "costumes/store/hoppy/model.glb",
       "page": "costumes/store/hoppy/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "hotdog",
       "name": "Hotdog",
       "date": "March 29, 2020",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/hotdog/hotdog.png",
+      "thumbnail": "costumes/store/hotdog/assistant-hotdog.png",
       "model": "costumes/store/hotdog/model.glb",
       "page": "costumes/store/hotdog/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "ice-dragon",
       "name": "Ice Dragon",
       "date": "September 22, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/ice-dragon/ice-dragon.png",
+      "thumbnail": "costumes/store/ice-dragon/assistant-ice-dragon.png",
       "model": "costumes/store/ice-dragon/model.glb",
       "page": "costumes/store/ice-dragon/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "ice-king",
       "name": "Ice King",
       "date": "September 1, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/ice-king/ice-king.png",
+      "thumbnail": "costumes/store/ice-king/assistant-ice-king.png",
       "model": "costumes/store/ice-king/model.glb",
       "page": "costumes/store/ice-king/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "ice-mammoth",
       "name": "Ice Mammoth",
       "date": "January 2, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/ice-mammoth/ice-mammoth.png",
+      "thumbnail": "costumes/store/ice-mammoth/assistant-ice-mammoth.png",
       "model": "costumes/store/ice-mammoth/model.glb",
       "page": "costumes/store/ice-mammoth/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "ice-queen",
       "name": "Ice Queen",
       "date": "December 20, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/ice-queen/ice-queen.png",
+      "thumbnail": "costumes/store/ice-queen/assistant-ice-queen.png",
       "model": "costumes/store/ice-queen/model.glb",
       "page": "costumes/store/ice-queen/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "ice-summoner",
       "name": "Ice Summoner",
       "date": "April 23, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/ice-summoner/ice-summoner.png",
+      "thumbnail": "costumes/store/ice-summoner/assistant-ice-summoner.png",
       "model": "costumes/store/ice-summoner/model.glb",
       "page": "costumes/store/ice-summoner/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "icebloom",
       "name": "Icebloom",
       "date": "December 20, 2020",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/icebloom/icebloom.png",
+      "thumbnail": "costumes/store/icebloom/assistant-icebloom.png",
       "model": "costumes/store/icebloom/model.glb",
       "page": "costumes/store/icebloom/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "icecap-shroomy",
       "name": "Icecap Shroomy",
       "date": "December 4, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/icecap-shroomy/icecap-shroomy.png",
+      "thumbnail": "costumes/store/icecap-shroomy/assistant-icecap-shroomy.png",
       "model": "costumes/store/icecap-shroomy/model.glb",
       "page": "costumes/store/icecap-shroomy/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "icedeer",
       "name": "Icedeer",
       "date": "December 29, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/icedeer/icedeer.png",
+      "thumbnail": "costumes/store/icedeer/assistant-icedeer.png",
       "model": "costumes/store/icedeer/model.glb",
       "page": "costumes/store/icedeer/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "iceolotl",
       "name": "Iceolotl",
       "date": "December 5, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/iceolotl/iceolotl.png",
+      "thumbnail": "costumes/store/iceolotl/assistant-iceolotl.png",
       "model": "costumes/store/iceolotl/model.glb",
       "page": "costumes/store/iceolotl/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "inferno",
       "name": "Inferno",
       "date": "August 18, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/inferno/inferno.png",
+      "thumbnail": "costumes/store/inferno/assistant-inferno.png",
       "model": "costumes/store/inferno/model.glb",
       "page": "costumes/store/inferno/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "inky",
       "name": "Inky",
       "date": "May 5, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/inky/inky.png",
+      "thumbnail": "costumes/store/inky/assistant-inky.png",
       "model": "costumes/store/inky/model.glb",
       "page": "costumes/store/inky/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "jade-queen",
       "name": "Jade Queen",
       "date": "November 26, 2023",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/jade-queen/jade-queen.png",
+      "thumbnail": "costumes/store/jade-queen/assistant-jade-queen.png",
       "model": "costumes/store/jade-queen/model.glb",
       "page": "costumes/store/jade-queen/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "jellyfish",
       "name": "JellyFish",
       "date": "August 6, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/jellyfish/jellyfish.png",
+      "thumbnail": "costumes/store/jellyfish/assistant-jellyfish.png",
       "model": "costumes/store/jellyfish/model.glb",
       "page": "costumes/store/jellyfish/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "juicy",
       "name": "Juicy",
       "date": "January 19, 2020",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/juicy/juicy.png",
+      "thumbnail": "costumes/store/juicy/assistant-juicy.png",
       "model": "costumes/store/juicy/model.glb",
       "page": "costumes/store/juicy/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "kitsune",
       "name": "Kitsune",
       "date": "July 17, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/kitsune/kitsune.png",
+      "thumbnail": "costumes/store/kitsune/assistant-kitsune.png",
       "model": "costumes/store/kitsune/model.glb",
       "page": "costumes/store/kitsune/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "koala",
       "name": "Koala",
       "date": "July 21, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/koala/koala.png",
+      "thumbnail": "costumes/store/koala/assistant-koala.png",
       "model": "costumes/store/koala/model.glb",
       "page": "costumes/store/koala/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "koala-knight",
       "name": "Koala Knight",
       "date": "March 5, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/koala-knight/koala-knight.png",
+      "thumbnail": "costumes/store/koala-knight/assistant-koala-knight.png",
       "model": "costumes/store/koala-knight/model.glb",
       "page": "costumes/store/koala-knight/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "koffee",
       "name": "Koffee",
       "date": "January 16, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/koffee/koffee.png",
+      "thumbnail": "costumes/store/koffee/assistant-koffee.png",
       "model": "costumes/store/koffee/model.glb",
       "page": "costumes/store/koffee/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "laser-shark",
       "name": "Laser Shark",
       "date": "April 28, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/laser-shark/laser-shark.png",
+      "thumbnail": "costumes/store/laser-shark/assistant-laser-shark.png",
       "model": "costumes/store/laser-shark/model.glb",
       "page": "costumes/store/laser-shark/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "lava-golem",
       "name": "Lava Golem",
       "date": "July 26, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/lava-golem/lava-golem.png",
+      "thumbnail": "costumes/store/lava-golem/assistant-lava-golem.png",
       "model": "costumes/store/lava-golem/model.glb",
       "page": "costumes/store/lava-golem/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "leaf",
       "name": "Leaf",
       "date": "May 24, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/leaf/leaf.png",
+      "thumbnail": "costumes/store/leaf/assistant-leaf.png",
       "model": "costumes/store/leaf/model.glb",
       "page": "costumes/store/leaf/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "leopard",
       "name": "Leopard",
       "date": "November 17, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/leopard/leopard.png",
+      "thumbnail": "costumes/store/leopard/assistant-leopard.png",
       "model": "costumes/store/leopard/model.glb",
       "page": "costumes/store/leopard/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "leprechaun",
       "name": "Leprechaun",
       "date": "March 17, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/leprechaun/leprechaun.png",
+      "thumbnail": "costumes/store/leprechaun/assistant-leprechaun.png",
       "model": "costumes/store/leprechaun/model.glb",
       "page": "costumes/store/leprechaun/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "lion",
       "name": "Lion",
       "date": "March 17, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/lion/lion.png",
+      "thumbnail": "costumes/store/lion/assistant-lion.png",
       "model": "costumes/store/lion/model.glb",
       "page": "costumes/store/lion/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "llama",
       "name": "Llama",
       "date": "March 31, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/llama/llama.png",
+      "thumbnail": "costumes/store/llama/assistant-llama.png",
       "model": "costumes/store/llama/model.glb",
       "page": "costumes/store/llama/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "lunar-red-panda",
       "name": "Lunar Red Panda",
       "date": "January 29, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/lunar-red-panda/lunar-red-panda.png",
+      "thumbnail": "costumes/store/lunar-red-panda/assistant-lunar-red-panda.png",
       "model": "costumes/store/lunar-red-panda/model.glb",
       "page": "costumes/store/lunar-red-panda/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "mage",
       "name": "Mage",
       "date": "January 24, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/mage/mage.png",
+      "thumbnail": "costumes/store/mage/assistant-mage.png",
       "model": "costumes/store/mage/model.glb",
       "page": "costumes/store/mage/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "mageolotl",
       "name": "Mageolotl",
       "date": "November 12, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/mageolotl/mageolotl.png",
+      "thumbnail": "costumes/store/mageolotl/assistant-mageolotl.png",
       "model": "costumes/store/mageolotl/model.glb",
       "page": "costumes/store/mageolotl/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "magma-dragon",
       "name": "Magma Dragon",
       "date": "August 21, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/magma-dragon/magma-dragon.png",
+      "thumbnail": "costumes/store/magma-dragon/assistant-magma-dragon.png",
       "model": "costumes/store/magma-dragon/model.glb",
       "page": "costumes/store/magma-dragon/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "medusa",
       "name": "Medusa",
       "date": "November 1, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/medusa/medusa.png",
+      "thumbnail": "costumes/store/medusa/assistant-medusa.png",
       "model": "costumes/store/medusa/model.glb",
       "page": "costumes/store/medusa/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "meerkat-ranger",
       "name": "Meerket Ranger",
       "date": "April 21, 2024",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/meerkat-ranger/meerkat-ranger.png",
+      "thumbnail": "costumes/store/meerkat-ranger/assistant-meerket-ranger.png",
       "model": "costumes/store/meerkat-ranger/model.glb",
       "page": "costumes/store/meerkat-ranger/",
       "tags": []
@@ -1543,392 +1541,392 @@
       "name": "Miner Pig",
       "date": "April 10, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/miner-pig/miner-pig.png",
+      "thumbnail": "costumes/store/miner-pig/assistant-miner-pig.png",
       "model": "costumes/store/miner-pig/model.glb",
       "page": "costumes/store/miner-pig/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "miss-bunny",
       "name": "Miss Bunny",
       "date": "October 25, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/miss-bunny/miss-bunny.png",
+      "thumbnail": "costumes/store/miss-bunny/assistant-miss-bunny.png",
       "model": "costumes/store/miss-bunny/model.glb",
       "page": "costumes/store/miss-bunny/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "moo",
       "name": "Moo",
       "date": "April 28, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/moo/moo.png",
+      "thumbnail": "costumes/store/moo/assistant-moo.png",
       "model": "costumes/store/moo/model.glb",
       "page": "costumes/store/moo/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "mr-grump",
       "name": "Mr Grump",
       "date": "April 7, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/mr-grump/mr-grump.png",
+      "thumbnail": "costumes/store/mr-grump/assistant-mr-grump.png",
       "model": "costumes/store/mr-grump/model.glb",
       "page": "costumes/store/mr-grump/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "mr-pickles",
       "name": "Mr Pickles",
       "date": "September 29, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/mr-pickles/mr-pickles.png",
+      "thumbnail": "costumes/store/mr-pickles/assistant-mr-pickles.png",
       "model": "costumes/store/mr-pickles/model.glb",
       "page": "costumes/store/mr-pickles/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "muddy-pig",
       "name": "Muddy Pig",
       "date": "February 5, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/muddy-pig/muddy-pig.png",
+      "thumbnail": "costumes/store/muddy-pig/assistant-muddy-pig.png",
       "model": "costumes/store/muddy-pig/model.glb",
       "page": "costumes/store/muddy-pig/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "narwhal",
       "name": "Narwhal",
       "date": "December 15, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/narwhal/narwhal.png",
+      "thumbnail": "costumes/store/narwhal/assistant-narwhal.png",
       "model": "costumes/store/narwhal/model.glb",
       "page": "costumes/store/narwhal/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "nether-skull",
       "name": "Nether Skull",
       "date": "October 20, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/nether-skull/nether-skull.png",
+      "thumbnail": "costumes/store/nether-skull/assistant-nether-skull.png",
       "model": "costumes/store/nether-skull/model.glb",
       "page": "costumes/store/nether-skull/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "night-crow",
       "name": "Night Crow",
       "date": "June 23, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/night-crow/night-crow.png",
+      "thumbnail": "costumes/store/night-crow/assistant-night-crow.png",
       "model": "costumes/store/night-crow/model.glb",
       "page": "costumes/store/night-crow/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "night-stalker",
       "name": "Night Stalker",
       "date": "October 23, 2022",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/night-stalker/night-stalker.png",
+      "thumbnail": "costumes/store/night-stalker/assistant-night-stalker.png",
       "model": "costumes/store/night-stalker/model.glb",
       "page": "costumes/store/night-stalker/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "night-star",
       "name": "Night Star",
       "date": "November 24, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/night-star/night-star.png",
+      "thumbnail": "costumes/store/night-star/assistant-night-star.png",
       "model": "costumes/store/night-star/model.glb",
       "page": "costumes/store/night-star/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "officer-11",
       "name": "Officer 11",
       "date": "May 24, 2020",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/officer-11/officer-11.png",
+      "thumbnail": "costumes/store/officer-11/assistant-officer-11.png",
       "model": "costumes/store/officer-11/model.glb",
       "page": "costumes/store/officer-11/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "old-town-horse",
       "name": "Old Town Horse",
       "date": "August 4, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/old-town-horse/old-town-horse.png",
+      "thumbnail": "costumes/store/old-town-horse/assistant-old-town-horse.png",
       "model": "costumes/store/old-town-horse/model.glb",
       "page": "costumes/store/old-town-horse/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "orange-juice",
       "name": "Orange Juice",
       "date": "April 9, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/orange-juice/orange-juice.png",
+      "thumbnail": "costumes/store/orange-juice/assistant-orange-juice.png",
       "model": "costumes/store/orange-juice/model.glb",
       "page": "costumes/store/orange-juice/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "orbit",
       "name": "Orbit",
       "date": "February 20, 2022",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/orbit/orbit.png",
+      "thumbnail": "costumes/store/orbit/assistant-orbit.png",
       "model": "costumes/store/orbit/model.glb",
       "page": "costumes/store/orbit/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "otto",
       "name": "Otto",
       "date": "May 5, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/otto/otto.png",
+      "thumbnail": "costumes/store/otto/assistant-otto.png",
       "model": "costumes/store/otto/model.glb",
       "page": "costumes/store/otto/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "owl",
       "name": "Owl",
       "date": "December 29, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/owl/owl.png",
+      "thumbnail": "costumes/store/owl/assistant-owl.png",
       "model": "costumes/store/owl/model.glb",
       "page": "costumes/store/owl/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "panda",
       "name": "Panda",
       "date": "March 10, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/panda/panda.png",
+      "thumbnail": "costumes/store/panda/assistant-panda.png",
       "model": "costumes/store/panda/model.glb",
       "page": "costumes/store/panda/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "parrot",
       "name": "Parrot",
       "date": "April 7, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/parrot/parrot.png",
+      "thumbnail": "costumes/store/parrot/assistant-parrot.png",
       "model": "costumes/store/parrot/model.glb",
       "page": "costumes/store/parrot/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "paws",
       "name": "Paws",
       "date": "June 16, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/paws/paws.png",
+      "thumbnail": "costumes/store/paws/assistant-paws.png",
       "model": "costumes/store/paws/model.glb",
       "page": "costumes/store/paws/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "penguin",
       "name": "Penguin",
       "date": "June 16, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/penguin/penguin.png",
+      "thumbnail": "costumes/store/penguin/assistant-penguin.png",
       "model": "costumes/store/penguin/model.glb",
       "page": "costumes/store/penguin/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "phoenix",
       "name": "Phoenix",
       "date": "August 7, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/phoenix/phoenix.png",
+      "thumbnail": "costumes/store/phoenix/assistant-phoenix.png",
       "model": "costumes/store/phoenix/model.glb",
       "page": "costumes/store/phoenix/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "piggy",
       "name": "Piggy",
       "date": "April 14, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/piggy/piggy.png",
+      "thumbnail": "costumes/store/piggy/assistant-piggy.png",
       "model": "costumes/store/piggy/model.glb",
       "page": "costumes/store/piggy/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "pinata-llama",
       "name": "Pinata Llama",
       "date": "April 2, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/pinata-llama/pinata-llama.png",
+      "thumbnail": "costumes/store/pinata-llama/assistant-pinata-llama.png",
       "model": "costumes/store/pinata-llama/model.glb",
       "page": "costumes/store/pinata-llama/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "pizza-time",
       "name": "Pizza Time",
       "date": "March 22, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/pizza-time/pizza-time.png",
+      "thumbnail": "costumes/store/pizza-time/assistant-pizza-time.png",
       "model": "costumes/store/pizza-time/model.glb",
       "page": "costumes/store/pizza-time/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "plague-doctor",
       "name": "Plague Doctor",
       "date": "October 23, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/plague-doctor/plague-doctor.png",
+      "thumbnail": "costumes/store/plague-doctor/assistant-plague-doctor.png",
       "model": "costumes/store/plague-doctor/model.glb",
       "page": "costumes/store/plague-doctor/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "potter",
       "name": "Potter",
       "date": "February 21, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/potter/potter.png",
+      "thumbnail": "costumes/store/potter/assistant-potter.png",
       "model": "costumes/store/potter/model.glb",
       "page": "costumes/store/potter/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "pumpkin-lord",
       "name": "Pumpkin Lord",
       "date": "October 17, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/pumpkin-lord/pumpkin-lord.png",
+      "thumbnail": "costumes/store/pumpkin-lord/assistant-pumpkin-lord.png",
       "model": "costumes/store/pumpkin-lord/model.glb",
       "page": "costumes/store/pumpkin-lord/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "pumpkin-paladin",
       "name": "Pumpkin Paladin",
       "date": "October 16, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/pumpkin-paladin/pumpkin-paladin.png",
+      "thumbnail": "costumes/store/pumpkin-paladin/assistant-pumpkin-paladin.png",
       "model": "costumes/store/pumpkin-paladin/model.glb",
       "page": "costumes/store/pumpkin-paladin/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "punch",
       "name": "Punch",
       "date": "July 7, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/punch/punch.png",
+      "thumbnail": "costumes/store/punch/assistant-punch.png",
       "model": "costumes/store/punch/model.glb",
       "page": "costumes/store/punch/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "pyjama-banana",
       "name": "Pyjama Banana",
       "date": "February 16, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/pyjama-banana/pyjama-banana.png",
+      "thumbnail": "costumes/store/pyjama-banana/assistant-pyjama-banana.png",
       "model": "costumes/store/pyjama-banana/model.glb",
       "page": "costumes/store/pyjama-banana/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "ravage",
       "name": "Ravage",
       "date": "August 18, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/ravage/ravage.png",
+      "thumbnail": "costumes/store/ravage/assistant-ravage.png",
       "model": "costumes/store/ravage/model.glb",
       "page": "costumes/store/ravage/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "raven",
       "name": "Raven",
       "date": "September 17, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/raven/raven.png",
+      "thumbnail": "costumes/store/raven/assistant-raven.png",
       "model": "costumes/store/raven/model.glb",
       "page": "costumes/store/raven/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "recon-agent",
       "name": "Recon Agent",
       "date": "October 8, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/recon-agent/recon-agent.png",
+      "thumbnail": "costumes/store/recon-agent/assistant-recon-agent.png",
       "model": "costumes/store/recon-agent/model.glb",
       "page": "costumes/store/recon-agent/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "red-panda",
       "name": "Red Panda",
       "date": "July 21, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/red-panda/red-panda.png",
+      "thumbnail": "costumes/store/red-panda/assistant-red-panda.png",
       "model": "costumes/store/red-panda/model.glb",
       "page": "costumes/store/red-panda/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "reindeer",
       "name": "Reindeer",
       "date": "December 20, 2018",
       "availability": "paid",
-      "thumbnail": "costumes/store/reindeer/reindeer.png",
+      "thumbnail": "costumes/store/reindeer/assistant-reindeer.png",
       "model": "costumes/store/reindeer/model.glb",
       "page": "costumes/store/reindeer/",
       "tags": []
@@ -1938,891 +1936,891 @@
       "name": "Royal Corgi",
       "date": "February 27, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/royal-corgi/royal-corgi.png",
+      "thumbnail": "costumes/store/royal-corgi/assistant-royal-corgi.png",
       "model": "costumes/store/royal-corgi/model.glb",
       "page": "costumes/store/royal-corgi/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "royal-pegasus",
       "name": "Royal Pegasus",
       "date": "November 19, 2023",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/royal-pegasus/royal-pegasus.png",
+      "thumbnail": "costumes/store/royal-pegasus/assistant-royal-pegasus.png",
       "model": "costumes/store/royal-pegasus/model.glb",
       "page": "costumes/store/royal-pegasus/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "royal-unicorn",
       "name": "Royal Unicorn",
       "date": "March 15, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/royal-unicorn/royal-unicorn.png",
+      "thumbnail": "costumes/store/royal-unicorn/assistant-royal-unicorn.png",
       "model": "costumes/store/royal-unicorn/model.glb",
       "page": "costumes/store/royal-unicorn/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "rufus",
       "name": "Rufus",
       "date": "September 22, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/rufus/rufus.png",
+      "thumbnail": "costumes/store/rufus/assistant-rufus.png",
       "model": "costumes/store/rufus/model.glb",
       "page": "costumes/store/rufus/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "rusty",
       "name": "Rusty",
       "date": "March 13, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/rusty/rusty.png",
+      "thumbnail": "costumes/store/rusty/assistant-rusty.png",
       "model": "costumes/store/rusty/model.glb",
       "page": "costumes/store/rusty/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "school-fox",
       "name": "School Fox",
       "date": "April 13, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/school-fox/school-fox.png",
+      "thumbnail": "costumes/store/school-fox/assistant-school-fox.png",
       "model": "costumes/store/school-fox/model.glb",
       "page": "costumes/store/school-fox/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "sculk-wolf",
       "name": "Sculk Wolf",
       "date": "August 20, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/sculk-wolf/sculk-wolf.png",
+      "thumbnail": "costumes/store/sculk-wolf/assistant-sculk-wolf.png",
       "model": "costumes/store/sculk-wolf/model.glb",
       "page": "costumes/store/sculk-wolf/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "sculk-wraith",
       "name": "Sculk Wraith",
       "date": "August 20, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/sculk-wraith/sculk-wraith.png",
+      "thumbnail": "costumes/store/sculk-wraith/assistant-sculk-wraith.png",
       "model": "costumes/store/sculk-wraith/model.glb",
       "page": "costumes/store/sculk-wraith/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "sculkolotl",
       "name": "Sculkolotl",
       "date": "July 9, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/sculkolotl/sculkolotl.png",
+      "thumbnail": "costumes/store/sculkolotl/assistant-sculkolotl.png",
       "model": "costumes/store/sculkolotl/model.glb",
       "page": "costumes/store/sculkolotl/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "sea-doge",
       "name": "Sea Doge",
       "date": "May 22, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/sea-doge/sea-doge.png",
+      "thumbnail": "costumes/store/sea-doge/assistant-sea-doge.png",
       "model": "costumes/store/sea-doge/model.glb",
       "page": "costumes/store/sea-doge/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "sergei",
       "name": "Sergei",
       "date": "May 25, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/sergei/sergei.png",
+      "thumbnail": "costumes/store/sergei/assistant-sergei.png",
       "model": "costumes/store/sergei/model.glb",
       "page": "costumes/store/sergei/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "shroomy",
       "name": "Shroomy",
       "date": "November 14, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/shroomy/shroomy.png",
+      "thumbnail": "costumes/store/shroomy/assistant-shroomy.png",
       "model": "costumes/store/shroomy/model.glb",
       "page": "costumes/store/shroomy/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "sir-creeper",
       "name": "Sir Creeper",
       "date": "April 28, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/sir-creeper/sir-creeper.png",
+      "thumbnail": "costumes/store/sir-creeper/assistant-sir-creeper.png",
       "model": "costumes/store/sir-creeper/model.glb",
       "page": "costumes/store/sir-creeper/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "skeleclaus",
       "name": "Skeleclaus",
       "date": "December 22, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/skeleclaus/skeleclaus.png",
+      "thumbnail": "costumes/store/skeleclaus/assistant-skeleclaus.png",
       "model": "costumes/store/skeleclaus/model.glb",
       "page": "costumes/store/skeleclaus/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "skelelotl",
       "name": "Skelelotl",
       "date": "October 9, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/skelelotl/skelelotl.png",
+      "thumbnail": "costumes/store/skelelotl/assistant-skelelotl.png",
       "model": "costumes/store/skelelotl/model.glb",
       "page": "costumes/store/skelelotl/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "skellington",
       "name": "Skellington",
       "date": "October 25, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/skellington/skellington.png",
+      "thumbnail": "costumes/store/skellington/assistant-skellington.png",
       "model": "costumes/store/skellington/model.glb",
       "page": "costumes/store/skellington/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "slimey",
       "name": "Slimey",
       "date": "March 22, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/slimey/slimey.png",
+      "thumbnail": "costumes/store/slimey/assistant-slimey.png",
       "model": "costumes/store/slimey/model.glb",
       "page": "costumes/store/slimey/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "slimey-ice-edition",
       "name": "Slimey Ice Edition",
       "date": "December 20, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/slimey-ice-edition/slimey-ice-edition.png",
+      "thumbnail": "costumes/store/slimey-ice-edition/assistant-slimey-ice-edition.png",
       "model": "costumes/store/slimey-ice-edition/model.glb",
       "page": "costumes/store/slimey-ice-edition/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "slimo",
       "name": "Slimo",
       "date": "March 17, 2024",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/slimo/slimo.png",
+      "thumbnail": "costumes/store/slimo/assistant-slimo.png",
       "model": "costumes/store/slimo/model.glb",
       "page": "costumes/store/slimo/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "snowy",
       "name": "Snowy",
       "date": "June 1, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/snowy/snowy.png",
+      "thumbnail": "costumes/store/snowy/assistant-snowy.png",
       "model": "costumes/store/snowy/model.glb",
       "page": "costumes/store/snowy/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "snowy-dragon",
       "name": "Snowy Dragon",
       "date": "November 27, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/snowy-dragon/snowy-dragon.png",
+      "thumbnail": "costumes/store/snowy-dragon/assistant-snowy-dragon.png",
       "model": "costumes/store/snowy-dragon/model.glb",
       "page": "costumes/store/snowy-dragon/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "solar",
       "name": "Solar",
       "date": "July 26, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/solar/solar.png",
+      "thumbnail": "costumes/store/solar/assistant-solar.png",
       "model": "costumes/store/solar/model.glb",
       "page": "costumes/store/solar/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "space-corgi",
       "name": "Space Corgi",
       "date": "May 21, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/space-corgi/space-corgi.png",
+      "thumbnail": "costumes/store/space-corgi/assistant-space-corgi.png",
       "model": "costumes/store/space-corgi/model.glb",
       "page": "costumes/store/space-corgi/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "space-kitten",
       "name": "Space Kitten",
       "date": "May 14, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/space-kitten/space-kitten.png",
+      "thumbnail": "costumes/store/space-kitten/assistant-space-kitten.png",
       "model": "costumes/store/space-kitten/model.glb",
       "page": "costumes/store/space-kitten/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "space-ranger",
       "name": "Space Ranger",
       "date": "July 21, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/space-ranger/space-ranger.png",
+      "thumbnail": "costumes/store/space-ranger/assistant-space-ranger.png",
       "model": "costumes/store/space-ranger/model.glb",
       "page": "costumes/store/space-ranger/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "sparkles",
       "name": "Sparkles",
       "date": "June 1, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/sparkles/sparkles.png",
+      "thumbnail": "costumes/store/sparkles/assistant-sparkles.png",
       "model": "costumes/store/sparkles/model.glb",
       "page": "costumes/store/sparkles/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "spider-queen",
       "name": "Spider Queen",
       "date": "October 10, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/spider-queen/spider-queen.png",
+      "thumbnail": "costumes/store/spider-queen/assistant-spider-queen.png",
       "model": "costumes/store/spider-queen/model.glb",
       "page": "costumes/store/spider-queen/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "spikes",
       "name": "Spikes",
       "date": "February 12, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/spikes/spikes.png",
+      "thumbnail": "costumes/store/spikes/assistant-spikes.png",
       "model": "costumes/store/spikes/model.glb",
       "page": "costumes/store/spikes/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "sprinkles",
       "name": "Sprinkles",
       "date": "February 6, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/sprinkles/sprinkles.png",
+      "thumbnail": "costumes/store/sprinkles/assistant-sprinkles.png",
       "model": "costumes/store/sprinkles/model.glb",
       "page": "costumes/store/sprinkles/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "storm-queen",
       "name": "Storm Queen",
       "date": "February 18, 2024",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/storm-queen/storm-queen.png",
+      "thumbnail": "costumes/store/storm-queen/assistant-storm-queen.png",
       "model": "costumes/store/storm-queen/model.glb",
       "page": "costumes/store/storm-queen/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "strawbee",
       "name": "Strawbee",
       "date": "December 26, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/strawbee/strawbee.png",
+      "thumbnail": "costumes/store/strawbee/assistant-strawbee.png",
       "model": "costumes/store/strawbee/model.glb",
       "page": "costumes/store/strawbee/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "strongman",
       "name": "Strongman",
       "date": "March 17, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/strongman/strongman.png",
+      "thumbnail": "costumes/store/strongman/assistant-strongman.png",
       "model": "costumes/store/strongman/model.glb",
       "page": "costumes/store/strongman/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "summer-banana",
       "name": "Summer Banana",
       "date": "July 30, 2023",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/summer-banana/summer-banana.png",
+      "thumbnail": "costumes/store/summer-banana/assistant-summer-banana.png",
       "model": "costumes/store/summer-banana/model.glb",
       "page": "costumes/store/summer-banana/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "summer-bee",
       "name": "Summer Bee",
       "date": "June 26, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/summer-bee/summer-bee.png",
+      "thumbnail": "costumes/store/summer-bee/assistant-summer-bee.png",
       "model": "costumes/store/summer-bee/model.glb",
       "page": "costumes/store/summer-bee/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "summer-doge",
       "name": "Summer Doge",
       "date": "June 20, 2020",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/summer-doge/summer-doge.png",
+      "thumbnail": "costumes/store/summer-doge/assistant-summer-doge.png",
       "model": "costumes/store/summer-doge/model.glb",
       "page": "costumes/store/summer-doge/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "summer-fox",
       "name": "Summer Fox",
       "date": "July 19, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/summer-fox/summer-fox.png",
+      "thumbnail": "costumes/store/summer-fox/assistant-summer-fox.png",
       "model": "costumes/store/summer-fox/model.glb",
       "page": "costumes/store/summer-fox/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "summer-leopard",
       "name": "Summer Leopard",
       "date": "July 30, 2023",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/summer-leopard/summer-leopard.png",
+      "thumbnail": "costumes/store/summer-leopard/assistant-summer-leopard.png",
       "model": "costumes/store/summer-leopard/model.glb",
       "page": "costumes/store/summer-leopard/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "summer-melon",
       "name": "Summer Melon",
       "date": "March 10, 2024",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/summer-melon/summer-melon.png",
+      "thumbnail": "costumes/store/summer-melon/assistant-summer-melon.png",
       "model": "costumes/store/summer-melon/model.glb",
       "page": "costumes/store/summer-melon/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "summer-unicorn",
       "name": "Summer Unicorn",
       "date": "July 19, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/summer-unicorn/summer-unicorn.png",
+      "thumbnail": "costumes/store/summer-unicorn/assistant-summer-unicorn.png",
       "model": "costumes/store/summer-unicorn/model.glb",
       "page": "costumes/store/summer-unicorn/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "summerlotl",
       "name": "Summerlotl",
       "date": "August 6, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/summerlotl/summerlotl.png",
+      "thumbnail": "costumes/store/summerlotl/assistant-summerlotl.png",
       "model": "costumes/store/summerlotl/model.glb",
       "page": "costumes/store/summerlotl/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "summoner",
       "name": "Summoner",
       "date": "October 24, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/summoner/summoner.png",
+      "thumbnail": "costumes/store/summoner/assistant-summoner.png",
       "model": "costumes/store/summoner/model.glb",
       "page": "costumes/store/summoner/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "sunny",
       "name": "Sunny",
       "date": "August 14, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/sunny/sunny.png",
+      "thumbnail": "costumes/store/sunny/assistant-sunny.png",
       "model": "costumes/store/sunny/model.glb",
       "page": "costumes/store/sunny/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "swampy",
       "name": "Swampy",
       "date": "May 5, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/swampy/swampy.png",
+      "thumbnail": "costumes/store/swampy/assistant-swampy.png",
       "model": "costumes/store/swampy/model.glb",
       "page": "costumes/store/swampy/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "taco-time",
       "name": "Taco Time",
       "date": "November 17, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/taco-time/taco-time.png",
+      "thumbnail": "costumes/store/taco-time/assistant-taco-time.png",
       "model": "costumes/store/taco-time/model.glb",
       "page": "costumes/store/taco-time/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "tanuki",
       "name": "Tanuki",
       "date": "November 5, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/tanuki/tanuki.png",
+      "thumbnail": "costumes/store/tanuki/assistant-tanuki.png",
       "model": "costumes/store/tanuki/model.glb",
       "page": "costumes/store/tanuki/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "teddy-bear",
       "name": "Teddy Bear",
       "date": "February 10, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/teddy-bear/teddy-bear.png",
+      "thumbnail": "costumes/store/teddy-bear/assistant-teddy-bear.png",
       "model": "costumes/store/teddy-bear/model.glb",
       "page": "costumes/store/teddy-bear/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "television",
       "name": "Television",
       "date": "April 14, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/television/television.png",
+      "thumbnail": "costumes/store/television/assistant-television.png",
       "model": "costumes/store/television/model.glb",
       "page": "costumes/store/television/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "the-assassin",
       "name": "The Assassin",
       "date": "October 13, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/the-assassin/the-assassin.png",
+      "thumbnail": "costumes/store/the-assassin/assistant-the-assassin.png",
       "model": "costumes/store/the-assassin/model.glb",
       "page": "costumes/store/the-assassin/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "the-night-phantom",
       "name": "The Night Phantom",
       "date": "July 14, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/the-night-phantom/the-night-phantom.png",
+      "thumbnail": "costumes/store/the-night-phantom/assistant-the-night-phantom.png",
       "model": "costumes/store/the-night-phantom/model.glb",
       "page": "costumes/store/the-night-phantom/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "the-oni",
       "name": "The Oni",
       "date": "May 29, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/the-oni/the-oni.png",
+      "thumbnail": "costumes/store/the-oni/assistant-the-oni.png",
       "model": "costumes/store/the-oni/model.glb",
       "page": "costumes/store/the-oni/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "the-overseer",
       "name": "The Overseer",
       "date": "August 18, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/the-overseer/the-overseer.png",
+      "thumbnail": "costumes/store/the-overseer/assistant-the-overseer.png",
       "model": "costumes/store/the-overseer/model.glb",
       "page": "costumes/store/the-overseer/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "the-traveler",
       "name": "The Traveler",
       "date": "August 11, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/the-traveler/the-traveler.png",
+      "thumbnail": "costumes/store/the-traveler/assistant-the-traveler.png",
       "model": "costumes/store/the-traveler/model.glb",
       "page": "costumes/store/the-traveler/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "toastie",
       "name": "Toastie",
       "date": "May 21, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/toastie/toastie.png",
+      "thumbnail": "costumes/store/toastie/assistant-toastie.png",
       "model": "costumes/store/toastie/model.glb",
       "page": "costumes/store/toastie/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "toy-soldier",
       "name": "Toy Soldier",
       "date": "June 9, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/toy-soldier/toy-soldier.png",
+      "thumbnail": "costumes/store/toy-soldier/assistant-toy-soldier.png",
       "model": "costumes/store/toy-soldier/model.glb",
       "page": "costumes/store/toy-soldier/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "toybot",
       "name": "ToyBot",
       "date": "September 25, 2022",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/toybot/toybot.png",
+      "thumbnail": "costumes/store/toybot/assistant-toybot.png",
       "model": "costumes/store/toybot/model.glb",
       "page": "costumes/store/toybot/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "trader-llama",
       "name": "Trader Llama",
       "date": "March 31, 2024",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/trader-llama/trader-llama.png",
+      "thumbnail": "costumes/store/trader-llama/assistant-trader-llama.png",
       "model": "costumes/store/trader-llama/model.glb",
       "page": "costumes/store/trader-llama/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "uncle-banana",
       "name": "Uncle Banana",
       "date": "July 4, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/uncle-banana/uncle-banana.png",
+      "thumbnail": "costumes/store/uncle-banana/assistant-uncle-banana.png",
       "model": "costumes/store/uncle-banana/model.glb",
       "page": "costumes/store/uncle-banana/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "unicorn",
       "name": "Unicorn",
       "date": "January 27, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/unicorn/unicorn.png",
+      "thumbnail": "costumes/store/unicorn/assistant-unicorn.png",
       "model": "costumes/store/unicorn/model.glb",
       "page": "costumes/store/unicorn/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "unicorn-gold-edition",
       "name": "Unicorn: Gold Edition",
       "date": "August 4, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/unicorn-gold-edition/unicorn-gold-edition.png",
+      "thumbnail": "costumes/store/unicorn-gold-edition/assistant-unicorn-gold-edition.png",
       "model": "costumes/store/unicorn-gold-edition/model.glb",
       "page": "costumes/store/unicorn-gold-edition/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "unipug",
       "name": "Unipug",
       "date": "March 15, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/unipug/unipug.png",
+      "thumbnail": "costumes/store/unipug/assistant-unipug.png",
       "model": "costumes/store/unipug/model.glb",
       "page": "costumes/store/unipug/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "vampiric-rabbit",
       "name": "Vampiric Rabbit",
       "date": "October 28, 2023",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/vampiric-rabbit/vampiric-rabbit.png",
+      "thumbnail": "costumes/store/vampiric-rabbit/assistant-vampiric-rabbit.png",
       "model": "costumes/store/vampiric-rabbit/model.glb",
       "page": "costumes/store/vampiric-rabbit/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "villager-007",
       "name": "Villager 007",
       "date": "February 23, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/villager-007/villager-007.png",
+      "thumbnail": "costumes/store/villager-007/assistant-villager-007.png",
       "model": "costumes/store/villager-007/model.glb",
       "page": "costumes/store/villager-007/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "virus",
       "name": "Virus",
       "date": "October 1, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/virus/virus.png",
+      "thumbnail": "costumes/store/virus/assistant-virus.png",
       "model": "costumes/store/virus/model.glb",
       "page": "costumes/store/virus/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "waddles",
       "name": "Waddles",
       "date": "December 12, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/waddles/waddles.png",
+      "thumbnail": "costumes/store/waddles/assistant-waddles.png",
       "model": "costumes/store/waddles/model.glb",
       "page": "costumes/store/waddles/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "walrus",
       "name": "Walrus",
       "date": "September 1, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/walrus/walrus.png",
+      "thumbnail": "costumes/store/walrus/assistant-walrus.png",
       "model": "costumes/store/walrus/model.glb",
       "page": "costumes/store/walrus/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "warrior-croc",
       "name": "Warrior Croc",
       "date": "September 3, 2023",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/warrior-croc/warrior-croc.png",
+      "thumbnail": "costumes/store/warrior-croc/assistant-warrior-croc.png",
       "model": "costumes/store/warrior-croc/model.glb",
       "page": "costumes/store/warrior-croc/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "werewolf",
       "name": "Werewolf",
       "date": "October 27, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/werewolf/werewolf.png",
+      "thumbnail": "costumes/store/werewolf/assistant-werewolf.png",
       "model": "costumes/store/werewolf/model.glb",
       "page": "costumes/store/werewolf/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "winter-husky",
       "name": "Winter Husky",
       "date": "December 11, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/winter-husky/winter-husky.png",
+      "thumbnail": "costumes/store/winter-husky/assistant-winter-husky.png",
       "model": "costumes/store/winter-husky/model.glb",
       "page": "costumes/store/winter-husky/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "winter-witch",
       "name": "Winter Witch",
       "date": "December 19, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/winter-witch/winter-witch.png",
+      "thumbnail": "costumes/store/winter-witch/assistant-winter-witch.png",
       "model": "costumes/store/winter-witch/model.glb",
       "page": "costumes/store/winter-witch/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "wolf-knight",
       "name": "Wolf Knight",
       "date": "July 10, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/wolf-knight/wolf-knight.png",
+      "thumbnail": "costumes/store/wolf-knight/assistant-wolf-knight.png",
       "model": "costumes/store/wolf-knight/model.glb",
       "page": "costumes/store/wolf-knight/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "wolf-pack",
       "name": "Wolf Pack",
       "date": "February 17, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/wolf-pack/wolf-pack.png",
+      "thumbnail": "costumes/store/wolf-pack/assistant-wolf-pack.png",
       "model": "costumes/store/wolf-pack/model.glb",
       "page": "costumes/store/wolf-pack/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "wolfy",
       "name": "Wolfy",
       "date": "May 21, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/wolfy/wolfy.png",
+      "thumbnail": "costumes/store/wolfy/assistant-wolfy.png",
       "model": "costumes/store/wolfy/model.glb",
       "page": "costumes/store/wolfy/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "woody",
       "name": "Woody",
       "date": "March 27, 2022",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/woody/woody.png",
+      "thumbnail": "costumes/store/woody/assistant-woody.png",
       "model": "costumes/store/woody/model.glb",
       "page": "costumes/store/woody/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "wooly",
       "name": "Wooly",
       "date": "September 13, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/wooly/wooly.png",
+      "thumbnail": "costumes/store/wooly/assistant-wooly.png",
       "model": "costumes/store/wooly/model.glb",
       "page": "costumes/store/wooly/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "wooly-cow",
       "name": "Wooly Cow",
       "date": "March 10, 2024",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/wooly-cow/wooly-cow.png",
+      "thumbnail": "costumes/store/wooly-cow/assistant-wooly-cow.png",
       "model": "costumes/store/wooly-cow/model.glb",
       "page": "costumes/store/wooly-cow/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "yeti",
       "name": "Yeti",
       "date": "December 29, 2019",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/yeti/yeti.png",
+      "thumbnail": "costumes/store/yeti/assistant-yeti.png",
       "model": "costumes/store/yeti/model.glb",
       "page": "costumes/store/yeti/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "zebra",
       "name": "Zebra",
       "date": "September 29, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/zebra/zebra.png",
+      "thumbnail": "costumes/store/zebra/assistant-zebra.png",
       "model": "costumes/store/zebra/model.glb",
       "page": "costumes/store/zebra/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "zesty",
       "name": "Zesty",
       "date": "February 23, 2020",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/zesty/zesty.png",
+      "thumbnail": "costumes/store/zesty/assistant-zesty.png",
       "model": "costumes/store/zesty/model.glb",
       "page": "costumes/store/zesty/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "zombear",
       "name": "Zombear",
       "date": "October 28, 2023",
       "availability": "paid",
-      "price": "160",
-      "thumbnail": "costumes/store/zombear/zombear.png",
+      "thumbnail": "costumes/store/zombear/assistant-zombear.png",
       "model": "costumes/store/zombear/model.glb",
       "page": "costumes/store/zombear/",
-      "tags": []
+      "tags": [],
+      "price": "160"
     },
     {
       "slug": "zombee",
       "name": "Zombee",
       "date": "July 7, 2019",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/zombee/zombee.png",
+      "thumbnail": "costumes/store/zombee/assistant-zombee.png",
       "model": "costumes/store/zombee/model.glb",
       "page": "costumes/store/zombee/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     },
     {
       "slug": "zompig",
       "name": "Zompig",
       "date": "October 31, 2021",
       "availability": "paid",
-      "price": "310",
-      "thumbnail": "costumes/store/zompig/zompig.png",
+      "thumbnail": "costumes/store/zompig/assistant-zompig.png",
       "model": "costumes/store/zompig/model.glb",
       "page": "costumes/store/zompig/",
-      "tags": []
+      "tags": [],
+      "price": "310"
     }
   ]
 }

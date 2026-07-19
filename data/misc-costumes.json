@@ -6,7 +6,7 @@
             "name": "Skelly Banana",
             "date": "Unreleased",
             "availability": "miscellaneous",
-            "thumbnail": "costumes/misc/skelly-banana/skelly-banana.png",
+            "thumbnail": "costumes/misc/skelly-banana/assistant-skelly-banana.png",
             "model": "costumes/misc/skelly-banana/model.glb",
             "page": "costumes/misc/skelly-banana/",
             "tags": []
@@ -15,7 +15,7 @@
             "slug": "mini-pirate",
             "name": "Mini Pirate",
             "availability": "miscellaneous",
-            "thumbnail": "costumes/misc/mini-pirate/mini-pirate.png",
+            "thumbnail": "costumes/misc/mini-pirate/assistant-mini-pirate.png",
             "model": "costumes/misc/mini-pirate/model.glb",
             "page": "costumes/misc/mini-pirate/",
             "tags": []
@@ -24,7 +24,7 @@
             "slug": "pirate",
             "name": "Pirate",
             "availability": "miscellaneous",
-            "thumbnail": "costumes/misc/pirate/pirate.png",
+            "thumbnail": "costumes/misc/pirate/assistant-pirate.png",
             "model": "costumes/misc/pirate/model.glb",
             "page": "costumes/misc/pirate/",
             "tags": []
@@ -33,7 +33,7 @@
             "slug": "skeleton",
             "name": "Skeleton",
             "availability": "miscellaneous",
-            "thumbnail": "costumes/misc/skeleton/skeleton.png",
+            "thumbnail": "costumes/misc/skeleton/assistant-skeleton.png",
             "model": "costumes/misc/skeleton/model.glb",
             "page": "costumes/misc/skeleton/",
             "tags": []
