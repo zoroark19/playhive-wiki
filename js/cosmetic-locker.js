@@ -186,6 +186,13 @@
       this._sharedCapeMaterial = null;
       this._pendingCapeItem = null; // item to apply once load finishes
 
+      // Resolves once the most recently requested costume model has
+      // finished loading (or immediately, if no costume load is in
+      // flight). _showSharedCape awaits this before fetching cape.glb, so
+      // the cape never tries to parent onto the costume's body bone
+      // before that bone/skeleton actually exists.
+      this._costumeLoadPromise = Promise.resolve();
+
       this._buildSkeleton();
       this._loadData();
     }
@@ -301,11 +308,17 @@
       this._renderTagList();
       this._renderBrowseGrid();
 
-      // Random costume on first load
-      const costumes = this.allItems.filter((i) => i.category === "costume");
-      if (costumes.length) {
-        const pick = costumes[Math.floor(Math.random() * costumes.length)];
-        this._equip(pick);
+      // If the URL already names equipped items (e.g. a shared link like
+      // ?endolotl&shark-hat&ender-pearl-cape), restore those instead of
+      // picking a random costume.
+      const restoredFromURL = this._applyEquippedFromURL();
+      if (!restoredFromURL) {
+        // Random costume on first load
+        const costumes = this.allItems.filter((i) => i.category === "costume");
+        if (costumes.length) {
+          const pick = costumes[Math.floor(Math.random() * costumes.length)];
+          this._equip(pick);
+        }
       }
       this._renderEquippedPanel();
     }
@@ -500,7 +513,11 @@
     }
 
     // -------------------------------------------------------------- equip
-    _equip(item) {
+    // `syncURL` defaults to true so every normal equip click updates the
+    // address bar. It's passed as false only from _applyEquippedFromURL,
+    // which equips several items back-to-back while restoring a shared
+    // link and syncs the URL itself once at the end instead.
+    _equip(item, { syncURL = true } = {}) {
       const slot = CATEGORY_SLOT[item.category];
       const previous = this.equipped[slot];
       this.equipped[slot] = item;
@@ -523,9 +540,11 @@
 
       if (slot === "hat") this._syncHelmetVisibility();
       if (slot === "cape_backbling") this._syncCapeArmorVisibility();
+
+      if (syncURL) this._syncURL();
     }
 
-    _unequipSlot(slot) {
+    _unequipSlot(slot, { syncURL = true } = {}) {
       this.equipped[slot] = null;
       this._renderEquippedPanel();
       this._renderBrowseGrid();
@@ -533,6 +552,76 @@
       if (slot === "cape_backbling") this._clearSharedCape();
       if (slot === "hat") this._syncHelmetVisibility();
       if (slot === "cape_backbling") this._syncCapeArmorVisibility();
+
+      if (syncURL) this._syncURL();
+    }
+
+    // ------------------------------------------------------------- URL sync
+    // Reflects the currently equipped items in the address bar as bare,
+    // "&"-joined slugs — e.g. ?endolotl&shark-hat&ender-pearl-cape —
+    // rather than standard key=value query params, per the requested
+    // format. Uses replaceState (not pushState) so clicking through the
+    // locker doesn't spam the browser's back-button history; each equip
+    // simply overwrites the current URL entry.
+    _syncURL() {
+      if (typeof window === "undefined" || !window.history) return;
+      const slugs = [
+        this.equipped.costume,
+        this.equipped.hat,
+        this.equipped.cape_backbling,
+      ]
+        .filter(Boolean)
+        .map((item) => encodeURIComponent(item.slug));
+
+      const newSearch = slugs.length ? `?${slugs.join("&")}` : "";
+      const newUrl = `${location.pathname}${newSearch}${location.hash}`;
+      // Avoid a redundant history entry if nothing actually changed.
+      if (newUrl === `${location.pathname}${location.search}${location.hash}`)
+        return;
+      window.history.replaceState(null, "", newUrl);
+    }
+
+    // Reads bare slugs out of location.search (?slug&slug&slug, no "="),
+    // looks each one up across every loaded category, and equips whatever
+    // matches. Returns true if at least one item from the URL was
+    // equipped, so the caller knows whether to fall back to the default
+    // random costume. Unknown/stale slugs are silently ignored.
+    _applyEquippedFromURL() {
+      const raw = (location.search || "").replace(/^\?/, "");
+      if (!raw) return false;
+
+      const tokens = raw
+        .split("&")
+        .map((t) => {
+          try {
+            return decodeURIComponent(t);
+          } catch {
+            return t;
+          }
+        })
+        .filter(Boolean);
+      if (!tokens.length) return false;
+
+      const matched = tokens
+        .map((slug) => this.allItems.find((i) => i.slug === slug))
+        .filter(Boolean);
+      if (!matched.length) return false;
+
+      // Equip the costume (if any) before hat/cape/backbling, regardless
+      // of what order the slugs happened to appear in the URL. The cape
+      // gate in _showSharedCape only has something to wait on once the
+      // costume's load has actually been kicked off — equipping the
+      // costume last would let the cape start (and finish) loading
+      // before that gate is ever set, defeating the point of it.
+      matched.sort((a, b) => {
+        const aIsCostume = a.category === "costume" ? 0 : 1;
+        const bIsCostume = b.category === "costume" ? 0 : 1;
+        return aIsCostume - bIsCostume;
+      });
+
+      matched.forEach((item) => this._equip(item, { syncURL: false }));
+      this._syncURL();
+      return true;
     }
 
     _formatPrice(price) {
@@ -844,6 +933,9 @@
       this._pendingCapeItem = item;
 
       if (this._sharedCapeMeshes && this._sharedCapeMeshes.length) {
+        // Already loaded — just swap the texture on the existing mesh.
+        // This doesn't touch parenting, so it's safe regardless of
+        // whether a costume load happens to be in flight right now.
         this._applyCapeTexture(textureUrl);
         this.loadedNodes.cape_backbling = this._sharedCapeMeshes;
         this._updateStageEmptyState();
@@ -854,6 +946,32 @@
       if (this._sharedCapeLoading) return;
       this._sharedCapeLoading = true;
 
+      // Don't fetch cape.glb until any in-flight costume load has
+      // finished. The cape gets parented onto the costume's "body"
+      // skeleton bone (see below), and if that bone/skeleton doesn't
+      // exist yet the cape ends up unparented and floating at the scene
+      // origin instead of attached to the character — waiting here (the
+      // promise resolves immediately if no costume load is pending)
+      // guarantees the bone always exists first.
+      this._costumeLoadPromise.then(() => {
+        // The cape slot may have been unequipped, or swapped to a
+        // different cape, while we were waiting — bail out if this
+        // request is no longer the current one.
+        if (
+          !this._pendingCapeItem ||
+          this._pendingCapeItem.slug !== item.slug
+        ) {
+          this._sharedCapeLoading = false;
+          return;
+        }
+        this._fetchSharedCapeModel(item, textureUrl);
+      });
+    }
+
+    // The actual cape.glb network load + parenting, split out of
+    // _showSharedCape so the fetch itself can be deferred until after
+    // the costume's model/skeleton is guaranteed to exist.
+    _fetchSharedCapeModel(item, textureUrl) {
       const url = resolveAsset(this.dataRoot, SHARED_CAPE_MODEL_URL);
       const dir = url.slice(0, url.lastIndexOf("/") + 1);
       const file = url.slice(url.lastIndexOf("/") + 1);
@@ -1050,6 +1168,15 @@
       const dir = url.slice(0, url.lastIndexOf("/") + 1);
       const file = url.slice(url.lastIndexOf("/") + 1);
 
+      // If this is a costume load, open a new gate that _showSharedCape
+      // waits on before fetching cape.glb — see _costumeLoadPromise.
+      let resolveCostumeLoad = null;
+      if (slot === "costume") {
+        this._costumeLoadPromise = new Promise((resolve) => {
+          resolveCostumeLoad = resolve;
+        });
+      }
+
       BABYLON.SceneLoader.ImportMeshAsync(
         null,
         dir,
@@ -1089,6 +1216,12 @@
         })
         .catch((exception) => {
           console.warn("cosmetic-locker: failed to load model", url, exception);
+        })
+        .finally(() => {
+          // Open the gate whether the costume load succeeded or failed,
+          // so a broken costume model can't permanently block a cape from
+          // ever loading.
+          if (slot === "costume" && resolveCostumeLoad) resolveCostumeLoad();
         });
     }
 
