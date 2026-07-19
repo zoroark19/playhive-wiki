@@ -238,7 +238,7 @@
       "date": "",
       "availability": "paid",
       "price": "",
-      "thumbnail": "assets/game-unlock/dr/cape/cape-rose-runner.png",
+      "thumbnail": "assets/game-unlock/dr/cape/avatar-rose-runner.png",
       "texture": "assets/game-unlock/dr/cape/rose-runner.png",
       "page": "game-unlock/dr/cape/",
       "tags": []
@@ -260,7 +260,7 @@
       "date": "",
       "availability": "paid",
       "price": "",
-      "thumbnail": "assets/game-unlock/dr/cape/cape-santas-cape.png",
+      "thumbnail": "assets/game-unlock/dr/cape/avatar-santas-cape.png",
       "texture": "assets/game-unlock/dr/cape/santas-cape.png",
       "page": "game-unlock/dr/cape/",
       "tags": []
@@ -282,7 +282,7 @@
       "date": "",
       "availability": "paid",
       "price": "",
-      "thumbnail": "assets/game-unlock/dr/cape/cape-tree-runner.png",
+      "thumbnail": "assets/game-unlock/dr/cape/avatar-tree-runner.png",
       "texture": "assets/game-unlock/dr/cape/tree-runner.png",
       "page": "game-unlock/dr/cape/",
       "tags": []
