@@ -576,37 +576,6 @@
           btn.classList.add("is-active");
         });
       })();
-
-      /* Auto-fill quest card progress: reads each task's "x/y"
-         count, marks it complete when x >= y, and sets the
-         card's "n/total tasks" label from how many of its tasks
-         are complete. Edit the numbers in .quest-task__count —
-         everything else updates itself. */
-      (function () {
-        document.querySelectorAll(".quest-card").forEach(function (card) {
-          var tasks = card.querySelectorAll(".quest-task");
-          var done = 0;
-
-          tasks.forEach(function (task) {
-            var countEl = task.querySelector(".quest-task__count");
-            if (!countEl) return;
-            var parts = countEl.textContent.split("/");
-            var have = parseFloat(parts[0]);
-            var need = parseFloat(parts[1]);
-            if (!isNaN(have) && !isNaN(need) && need > 0 && have >= need) {
-              task.classList.add("is-complete");
-              done++;
-            } else {
-              task.classList.remove("is-complete");
-            }
-          });
-
-          var total = tasks.length;
-
-          var label = card.querySelector(".quest-card__progress-label");
-          if (label) label.textContent = done + "/" + total + " tasks";
-        });
-      })();
     </script>
   </body>
 </html>
