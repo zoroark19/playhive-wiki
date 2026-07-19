@@ -228,6 +228,14 @@
 
           <div class="locker__stage-col">
             <div class="locker__stage">
+              <div class="locker__stage-controls">
+                <button type="button" class="locker__stage-btn" data-role="reset-view" title="Reset view">
+                  <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+                </button>
+                <button type="button" class="locker__stage-btn" data-role="screenshot" title="Save screenshot (transparent PNG)">
+                  <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                </button>
+              </div>
               <div class="locker__stage-empty" data-role="stage-empty" style="display:none">
                 Select a costume, hat, or cape/backbling to preview it here.
               </div>
@@ -265,6 +273,8 @@
         tags: this.rootEl.querySelector('[data-role="tags"]'),
         stageEmpty: this.rootEl.querySelector('[data-role="stage-empty"]'),
         canvas: this.rootEl.querySelector('[data-role="canvas"]'),
+        resetView: this.rootEl.querySelector('[data-role="reset-view"]'),
+        screenshot: this.rootEl.querySelector('[data-role="screenshot"]'),
         browseGrid: this.rootEl.querySelector('[data-role="browse-grid"]'),
         slotCostume: this.rootEl.querySelector('[data-role="slot-costume"]'),
         slotHat: this.rootEl.querySelector('[data-role="slot-hat"]'),
@@ -282,6 +292,9 @@
         this._renderBrowseGrid();
       });
       this.$.tagFilter.addEventListener("input", () => this._renderTagList());
+
+      this.$.resetView.addEventListener("click", () => this._refitCamera());
+      this.$.screenshot.addEventListener("click", () => this._takeScreenshot());
 
       this._initBabylon();
     }
@@ -1251,6 +1264,59 @@
       this.camera.radius = radius;
       this.camera.lowerRadiusLimit = radius * 0.4;
       this.camera.upperRadiusLimit = radius * 3;
+    }
+
+    // Renders the current stage to an off-screen render target (so we
+    // don't just grab whatever's already in the visible canvas buffer)
+    // and downloads it as a transparent PNG. The scene's clearColor
+    // already has alpha 0 (see _initBabylon), and engine.setHardwareScalingLevel
+    // there also keeps this render crisp at the device's actual pixel
+    // ratio rather than the CSS-scaled canvas size.
+    _takeScreenshot() {
+      if (!this.engine || !this.scene || !this.camera) return;
+
+      const canvas = this.$.canvas;
+      const width = Math.max(
+        1,
+        Math.floor(canvas.clientWidth * (window.devicePixelRatio || 1)),
+      );
+      const height = Math.max(
+        1,
+        Math.floor(canvas.clientHeight * (window.devicePixelRatio || 1)),
+      );
+
+      const previewName = this._equippedFileName();
+
+      BABYLON.Tools.CreateScreenshotUsingRenderTarget(
+        this.engine,
+        this.camera,
+        { width, height, precision: 1 },
+        (dataUrl) => {
+          const link = document.createElement("a");
+          link.href = dataUrl;
+          link.download = `${previewName}.png`;
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+        },
+        "image/png",
+        undefined,
+        true, // antialiasing
+      );
+    }
+
+    // Builds a readable filename out of whatever's currently equipped,
+    // e.g. "endolotl_shark-hat_ender-pearl-cape", falling back to a
+    // generic name if the stage is empty.
+    _equippedFileName() {
+      const slugs = [
+        this.equipped.costume,
+        this.equipped.hat,
+        this.equipped.cape_backbling,
+      ]
+        .filter(Boolean)
+        .map((item) => item.slug);
+      return slugs.length ? slugs.join("_") : "cosmetic-locker";
     }
   }
 

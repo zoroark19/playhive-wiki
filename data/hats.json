@@ -449,7 +449,7 @@
       "availability": "paid",
       "price": 490,
       "thumbnail": "https://cdn.playhive.com/avatars/hat-shark-hat.png",
-      "model": "hats/shark.glb",
+      "model": "hats/shark-hat.glb",
       "page": "hats/shark-hat/",
       "tags": []
     },
@@ -483,6 +483,17 @@
       "thumbnail": "https://cdn.playhive.com/avatars/hat-turtle-buddy.png",
       "model": "hats/turtle-buddy.glb",
       "page": "hats/turtle-buddy-hat/",
+      "tags": []
+    },
+    {
+      "slug": "frostflame-crown",
+      "name": "Frostflame Crown",
+      "date": "",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-frostflame-crown.png",
+      "model": "hats/frostflame-crown.glb",
+      "page": "hats/frostflame-crown/",
       "tags": []
     }
   ]
