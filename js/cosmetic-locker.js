@@ -89,6 +89,14 @@
   // armor doesn't clip through the cape geometry.
   const CAPE_HIDDEN_NODE_NAMES = ["leftarmarmor", "rightarmarmor", "bodyarmor"];
 
+  // Tuning for the "reset view" stage button (see _resetView). Beta is
+  // Babylon's polar angle from the top pole, so a positive offset tilts
+  // the camera to look down at the model a bit more than the camera's
+  // plain page-load default. The zoom multiplier is applied to the
+  // normal auto-fit radius — < 1 zooms in tighter.
+  const CAMERA_RESET_BETA_OFFSET = 0.12;
+  const CAMERA_RESET_ZOOM_MULTIPLIER = 0.85;
+
   // Capes all share ONE globally-used mesh (same approach as player.html /
   // server.js): rather than each cape shipping its own .glb, every cape
   // loads this single model and gets its own look via a per-cape PNG
@@ -293,7 +301,7 @@
       });
       this.$.tagFilter.addEventListener("input", () => this._renderTagList());
 
-      this.$.resetView.addEventListener("click", () => this._refitCamera());
+      this.$.resetView.addEventListener("click", () => this._resetView());
       this.$.screenshot.addEventListener("click", () => this._takeScreenshot());
 
       this._initBabylon();
@@ -713,6 +721,11 @@
       camera.panningSensibility = 700;
       camera.wheelPrecision = 30;
       this.camera = camera;
+      // Remembered so _refitCamera can restore the original orbit angle
+      // on "reset view", not just re-center/re-zoom on whatever angle
+      // the user last dragged to.
+      this._defaultCameraAlpha = camera.alpha;
+      this._defaultCameraBeta = camera.beta;
 
       // Babylon's own wheel handling zooms the camera, but doesn't stop
       // the underlying page from also scrolling on the same wheel event.
@@ -1291,7 +1304,22 @@
         });
     }
 
-    _refitCamera() {
+    // `resetRotation` restores the camera's original orbit angle too —
+    // used only by the explicit "reset view" button (_resetView), not by
+    // the many equip/unequip/model-load call sites below, which should
+    // just re-center/re-zoom without yanking the camera away from
+    // whatever angle the user has it at.
+    //
+    // Order matters here: ArcRotateCamera.setTarget() recomputes
+    // alpha/beta/radius from the camera's CURRENT world position
+    // relative to the new target. If the camera had been dragged
+    // around, calling setTarget first derives angles from that stale,
+    // dragged position — so restoring alpha/beta afterward still leaves
+    // a subtly wrong radius/position baked in from that intermediate
+    // step (this is what caused "reset" to end up tilted/raised versus
+    // the true default). Setting alpha/beta BEFORE setTarget avoids
+    // that entirely.
+    _refitCamera({ resetRotation = false } = {}) {
       const allMeshes = [
         ...this.loadedNodes.costume,
         ...this.loadedNodes.hat,
@@ -1299,6 +1327,18 @@
       ].filter((m) => m.getBoundingInfo);
 
       if (!allMeshes.length) return;
+
+      // Reset view uses a slightly steeper (larger beta = looking down
+      // more) angle and a tighter zoom than the camera's true starting
+      // defaults, per request — a dedicated offset/multiplier so the
+      // plain page-load defaults (_defaultCameraAlpha/Beta) stay
+      // unchanged for anything else that might reference them.
+      const resetBeta = this._defaultCameraBeta + CAMERA_RESET_BETA_OFFSET;
+
+      if (resetRotation) {
+        this.camera.alpha = this._defaultCameraAlpha;
+        this.camera.beta = resetBeta;
+      }
 
       const bounds = allMeshes.map((m) => m.getBoundingInfo().boundingBox);
       const min = bounds.reduce(
@@ -1311,12 +1351,41 @@
       );
       const center = min.add(max).scale(0.5);
       const size = max.subtract(min);
-      const radius = Math.max(size.x, size.y, size.z) * 1.85 || 10;
+      const baseRadius = Math.max(size.x, size.y, size.z) * 1.85 || 10;
+      const radius = resetRotation
+        ? baseRadius * CAMERA_RESET_ZOOM_MULTIPLIER
+        : baseRadius;
 
       this.camera.setTarget(center);
       this.camera.radius = radius;
       this.camera.lowerRadiusLimit = radius * 0.4;
       this.camera.upperRadiusLimit = radius * 3;
+
+      if (resetRotation) {
+        // setTarget() can still nudge alpha/beta slightly when
+        // re-deriving them from the (now-updated) camera position, so
+        // pin them back to the exact default once more after everything
+        // else has settled.
+        this.camera.alpha = this._defaultCameraAlpha;
+        this.camera.beta = resetBeta;
+      }
+    }
+
+    // Handler for the stage's "reset view" button — restores the
+    // original orbit angle (steepened slightly, see
+    // CAMERA_RESET_BETA_OFFSET) and zooms in a bit tighter than the
+    // page-load default (see CAMERA_RESET_ZOOM_MULTIPLIER), in addition
+    // to re-centering. Also resets when the stage is empty, since
+    // _refitCamera bails out early with nothing equipped to bound.
+    _resetView() {
+      const resetBeta = this._defaultCameraBeta + CAMERA_RESET_BETA_OFFSET;
+      this.camera.alpha = this._defaultCameraAlpha;
+      this.camera.beta = resetBeta;
+      this._refitCamera({ resetRotation: true });
+      // Final pin, after _refitCamera's own internal setTarget/reset
+      // sequence, in case anything upstream nudged the angles again.
+      this.camera.alpha = this._defaultCameraAlpha;
+      this.camera.beta = resetBeta;
     }
 
     // Renders the current stage to an off-screen render target (so we
