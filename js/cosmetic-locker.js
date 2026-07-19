@@ -683,7 +683,12 @@
         return;
       }
       const canvas = this.$.canvas;
-      const engine = new BABYLON.Engine(canvas, true, {
+      // antialias: false — MSAA smooths triangle edges, which blends
+      // adjacent texel colors right at the model's silhouette and any
+      // hard internal edges (the diamond gem, spikes, etc.). Pixel-art
+      // models should render with hard, aliased edges, not smoothed
+      // ones, to avoid that fringing.
+      const engine = new BABYLON.Engine(canvas, false, {
         preserveDrawingBuffer: true,
         stencil: true,
         alpha: true,
@@ -723,12 +728,28 @@
         { passive: false },
       );
 
+      // Blockbench-style lighting: a bright, even hemispheric fill plus a
+      // "sun" directional light from up/front. Intensities are balanced
+      // so no side of the model goes dark and there's no dramatic
+      // falloff — this deliberately isn't a moody/dramatic lighting rig,
+      // it's meant to read the texture as close to "true color" as
+      // possible while still giving faces some shape.
       const light = new BABYLON.HemisphericLight(
         "lockerLight",
         new BABYLON.Vector3(0, 1, 0),
         scene,
       );
-      light.intensity = 0.9;
+      light.intensity = 0.75;
+      light.groundColor = new BABYLON.Color3(0.6, 0.6, 0.65);
+
+      const sun = new BABYLON.DirectionalLight(
+        "lockerSun",
+        new BABYLON.Vector3(-0.4, -1, 0.6),
+        scene,
+      );
+      sun.intensity = 0.9;
+      sun.specular = new BABYLON.Color3(0, 0, 0);
+      this.sun = sun;
 
       scene.onPointerObservable.add((pointerInfo) => {
         if (pointerInfo.type === BABYLON.PointerEventTypes.POINTERDOWN)
@@ -906,7 +927,7 @@
       const tex = new BABYLON.Texture(
         resolveAsset(this.dataRoot, textureUrl),
         this.scene,
-        false,
+        true, // noMipmap — pixel art shouldn't blend across mip levels
         false,
         BABYLON.Texture.NEAREST_SAMPLINGMODE,
       );
@@ -932,8 +953,12 @@
           );
         }
         mesh.material.diffuseTexture = tex;
+        // Emissive fill keeps the cape's texture close to true color —
+        // Blockbench-style shading is gentle, not high-contrast, so this
+        // sits fairly high rather than letting the sun light create
+        // strong falloff on its own.
         mesh.material.emissiveTexture = tex;
-        mesh.material.emissiveColor = new BABYLON.Color3(1, 1, 1);
+        mesh.material.emissiveColor = new BABYLON.Color3(0.45, 0.45, 0.45);
         mesh.material.specularColor = new BABYLON.Color3(0, 0, 0);
         mesh.material.backFaceCulling = false;
       });
@@ -1214,9 +1239,37 @@
             }
           });
           meshes.forEach((mesh) => {
-            if (mesh.material && mesh.material.albedoTexture) {
+            if (!mesh.material) return;
+            // Pixel-art textures need nearest-neighbor sampling with no
+            // mipmaps — Babylon's glTF loader defaults every imported
+            // texture to trilinear filtering + generated mipmaps, which
+            // blends neighboring texels (including across UV island
+            // seams) into soft color bleed as the camera moves back.
+            // Wrap mode is also clamped so the GPU can't sample from the
+            // opposite edge of a texture at a UV seam, which is the
+            // other common source of stray color fringing.
+            [
+              mesh.material.albedoTexture,
+              mesh.material.bumpTexture,
+              mesh.material.emissiveTexture,
+              mesh.material.metallicTexture,
+              mesh.material.opacityTexture,
+            ].forEach((texture) => {
+              if (!texture) return;
+              texture.updateSamplingMode(BABYLON.Texture.NEAREST_SAMPLINGMODE);
+              texture.wrapU = BABYLON.Texture.CLAMP_ADDRESSMODE;
+              texture.wrapV = BABYLON.Texture.CLAMP_ADDRESSMODE;
+            });
+            if (mesh.material.albedoTexture) {
+              // Emissive fill keeps the texture near its true color —
+              // matches Blockbench's bright, evenly-lit viewport rather
+              // than a high-contrast lit scene.
               mesh.material.emissiveTexture = mesh.material.albedoTexture;
-              mesh.material.emissiveColor = new BABYLON.Color3(1, 1, 1);
+              mesh.material.emissiveColor = new BABYLON.Color3(
+                0.45,
+                0.45,
+                0.45,
+              );
             }
           });
           this.loadedNodes[slot] = meshes;
@@ -1301,7 +1354,7 @@
         },
         "image/png",
         undefined,
-        true, // antialiasing
+        false, // antialiasing — off, matches the viewport's hard pixel-art edges
       );
     }
 
