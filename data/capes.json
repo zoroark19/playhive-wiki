@@ -2,7 +2,7 @@
   "description": "Purchasable and quest capes available on the marketplace. All capes share a single model (cape.glb) and are differentiated only by their texture.",
   "items": [
     {
-      "slug": "aquarium",
+      "slug": "aquarium-cape",
       "name": "Aquarium",
       "date": "",
       "availability": "paid",
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "slug": "battle",
+      "slug": "battle-cape",
       "name": "Battle",
       "date": "",
       "availability": "paid",
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "slug": "bee",
+      "slug": "bee-cape",
       "name": "Bee",
       "date": "",
       "availability": "paid",
@@ -41,7 +41,7 @@
       ]
     },
     {
-      "slug": "champion",
+      "slug": "champion-cape",
       "name": "Champion",
       "date": "",
       "availability": "paid",
@@ -54,7 +54,7 @@
       ]
     },
     {
-      "slug": "code",
+      "slug": "code-cape",
       "name": "Code",
       "date": "",
       "availability": "paid",
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "slug": "cranium",
+      "slug": "cranium-cape",
       "name": "Cranium",
       "date": "",
       "availability": "paid",
@@ -80,7 +80,7 @@
       ]
     },
     {
-      "slug": "crescent-moon",
+      "slug": "crescent-moon-cape",
       "name": "Crescent Moon",
       "date": "",
       "availability": "paid",
@@ -93,7 +93,7 @@
       ]
     },
     {
-      "slug": "dimensions",
+      "slug": "dimensions-cape",
       "name": "Dimensions",
       "date": "",
       "availability": "paid",
@@ -106,7 +106,7 @@
       ]
     },
     {
-      "slug": "ender-pearl",
+      "slug": "ender-pearl-cape",
       "name": "Ender Pearl",
       "date": "",
       "availability": "paid",
@@ -119,7 +119,7 @@
       ]
     },
     {
-      "slug": "end-portal",
+      "slug": "end-portal-cape",
       "name": "End Portal",
       "date": "",
       "availability": "paid",
@@ -132,7 +132,7 @@
       ]
     },
     {
-      "slug": "frozen",
+      "slug": "frozen-cape",
       "name": "Frozen",
       "date": "",
       "availability": "paid",
@@ -145,7 +145,7 @@
       ]
     },
     {
-      "slug": "galaxy",
+      "slug": "galaxy-cape",
       "name": "Galaxy",
       "date": "",
       "availability": "paid",
@@ -158,7 +158,7 @@
       ]
     },
     {
-      "slug": "gameboy",
+      "slug": "gameboy-cape",
       "name": "Gameboy",
       "date": "",
       "availability": "paid",
@@ -171,7 +171,7 @@
       ]
     },
     {
-      "slug": "gingerbread",
+      "slug": "gingerbread-cape",
       "name": "Gingerbread",
       "date": "",
       "availability": "paid",
@@ -184,7 +184,7 @@
       ]
     },
     {
-      "slug": "halloween-vibes",
+      "slug": "halloween-vibes-cape",
       "name": "Halloween Vibes",
       "date": "",
       "availability": "paid",
@@ -197,7 +197,7 @@
       ]
     },
     {
-      "slug": "love",
+      "slug": "love-cape",
       "name": "Love",
       "date": "",
       "availability": "paid",
@@ -210,7 +210,7 @@
       ]
     },
     {
-      "slug": "magma",
+      "slug": "magma-cape",
       "name": "Magma",
       "date": "",
       "availability": "paid",
@@ -223,7 +223,7 @@
       ]
     },
     {
-      "slug": "mr-worldwide",
+      "slug": "mr-worldwide-cape",
       "name": "Mr Worldwide",
       "date": "",
       "availability": "paid",
@@ -236,7 +236,7 @@
       ]
     },
     {
-      "slug": "nether",
+      "slug": "nether-cape",
       "name": "Nether",
       "date": "",
       "availability": "paid",
@@ -249,7 +249,7 @@
       ]
     },
     {
-      "slug": "overgrown",
+      "slug": "overgrown-cape",
       "name": "Overgrown",
       "date": "",
       "availability": "paid",
@@ -262,7 +262,7 @@
       ]
     },
     {
-      "slug": "present",
+      "slug": "present-cape",
       "name": "Present",
       "date": "",
       "availability": "paid",
@@ -275,7 +275,7 @@
       ]
     },
     {
-      "slug": "rose-runner",
+      "slug": "rose-runner-cape",
       "name": "Rose Runner",
       "date": "",
       "availability": "paid",
@@ -288,7 +288,7 @@
       ]
     },
     {
-      "slug": "royal",
+      "slug": "royal-cape",
       "name": "Royal",
       "date": "",
       "availability": "paid",
@@ -314,7 +314,7 @@
       ]
     },
     {
-      "slug": "science",
+      "slug": "science-cape",
       "name": "Science",
       "date": "",
       "availability": "paid",
@@ -327,7 +327,7 @@
       ]
     },
     {
-      "slug": "tree-runner",
+      "slug": "tree-runner-cape",
       "name": "Tree Runner",
       "date": "",
       "availability": "paid",
@@ -340,7 +340,7 @@
       ]
     },
     {
-      "slug": "xmas",
+      "slug": "xmas-cape",
       "name": "Xmas",
       "date": "",
       "availability": "paid",
