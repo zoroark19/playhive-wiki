@@ -2,17 +2,345 @@
   "description": "Backbling cosmetics available on the marketplace.",
   "items": [
     {
+      "slug": "cuddle-bear",
+      "name": "Cuddle Bear",
+      "date": "",
+      "availability": "paid",
+      "price": 310,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-cuddle-bear.png",
+      "model": "backblings/cuddle-bear.glb",
+      "page": "backblings/cuddle-bear/",
+      "tags": []
+    },
+    {
+      "slug": "lunar-wings",
+      "name": "Lunar Wings",
+      "date": "",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-lunar-wings.png",
+      "model": "backblings/lunar-wings.glb",
+      "page": "backblings/lunar-wings/",
+      "tags": []
+    },
+    {
+      "slug": "solar-system",
+      "name": "Solar System",
+      "date": "",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-solar-system.png",
+      "model": "backblings/solar-system.glb",
+      "page": "backblings/solar-system/",
+      "tags": []
+    },
+    {
+      "slug": "steampunk-wings",
+      "name": "Steampunk Wings",
+      "date": "",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-steampunk-wings.png",
+      "model": "backblings/steampunk-wings.glb",
+      "page": "backblings/steampunk-wings/",
+      "tags": []
+    },
+    {
+      "slug": "angel-wings",
+      "name": "Angel Wings",
+      "date": "",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-angel-wings.png",
+      "model": "backblings/angel-wings.glb",
+      "page": "backblings/angel-wings/",
+      "tags": []
+    },
+    {
+      "slug": "butterfly-wings",
+      "name": "Butterfly Wings",
+      "date": "",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-butterfly-wings.png",
+      "model": "backblings/butterfly-wings.glb",
+      "page": "backblings/butterfly-wings/",
+      "tags": []
+    },
+    {
+      "slug": "kraken-tentacles",
+      "name": "Kraken Tentacles",
+      "date": "",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-kraken-tentacles.png",
+      "model": "backblings/kraken-tentacles.glb",
+      "page": "backblings/kraken-tentacles/",
+      "tags": []
+    },
+    {
+      "slug": "soaring-heart",
+      "name": "Soaring Heart",
+      "date": "",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-soaring-heart.png",
+      "model": "backblings/soaring-heart.glb",
+      "page": "backblings/soaring-heart/",
+      "tags": []
+    },
+    {
+      "slug": "axolotl-plush",
+      "name": "Axolotl Plush",
+      "date": "",
+      "availability": "paid",
+      "price": 310,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-axolotl-plush.png",
+      "model": "backblings/axolotl-plush.glb",
+      "page": "backblings/axolotl-plush/",
+      "tags": []
+    },
+    {
+      "slug": "demon-wings",
+      "name": "Demon Wings",
+      "date": "",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-demon-wings.png",
+      "model": "backblings/demon-wings.glb",
+      "page": "backblings/demon-wings/",
+      "tags": []
+    },
+    {
+      "slug": "cyber-jetpack",
+      "name": "Cyber Jetpack",
+      "date": "",
+      "availability": "paid",
+      "price": 660,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-cyber-jetpack.png",
+      "model": "backblings/cyber-jetpack.glb",
+      "page": "backblings/cyber-jetpack/",
+      "tags": []
+    },
+    {
+      "slug": "wasp-wings",
+      "name": "Wasp Wings",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-wasp-wings.png",
+      "model": "backblings/wasp-wings.glb",
+      "page": "backblings/wasp-wings/",
+      "tags": []
+    },
+    {
+      "slug": "sculk-wings",
+      "name": "Sculk Wings",
+      "date": "",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-sculk-wings.png",
+      "model": "backblings/sculk-wings.glb",
+      "page": "backblings/sculk-wings/",
+      "tags": []
+    },
+    {
+      "slug": "divine-wings",
+      "name": "Divine Wings",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-divine-wings.png",
+      "model": "backblings/divine-wings.glb",
+      "page": "backblings/divine-wings/",
+      "tags": []
+    },
+    {
+      "slug": "galaxy-wings",
+      "name": "Galaxy Wings",
+      "date": "",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-galaxy-wings.png",
+      "model": "backblings/galaxy-wings.glb",
+      "page": "backblings/galaxy-wings/",
+      "tags": []
+    },
+    {
+      "slug": "dark-broadcast",
+      "name": "Dark Broadcast",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-dark-broadcast.png",
+      "model": "backblings/dark-broadcast.glb",
+      "page": "backblings/dark-broadcast/",
+      "tags": []
+    },
+    {
+      "slug": "phantom-wings",
+      "name": "Phantom Wings",
+      "date": "",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-phantom-wings.png",
+      "model": "backblings/phantom-wings.glb",
+      "page": "backblings/phantom-wings/",
+      "tags": []
+    },
+    {
+      "slug": "bittersweet-wings",
+      "name": "Bittersweet Wings",
+      "date": "",
+      "availability": "paid",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-bittersweet-wings.png",
+      "model": "backblings/bittersweet-wings.glb",
+      "page": "backblings/bittersweet-wings/",
+      "tags": []
+    },
+    {
+      "slug": "backroom-buddy",
+      "name": "Backroom Buddy",
+      "date": "",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-backroom-buddy.png",
+      "model": "backblings/backroom-buddy.glb",
+      "page": "backblings/backroom-buddy/",
+      "tags": []
+    },
+    {
+      "slug": "ender-wings",
+      "name": "Ender Wings",
+      "date": "",
+      "availability": "unobtainable",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-ender-wings.png",
+      "model": "backblings/ender-wings.glb",
+      "page": "backblings/ender-wings/",
+      "tags": []
+    },
+    {
       "slug": "turtle-shell",
       "name": "Turtle Shell",
-      "date": "March 3, 2024",
-      "availability": "paid",
+      "date": "April 1, 2024",
+      "availability": "unobtainable",
       "price": 120,
       "thumbnail": "https://cdn.playhive.com/avatars/backbling-turtle-shell.png",
-      "model": "backblings/turtle-shell/model.glb",
+      "model": "backblings/turtle-shell.glb",
       "page": "backblings/turtle-shell/",
-      "tags": [
-        "weapon"
-      ]
+      "tags": []
+    },
+    {
+      "slug": "black-ice-wings",
+      "name": "Black Ice Wings",
+      "date": "",
+      "availability": "unobtainable",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-black-ice-wings.png",
+      "model": "backblings/black-ice-wings.glb",
+      "page": "backblings/black-ice-wings/",
+      "tags": []
+    },
+    {
+      "slug": "crystalline-wings",
+      "name": "Crystalline Wings",
+      "date": "",
+      "availability": "unobtainable",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-crystalline-wings.png",
+      "model": "backblings/crystalline-wings.glb",
+      "page": "backblings/crystalline-wings/",
+      "tags": []
+    },
+    {
+      "slug": "valentines-bear",
+      "name": "Valentine's Bear",
+      "date": "",
+      "availability": "unobtainable",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-valentines-bear.png",
+      "model": "backblings/valentines-bear.glb",
+      "page": "backblings/valentines-bear/",
+      "tags": []
+    },
+    {
+      "slug": "rubber-ducky",
+      "name": "Rubber Ducky",
+      "date": "",
+      "availability": "unobtainable",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-rubber-ducky.png",
+      "model": "backblings/rubber-ducky.glb",
+      "page": "backblings/rubber-ducky/",
+      "tags": []
+    },
+    {
+      "slug": "7th-beeday-cake",
+      "name": "7th Beeday Cake",
+      "date": "October 16, 2025",
+      "availability": "unobtainable",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-seventh-beeday-cake.png",
+      "model": "backblings/7th-beeday-cake.glb",
+      "page": "backblings/7th-beeday-cake/",
+      "tags": []
+    },
+    {
+      "slug": "book-of-souls",
+      "name": "Book of Souls",
+      "date": "October 31, 2025",
+      "availability": "unobtainable",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-book-of-souls.png",
+      "model": "backblings/book-of-souls.glb",
+      "page": "backblings/book-of-souls/",
+      "tags": []
+    },
+    {
+      "slug": "pixel-pal",
+      "name": "Pixel Pal",
+      "date": "",
+      "availability": "unobtainable",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-pixel-pal.png",
+      "model": "backblings/pixel-pal.glb",
+      "page": "backblings/pixel-pal/",
+      "tags": []
+    },
+    {
+      "slug": "snowflake-wings",
+      "name": "Snowflake Wings",
+      "date": "",
+      "availability": "unobtainable",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-snowflake-wings.png",
+      "model": "backblings/snowflake-wings.glb",
+      "page": "backblings/snowflake-wings/",
+      "tags": []
+    },
+    {
+      "slug": "lunar-lantern",
+      "name": "Lunar Lantern",
+      "date": "",
+      "availability": "unobtainable",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-lunar-lantern.png",
+      "model": "backblings/lunar-lantern.glb",
+      "page": "backblings/lunar-lantern/",
+      "tags": []
+    },
+    {
+      "slug": "aqua-blast-jetpack",
+      "name": "Aqua Blast Jetpack",
+      "date": "",
+      "availability": "unobtainable",
+      "price": "",
+      "thumbnail": "https://cdn.playhive.com/avatars/backbling-aqua-blast-jetpack.png",
+      "model": "backblings/aqua-blast-jetpack.glb",
+      "page": "backblings/aqua-blast-jetpack/",
+      "tags": []
     }
   ]
 }

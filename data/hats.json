@@ -2,17 +2,488 @@
   "description": "Hat cosmetics available on the marketplace.",
   "items": [
     {
+      "slug": "5th-beeday-cake",
+      "name": "5th Beeday Cake",
+      "date": "October 16, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-fifth-beeday-cake.png",
+      "model": "hats/5th-beeday-cake.glb",
+      "page": "hats/5th-beeday-cake/",
+      "tags": []
+    },
+    {
+      "slug": "axe-head-hat",
+      "name": "Axe Head Hat",
+      "date": null,
+      "availability": "paid",
+      "price": 160,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-axe.png",
+      "model": "hats/axe-head-hat.glb",
+      "page": "hats/axe-head-hat/",
+      "tags": []
+    },
+    {
+      "slug": "axolotl-buddy-hat",
+      "name": "Axolotl Buddy Hat",
+      "date": "July 15, 2023",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-axolotl-buddy.png",
+      "model": "hats/axolotl-buddy-hat.glb",
+      "page": "hats/axolotl-buddy-hat/",
+      "tags": []
+    },
+    {
+      "slug": "bee-hat",
+      "name": "Bee Hat",
+      "date": "September 6, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-bee-hat.png",
+      "model": "hats/bee-hat.glb",
+      "page": "hats/bee-hat/",
+      "tags": []
+    },
+    {
+      "slug": "blob-fish-hat",
+      "name": "Blob Fish Hat",
+      "date": "May 23, 2024",
+      "availability": "paid",
+      "price": 310,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-blob-fish.png",
+      "model": "hats/blob-fish-hat.glb",
+      "page": "hats/blob-fish-hat/",
+      "tags": []
+    },
+    {
+      "slug": "blue-party-hat",
+      "name": "Blue Party Hat",
+      "date": "October 16, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-party-hat-blue.png",
+      "model": "hats/blue-party-hat.glb",
+      "page": "hats/blue-party-hat/",
+      "tags": []
+    },
+    {
+      "slug": "bunny-ears",
+      "name": "Bunny Ears",
+      "date": "January 22, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-bunny-ears.png",
+      "model": "hats/bunny-ears.glb",
+      "page": "hats/bunny-ears/",
+      "tags": []
+    },
+    {
+      "slug": "capybara-buddy-hat",
+      "name": "Capybara Buddy Hat",
+      "date": null,
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-capybara-buddy.png",
+      "model": "hats/capybara-buddy-hat.glb",
+      "page": "hats/capybara-buddy-hat/",
+      "tags": []
+    },
+    {
+      "slug": "cardboard-box-hat",
+      "name": "Cardboard Box Hat",
+      "date": null,
+      "availability": "paid",
+      "price": 160,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-cardboard-box.png",
+      "model": "hats/cardboard-box-hat.glb",
+      "page": "hats/cardboard-box-hat/",
+      "tags": []
+    },
+    {
+      "slug": "cat-beanie-hat",
+      "name": "Cat Beanie Hat",
+      "date": "September 7, 2024",
+      "availability": "paid",
+      "price": 310,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-cat-beanie.png",
+      "model": "hats/cat-beanie-hat.glb",
+      "page": "hats/cat-beanie-hat/",
+      "tags": []
+    },
+    {
+      "slug": "cat-cap",
+      "name": "Cat Cap",
+      "date": "November 25, 2022",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-cat-cap.png",
+      "model": "hats/cat-cap.glb",
+      "page": "hats/cat-cap/",
+      "tags": []
+    },
+    {
+      "slug": "crown",
+      "name": "Crown",
+      "date": "November 25, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-crown.png",
+      "model": "hats/crown.glb",
+      "page": "hats/crown/",
+      "tags": []
+    },
+    {
+      "slug": "cubee-cap-hat",
+      "name": "Cubee Cap Hat",
+      "date": "May 23, 2024",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-cubee-cap.png",
+      "model": "hats/cubee-cap-hat.glb",
+      "page": "hats/cubee-cap-hat/",
+      "tags": []
+    },
+    {
+      "slug": "diamond-treasure-hunter",
+      "name": "Diamond Treasure Hunter",
+      "date": "April 5, 2024",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-treasure-hunter-diamond.png",
+      "model": "hats/diamond-treasure-hunter.glb",
+      "page": "hats/diamond-treasure-hunter/",
+      "tags": []
+    },
+    {
+      "slug": "disco-ball",
+      "name": "Disco Ball",
+      "date": "January 20, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-party-disco-ball.png",
+      "model": "hats/disco-ball.glb",
+      "page": "hats/disco-ball/",
+      "tags": []
+    },
+    {
+      "slug": "dog-ears-hat",
+      "name": "Dog Ears Hat",
+      "date": "May 23, 2024",
+      "availability": "paid",
+      "price": 160,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-dog-ears.png",
+      "model": "hats/dog-ears-hat.glb",
+      "page": "hats/dog-ears-hat/",
+      "tags": []
+    },
+    {
+      "slug": "dr-zuks-goggles",
+      "name": "Dr. Zuk's Goggles",
+      "date": "January 20, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-party-zuk-goggles.png",
+      "model": "hats/dr-zuks-goggles.glb",
+      "page": "hats/dr-zuks-goggles/",
+      "tags": []
+    },
+    {
+      "slug": "emerald-treasure-hunter",
+      "name": "Emerald Treasure Hunter",
+      "date": "April 5, 2024",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-treasure-hunter-emerald.png",
+      "model": "hats/emerald-treasure-hunter.glb",
+      "page": "hats/emerald-treasure-hunter/",
+      "tags": []
+    },
+    {
+      "slug": "endolotl-buddy-hat",
+      "name": "Endolotl Buddy Hat",
+      "date": "December 24, 2022",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-endolotl-buddy.png",
+      "model": "hats/endolotl-buddy-hat.glb",
+      "page": "hats/endolotl-buddy-hat/",
+      "tags": []
+    },
+    {
+      "slug": "flower-crown-hat",
+      "name": "Flower Crown Hat",
+      "date": null,
+      "availability": "paid",
+      "price": 310,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-flower-crown.png",
+      "model": "hats/flower-crown-hat.glb",
+      "page": "hats/flower-crown-hat/",
+      "tags": []
+    },
+    {
+      "slug": "fox-buddy-hat",
+      "name": "Fox Buddy Hat",
+      "date": null,
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-fox-buddy.png",
+      "model": "hats/fox-buddy-hat.glb",
+      "page": "hats/fox-buddy-hat/",
+      "tags": []
+    },
+    {
+      "slug": "fox-ears",
+      "name": "Fox Ears",
+      "date": "July 15, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-fox-ears.png",
+      "model": "hats/fox-ears.glb",
+      "page": "hats/fox-ears/",
+      "tags": []
+    },
+    {
+      "slug": "frog-buddy-hat",
+      "name": "Frog Buddy Hat",
+      "date": "October 28, 2023",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-frog-buddy.png",
+      "model": "hats/frog-buddy-hat.glb",
+      "page": "hats/frog-buddy-hat/",
+      "tags": []
+    },
+    {
+      "slug": "froggy-cap-hat",
+      "name": "Froggy Cap Hat",
+      "date": "December 24, 2022",
+      "availability": "paid",
+      "price": 310,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-froggy-cap.png",
+      "model": "hats/froggy-cap-hat.glb",
+      "page": "hats/froggy-cap-hat/",
+      "tags": []
+    },
+    {
+      "slug": "gamer-headset-hat",
+      "name": "Gamer Headset Hat",
+      "date": null,
+      "availability": "paid",
+      "price": 160,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-gamer-headset.png",
+      "model": "hats/gamer-headset-hat.glb",
+      "page": "hats/gamer-headset-hat/",
+      "tags": []
+    },
+    {
+      "slug": "ghost-buddy",
+      "name": "Ghost Buddy",
+      "date": "October 17, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-ghost-buddy.png",
+      "model": "hats/ghost-buddy.glb",
+      "page": "hats/ghost-buddy/",
+      "tags": []
+    },
+    {
+      "slug": "gold-treasure-hunter",
+      "name": "Gold Treasure Hunter",
+      "date": "April 5, 2024",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-treasure-hunter-gold.png",
+      "model": "hats/gold-treasure-hunter.glb",
+      "page": "hats/gold-treasure-hunter/",
+      "tags": []
+    },
+    {
+      "slug": "green-party-hat",
+      "name": "Green Party Hat",
+      "date": "October 16, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-party-hat-green.png",
+      "model": "hats/green-party-hat.glb",
+      "page": "hats/green-party-hat/",
+      "tags": []
+    },
+    {
+      "slug": "horns-hat",
+      "name": "Horns Hat",
+      "date": "December 25, 2022",
+      "availability": "paid",
+      "price": 310,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-horns.png",
+      "model": "hats/horns-hat.glb",
+      "page": "hats/horns-hat/",
+      "tags": []
+    },
+    {
+      "slug": "insanecraft-dragon-cap",
+      "name": "InsaneCraft Dragon Cap",
+      "date": "June 29, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-insanecraft-dragon-cap.png",
+      "model": "hats/insanecraft-dragon-cap.glb",
+      "page": "hats/insanecraft-dragon-cap/",
+      "tags": []
+    },
+    {
+      "slug": "mushroom-cap-hat",
+      "name": "Mushroom Cap Hat",
+      "date": "December 24, 2022",
+      "availability": "paid",
+      "price": 160,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-mushroom-cap.png",
+      "model": "hats/mushroom-cap-hat.glb",
+      "page": "hats/mushroom-cap-hat/",
+      "tags": []
+    },
+    {
+      "slug": "mystical-antlers-hat",
+      "name": "Mystical Antlers Hat",
+      "date": null,
+      "availability": "paid",
+      "price": 310,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-mystical-antlers.png",
+      "model": "hats/mystical-antlers-hat.glb",
+      "page": "hats/mystical-antlers-hat/",
+      "tags": []
+    },
+    {
+      "slug": "neon-crown",
+      "name": "Neon Crown",
+      "date": "January 20, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-party-neon-crown.png",
+      "model": "hats/neon-crown.glb",
+      "page": "hats/neon-crown/",
+      "tags": []
+    },
+    {
+      "slug": "octopus-plush-hat",
+      "name": "Octopus Plush Hat",
+      "date": null,
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-octopus.png",
+      "model": "hats/octopus-plush-hat.glb",
+      "page": "hats/octopus-plush-hat/",
+      "tags": []
+    },
+    {
+      "slug": "pancake-tower",
+      "name": "Pancake Tower",
+      "date": "December 25, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-pancake-tower.png",
+      "model": "hats/pancake-tower.glb",
+      "page": "hats/pancake-tower/",
+      "tags": []
+    },
+    {
+      "slug": "panda-cap-hat",
+      "name": "Panda Cap Hat",
+      "date": "August 6, 2023",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-panda-cap.png",
+      "model": "hats/panda-cap-hat.glb",
+      "page": "hats/panda-cap-hat/",
+      "tags": []
+    },
+    {
+      "slug": "pink-party-hat",
+      "name": "Pink Party Hat",
+      "date": "October 9, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-party-hat-pink.png",
+      "model": "hats/pink-party-hat.glb",
+      "page": "hats/pink-party-hat/",
+      "tags": []
+    },
+    {
+      "slug": "pride-hat",
+      "name": "Pride Hat",
+      "date": "June 8, 2024",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-pride.png",
+      "model": "hats/pride-hat.glb",
+      "page": "hats/pride-hat/",
+      "tags": []
+    },
+    {
+      "slug": "propeller-hat",
+      "name": "Propeller Hat",
+      "date": "December 25, 2022",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-propeller.png",
+      "model": "hats/propeller-hat.glb",
+      "page": "hats/propeller-hat/",
+      "tags": []
+    },
+    {
+      "slug": "purple-party-hat",
+      "name": "Purple Party Hat",
+      "date": "October 16, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-party-hat-purple.png",
+      "model": "hats/purple-party-hat.glb",
+      "page": "hats/purple-party-hat/",
+      "tags": []
+    },
+    {
+      "slug": "red-panda-buddy-hat",
+      "name": "Red Panda Buddy Hat",
+      "date": null,
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-red-panda-buddy.png",
+      "model": "hats/red-panda-buddy-hat.glb",
+      "page": "hats/red-panda-buddy-hat/",
+      "tags": []
+    },
+    {
+      "slug": "santa-hat",
+      "name": "Santa Hat",
+      "date": "December 24, 2022",
+      "availability": "paid",
+      "price": 160,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-santa-hat.png",
+      "model": "hats/santa-hat.glb",
+      "page": "hats/santa-hat/",
+      "tags": []
+    },
+    {
       "slug": "shark-hat",
       "name": "Shark Hat",
       "date": "March 3, 2024",
       "availability": "paid",
-      "price": 120,
+      "price": 490,
       "thumbnail": "https://cdn.playhive.com/avatars/hat-shark-hat.png",
-      "model": "hats/shark-hat/model.glb",
+      "model": "hats/shark-hat.glb",
       "page": "hats/shark-hat/",
-      "tags": [
-        "character"
-      ]
+      "tags": []
+    },
+    {
+      "slug": "shining-crown-hat",
+      "name": "Shining Crown Hat",
+      "date": null,
+      "availability": "paid",
+      "price": 310,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-shining-crown.png",
+      "model": "hats/shining-crown-hat.glb",
+      "page": "hats/shining-crown-hat/",
+      "tags": []
+    },
+    {
+      "slug": "space-helmet",
+      "name": "Space Helmet",
+      "date": "June 30, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-space-helmet.png",
+      "model": "hats/space-helmet.glb",
+      "page": "hats/space-helmet/",
+      "tags": []
+    },
+    {
+      "slug": "turtle-buddy-hat",
+      "name": "Turtle Buddy Hat",
+      "date": "June 29, 2024",
+      "availability": "paid",
+      "price": 490,
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-turtle-buddy.png",
+      "model": "hats/turtle-buddy-hat.glb",
+      "page": "hats/turtle-buddy-hat/",
+      "tags": []
     }
   ]
 }
