@@ -1414,17 +1414,152 @@
         this.camera,
         { width, height, precision: 1 },
         (dataUrl) => {
-          const link = document.createElement("a");
-          link.href = dataUrl;
-          link.download = `${previewName}.png`;
-          document.body.appendChild(link);
-          link.click();
-          link.remove();
+          this._watermarkImage(dataUrl, width, height).then((finalDataUrl) => {
+            const link = document.createElement("a");
+            link.href = finalDataUrl;
+            link.download = `${previewName}.png`;
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+          });
         },
         "image/png",
         undefined,
         false, // antialiasing — off, matches the viewport's hard pixel-art edges
       );
+    }
+
+    // Scans a canvas's pixel alpha channel and returns the tightest
+    // {x, y, width, height} box containing every non-transparent pixel,
+    // or null if the image is fully transparent. This is how we crop
+    // out the empty margin _refitCamera leaves around the model for
+    // orbit/UI purposes in the live viewport — that margin is only
+    // wasted space in an exported still image.
+    _findOpaqueBounds(ctx, width, height) {
+      const { data } = ctx.getImageData(0, 0, width, height);
+      let minX = width;
+      let minY = height;
+      let maxX = -1;
+      let maxY = -1;
+
+      // Walking row-by-row keeps this cheap even at high-DPI capture
+      // resolutions; there's no need for anything fancier since this
+      // only runs once per export click.
+      for (let y = 0; y < height; y++) {
+        const rowOffset = y * width * 4;
+        for (let x = 0; x < width; x++) {
+          const alpha = data[rowOffset + x * 4 + 3];
+          if (alpha === 0) continue;
+          if (x < minX) minX = x;
+          if (x > maxX) maxX = x;
+          if (y < minY) minY = y;
+          if (y > maxY) maxY = y;
+        }
+      }
+
+      if (maxX < minX || maxY < minY) return null; // fully transparent
+
+      return {
+        x: minX,
+        y: minY,
+        width: maxX - minX + 1,
+        height: maxY - minY + 1,
+      };
+    }
+
+    // Draws the rendered screenshot onto a 2D canvas, crops it to the
+    // model's actual bounding box (with a little breathing room), stamps
+    // a small "playhive.wiki" watermark in the bottom-right corner, and
+    // returns a new PNG data URL. Keeping this as a separate compositing
+    // pass (rather than drawing into the Babylon scene itself, or
+    // re-framing the 3D camera) means none of it affects the live
+    // viewport or its orbit/zoom framing — only the exported file.
+    _watermarkImage(dataUrl, width, height) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => {
+          // First pass: draw at full captured size purely so we can
+          // read back pixel alpha and find the content bounds.
+          const scratchCanvas = document.createElement("canvas");
+          scratchCanvas.width = width;
+          scratchCanvas.height = height;
+          const scratchCtx = scratchCanvas.getContext("2d", {
+            willReadFrequently: true,
+          });
+          scratchCtx.drawImage(img, 0, 0, width, height);
+
+          const bounds = this._findOpaqueBounds(scratchCtx, width, height);
+
+          // Pad around the tight bounds so the crop doesn't feel
+          // clipped, scaled relative to the content size itself.
+          const paddingRatio = 0.06;
+          let cropX = 0;
+          let cropY = 0;
+          let cropWidth = width;
+          let cropHeight = height;
+
+          if (bounds) {
+            const padX = Math.round(bounds.width * paddingRatio);
+            const padY = Math.round(bounds.height * paddingRatio);
+
+            const left = Math.max(0, bounds.x - padX);
+            const top = Math.max(0, bounds.y - padY);
+            const right = Math.min(width, bounds.x + bounds.width + padX);
+            const bottom = Math.min(height, bounds.y + bounds.height + padY);
+
+            cropX = left;
+            cropY = top;
+            cropWidth = right - left;
+            cropHeight = bottom - top;
+          }
+
+          const outCanvas = document.createElement("canvas");
+          outCanvas.width = cropWidth;
+          outCanvas.height = cropHeight;
+          const ctx = outCanvas.getContext("2d");
+          ctx.drawImage(
+            scratchCanvas,
+            cropX,
+            cropY,
+            cropWidth,
+            cropHeight,
+            0,
+            0,
+            cropWidth,
+            cropHeight,
+          );
+
+          // Scale the watermark relative to the cropped image size so
+          // it stays legible (but unobtrusive) whether this is a small
+          // preview or a large high-DPI capture.
+          const fontSize = Math.max(12, Math.round(cropHeight * 0.028));
+          const paddingX = Math.round(fontSize * 0.9);
+          const paddingY = Math.round(fontSize * 0.9);
+          const label = "playhive.wiki";
+
+          ctx.font = `700 ${fontSize}px sans-serif`;
+          ctx.textAlign = "right";
+          ctx.textBaseline = "bottom";
+
+          const x = cropWidth - paddingX;
+          const y = cropHeight - paddingY;
+
+          // Soft dark outline/shadow first so the label stays readable
+          // over both light and dark parts of the render, then the
+          // semi-transparent white fill on top.
+          ctx.lineWidth = Math.max(2, Math.round(fontSize * 0.18));
+          ctx.strokeStyle = "rgba(0, 0, 0, 0.55)";
+          ctx.lineJoin = "round";
+          ctx.strokeText(label, x, y);
+
+          ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
+          ctx.fillText(label, x, y);
+
+          resolve(outCanvas.toDataURL("image/png"));
+        };
+        img.onerror = () => resolve(dataUrl); // fall back to unwatermarked
+        img.src = dataUrl;
+      });
     }
 
     // Builds a readable filename out of whatever's currently equipped,
