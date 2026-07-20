@@ -1,0 +1,42 @@
+name: Update changelog data
+
+on:
+  schedule:
+    # Runs every 3 hours. GitHub may delay scheduled runs slightly under load.
+    - cron: "0 */3 * * *"
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - "scripts/fetch-changelog.mjs"
+      - ".github/workflows/changelog.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch changelog RSS and write JSON
+        run: node scripts/fetch-changelog.mjs
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/changelog.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update changelog data [automated]"
+            git push
+          fi
