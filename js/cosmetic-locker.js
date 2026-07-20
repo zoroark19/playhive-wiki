@@ -89,6 +89,14 @@
   // armor doesn't clip through the cape geometry.
   const CAPE_HIDDEN_NODE_NAMES = ["leftarmarmor", "rightarmarmor", "bodyarmor"];
 
+  // Tuning for the "reset view" stage button (see _resetView). Beta is
+  // Babylon's polar angle from the top pole, so a positive offset tilts
+  // the camera to look down at the model a bit more than the camera's
+  // plain page-load default. The zoom multiplier is applied to the
+  // normal auto-fit radius — < 1 zooms in tighter.
+  const CAMERA_RESET_BETA_OFFSET = 0.12;
+  const CAMERA_RESET_ZOOM_MULTIPLIER = 0.65;
+
   // Capes all share ONE globally-used mesh (same approach as player.html /
   // server.js): rather than each cape shipping its own .glb, every cape
   // loads this single model and gets its own look via a per-cape PNG
@@ -228,6 +236,14 @@
 
           <div class="locker__stage-col">
             <div class="locker__stage">
+              <div class="locker__stage-controls">
+                <button type="button" class="locker__stage-btn" data-role="reset-view" title="Reset view">
+                  <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+                </button>
+                <button type="button" class="locker__stage-btn" data-role="screenshot" title="Save screenshot (transparent PNG)">
+                  <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                </button>
+              </div>
               <div class="locker__stage-empty" data-role="stage-empty" style="display:none">
                 Select a costume, hat, or cape/backbling to preview it here.
               </div>
@@ -265,6 +281,8 @@
         tags: this.rootEl.querySelector('[data-role="tags"]'),
         stageEmpty: this.rootEl.querySelector('[data-role="stage-empty"]'),
         canvas: this.rootEl.querySelector('[data-role="canvas"]'),
+        resetView: this.rootEl.querySelector('[data-role="reset-view"]'),
+        screenshot: this.rootEl.querySelector('[data-role="screenshot"]'),
         browseGrid: this.rootEl.querySelector('[data-role="browse-grid"]'),
         slotCostume: this.rootEl.querySelector('[data-role="slot-costume"]'),
         slotHat: this.rootEl.querySelector('[data-role="slot-hat"]'),
@@ -282,6 +300,9 @@
         this._renderBrowseGrid();
       });
       this.$.tagFilter.addEventListener("input", () => this._renderTagList());
+
+      this.$.resetView.addEventListener("click", () => this._resetView());
+      this.$.screenshot.addEventListener("click", () => this._takeScreenshot());
 
       this._initBabylon();
     }
@@ -586,6 +607,25 @@
     // matches. Returns true if at least one item from the URL was
     // equipped, so the caller knows whether to fall back to the default
     // random costume. Unknown/stale slugs are silently ignored.
+    //
+    // A slug is only guaranteed unique WITHIN its own category's data
+    // file(s), not globally — e.g. "rubber-ducky" is both a quest costume
+    // and an unrelated backbling. A naive allItems.find(slug) always
+    // returns whichever one happens to appear first once every category
+    // is flattened together, regardless of which one the link actually
+    // meant, silently equipping the wrong item into the wrong slot.
+    //
+    // Since a single URL can only ever carry one item per equip slot
+    // anyway (costume / hat / cape_backbling), we resolve ambiguous slugs
+    // by process of elimination against the OTHER tokens in the same URL
+    // — in two passes so the result doesn't depend on token order:
+    //   1. Every unambiguous token (slug used by exactly one item across
+    //      all categories) is resolved first and claims its slot.
+    //   2. Each ambiguous token then picks whichever of its candidates'
+    //      slots isn't already claimed — by an unambiguous token OR by
+    //      an ambiguous token resolved earlier in this same pass.
+    // A lone ambiguous slug with no other tokens to eliminate against
+    // still falls back to its first candidate, same as previous behavior.
     _applyEquippedFromURL() {
       const raw = (location.search || "").replace(/^\?/, "");
       if (!raw) return false;
@@ -602,9 +642,46 @@
         .filter(Boolean);
       if (!tokens.length) return false;
 
-      const matched = tokens
-        .map((slug) => this.allItems.find((i) => i.slug === slug))
-        .filter(Boolean);
+      // Group every item (across all categories) by slug once, so each
+      // token can see every same-slug candidate rather than just the
+      // first one Array.find would have stopped at.
+      const bySlug = new Map();
+      this.allItems.forEach((item) => {
+        if (!bySlug.has(item.slug)) bySlug.set(item.slug, []);
+        bySlug.get(item.slug).push(item);
+      });
+
+      const resolved = tokens.map((slug) => ({
+        slug,
+        candidates: bySlug.get(slug) || [],
+      }));
+
+      const claimedSlots = new Set();
+
+      // Pass 1: unambiguous tokens claim their slot first, independent of
+      // where they appear in the URL.
+      resolved.forEach((entry) => {
+        if (entry.candidates.length === 1) {
+          claimedSlots.add(CATEGORY_SLOT[entry.candidates[0].category]);
+        }
+      });
+
+      // Pass 2: resolve every token against the now-complete claimed set.
+      const matched = [];
+      resolved.forEach((entry) => {
+        if (!entry.candidates.length) return; // unknown slug
+
+        const item =
+          entry.candidates.length === 1
+            ? entry.candidates[0]
+            : entry.candidates.find(
+                (candidate) =>
+                  !claimedSlots.has(CATEGORY_SLOT[candidate.category]),
+              ) || entry.candidates[0];
+
+        matched.push(item);
+        claimedSlots.add(CATEGORY_SLOT[item.category]);
+      });
       if (!matched.length) return false;
 
       // Equip the costume (if any) before hat/cape/backbling, regardless
@@ -670,7 +747,12 @@
         return;
       }
       const canvas = this.$.canvas;
-      const engine = new BABYLON.Engine(canvas, true, {
+      // antialias: false — MSAA smooths triangle edges, which blends
+      // adjacent texel colors right at the model's silhouette and any
+      // hard internal edges (the diamond gem, spikes, etc.). Pixel-art
+      // models should render with hard, aliased edges, not smoothed
+      // ones, to avoid that fringing.
+      const engine = new BABYLON.Engine(canvas, false, {
         preserveDrawingBuffer: true,
         stencil: true,
         alpha: true,
@@ -695,6 +777,11 @@
       camera.panningSensibility = 700;
       camera.wheelPrecision = 30;
       this.camera = camera;
+      // Remembered so _refitCamera can restore the original orbit angle
+      // on "reset view", not just re-center/re-zoom on whatever angle
+      // the user last dragged to.
+      this._defaultCameraAlpha = camera.alpha;
+      this._defaultCameraBeta = camera.beta;
 
       // Babylon's own wheel handling zooms the camera, but doesn't stop
       // the underlying page from also scrolling on the same wheel event.
@@ -710,12 +797,28 @@
         { passive: false },
       );
 
+      // Blockbench-style lighting: a bright, even hemispheric fill plus a
+      // "sun" directional light from up/front. Intensities are balanced
+      // so no side of the model goes dark and there's no dramatic
+      // falloff — this deliberately isn't a moody/dramatic lighting rig,
+      // it's meant to read the texture as close to "true color" as
+      // possible while still giving faces some shape.
       const light = new BABYLON.HemisphericLight(
         "lockerLight",
         new BABYLON.Vector3(0, 1, 0),
         scene,
       );
-      light.intensity = 0.9;
+      light.intensity = 0.75;
+      light.groundColor = new BABYLON.Color3(0.6, 0.6, 0.65);
+
+      const sun = new BABYLON.DirectionalLight(
+        "lockerSun",
+        new BABYLON.Vector3(-0.4, -1, 0.6),
+        scene,
+      );
+      sun.intensity = 0.9;
+      sun.specular = new BABYLON.Color3(0, 0, 0);
+      this.sun = sun;
 
       scene.onPointerObservable.add((pointerInfo) => {
         if (pointerInfo.type === BABYLON.PointerEventTypes.POINTERDOWN)
@@ -893,7 +996,7 @@
       const tex = new BABYLON.Texture(
         resolveAsset(this.dataRoot, textureUrl),
         this.scene,
-        false,
+        true, // noMipmap — pixel art shouldn't blend across mip levels
         false,
         BABYLON.Texture.NEAREST_SAMPLINGMODE,
       );
@@ -919,8 +1022,12 @@
           );
         }
         mesh.material.diffuseTexture = tex;
+        // Emissive fill keeps the cape's texture close to true color —
+        // Blockbench-style shading is gentle, not high-contrast, so this
+        // sits fairly high rather than letting the sun light create
+        // strong falloff on its own.
         mesh.material.emissiveTexture = tex;
-        mesh.material.emissiveColor = new BABYLON.Color3(1, 1, 1);
+        mesh.material.emissiveColor = new BABYLON.Color3(0.45, 0.45, 0.45);
         mesh.material.specularColor = new BABYLON.Color3(0, 0, 0);
         mesh.material.backFaceCulling = false;
       });
@@ -1201,9 +1308,37 @@
             }
           });
           meshes.forEach((mesh) => {
-            if (mesh.material && mesh.material.albedoTexture) {
+            if (!mesh.material) return;
+            // Pixel-art textures need nearest-neighbor sampling with no
+            // mipmaps — Babylon's glTF loader defaults every imported
+            // texture to trilinear filtering + generated mipmaps, which
+            // blends neighboring texels (including across UV island
+            // seams) into soft color bleed as the camera moves back.
+            // Wrap mode is also clamped so the GPU can't sample from the
+            // opposite edge of a texture at a UV seam, which is the
+            // other common source of stray color fringing.
+            [
+              mesh.material.albedoTexture,
+              mesh.material.bumpTexture,
+              mesh.material.emissiveTexture,
+              mesh.material.metallicTexture,
+              mesh.material.opacityTexture,
+            ].forEach((texture) => {
+              if (!texture) return;
+              texture.updateSamplingMode(BABYLON.Texture.NEAREST_SAMPLINGMODE);
+              texture.wrapU = BABYLON.Texture.CLAMP_ADDRESSMODE;
+              texture.wrapV = BABYLON.Texture.CLAMP_ADDRESSMODE;
+            });
+            if (mesh.material.albedoTexture) {
+              // Emissive fill keeps the texture near its true color —
+              // matches Blockbench's bright, evenly-lit viewport rather
+              // than a high-contrast lit scene.
               mesh.material.emissiveTexture = mesh.material.albedoTexture;
-              mesh.material.emissiveColor = new BABYLON.Color3(1, 1, 1);
+              mesh.material.emissiveColor = new BABYLON.Color3(
+                0.45,
+                0.45,
+                0.45,
+              );
             }
           });
           this.loadedNodes[slot] = meshes;
@@ -1225,7 +1360,22 @@
         });
     }
 
-    _refitCamera() {
+    // `resetRotation` restores the camera's original orbit angle too —
+    // used only by the explicit "reset view" button (_resetView), not by
+    // the many equip/unequip/model-load call sites below, which should
+    // just re-center/re-zoom without yanking the camera away from
+    // whatever angle the user has it at.
+    //
+    // Order matters here: ArcRotateCamera.setTarget() recomputes
+    // alpha/beta/radius from the camera's CURRENT world position
+    // relative to the new target. If the camera had been dragged
+    // around, calling setTarget first derives angles from that stale,
+    // dragged position — so restoring alpha/beta afterward still leaves
+    // a subtly wrong radius/position baked in from that intermediate
+    // step (this is what caused "reset" to end up tilted/raised versus
+    // the true default). Setting alpha/beta BEFORE setTarget avoids
+    // that entirely.
+    _refitCamera({ resetRotation = false } = {}) {
       const allMeshes = [
         ...this.loadedNodes.costume,
         ...this.loadedNodes.hat,
@@ -1233,6 +1383,18 @@
       ].filter((m) => m.getBoundingInfo);
 
       if (!allMeshes.length) return;
+
+      // Reset view uses a slightly steeper (larger beta = looking down
+      // more) angle and a tighter zoom than the camera's true starting
+      // defaults, per request — a dedicated offset/multiplier so the
+      // plain page-load defaults (_defaultCameraAlpha/Beta) stay
+      // unchanged for anything else that might reference them.
+      const resetBeta = this._defaultCameraBeta + CAMERA_RESET_BETA_OFFSET;
+
+      if (resetRotation) {
+        this.camera.alpha = this._defaultCameraAlpha;
+        this.camera.beta = resetBeta;
+      }
 
       const bounds = allMeshes.map((m) => m.getBoundingInfo().boundingBox);
       const min = bounds.reduce(
@@ -1245,12 +1407,229 @@
       );
       const center = min.add(max).scale(0.5);
       const size = max.subtract(min);
-      const radius = Math.max(size.x, size.y, size.z) * 1.85 || 10;
+      const baseRadius = Math.max(size.x, size.y, size.z) * 1.85 || 10;
+      const radius = resetRotation
+        ? baseRadius * CAMERA_RESET_ZOOM_MULTIPLIER
+        : baseRadius;
 
       this.camera.setTarget(center);
       this.camera.radius = radius;
       this.camera.lowerRadiusLimit = radius * 0.4;
       this.camera.upperRadiusLimit = radius * 3;
+
+      if (resetRotation) {
+        // setTarget() can still nudge alpha/beta slightly when
+        // re-deriving them from the (now-updated) camera position, so
+        // pin them back to the exact default once more after everything
+        // else has settled.
+        this.camera.alpha = this._defaultCameraAlpha;
+        this.camera.beta = resetBeta;
+      }
+    }
+
+    // Handler for the stage's "reset view" button — restores the
+    // original orbit angle (steepened slightly, see
+    // CAMERA_RESET_BETA_OFFSET) and zooms in a bit tighter than the
+    // page-load default (see CAMERA_RESET_ZOOM_MULTIPLIER), in addition
+    // to re-centering. Also resets when the stage is empty, since
+    // _refitCamera bails out early with nothing equipped to bound.
+    _resetView() {
+      const resetBeta = this._defaultCameraBeta + CAMERA_RESET_BETA_OFFSET;
+      this.camera.alpha = this._defaultCameraAlpha;
+      this.camera.beta = resetBeta;
+      this._refitCamera({ resetRotation: true });
+      // Final pin, after _refitCamera's own internal setTarget/reset
+      // sequence, in case anything upstream nudged the angles again.
+      this.camera.alpha = this._defaultCameraAlpha;
+      this.camera.beta = resetBeta;
+    }
+
+    // Renders the current stage to an off-screen render target (so we
+    // don't just grab whatever's already in the visible canvas buffer)
+    // and downloads it as a transparent PNG. The scene's clearColor
+    // already has alpha 0 (see _initBabylon), and engine.setHardwareScalingLevel
+    // there also keeps this render crisp at the device's actual pixel
+    // ratio rather than the CSS-scaled canvas size.
+    _takeScreenshot() {
+      if (!this.engine || !this.scene || !this.camera) return;
+
+      const canvas = this.$.canvas;
+      const width = Math.max(
+        1,
+        Math.floor(canvas.clientWidth * (window.devicePixelRatio || 1)),
+      );
+      const height = Math.max(
+        1,
+        Math.floor(canvas.clientHeight * (window.devicePixelRatio || 1)),
+      );
+
+      const previewName = this._equippedFileName();
+
+      BABYLON.Tools.CreateScreenshotUsingRenderTarget(
+        this.engine,
+        this.camera,
+        { width, height, precision: 1 },
+        (dataUrl) => {
+          this._watermarkImage(dataUrl, width, height).then((finalDataUrl) => {
+            const link = document.createElement("a");
+            link.href = finalDataUrl;
+            link.download = `${previewName}.png`;
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+          });
+        },
+        "image/png",
+        undefined,
+        false, // antialiasing — off, matches the viewport's hard pixel-art edges
+      );
+    }
+
+    // Scans a canvas's pixel alpha channel and returns the tightest
+    // {x, y, width, height} box containing every non-transparent pixel,
+    // or null if the image is fully transparent. This is how we crop
+    // out the empty margin _refitCamera leaves around the model for
+    // orbit/UI purposes in the live viewport — that margin is only
+    // wasted space in an exported still image.
+    _findOpaqueBounds(ctx, width, height) {
+      const { data } = ctx.getImageData(0, 0, width, height);
+      let minX = width;
+      let minY = height;
+      let maxX = -1;
+      let maxY = -1;
+
+      // Walking row-by-row keeps this cheap even at high-DPI capture
+      // resolutions; there's no need for anything fancier since this
+      // only runs once per export click.
+      for (let y = 0; y < height; y++) {
+        const rowOffset = y * width * 4;
+        for (let x = 0; x < width; x++) {
+          const alpha = data[rowOffset + x * 4 + 3];
+          if (alpha === 0) continue;
+          if (x < minX) minX = x;
+          if (x > maxX) maxX = x;
+          if (y < minY) minY = y;
+          if (y > maxY) maxY = y;
+        }
+      }
+
+      if (maxX < minX || maxY < minY) return null; // fully transparent
+
+      return {
+        x: minX,
+        y: minY,
+        width: maxX - minX + 1,
+        height: maxY - minY + 1,
+      };
+    }
+
+    // Draws the rendered screenshot onto a 2D canvas, crops it to the
+    // model's actual bounding box (with a little breathing room), stamps
+    // a small "playhive.wiki" watermark in the bottom-right corner, and
+    // returns a new PNG data URL. Keeping this as a separate compositing
+    // pass (rather than drawing into the Babylon scene itself, or
+    // re-framing the 3D camera) means none of it affects the live
+    // viewport or its orbit/zoom framing — only the exported file.
+    _watermarkImage(dataUrl, width, height) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => {
+          // First pass: draw at full captured size purely so we can
+          // read back pixel alpha and find the content bounds.
+          const scratchCanvas = document.createElement("canvas");
+          scratchCanvas.width = width;
+          scratchCanvas.height = height;
+          const scratchCtx = scratchCanvas.getContext("2d", {
+            willReadFrequently: true,
+          });
+          scratchCtx.drawImage(img, 0, 0, width, height);
+
+          const bounds = this._findOpaqueBounds(scratchCtx, width, height);
+
+          // Pad around the tight bounds so the crop doesn't feel
+          // clipped, scaled relative to the content size itself.
+          const paddingRatio = 0.06;
+          let cropX = 0;
+          let cropY = 0;
+          let cropWidth = width;
+          let cropHeight = height;
+
+          if (bounds) {
+            const padX = Math.round(bounds.width * paddingRatio);
+            const padY = Math.round(bounds.height * paddingRatio);
+
+            const left = Math.max(0, bounds.x - padX);
+            const top = Math.max(0, bounds.y - padY);
+            const right = Math.min(width, bounds.x + bounds.width + padX);
+            const bottom = Math.min(height, bounds.y + bounds.height + padY);
+
+            cropX = left;
+            cropY = top;
+            cropWidth = right - left;
+            cropHeight = bottom - top;
+          }
+
+          const outCanvas = document.createElement("canvas");
+          outCanvas.width = cropWidth;
+          outCanvas.height = cropHeight;
+          const ctx = outCanvas.getContext("2d");
+          ctx.drawImage(
+            scratchCanvas,
+            cropX,
+            cropY,
+            cropWidth,
+            cropHeight,
+            0,
+            0,
+            cropWidth,
+            cropHeight,
+          );
+
+          // Scale the watermark relative to the cropped image size so
+          // it stays legible (but unobtrusive) whether this is a small
+          // preview or a large high-DPI capture.
+          const fontSize = Math.max(12, Math.round(cropHeight * 0.028));
+          const paddingX = Math.round(fontSize * 0.9);
+          const paddingY = Math.round(fontSize * 0.9);
+          const label = "playhive.wiki";
+
+          ctx.font = `700 ${fontSize}px sans-serif`;
+          ctx.textAlign = "right";
+          ctx.textBaseline = "bottom";
+
+          const x = cropWidth - paddingX;
+          const y = cropHeight - paddingY;
+
+          // Soft dark outline/shadow first so the label stays readable
+          // over both light and dark parts of the render, then the
+          // semi-transparent white fill on top.
+          ctx.lineWidth = Math.max(2, Math.round(fontSize * 0.18));
+          ctx.strokeStyle = "rgba(0, 0, 0, 0.55)";
+          ctx.lineJoin = "round";
+          ctx.strokeText(label, x, y);
+
+          ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
+          ctx.fillText(label, x, y);
+
+          resolve(outCanvas.toDataURL("image/png"));
+        };
+        img.onerror = () => resolve(dataUrl); // fall back to unwatermarked
+        img.src = dataUrl;
+      });
+    }
+
+    // Builds a readable filename out of whatever's currently equipped,
+    // e.g. "endolotl_shark-hat_ender-pearl-cape", falling back to a
+    // generic name if the stage is empty.
+    _equippedFileName() {
+      const slugs = [
+        this.equipped.costume,
+        this.equipped.hat,
+        this.equipped.cape_backbling,
+      ]
+        .filter(Boolean)
+        .map((item) => item.slug);
+      return slugs.length ? slugs.join("_") : "cosmetic-locker";
     }
   }
 
