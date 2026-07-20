@@ -96,6 +96,19 @@
   const PROPELLER_SPIN_NODE_NAME = "propeller";
   const PROPELLER_SPIN_DEGREES_PER_SECOND = 360;
 
+  // Costume idle "bob" animation — arms gently swinging, applied to every
+  // costume while toggled on (see _startBob/_stopBob). Reproduces the
+  // source Bedrock rig's "animation.humanoid.bob":
+  //   leftarm.rotation.z  = ((cos(life_time * 103.2°) * 2.865°) + 2.865°) * -1
+  //   rightarm.rotation.z =  (cos(life_time * 103.2°) * 2.865°) + 2.865°
+  // life_time is seconds elapsed since the bob loop (re)started, matching
+  // Bedrock's query.life_time. Bone names are case-insensitive lookups
+  // against the costume's skeleton, same convention as HELMET_NODE_NAME.
+  const BOB_LEFT_ARM_BONE_NAME = "leftarm";
+  const BOB_RIGHT_ARM_BONE_NAME = "rightarm";
+  const BOB_FREQUENCY_DEGREES_PER_SECOND = 103.2;
+  const BOB_AMPLITUDE_DEGREES = 2.865;
+
   // Node names (case-insensitive) inside a costume's hierarchy that should
   // be hidden whenever a Cape (not a Backbling) is equipped, so shoulder/back
   // armor doesn't clip through the cape geometry.
@@ -182,6 +195,10 @@
       this.activeTags = new Set();
       this.searchTerm = "";
       this.sort = "newest";
+      // User-toggleable idle "bob" animation (arms swinging), applied to
+      // every costume — see _startBob/_stopBob. On by default to match
+      // the source Bedrock rig's always-on humanoid.bob animation.
+      this.bobbingEnabled = true;
 
       this.engine = null;
       this.scene = null;
@@ -198,6 +215,20 @@
         hat: null,
         cape_backbling: null,
       };
+      // scene.onBeforeRenderObservable handle for the costume's idle "bob"
+      // (arm-swing) animation — see _startBob/_stopBob. null whenever
+      // bobbing is off or no costume with left/rightarm bones is loaded.
+      this._bobObserver = null;
+      // Elapsed seconds fed into the bob formula, accumulated via engine
+      // delta time (mirrors query.life_time from the source Bedrock
+      // animation) rather than wall-clock Date.now(), so it stays in sync
+      // with the scene's own render clock and pauses/resumes cleanly.
+      this._bobLifeTime = 0;
+      // Original (un-bobbed) local rotation for each arm bone, keyed by
+      // bone name, so bobbing can be turned off mid-animation and the
+      // arms snap cleanly back to their bind pose instead of freezing
+      // wherever the bob motion last left them.
+      this._bobOriginalRotations = null;
       // Original (unscaled) bone scaling cache, keyed by bone name, restored
       // when the corresponding hide condition (hat/cape) no longer applies.
       this._boneOriginalScales = null;
@@ -259,6 +290,9 @@
           <div class="locker__stage-col">
             <div class="locker__stage">
               <div class="locker__stage-controls">
+                <button type="button" class="locker__stage-btn" data-role="toggle-bob" title="Toggle idle bobbing">
+                  <svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M5 12H3M21 12h-2M7.5 7.5 6 6M18 18l-1.5-1.5M7.5 16.5 6 18M18 6l-1.5 1.5"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
                 <button type="button" class="locker__stage-btn" data-role="reset-view" title="Reset view">
                   <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
                 </button>
@@ -305,6 +339,7 @@
         canvas: this.rootEl.querySelector('[data-role="canvas"]'),
         resetView: this.rootEl.querySelector('[data-role="reset-view"]'),
         screenshot: this.rootEl.querySelector('[data-role="screenshot"]'),
+        toggleBob: this.rootEl.querySelector('[data-role="toggle-bob"]'),
         browseGrid: this.rootEl.querySelector('[data-role="browse-grid"]'),
         slotCostume: this.rootEl.querySelector('[data-role="slot-costume"]'),
         slotHat: this.rootEl.querySelector('[data-role="slot-hat"]'),
@@ -325,6 +360,8 @@
 
       this.$.resetView.addEventListener("click", () => this._resetView());
       this.$.screenshot.addEventListener("click", () => this._takeScreenshot());
+      this.$.toggleBob.addEventListener("click", () => this._toggleBobbing());
+      this._updateBobButtonState();
 
       this._initBabylon();
     }
@@ -975,6 +1012,122 @@
       );
     }
 
+    // Looks up a named bone's linked TransformNode on the costume's
+    // skeleton (case-insensitive) — same lookup pattern as
+    // _getCostumeBoneTransformNode, kept as its own small helper here since
+    // bobbing needs both arm bones together and returns them as a lookup
+    // table rather than one at a time.
+    _getCostumeArmBoneNodes() {
+      return {
+        [BOB_LEFT_ARM_BONE_NAME]: this._getCostumeBoneTransformNode(
+          BOB_LEFT_ARM_BONE_NAME,
+        ),
+        [BOB_RIGHT_ARM_BONE_NAME]: this._getCostumeBoneTransformNode(
+          BOB_RIGHT_ARM_BONE_NAME,
+        ),
+      };
+    }
+
+    // Starts (or restarts) the costume's idle "bob" animation — gently
+    // swinging left/rightarm bones on the Z axis. Reproduces the source
+    // Bedrock rig's always-on "animation.humanoid.bob" (see the constants
+    // above) since, like the propeller spin, it was never exported into
+    // any costume .glb as a real glTF animation clip. No-ops quietly if
+    // bobbing is toggled off, no costume is loaded, or the loaded costume
+    // has no left/rightarm bones.
+    _startBob() {
+      this._stopBob();
+      if (!this.bobbingEnabled || !this.scene) return;
+
+      const armNodes = this._getCostumeArmBoneNodes();
+      const leftArm = armNodes[BOB_LEFT_ARM_BONE_NAME];
+      const rightArm = armNodes[BOB_RIGHT_ARM_BONE_NAME];
+      if (!leftArm && !rightArm) return;
+
+      if (!this._bobOriginalRotations) this._bobOriginalRotations = {};
+      [
+        [BOB_LEFT_ARM_BONE_NAME, leftArm],
+        [BOB_RIGHT_ARM_BONE_NAME, rightArm],
+      ].forEach(([name, node]) => {
+        if (!node) return;
+        // Bobbing only ever touches rotation.z, so Euler rotation (not a
+        // quaternion) needs to be what's driving orientation, same
+        // reasoning as the propeller spin's rotationQuaternion reset.
+        node.rotationQuaternion = null;
+        if (!(name in this._bobOriginalRotations)) {
+          this._bobOriginalRotations[name] = node.rotation.z;
+        }
+      });
+
+      const frequencyRadiansPerSecond =
+        (BOB_FREQUENCY_DEGREES_PER_SECOND * Math.PI) / 180;
+      const amplitudeRadians = (BOB_AMPLITUDE_DEGREES * Math.PI) / 180;
+
+      this._bobLifeTime = 0;
+      const observer = this.scene.onBeforeRenderObservable.add(() => {
+        const deltaSeconds = this.scene.getEngine().getDeltaTime() / 1000;
+        this._bobLifeTime += deltaSeconds;
+
+        const wave =
+          Math.cos(this._bobLifeTime * frequencyRadiansPerSecond) *
+            amplitudeRadians +
+          amplitudeRadians;
+
+        if (leftArm) leftArm.rotation.z = -wave;
+        if (rightArm) rightArm.rotation.z = wave;
+      });
+
+      this._bobObserver = observer;
+    }
+
+    // Stops the idle-bob observer (if running) and snaps both arm bones
+    // back to their original bind-pose rotation, so turning bobbing off
+    // (or clearing/swapping the costume) never leaves an arm frozen
+    // mid-swing.
+    _stopBob() {
+      if (this._bobObserver && this.scene) {
+        this.scene.onBeforeRenderObservable.remove(this._bobObserver);
+      }
+      this._bobObserver = null;
+
+      if (this._bobOriginalRotations) {
+        const armNodes = this._getCostumeArmBoneNodes();
+        Object.entries(this._bobOriginalRotations).forEach(
+          ([name, originalZ]) => {
+            const node = armNodes[name];
+            if (node) node.rotation.z = originalZ;
+          },
+        );
+      }
+      this._bobOriginalRotations = null;
+    }
+
+    // Click handler for the stage's "toggle bobbing" button.
+    _toggleBobbing() {
+      this.bobbingEnabled = !this.bobbingEnabled;
+      this._updateBobButtonState();
+      if (this.bobbingEnabled) {
+        this._startBob();
+      } else {
+        this._stopBob();
+      }
+    }
+
+    // Reflects this.bobbingEnabled onto the toggle button's pressed/active
+    // visual state (see .locker__stage-btn.is-active in the CSS) and its
+    // accessible pressed-state + tooltip text.
+    _updateBobButtonState() {
+      if (!this.$.toggleBob) return;
+      this.$.toggleBob.classList.toggle("is-active", this.bobbingEnabled);
+      this.$.toggleBob.setAttribute(
+        "aria-pressed",
+        this.bobbingEnabled ? "true" : "false",
+      );
+      this.$.toggleBob.title = this.bobbingEnabled
+        ? "Turn off idle bobbing"
+        : "Turn on idle bobbing";
+    }
+
     // Finds a node named PROPELLER_SPIN_NODE_NAME (case-insensitive) among
     // a slot's loaded nodes and/or skeleton bones, preferring an actual
     // TransformNode over a bare Bone since Babylon rotates a TransformNode
@@ -1045,6 +1198,7 @@
 
     _clearSlotModel(slot) {
       this._stopPropellerSpin(slot);
+      if (slot === "costume") this._stopBob();
       // If we're about to dispose the costume's skeleton/nodes, detach any
       // currently-equipped shared cape first. The cape is parented (via
       // its chain-top wrapper node) to a TransformNode linked to a bone on
@@ -1445,6 +1599,7 @@
           this._syncHelmetVisibility();
           this._syncCapeArmorVisibility();
           if (slot === "costume") this._reattachSharedCape();
+          if (slot === "costume") this._startBob();
           this._startPropellerSpin(slot);
           this._refitCamera();
         })

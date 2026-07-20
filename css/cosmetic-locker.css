@@ -237,6 +237,17 @@
 .locker__stage-btn:active {
   transform: translateY(1px);
 }
+/* Bob toggle: "on" state uses the gold accent (same language as
+   .locker__category-thumb.is-active / .locker__item-thumb.is-equipped)
+   so it's clear at a glance whether idle bobbing is currently enabled. */
+.locker__stage-btn.is-active {
+  background: hsla(43, 90%, 50%, 0.22);
+  border-color: var(--hg-gold);
+  color: var(--hg-gold);
+}
+.locker__stage-btn.is-active:hover {
+  background: hsla(43, 90%, 50%, 0.32);
+}
 .locker__stage-btn svg {
   width: 17px;
   height: 17px;
