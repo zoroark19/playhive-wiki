@@ -114,6 +114,333 @@
   // armor doesn't clip through the cape geometry.
   const CAPE_HIDDEN_NODE_NAMES = ["leftarmarmor", "rightarmarmor", "bodyarmor"];
 
+  // ------------------------------------------------------------------
+  // Per-item procedural bone animations (ITEM_BONE_ANIMATIONS)
+  // ------------------------------------------------------------------
+  // Some cosmetics (e.g. the Propeller hat's spin, the costume idle bob
+  // above) drive their motion from Bedrock-style Molang animation.json
+  // files that never get exported into the .glb as a real glTF animation
+  // clip — so there's nothing for Babylon's animation system to play back.
+  // This table reproduces those source animations directly: for each item
+  // slug, a set of named tracks describing how specific bones move over
+  // time. It's applied generically via _startItemBoneAnimations, so adding
+  // a new animated cosmetic is just a matter of adding an entry here
+  // rather than writing bespoke per-item code.
+  //
+  // Track shapes (all fields optional per bone, mix and match freely):
+  //   {
+  //     bones: {
+  //       "<boneName>": {
+  //         loopSeconds: <number>,        // time base each bone's own
+  //                                       // clock wraps at (see below)
+  //         rotationZDegPerSec: <number>, // continuous linear spin (deg/s),
+  //                                       // e.g. the propeller hat
+  //         rotationYExpr: (t) => degrees,// continuous Molang-style Y
+  //                                       // rotation, for anything more
+  //                                       // than a flat linear spin
+  //                                       // (e.g. wing flutter)
+  //         scaleExpr: (t) => number,     // continuous Molang-style scale
+  //         positionKeys: [[time, [x,y,z]], ...],  // keyframed position
+  //         scaleKeys:    [[time, [x,y,z]], ...],  // keyframed uniform-ish scale
+  //       },
+  //     },
+  //   }
+  //
+  // `loopSeconds` is each bone's own local timeline length — bones can be
+  // staggered (see snowflake-wings' star1..star6, each offset within one
+  // shared 6.52s cycle) by giving keyframe times that already include the
+  // stagger and using the SAME loopSeconds across the group, so they all
+  // wrap together but peak at different points in the cycle.
+  //
+  // Position/scale keys are looked up by linear interpolation between the
+  // two surrounding keyframes (falling back to the nearest edge outside the
+  // given range), matching how Bedrock/Blockbench keyframe tracks behave
+  // for anything other than explicit easing curves.
+  // Shared "generic wings idle" flutter, reused across every winged
+  // backbling rather than duplicated per item — matches the source
+  // "animation.hive.backbling.generic.wings.idle", which is itself
+  // written to apply to any wing rig sharing these bone names:
+  //   rightWingLower.rotation.y = ((cos((t + 3.4) * 100°) * 5°)) - 5°
+  //   leftWingLower.rotation.y  = -((cos((t + 3.4) * 100°) * 5°)) + 5°
+  //   leftWing.rotation.y       = -cos(t * 100°) * 6° + 5°
+  //   rightWing.rotation.y      =  cos(t * 100°) * 6° - 5°
+  // Not every wing model has all four bones (e.g. Snowflake Wings only has
+  // leftWing/rightWing, no *Lower variants) — _startItemBoneAnimations
+  // already skips any bone the loaded model doesn't actually have, so
+  // spreading this whole object into an item's `bones` is always safe.
+  const GENERIC_WING_IDLE_BONES = {
+    rightWingLower: {
+      loopSeconds: null,
+      rotationYExpr: (t) => Math.cos((t + 3.4) * 100 * (Math.PI / 180)) * 5 - 5,
+    },
+    leftWingLower: {
+      loopSeconds: null,
+      rotationYExpr: (t) =>
+        -(Math.cos((t + 3.4) * 100 * (Math.PI / 180)) * 5) + 5,
+    },
+    leftWing: {
+      loopSeconds: null,
+      rotationYExpr: (t) => -Math.cos(t * 100 * (Math.PI / 180)) * 6 + 5,
+    },
+    rightWing: {
+      loopSeconds: null,
+      rotationYExpr: (t) => Math.cos(t * 100 * (Math.PI / 180)) * 6 - 5,
+    },
+  };
+
+  const ITEM_BONE_ANIMATIONS = {
+    "snowflake-wings": {
+      bones: {
+        // Shared wing-flutter idle, reused across winged backblings —
+        // see GENERIC_WING_IDLE_BONES above.
+        ...GENERIC_WING_IDLE_BONES,
+
+        // Six sparkle "stars" scattered across both wings. Each spins
+        // continuously and, once per 6.52s shared cycle, pops in (scale
+        // 0 → 1 with an ease-out ramp) then drifts downward while
+        // shrinking back to 0 — staggered ~1.16s apart so they twinkle
+        // in a rolling sequence rather than all at once. Source:
+        // "animation.hive.backbling.snowflake_wings.stars".
+        star1: {
+          loopSeconds: 6.52,
+          rotationZDegPerSec: 70,
+          positionKeys: [
+            [0.0, [0, 0, 0]],
+            [0.52, [0, -0.08788, 0]],
+            [0.88, [0, -0.31031, 0]],
+            [1.12, [0, -0.58383, 0]],
+            [1.36, [0, -1.00177, 0]],
+            [1.56, [0, -1.48553, 0]],
+            [1.8, [0, -2.23612, 0]],
+            [2.32, [0, -4.30906, 0]],
+            [2.48, [0, -5, 0]],
+          ],
+          scaleKeys: [
+            [0.0, [0, 0, 0]],
+            [0.04, [0.04123, 0.04123, 0.04123]],
+            [0.08, [0.17331, 0.17331, 0.17331]],
+            [0.12, [0.34309, 0.34309, 0.34309]],
+            [0.16, [0.49173, 0.49173, 0.49173]],
+            [0.2, [0.6096, 0.6096, 0.6096]],
+            [0.24, [0.70223, 0.70223, 0.70223]],
+            [0.28, [0.77548, 0.77548, 0.77548]],
+            [0.32, [0.83368, 0.83368, 0.83368]],
+            [0.36, [0.8799, 0.8799, 0.8799]],
+            [0.4, [0.91637, 0.91637, 0.91637]],
+            [0.44, [0.94473, 0.94473, 0.94473]],
+            [0.48, [0.96623, 0.96623, 0.96623]],
+            [0.52, [0.9818, 0.9818, 0.9818]],
+            [0.64, [1, 1, 1]],
+            [1.16, [0.83347, 0.83347, 0.83347]],
+            [1.68, [0.52477, 0.52477, 0.52477]],
+            [2.2, [0.16779, 0.16779, 0.16779]],
+            [2.4, [0.03557, 0.03557, 0.03557]],
+            [2.44, [0.01359, 0.01359, 0.01359]],
+            [2.48, [0, 0, 0]],
+          ],
+        },
+        star2: {
+          loopSeconds: 6.52,
+          rotationZDegPerSec: 70,
+          positionKeys: [
+            [4.04, [0, 0, 0]],
+            [4.56, [0, -0.08788, 0]],
+            [4.92, [0, -0.31031, 0]],
+            [5.16, [0, -0.58383, 0]],
+            [5.4, [0, -1.00177, 0]],
+            [5.6, [0, -1.48553, 0]],
+            [5.84, [0, -2.23612, 0]],
+            [6.36, [0, -4.30906, 0]],
+            [6.52, [0, -5, 0]],
+          ],
+          scaleKeys: [
+            [4.04, [0, 0, 0]],
+            [4.08, [0.04123, 0.04123, 0.04123]],
+            [4.12, [0.17331, 0.17331, 0.17331]],
+            [4.16, [0.34309, 0.34309, 0.34309]],
+            [4.2, [0.49173, 0.49173, 0.49173]],
+            [4.24, [0.6096, 0.6096, 0.6096]],
+            [4.28, [0.70223, 0.70223, 0.70223]],
+            [4.32, [0.77548, 0.77548, 0.77548]],
+            [4.36, [0.83368, 0.83368, 0.83368]],
+            [4.4, [0.8799, 0.8799, 0.8799]],
+            [4.44, [0.91637, 0.91637, 0.91637]],
+            [4.48, [0.94473, 0.94473, 0.94473]],
+            [4.52, [0.96623, 0.96623, 0.96623]],
+            [4.56, [0.9818, 0.9818, 0.9818]],
+            [4.68, [1, 1, 1]],
+            [5.2, [0.83347, 0.83347, 0.83347]],
+            [5.72, [0.52477, 0.52477, 0.52477]],
+            [6.24, [0.16779, 0.16779, 0.16779]],
+            [6.44, [0.03557, 0.03557, 0.03557]],
+            [6.48, [0.01359, 0.01359, 0.01359]],
+            [6.52, [0, 0, 0]],
+          ],
+        },
+        star3: {
+          loopSeconds: 6.52,
+          rotationZDegPerSec: 70,
+          positionKeys: [
+            [1.84, [0, 0, 0]],
+            [2.36, [0, -0.08788, 0]],
+            [2.72, [0, -0.31031, 0]],
+            [2.96, [0, -0.58383, 0]],
+            [3.2, [0, -1.00177, 0]],
+            [3.4, [0, -1.48553, 0]],
+            [3.64, [0, -2.23612, 0]],
+            [4.16, [0, -4.30906, 0]],
+            [4.32, [0, -5, 0]],
+          ],
+          scaleKeys: [
+            [1.84, [0, 0, 0]],
+            [1.88, [0.04123, 0.04123, 0.04123]],
+            [1.92, [0.17331, 0.17331, 0.17331]],
+            [1.96, [0.34309, 0.34309, 0.34309]],
+            [2.0, [0.49173, 0.49173, 0.49173]],
+            [2.04, [0.6096, 0.6096, 0.6096]],
+            [2.08, [0.70223, 0.70223, 0.70223]],
+            [2.12, [0.77548, 0.77548, 0.77548]],
+            [2.16, [0.83368, 0.83368, 0.83368]],
+            [2.2, [0.8799, 0.8799, 0.8799]],
+            [2.24, [0.91637, 0.91637, 0.91637]],
+            [2.28, [0.94473, 0.94473, 0.94473]],
+            [2.32, [0.96623, 0.96623, 0.96623]],
+            [2.36, [0.9818, 0.9818, 0.9818]],
+            [2.48, [1, 1, 1]],
+            [3.0, [0.83347, 0.83347, 0.83347]],
+            [3.52, [0.52477, 0.52477, 0.52477]],
+            [4.04, [0.16779, 0.16779, 0.16779]],
+            [4.24, [0.03557, 0.03557, 0.03557]],
+            [4.28, [0.01359, 0.01359, 0.01359]],
+            [4.32, [0, 0, 0]],
+          ],
+        },
+        star4: {
+          loopSeconds: 6.52,
+          rotationZDegPerSec: 70,
+          positionKeys: [
+            [2.84, [0, 0, 0]],
+            [3.36, [0, -0.08788, 0]],
+            [3.72, [0, -0.31031, 0]],
+            [3.96, [0, -0.58383, 0]],
+            [4.2, [0, -1.00177, 0]],
+            [4.4, [0, -1.48553, 0]],
+            [4.64, [0, -2.23612, 0]],
+            [5.16, [0, -4.30906, 0]],
+            [5.32, [0, -5, 0]],
+          ],
+          scaleKeys: [
+            [2.84, [0, 0, 0]],
+            [2.88, [0.04123, 0.04123, 0.04123]],
+            [2.92, [0.17331, 0.17331, 0.17331]],
+            [2.96, [0.34309, 0.34309, 0.34309]],
+            [3.0, [0.49173, 0.49173, 0.49173]],
+            [3.04, [0.6096, 0.6096, 0.6096]],
+            [3.08, [0.70223, 0.70223, 0.70223]],
+            [3.12, [0.77548, 0.77548, 0.77548]],
+            [3.16, [0.83368, 0.83368, 0.83368]],
+            [3.2, [0.8799, 0.8799, 0.8799]],
+            [3.24, [0.91637, 0.91637, 0.91637]],
+            [3.28, [0.94473, 0.94473, 0.94473]],
+            [3.32, [0.96623, 0.96623, 0.96623]],
+            [3.36, [0.9818, 0.9818, 0.9818]],
+            [3.48, [1, 1, 1]],
+            [4.0, [0.83347, 0.83347, 0.83347]],
+            [4.52, [0.52477, 0.52477, 0.52477]],
+            [5.04, [0.16779, 0.16779, 0.16779]],
+            [5.24, [0.03557, 0.03557, 0.03557]],
+            [5.28, [0.01359, 0.01359, 0.01359]],
+            [5.32, [0, 0, 0]],
+          ],
+        },
+        star5: {
+          loopSeconds: 6.52,
+          rotationZDegPerSec: 70,
+          positionKeys: [
+            [1.16, [0, 0, 0]],
+            [1.68, [0, -0.08788, 0]],
+            [2.04, [0, -0.31031, 0]],
+            [2.28, [0, -0.58383, 0]],
+            [2.52, [0, -1.00177, 0]],
+            [2.72, [0, -1.48553, 0]],
+            [2.96, [0, -2.23612, 0]],
+            [3.48, [0, -4.30906, 0]],
+            [3.64, [0, -5, 0]],
+          ],
+          scaleKeys: [
+            [1.16, [0, 0, 0]],
+            [1.2, [0.04123, 0.04123, 0.04123]],
+            [1.24, [0.17331, 0.17331, 0.17331]],
+            [1.28, [0.34309, 0.34309, 0.34309]],
+            [1.32, [0.49173, 0.49173, 0.49173]],
+            [1.36, [0.6096, 0.6096, 0.6096]],
+            [1.4, [0.70223, 0.70223, 0.70223]],
+            [1.44, [0.77548, 0.77548, 0.77548]],
+            [1.48, [0.83368, 0.83368, 0.83368]],
+            [1.52, [0.8799, 0.8799, 0.8799]],
+            [1.56, [0.91637, 0.91637, 0.91637]],
+            [1.6, [0.94473, 0.94473, 0.94473]],
+            [1.64, [0.96623, 0.96623, 0.96623]],
+            [1.68, [0.9818, 0.9818, 0.9818]],
+            [1.8, [1, 1, 1]],
+            [2.32, [0.83347, 0.83347, 0.83347]],
+            [2.84, [0.52477, 0.52477, 0.52477]],
+            [3.36, [0.16779, 0.16779, 0.16779]],
+            [3.56, [0.03557, 0.03557, 0.03557]],
+            [3.6, [0.01359, 0.01359, 0.01359]],
+            [3.64, [0, 0, 0]],
+          ],
+        },
+        star6: {
+          loopSeconds: 6.52,
+          rotationZDegPerSec: 70,
+          positionKeys: [
+            [3.08, [0, 0, 0]],
+            [3.6, [0, -0.08788, 0]],
+            [3.96, [0, -0.31031, 0]],
+            [4.2, [0, -0.58383, 0]],
+            [4.44, [0, -1.00177, 0]],
+            [4.64, [0, -1.48553, 0]],
+            [4.88, [0, -2.23612, 0]],
+            [5.4, [0, -4.30906, 0]],
+            [5.56, [0, -5, 0]],
+          ],
+          scaleKeys: [
+            [3.08, [0, 0, 0]],
+            [3.12, [0.04123, 0.04123, 0.04123]],
+            [3.16, [0.17331, 0.17331, 0.17331]],
+            [3.2, [0.34309, 0.34309, 0.34309]],
+            [3.24, [0.49173, 0.49173, 0.49173]],
+            [3.28, [0.6096, 0.6096, 0.6096]],
+            [3.32, [0.70223, 0.70223, 0.70223]],
+            [3.36, [0.77548, 0.77548, 0.77548]],
+            [3.4, [0.83368, 0.83368, 0.83368]],
+            [3.44, [0.8799, 0.8799, 0.8799]],
+            [3.48, [0.91637, 0.91637, 0.91637]],
+            [3.52, [0.94473, 0.94473, 0.94473]],
+            [3.56, [0.96623, 0.96623, 0.96623]],
+            [3.6, [0.9818, 0.9818, 0.9818]],
+            [3.72, [1, 1, 1]],
+            [4.24, [0.83347, 0.83347, 0.83347]],
+            [4.76, [0.52477, 0.52477, 0.52477]],
+            [5.28, [0.16779, 0.16779, 0.16779]],
+            [5.48, [0.03557, 0.03557, 0.03557]],
+            [5.52, [0.01359, 0.01359, 0.01359]],
+            [5.56, [0, 0, 0]],
+          ],
+        },
+        // Continuous scale "breathing" pulse on the spine's decorative
+        // bit, independent of the star cycle above. Source:
+        // "animation.hive.backbling.snowflake_wings.idle_spine".
+        spineDecor: {
+          loopSeconds: null, // no wrap — Molang expression runs forever
+          scaleExpr: (t) =>
+            1 + (Math.cos(t * ((100 * Math.PI) / 180)) * 0.03 + 0.1),
+        },
+      },
+    },
+  };
+
   // Tuning for the "reset view" stage button (see _resetView). Beta is
   // Babylon's polar angle from the top pole, so a positive offset tilts
   // the camera to look down at the model a bit more than the camera's
@@ -232,6 +559,16 @@
       // Original (unscaled) bone scaling cache, keyed by bone name, restored
       // when the corresponding hide condition (hat/cape) no longer applies.
       this._boneOriginalScales = null;
+
+      // scene.onBeforeRenderObservable handle for each slot's generic
+      // ITEM_BONE_ANIMATIONS playback (see _startItemBoneAnimations /
+      // _stopItemBoneAnimations), or null if the currently equipped item
+      // in that slot has no entry in the table.
+      this._itemBoneAnimObservers = {
+        costume: null,
+        hat: null,
+        cape_backbling: null,
+      };
 
       // The shared cape.glb is loaded once and reused for every Cape;
       // texture swaps happen on the same mesh instance instead of
@@ -1196,8 +1533,162 @@
       this._propellerSpinObservers[slot] = null;
     }
 
+    // Finds a node/bone named `boneName` (case-insensitive) among a slot's
+    // own loaded nodes and skeletons — same lookup pattern as
+    // _findPropellerSpinNode, generalized to take an arbitrary name so
+    // _startItemBoneAnimations can look up any bone the animation table
+    // references (star1..star6, spineDecor, etc), not just "propeller".
+    _findSlotBoneNode(slot, boneName) {
+      const target = boneName.toLowerCase();
+      const nodes = this.loadedNodes[slot] || [];
+      const direct = nodes.find(
+        (n) => n.name && n.name.toLowerCase() === target,
+      );
+      if (direct) return direct;
+
+      const skeletons = this.loadedSkeletons[slot] || [];
+      for (const skeleton of skeletons) {
+        const bone = skeleton.bones.find(
+          (b) => b.name && b.name.toLowerCase() === target,
+        );
+        if (!bone) continue;
+        const node =
+          typeof bone.getTransformNode === "function"
+            ? bone.getTransformNode()
+            : null;
+        if (node) return node;
+      }
+      return null;
+    }
+
+    // Linear interpolation across a sorted [time, [x,y,z]] keyframe list —
+    // matches Bedrock/Blockbench's default (non-eased) keyframe behavior.
+    // `t` is expected to already be wrapped into the track's own local
+    // loop range by the caller. Times outside the given range clamp to
+    // the nearest edge keyframe rather than extrapolating.
+    _sampleVectorKeyframes(keys, t) {
+      if (!keys || !keys.length) return null;
+      if (t <= keys[0][0]) return keys[0][1];
+      if (t >= keys[keys.length - 1][0]) return keys[keys.length - 1][1];
+
+      for (let i = 0; i < keys.length - 1; i++) {
+        const [t0, v0] = keys[i];
+        const [t1, v1] = keys[i + 1];
+        if (t < t0 || t > t1) continue;
+        const span = t1 - t0;
+        const ratio = span > 0 ? (t - t0) / span : 0;
+        return [
+          v0[0] + (v1[0] - v0[0]) * ratio,
+          v0[1] + (v1[1] - v0[1]) * ratio,
+          v0[2] + (v1[2] - v0[2]) * ratio,
+        ];
+      }
+      return keys[keys.length - 1][1];
+    }
+
+    // Starts (or restarts) every procedural bone-animation track defined
+    // for `item` in ITEM_BONE_ANIMATIONS, applying them to whatever's
+    // currently loaded in `slot`. These reproduce source Bedrock/Molang
+    // animation.json files that never made it into the .glb as real glTF
+    // animation clips (see the table's own comment above) — same
+    // rationale as _startPropellerSpin/_startBob, just generalized to
+    // arbitrary keyframed + continuous-expression tracks instead of one
+    // hardcoded motion. Bones the table lists but the model doesn't
+    // actually have are skipped silently (e.g. snowflake-wings' table has
+    // no star7/star8 since this model only has six stars).
+    _startItemBoneAnimations(slot, item) {
+      this._stopItemBoneAnimations(slot);
+      if (!this.scene || !item) return;
+
+      const config = ITEM_BONE_ANIMATIONS[item.slug];
+      if (!config || !config.bones) return;
+
+      const boneEntries = Object.entries(config.bones)
+        .map(([boneName, track]) => {
+          const node = this._findSlotBoneNode(slot, boneName);
+          if (!node) return null;
+          // Continuous expression tracks (rotationZDegPerSec/rotationYExpr/
+          // scaleExpr) rotate/scale relative to the bone's own bind pose,
+          // so it needs to be captured before any track starts mutating
+          // it — mirrors _startBob's original-rotation cache.
+          node.rotationQuaternion = null;
+          return {
+            node,
+            track,
+            originalRotationY: node.rotation.y,
+            originalRotationZ: node.rotation.z,
+            originalScale: node.scaling.clone(),
+          };
+        })
+        .filter(Boolean);
+
+      if (!boneEntries.length) return;
+
+      let elapsed = 0;
+      const observer = this.scene.onBeforeRenderObservable.add(() => {
+        const deltaSeconds = this.scene.getEngine().getDeltaTime() / 1000;
+        elapsed += deltaSeconds;
+
+        boneEntries.forEach(({ node, track }) => {
+          // Each bone's own timeline wraps independently at its
+          // loopSeconds — this is what lets, e.g., snowflake-wings'
+          // six stars share one 6.52s cycle but peak at staggered
+          // offsets purely via where their keyframes fall in that
+          // shared range. A null/undefined loopSeconds means "run
+          // forever, no wrap" (used by continuous Molang expressions
+          // like spineDecor's scale pulse).
+          const t =
+            track.loopSeconds != null ? elapsed % track.loopSeconds : elapsed;
+
+          if (track.rotationZDegPerSec != null) {
+            node.rotation.z =
+              (elapsed * track.rotationZDegPerSec * Math.PI) / 180;
+          }
+          if (track.rotationYExpr) {
+            node.rotation.y = (track.rotationYExpr(elapsed) * Math.PI) / 180;
+          }
+          if (track.positionKeys) {
+            const pos = this._sampleVectorKeyframes(track.positionKeys, t);
+            if (pos) node.position.set(pos[0], pos[1], pos[2]);
+          }
+          if (track.scaleKeys) {
+            const scale = this._sampleVectorKeyframes(track.scaleKeys, t);
+            if (scale) node.scaling.set(scale[0], scale[1], scale[2]);
+          }
+          if (track.scaleExpr) {
+            const s = track.scaleExpr(elapsed);
+            node.scaling.set(s, s, s);
+          }
+        });
+      });
+
+      this._itemBoneAnimObservers[slot] = { observer, boneEntries };
+    }
+
+    // Stops the running ITEM_BONE_ANIMATIONS playback for `slot` (if any)
+    // and restores every affected bone's original rotation/scale, so
+    // unequipping or swapping items never leaves a star frozen mid-pop or
+    // a bone stuck at some mid-cycle scale.
+    _stopItemBoneAnimations(slot) {
+      const entry = this._itemBoneAnimObservers[slot];
+      if (entry && this.scene) {
+        this.scene.onBeforeRenderObservable.remove(entry.observer);
+        entry.boneEntries.forEach(
+          ({ node, originalRotationY, originalRotationZ, originalScale }) => {
+            try {
+              node.rotation.y = originalRotationY;
+              node.rotation.z = originalRotationZ;
+              node.scaling.copyFrom(originalScale);
+            } catch {}
+          },
+        );
+      }
+      this._itemBoneAnimObservers[slot] = null;
+    }
+
     _clearSlotModel(slot) {
       this._stopPropellerSpin(slot);
+      this._stopItemBoneAnimations(slot);
       if (slot === "costume") this._stopBob();
       // If we're about to dispose the costume's skeleton/nodes, detach any
       // currently-equipped shared cape first. The cape is parented (via
@@ -1601,6 +2092,7 @@
           if (slot === "costume") this._reattachSharedCape();
           if (slot === "costume") this._startBob();
           this._startPropellerSpin(slot);
+          this._startItemBoneAnimations(slot, item);
           this._refitCamera();
         })
         .catch((exception) => {
