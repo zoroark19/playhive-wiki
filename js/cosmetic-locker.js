@@ -500,9 +500,13 @@
             this.equipped[slot] &&
             this.equipped[slot].slug === item.slug &&
             this.equipped[slot].category === item.category;
+          const thumb =
+            item.category === "costume" && item.page
+              ? `${item.page.replace(/\/?$/, "/")}avatar.png`
+              : item.thumbnail;
           return `<button type="button" class="locker__item-thumb${isEquipped ? " is-equipped" : ""}"
             data-slug="${esc(item.slug)}" data-category="${esc(item.category)}" title="${esc(item.name)}">
-            <img src="${esc(resolveAsset(this.dataRoot, item.thumbnail))}" alt="${esc(item.name)}" loading="lazy">
+            <img src="${esc(resolveAsset(this.dataRoot, thumb))}" alt="${esc(item.name)}" loading="lazy">
             <span class="locker__item-name">${esc(item.name)}</span>
           </button>`;
         })
@@ -721,12 +725,15 @@
           slotKey === "costume" && item.page
             ? `${item.page.replace(/\/?$/, "/")}avatar.png`
             : item.thumbnail;
+        const nameHtml = item.page
+          ? `<a class="locker__slot-name" href="${esc(resolveAsset(this.dataRoot, item.page))}">${esc(item.name)}</a>`
+          : `<div class="locker__slot-name">${esc(item.name)}</div>`;
         target.innerHTML = `
           <div class="locker__slot-thumb">
             <img src="${esc(resolveAsset(this.dataRoot, equippedImg))}" alt="${esc(item.name)}">
           </div>
           <div class="locker__slot-info">
-            <div class="locker__slot-name">${esc(item.name)}</div>
+            ${nameHtml}
             ${this._formatPrice(item.price)}
           </div>
           <button type="button" class="locker__slot-clear" title="Unequip">✕</button>`;

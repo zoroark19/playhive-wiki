@@ -313,9 +313,10 @@
   font-weight: 700;
   padding: 12px 5px 4px;
   line-height: 1.25;
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: normal;
+  /* overflow: hidden; */
   text-overflow: ellipsis;
+  text-align: center;
 }
 .locker__item-sub {
   position: absolute;
@@ -430,6 +431,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-decoration: none;
+}
+a.locker__slot-name:hover {
+  color: var(--hg-gold);
+  text-decoration: underline;
 }
 .locker__slot-price {
   font-size: 10.5px;

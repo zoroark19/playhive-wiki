@@ -13,7 +13,7 @@
     },
     {
       "slug": "axe-head-hat",
-      "name": "Axe Head Hat",
+      "name": "Axe Head",
       "date": null,
       "availability": "paid",
       "price": 160,
@@ -24,7 +24,7 @@
     },
     {
       "slug": "axolotl-buddy-hat",
-      "name": "Axolotl Buddy Hat",
+      "name": "Axolotl Buddy",
       "date": "July 15, 2023",
       "availability": "paid",
       "price": 490,
@@ -35,7 +35,7 @@
     },
     {
       "slug": "bee-hat",
-      "name": "Bee Hat",
+      "name": "Bee",
       "date": "September 6, 2023",
       "availability": "unobtainable",
       "thumbnail": "https://cdn.playhive.com/avatars/hat-bee-hat.png",
@@ -45,7 +45,7 @@
     },
     {
       "slug": "blob-fish-hat",
-      "name": "Blob Fish Hat",
+      "name": "Blob Fish",
       "date": "May 23, 2024",
       "availability": "paid",
       "price": 310,
@@ -56,7 +56,7 @@
     },
     {
       "slug": "blue-party-hat",
-      "name": "Blue Party Hat",
+      "name": "Blue Party",
       "date": "October 16, 2023",
       "availability": "unobtainable",
       "thumbnail": "https://cdn.playhive.com/avatars/hat-party-hat-blue.png",
@@ -76,7 +76,7 @@
     },
     {
       "slug": "capybara-buddy-hat",
-      "name": "Capybara Buddy Hat",
+      "name": "Capybara Buddy",
       "date": null,
       "availability": "paid",
       "price": 490,
@@ -87,7 +87,7 @@
     },
     {
       "slug": "cardboard-box-hat",
-      "name": "Cardboard Box Hat",
+      "name": "Cardboard Box",
       "date": null,
       "availability": "paid",
       "price": 160,
@@ -98,7 +98,7 @@
     },
     {
       "slug": "cat-beanie-hat",
-      "name": "Cat Beanie Hat",
+      "name": "Cat Beanie",
       "date": "September 7, 2024",
       "availability": "paid",
       "price": 310,
@@ -129,7 +129,7 @@
     },
     {
       "slug": "cubee-cap-hat",
-      "name": "Cubee Cap Hat",
+      "name": "Cubee Cap",
       "date": "May 23, 2024",
       "availability": "paid",
       "price": 490,
@@ -160,7 +160,7 @@
     },
     {
       "slug": "dog-ears-hat",
-      "name": "Dog Ears Hat",
+      "name": "Dog Ears",
       "date": "May 23, 2024",
       "availability": "paid",
       "price": 160,
@@ -191,7 +191,7 @@
     },
     {
       "slug": "endolotl-buddy-hat",
-      "name": "Endolotl Buddy Hat",
+      "name": "Endolotl Buddy",
       "date": "December 24, 2022",
       "availability": "paid",
       "price": 490,
@@ -202,7 +202,7 @@
     },
     {
       "slug": "flower-crown-hat",
-      "name": "Flower Crown Hat",
+      "name": "Flower Crown",
       "date": null,
       "availability": "paid",
       "price": 310,
@@ -213,7 +213,7 @@
     },
     {
       "slug": "fox-buddy-hat",
-      "name": "Fox Buddy Hat",
+      "name": "Fox Buddy",
       "date": null,
       "availability": "paid",
       "price": 490,
@@ -234,7 +234,7 @@
     },
     {
       "slug": "frog-buddy-hat",
-      "name": "Frog Buddy Hat",
+      "name": "Frog Buddy",
       "date": "October 28, 2023",
       "availability": "paid",
       "price": 490,
@@ -245,7 +245,7 @@
     },
     {
       "slug": "froggy-cap-hat",
-      "name": "Froggy Cap Hat",
+      "name": "Froggy Cap",
       "date": "December 24, 2022",
       "availability": "paid",
       "price": 310,
@@ -256,7 +256,7 @@
     },
     {
       "slug": "gamer-headset-hat",
-      "name": "Gamer Headset Hat",
+      "name": "Gamer Headset",
       "date": null,
       "availability": "paid",
       "price": 160,
@@ -287,7 +287,7 @@
     },
     {
       "slug": "green-party-hat",
-      "name": "Green Party Hat",
+      "name": "Green Party",
       "date": "October 16, 2023",
       "availability": "unobtainable",
       "thumbnail": "https://cdn.playhive.com/avatars/hat-party-hat-green.png",
@@ -297,7 +297,7 @@
     },
     {
       "slug": "horns-hat",
-      "name": "Horns Hat",
+      "name": "Horns",
       "date": "December 25, 2022",
       "availability": "paid",
       "price": 310,
@@ -318,7 +318,7 @@
     },
     {
       "slug": "mushroom-cap-hat",
-      "name": "Mushroom Cap Hat",
+      "name": "Mushroom Cap",
       "date": "December 24, 2022",
       "availability": "paid",
       "price": 160,
@@ -329,7 +329,7 @@
     },
     {
       "slug": "mystical-antlers-hat",
-      "name": "Mystical Antlers Hat",
+      "name": "Mystical Antlers",
       "date": null,
       "availability": "paid",
       "price": 310,
@@ -350,7 +350,7 @@
     },
     {
       "slug": "octopus-plush-hat",
-      "name": "Octopus Plush Hat",
+      "name": "Octopus Plush",
       "date": null,
       "availability": "paid",
       "price": 490,
@@ -371,7 +371,7 @@
     },
     {
       "slug": "panda-cap-hat",
-      "name": "Panda Cap Hat",
+      "name": "Panda Cap",
       "date": "August 6, 2023",
       "availability": "paid",
       "price": 490,
@@ -382,7 +382,7 @@
     },
     {
       "slug": "pink-party-hat",
-      "name": "Pink Party Hat",
+      "name": "Pink Party",
       "date": "October 9, 2023",
       "availability": "unobtainable",
       "thumbnail": "https://cdn.playhive.com/avatars/hat-party-hat-pink.png",
@@ -392,7 +392,7 @@
     },
     {
       "slug": "pride-hat",
-      "name": "Pride Hat",
+      "name": "Pride",
       "date": "June 8, 2024",
       "availability": "unobtainable",
       "thumbnail": "https://cdn.playhive.com/avatars/hat-pride.png",
@@ -402,7 +402,7 @@
     },
     {
       "slug": "propeller-hat",
-      "name": "Propeller Hat",
+      "name": "Propeller",
       "date": "December 25, 2022",
       "availability": "unobtainable",
       "thumbnail": "https://cdn.playhive.com/avatars/hat-propeller.png",
@@ -412,7 +412,7 @@
     },
     {
       "slug": "purple-party-hat",
-      "name": "Purple Party Hat",
+      "name": "Purple Party",
       "date": "October 16, 2023",
       "availability": "unobtainable",
       "thumbnail": "https://cdn.playhive.com/avatars/hat-party-hat-purple.png",
@@ -422,7 +422,7 @@
     },
     {
       "slug": "red-panda-buddy-hat",
-      "name": "Red Panda Buddy Hat",
+      "name": "Red Panda Buddy",
       "date": null,
       "availability": "paid",
       "price": 490,
@@ -433,7 +433,7 @@
     },
     {
       "slug": "santa-hat",
-      "name": "Santa Hat",
+      "name": "Santa",
       "date": "December 24, 2022",
       "availability": "paid",
       "price": 160,
@@ -455,7 +455,7 @@
     },
     {
       "slug": "shining-crown-hat",
-      "name": "Shining Crown Hat",
+      "name": "Shining Crown",
       "date": null,
       "availability": "paid",
       "price": 310,
@@ -476,7 +476,7 @@
     },
     {
       "slug": "turtle-buddy-hat",
-      "name": "Turtle Buddy Hat",
+      "name": "Turtle Buddy",
       "date": "June 29, 2024",
       "availability": "paid",
       "price": 490,
