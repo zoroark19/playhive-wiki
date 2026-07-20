@@ -337,9 +337,54 @@ img {
    Layout shell: sidebar + content
    ========================================================= */
 .wiki-shell {
-  max-width: 1280px;
+  max-width: 1800px;
   margin: 0 auto;
   padding: 20px 20px 0;
+}
+
+/* =========================================================
+   Home layout — persistent main + sidebar grid so the page
+   spreads out horizontally instead of stacking sections
+   ========================================================= */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 36px;
+  align-items: start;
+}
+.home-grid .home-main {
+  min-width: 0;
+}
+.home-grid .home-side {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.home-grid .home-side .panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.home-grid .home-side .panel ul {
+  flex: 1;
+}
+
+/* Top variant — hero + stats next to Recent Updates. Stretch so
+   the sidebar panel fills the same height as the hero column. */
+.home-grid--top {
+  align-items: stretch;
+}
+.home-grid--top .home-side {
+  position: static;
+}
+@media (max-width: 1000px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-grid .home-side {
+    position: static;
+  }
 }
 
 .nav-dropdown-wrap {
@@ -425,7 +470,7 @@ img {
   background: var(--hg-card-bg);
   border: 1px solid var(--border-soft);
   border-radius: var(--radius);
-  padding: 32px 40px 32px;
+  padding: 32px 44px 32px;
   margin-bottom: 20px;
   min-height: calc(100vh - 128px);
   box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.6);
@@ -600,7 +645,7 @@ img {
     linear-gradient(180deg, rgba(20, 12, 38, 0.5), rgba(16, 10, 30, 0.88)),
     radial-gradient(120% 160% at 50% 0%, #3a2358 0%, #160d22 70%);
   border-radius: var(--radius);
-  padding: 44px 44px;
+  padding: 28px 28px;
   margin-bottom: 30px;
   overflow: hidden;
 }
@@ -695,8 +740,8 @@ a.stat-card:hover {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
   margin-bottom: 34px;
 }
 
@@ -741,8 +786,9 @@ a.stat-card:hover {
 
 .two-col {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 28px;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 36px;
+  margin-top: 8px;
 }
 
 .panel {
@@ -800,6 +846,22 @@ a.stat-card:hover {
   margin-bottom: 34px;
 }
 
+/* Full-width variant used on the homepage — sits above the
+   two-column home-grid split so it spans the entire page. */
+.category-grid--full {
+  grid-template-columns: repeat(8, 1fr);
+}
+@media (max-width: 1200px) {
+  .category-grid--full {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .category-grid--full {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .category-tile {
   display: flex;
   flex-direction: column;
@@ -847,6 +909,62 @@ a.stat-card:hover {
   text-transform: uppercase;
   color: var(--hg-ink-dim);
   margin-top: -20px;
+}
+
+.category-tile__icon {
+  width: 48px;
+  height: 48px;
+  color: var(--hg-title-dark);
+}
+.category-tile__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.category-tile__tag.status-live {
+  color: #7ee39a;
+}
+.category-tile__tag.status-soon {
+  color: var(--hg-ink-dim);
+}
+
+.category-tile.is-soon {
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
+}
+.category-tile.is-soon .category-tile__icon {
+  color: var(--hg-ink-dim);
+}
+
+/* =========================================================
+   "Coming soon" state — reused on game-card and category-tile
+   for sections that don't have a page built yet
+   ========================================================= */
+.is-soon-card {
+  position: relative;
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+.is-soon-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+.soon-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: var(--font-display);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--hg-ink-dim);
+  background: hsla(0, 0%, 100%, 0.06);
+  border: 1px solid var(--border-soft);
+  border-radius: 3px;
+  padding: 3px 7px;
 }
 
 /* =========================================================

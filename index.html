@@ -11,124 +11,84 @@
 
     <div class="wiki-shell">
       <main class="content">
-        <div class="hero">
-          <span class="eyebrow">Community Wiki</span>
-          <h1>Everything you need to know about The Hive</h1>
-          <p>
-            The player-run encyclopedia for The Hive's Minecraft Bedrock server
-            — minigames, NPCs, cosmetics, and lore, all in one place. Anyone can
-            contribute.
-          </p>
-          <div class="btn-row">
-            <a href="#" class="btn btn-primary">Start Editing</a>
-            <a href="#" class="btn btn-outline">Browse Games</a>
-          </div>
-        </div>
+        <div class="home-grid home-grid--top">
+          <div class="home-main">
+            <div class="hero">
+              <span class="eyebrow">Community Wiki</span>
+              <h1>Everything you need to know about The Hive</h1>
+              <p>
+                The player-run encyclopedia for The Hive's Minecraft Bedrock
+                server — minigames, NPCs, cosmetics, and lore, all in one place.
+                Anyone can contribute.
+              </p>
+              <div class="btn-row">
+                <a href="costumes/index.html" class="btn btn-primary"
+                  >Browse Costumes</a
+                >
+                <a href="pages/npc.html" class="btn btn-outline"
+                  >Meet the NPCs</a
+                >
+              </div>
+            </div>
 
-        <div class="stats-row">
-          <a href="costumes/index.html" class="stat-card">
-            <div class="num">312</div>
-            <div class="label">Articles</div>
-          </a>
-          <div class="stat-card">
-            <div class="num">18</div>
-            <div class="label">Minigames</div>
-          </div>
-          <div class="stat-card">
-            <div class="num">47</div>
-            <div class="label">NPCs Documented</div>
-          </div>
-          <div class="stat-card">
-            <div class="num">1,204</div>
-            <div class="label">Edits This Month</div>
-          </div>
-        </div>
-
-        <h2 class="section-heading">Featured Minigames</h2>
-        <div class="card-grid">
-          <a href="#" class="game-card">
-            <span class="tag">Team PvP</span>
-            <h4>BedWars</h4>
-            <p>
-              Defend your bed, break the enemy's, and outlast every other team
-              on the map.
-            </p>
-          </a>
-          <a href="#" class="game-card">
-            <span class="tag">Party Game</span>
-            <h4>SkyWars</h4>
-            <p>
-              Spawn on a floating island, gear up fast, and be the last player
-              flying.
-            </p>
-          </a>
-          <a href="#" class="game-card">
-            <span class="tag">Battle Royale</span>
-            <h4>Survival Games</h4>
-            <p>
-              Loot chests, dodge the deathmatch, and be the last tribute
-              standing.
-            </p>
-          </a>
-          <a href="#" class="game-card">
-            <span class="tag">Social Deduction</span>
-            <h4>Murder Mystery</h4>
-            <p>
-              One murderer, one sheriff, and a map full of unarmed innocents.
-            </p>
-          </a>
-          <a href="#" class="game-card">
-            <span class="tag">Team PvP</span>
-            <h4>Ground Wars</h4>
-            <p>
-              Build defenses, then eliminate the enemy team by throwing eggs
-              across the map.
-            </p>
-          </a>
-          <a href="#" class="game-card">
-            <span class="tag">Hide &amp; Seek</span>
-            <h4>Hide and Seek</h4>
-            <p>
-              Disguise yourself as a block and evade the Seeker until time runs
-              out.
-            </p>
-          </a>
-        </div>
-
-        <div class="two-col">
-          <div>
-            <h2 class="section-heading">About The Hive</h2>
-            <p>
-              The Hive is one of the longest-running Minecraft Bedrock servers,
-              known for popularizing minigames like SkyWars and Survival Games
-              years before they spread across the platform. This wiki documents
-              the server's game modes, cosmetics, ranks, NPCs, and history as
-              maintained by its player community.
-            </p>
-            <p>
-              New to editing? Check the
-              <a href="#">Rules &amp; Guidelines</a> page before making changes,
-              and feel free to ask questions in the Discord server linked in the
-              sidebar.
-            </p>
+            <div
+              class="stats-row"
+              id="ghStats"
+              data-repo="zoroark19/playhive-wiki"
+            >
+              <a class="stat-card">
+                <div class="num">312</div>
+                <div class="label">Pages</div>
+              </a>
+              <a
+                href="https://github.com/zoroark19/playhive-wiki/commits/main/"
+                class="stat-card"
+                data-role="commits"
+              >
+                <div class="num">—</div>
+                <div class="label">Edits</div>
+              </a>
+              <a
+                href="https://github.com/zoroark19/playhive-wiki/graphs/contributors"
+                class="stat-card"
+                data-role="contributors"
+              >
+                <div class="num">—</div>
+                <div class="label">Editors</div>
+              </a>
+              <a
+                href="https://github.com/zoroark19/playhive-wiki/commits/main/"
+                class="stat-card"
+                data-role="last-commit"
+              >
+                <div class="num">—</div>
+                <div class="label">Last Updated</div>
+              </a>
+            </div>
           </div>
 
-          <aside>
+          <aside class="home-side">
             <div class="panel">
               <h4>Recent Updates</h4>
-              <ul>
+              <ul data-role="hive-changelog">
+                <!--
+                  Static fallback content — replaced automatically by
+                  js/changelog.js with live entries from
+                  updates.playhive.com/changelog once data/changelog.json
+                  loads. Kept here so the panel isn't empty if that fetch
+                  ever fails (e.g. JS disabled, data file missing).
+                -->
                 <li>
                   <a href="costumes/index.html">Costumes</a> hub page now live,
                   browse all categories
                   <div class="meta">1 hour ago</div>
                 </li>
                 <li>
-                  <a href="pages/npc.html">Herald the Guide</a> page expanded
-                  with dialogue
+                  <a href="pages/npc.html">NPC</a> pages expanded with dialogue
                   <div class="meta">2 hours ago</div>
                 </li>
                 <li>
-                  <a href="#">BedWars</a> unlock list updated for Season 4
+                  <strong>BedWars</strong> unlock list drafted
                   <div class="meta">Yesterday</div>
                 </li>
                 <li>
@@ -137,26 +97,226 @@
                   <div class="meta">3 days ago</div>
                 </li>
                 <li>
-                  <a href="#">Ground Wars</a> mechanics rewritten
+                  <strong>Ground Wars</strong> mechanics being written
                   <div class="meta">5 days ago</div>
                 </li>
               </ul>
             </div>
-
-            <div class="panel">
-              <h4>Did You Know?</h4>
-              <ul>
-                <li>
-                  The Hive was one of the first Bedrock servers to run public
-                  minigames back in 2013.
-                </li>
-                <li>
-                  Herald the Guide NPC appears in the lobby of nearly every game
-                  mode.
-                </li>
-              </ul>
-            </div>
           </aside>
+        </div>
+
+        <h2 class="section-heading">Explore the Wiki</h2>
+        <div class="category-grid category-grid--full">
+          <a href="costumes/index.html" class="category-tile">
+            <span class="category-tile__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M8 4 3 7l2 3 2-1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V9l2 1 2-3-5-3-2 2h-4z"
+                />
+                <path d="M10 4a2 2 0 0 0 4 0" />
+              </svg>
+            </span>
+            <span class="category-tile__label">Costumes</span>
+            <span class="category-tile__tag status-live">Live</span>
+          </a>
+
+          <a href="pages/npc.html" class="category-tile">
+            <span class="category-tile__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="8" r="3.2" />
+                <path d="M5 20c0-3.9 3.1-6.5 7-6.5s7 2.6 7 6.5" />
+              </svg>
+            </span>
+            <span class="category-tile__label">NPCs</span>
+            <span class="category-tile__tag status-live">Live</span>
+          </a>
+
+          <span class="category-tile is-soon" aria-disabled="true">
+            <span class="category-tile__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 20 15 9" />
+                <path d="M13 5l6 6-2 2-6-6z" />
+                <path d="M4 20l1.8-4.8L9 18z" />
+              </svg>
+            </span>
+            <span class="category-tile__label">Minigames</span>
+            <span class="category-tile__tag status-soon">Coming Soon</span>
+          </span>
+
+          <span class="category-tile is-soon" aria-disabled="true">
+            <span class="category-tile__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z"
+                />
+              </svg>
+            </span>
+            <span class="category-tile__label">Ranks</span>
+            <span class="category-tile__tag status-soon">Coming Soon</span>
+          </span>
+
+          <span class="category-tile is-soon" aria-disabled="true">
+            <span class="category-tile__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M6 3h9a2 2 0 0 1 2 2v15l-3-2-2 2-2-2-2 2-2-2-3 2V5a2 2 0 0 1 1-2z"
+                />
+                <path d="M8 8h6M8 12h6" />
+              </svg>
+            </span>
+            <span class="category-tile__label">Quests</span>
+            <span class="category-tile__tag status-soon">Coming Soon</span>
+          </span>
+
+          <span class="category-tile is-soon" aria-disabled="true">
+            <span class="category-tile__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="4" y="5" width="16" height="15" rx="1.5" />
+                <path d="M4 9.5h16M8 3v3.5M16 3v3.5" />
+              </svg>
+            </span>
+            <span class="category-tile__label">Events</span>
+            <span class="category-tile__tag status-soon">Coming Soon</span>
+          </span>
+
+          <span class="category-tile is-soon" aria-disabled="true">
+            <span class="category-tile__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 9h16l-1.5 10a1.5 1.5 0 0 1-1.5 1.3H7A1.5 1.5 0 0 1 5.5 19z"
+                />
+                <path d="M8 9V7a4 4 0 0 1 8 0v2" />
+              </svg>
+            </span>
+            <span class="category-tile__label">Marketplace</span>
+            <span class="category-tile__tag status-soon">Coming Soon</span>
+          </span>
+
+          <span class="category-tile is-soon" aria-disabled="true">
+            <span class="category-tile__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M6 4h9l3 3v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"
+                />
+                <path d="M9 9h6M9 13h6M9 17h3" />
+              </svg>
+            </span>
+            <span class="category-tile__label">Rules &amp; Guidelines</span>
+            <span class="category-tile__tag status-soon">Coming Soon</span>
+          </span>
+        </div>
+
+        <h2 class="section-heading">Featured Minigames</h2>
+        <div class="card-grid">
+          <span class="game-card is-soon-card" aria-disabled="true">
+            <span class="soon-badge">Soon</span>
+            <span class="tag">Team PvP</span>
+            <h4>BedWars</h4>
+            <p>
+              Defend your bed, break the enemy's, and outlast every other team
+              on the map.
+            </p>
+          </span>
+          <span class="game-card is-soon-card" aria-disabled="true">
+            <span class="soon-badge">Soon</span>
+            <span class="tag">Party Game</span>
+            <h4>SkyWars</h4>
+            <p>
+              Spawn on a floating island, gear up fast, and be the last player
+              flying.
+            </p>
+          </span>
+          <span class="game-card is-soon-card" aria-disabled="true">
+            <span class="soon-badge">Soon</span>
+            <span class="tag">Battle Royale</span>
+            <h4>Survival Games</h4>
+            <p>
+              Loot chests, dodge the deathmatch, and be the last tribute
+              standing.
+            </p>
+          </span>
+          <span class="game-card is-soon-card" aria-disabled="true">
+            <span class="soon-badge">Soon</span>
+            <span class="tag">Social Deduction</span>
+            <h4>Murder Mystery</h4>
+            <p>
+              One murderer, one sheriff, and a map full of unarmed innocents.
+            </p>
+          </span>
+          <span class="game-card is-soon-card" aria-disabled="true">
+            <span class="soon-badge">Soon</span>
+            <span class="tag">Team PvP</span>
+            <h4>Ground Wars</h4>
+            <p>
+              Build defenses, then eliminate the enemy team by throwing eggs
+              across the map.
+            </p>
+          </span>
+          <span class="game-card is-soon-card" aria-disabled="true">
+            <span class="soon-badge">Soon</span>
+            <span class="tag">Hide &amp; Seek</span>
+            <h4>Hide and Seek</h4>
+            <p>
+              Disguise yourself as a block and evade the Seeker until time runs
+              out.
+            </p>
+          </span>
         </div>
       </main>
     </div>
@@ -164,5 +324,7 @@
     <div data-include="footer"></div>
 
     <script src="js/partials.js"></script>
+    <script src="js/github-stats.js"></script>
+    <script src="js/changelog.js"></script>
   </body>
 </html>

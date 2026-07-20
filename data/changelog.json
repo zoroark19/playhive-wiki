@@ -1,0 +1,30 @@
+{
+  "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
+  "fetchedAt": "2026-07-20T00:00:00.000Z",
+  "items": [
+    {
+      "title": "🔥 Hot Drops: Coming Soon",
+      "link": "https://updates.playhive.com/changelog/fire-hot-drops-coming-soon",
+      "pubDate": "2026-07-13T00:00:00.000Z",
+      "excerpt": "Hot Drops are here — exclusive, limited-edition cosmetics available for a limited time, starting with the Starfire Crown Hat."
+    },
+    {
+      "title": "Summer Daily Leaving Soon",
+      "link": "https://updates.playhive.com/changelog/summer-daily-leaving-soon",
+      "pubDate": "2026-07-10T00:00:00.000Z",
+      "excerpt": "Summer Daily leaves on July 12th — last chance to grab the All Access Pass and any missed cosmetics."
+    },
+    {
+      "title": "SUMMER SALE: 50% off ALL ranks, plus free gifts with purchase",
+      "link": "https://updates.playhive.com/changelog/50percent-off-all-ranks-free-uncle-banana-costume-with-your",
+      "pubDate": "2026-07-03T00:00:00.000Z",
+      "excerpt": "Biggest discount ever on Hive+ and Hive Ultimate, plus a free Uncle Banana costume and bonus gift token with qualifying purchases."
+    },
+    {
+      "title": "July Quest Costume Released",
+      "link": "https://updates.playhive.com/changelog/july-quest-costume-released-8",
+      "pubDate": "2026-07-01T00:00:00.000Z",
+      "excerpt": "The Cacti Bandit costume can now be purchased from the Quest Store."
+    }
+  ]
+}
