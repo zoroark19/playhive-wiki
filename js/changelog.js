@@ -12,7 +12,7 @@
  */
 (function () {
   const DATA_URL = "data/changelog.json";
-  const MAX_ITEMS = 4;
+  const MAX_ITEMS = 6;
 
   function formatRelativeTime(isoDate) {
     const then = new Date(isoDate).getTime();
