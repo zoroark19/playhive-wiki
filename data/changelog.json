@@ -1,30 +1,30 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-07-20T00:00:00.000Z",
+  "fetchedAt": "2026-07-20T14:38:47.481Z",
   "items": [
     {
       "title": "🔥 Hot Drops: Coming Soon",
       "link": "https://updates.playhive.com/changelog/fire-hot-drops-coming-soon",
-      "pubDate": "2026-07-13T00:00:00.000Z",
-      "excerpt": "Hot Drops are here — exclusive, limited-edition cosmetics available for a limited time, starting with the Starfire Crown Hat."
+      "pubDate": "2026-07-13T18:33:57.000Z",
+      "excerpt": "Hot Drops are here, and it’s your chance to get your hands on exclusive, limited-edition cosmetics! Mark your calendars! The first Hot Drop will take place on…"
     },
     {
       "title": "Summer Daily Leaving Soon",
       "link": "https://updates.playhive.com/changelog/summer-daily-leaving-soon",
-      "pubDate": "2026-07-10T00:00:00.000Z",
-      "excerpt": "Summer Daily leaves on July 12th — last chance to grab the All Access Pass and any missed cosmetics."
+      "pubDate": "2026-07-10T14:18:48.000Z",
+      "excerpt": "Summer Daily will be leaving on July 12th. This is your last chance to grab the All Access Pass to unlock premium crates and any cosmetics you may have missed!…"
     },
     {
-      "title": "SUMMER SALE: 50% off ALL ranks, plus free gifts with purchase",
+      "title": "SUMMER SALE: 50% off ALL ranks, a free Uncle Banana Costume with your purchase, and a free gift token with purchases over 830+ Minecoins!",
       "link": "https://updates.playhive.com/changelog/50percent-off-all-ranks-free-uncle-banana-costume-with-your",
-      "pubDate": "2026-07-03T00:00:00.000Z",
-      "excerpt": "Biggest discount ever on Hive+ and Hive Ultimate, plus a free Uncle Banana costume and bonus gift token with qualifying purchases."
+      "pubDate": "2026-07-03T13:42:57.000Z",
+      "excerpt": "This July 4th weekend, benefit from amazing deals on The Hive store! ## 50% Off All Premium Ranks From now until July 6th, get 50% off Hive+, Hive Ultimate,…"
     },
     {
       "title": "July Quest Costume Released",
       "link": "https://updates.playhive.com/changelog/july-quest-costume-released-8",
       "pubDate": "2026-07-01T00:00:00.000Z",
-      "excerpt": "The Cacti Bandit costume can now be purchased from the Quest Store."
+      "excerpt": "A desert outlaw with some serious points to make... The Cacti Bandit costume can now be purchased from the Quest Store!…"
     }
   ]
 }
