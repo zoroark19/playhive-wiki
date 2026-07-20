@@ -139,7 +139,17 @@
   //                                       // rotation, for anything more
   //                                       // than a flat linear spin
   //                                       // (e.g. wing flutter)
+  //         rotationXExpr: (t) => degrees,// same, but for X rotation
+  //         rotationZExpr: (t) => degrees,// same, but for Z rotation
   //         scaleExpr: (t) => number,     // continuous Molang-style scale
+  //         scaleXExpr: (t) => number,    // continuous Molang-style scale,
+  //                                       // X axis only (non-uniform, e.g.
+  //                                       // a "puffing out" chest bone)
+  //         positionYExpr: (t) => number, // continuous Molang-style
+  //                                       // position offset, Y axis only —
+  //                                       // added to the bone's bind-pose Y,
+  //                                       // same convention as the rotation
+  //                                       // exprs above
   //         positionKeys: [[time, [x,y,z]], ...],  // keyframed position
   //         scaleKeys:    [[time, [x,y,z]], ...],  // keyframed uniform-ish scale
   //       },
@@ -442,6 +452,121 @@
     "angel-wings": {
       bones: {
         ...GENERIC_WING_IDLE_BONES,
+      },
+    },
+    "black-ice-wings": {
+      bones: {
+        ...GENERIC_WING_IDLE_BONES,
+      },
+    },
+    // Bittersweet Wings — combines two source clips that play together:
+    // "animation.hive.backbling.bittersweet_wings.idle_flap" (continuous
+    // wing rotation + heart scale via Molang expressions, plus a slow Y
+    // position bob on heart/rightWing/leftWing) and "...idle_beat" (a
+    // short 0.44s looped heart-scale pulse, keyframed). Both clips share
+    // the SAME anim_time_update ("0.75 * q.delta_time + q.anim_time"),
+    // i.e. Bedrock's anim_time advances at 0.75x real time — every
+    // expression/keyframe time below is converted to real seconds
+    // accordingly (continuous expressions multiply their input time `t`
+    // by 0.75 inline; idle_beat's keyframe times and its 0.44s
+    // animation_length are divided by 0.75, giving an effective ~0.587s
+    // real-time loop for the heartbeat). Like book-of-souls, the
+    // position exprs are in Bedrock's pixel-grid units (16 units = 1
+    // block), so they're divided by 16 to land correctly in Babylon's
+    // block-scale world units.
+    "bittersweet-wings": {
+      bones: {
+        heart: {
+          // idle_beat: quick "thump-thump" scale pulse, looping every
+          // 0.44 Bedrock anim_time units (~0.5867s real time).
+          loopSeconds: 0.44 / 0.75,
+          scaleKeys: [
+            [0.0 / 0.75, [1, 1, 1]],
+            [0.24 / 0.75, [0.95, 0.95, 0.95]],
+            [0.28 / 0.75, [0.92, 0.92, 0.92]],
+            [0.32 / 0.75, [0.9, 0.9, 0.9]],
+            [0.36 / 0.75, [0.975, 0.975, 0.975]],
+            [0.44 / 0.75, [1, 1, 1]],
+          ],
+          // idle_flap: slow vertical bob, phase-offset from the wings'
+          // own +4.1 offset (source uses +6.5 for the heart specifically).
+          positionYExpr: (t) =>
+            (Math.cos((t * 0.75 + 6.5) * 60 * (Math.PI / 180)) * 0.2) / 16,
+        },
+        rightWing: {
+          rotationYExpr: (t) =>
+            -(Math.cos((t * 0.75 + 4.1) * 800 * (Math.PI / 180)) * 20),
+          rotationZExpr: (t) => -Math.cos(t * 0.75 * 60 * (Math.PI / 180)) * 5,
+          positionYExpr: (t) =>
+            (Math.cos(t * 0.75 * 60 * (Math.PI / 180)) * 1 + 1) / 16,
+        },
+        leftWing: {
+          rotationYExpr: (t) =>
+            Math.cos((t * 0.75 + 4.1) * 800 * (Math.PI / 180)) * 20,
+          rotationZExpr: (t) => Math.cos(t * 0.75 * 60 * (Math.PI / 180)) * 5,
+          positionYExpr: (t) =>
+            (Math.cos(t * 0.75 * 60 * (Math.PI / 180)) * 1 + 1) / 16,
+        },
+        mid: {
+          scaleXExpr: (t) =>
+            1 + (Math.cos(t * 0.75 * 60 * (Math.PI / 180)) * 0.1 + 0.1),
+        },
+      },
+    },
+    // Book of Souls — "animation.hive.backbling.book_of_souls.idle".
+    // No custom anim_time_update in the source, so Bedrock's anim_time
+    // runs 1:1 with real time (unlike bittersweet-wings above) — `t` is
+    // used directly with no speed-factor scaling. Every bone here just
+    // rocks back and forth on X rotation (the book, hand, fingers, and
+    // both tails), each with its own phase offset and amplitude so the
+    // motion ripples rather than moving in lockstep; the book and hand
+    // also drift very slightly on Y position, and the hand is scaled
+    // down to 0.8 (a static, non-animated scale straight from the
+    // source, not a Molang expression). Unlike rotation (unit-agnostic
+    // degrees), the source's position values are in Bedrock's native
+    // pixel-grid units (16 units = 1 block), so they're divided by 16
+    // here to land correctly in Babylon's block-scale world units —
+    // without this the book/hand drift looks ~16x too large.
+    "book-of-souls": {
+      bones: {
+        soulBook: {
+          rotationXExpr: (t) =>
+            Math.cos((t + 3.4) * 120 * (Math.PI / 180)) * 0.7,
+          positionYExpr: (t) =>
+            (Math.cos((t + 4.1) * 120 * (Math.PI / 180)) * 0.2) / 16,
+        },
+        souldHand: {
+          rotationXExpr: (t) =>
+            Math.cos((t + 2.7) * 120 * (Math.PI / 180)) * 1.3,
+          positionYExpr: (t) =>
+            (Math.cos((t + 4.1) * 120 * (Math.PI / 180)) * 0.1) / 16,
+          scaleExpr: () => 0.8,
+        },
+        thumb: {
+          rotationXExpr: (t) =>
+            -(Math.cos((t + 2) * 120 * (Math.PI / 180)) * 2),
+        },
+        finger1: {
+          rotationXExpr: (t) => Math.cos((t + 2) * 120 * (Math.PI / 180)) * 2,
+        },
+        finger2: {
+          rotationXExpr: (t) => Math.cos((t + 2) * 120 * (Math.PI / 180)) * 1.5,
+        },
+        finger3: {
+          rotationXExpr: (t) => Math.cos((t + 1.9) * 120 * (Math.PI / 180)) * 2,
+        },
+        tailRight: {
+          rotationXExpr: (t) => Math.cos((t + 2.1) * 120 * (Math.PI / 180)) * 2,
+        },
+        tailRight2: {
+          rotationXExpr: (t) => Math.cos((t + 1.6) * 120 * (Math.PI / 180)) * 3,
+        },
+        tailLeft: {
+          rotationXExpr: (t) => Math.cos((t + 2.4) * 120 * (Math.PI / 180)) * 2,
+        },
+        tailLeft2: {
+          rotationXExpr: (t) => Math.cos((t + 2) * 120 * (Math.PI / 180)) * 3,
+        },
       },
     },
   };
@@ -1683,9 +1808,11 @@
           return {
             node,
             track,
+            originalRotationX: node.rotation.x,
             originalRotationY: node.rotation.y,
             originalRotationZ: node.rotation.z,
             originalScale: node.scaling.clone(),
+            originalPosition: node.position.clone(),
           };
         })
         .filter(Boolean);
@@ -1697,7 +1824,7 @@
         const deltaSeconds = this.scene.getEngine().getDeltaTime() / 1000;
         elapsed += deltaSeconds;
 
-        boneEntries.forEach(({ node, track }) => {
+        boneEntries.forEach(({ node, track, originalPosition }) => {
           // Each bone's own timeline wraps independently at its
           // loopSeconds — this is what lets, e.g., snowflake-wings'
           // six stars share one 6.52s cycle but peak at staggered
@@ -1715,6 +1842,15 @@
           if (track.rotationYExpr) {
             node.rotation.y = (track.rotationYExpr(elapsed) * Math.PI) / 180;
           }
+          if (track.rotationXExpr) {
+            node.rotation.x = (track.rotationXExpr(elapsed) * Math.PI) / 180;
+          }
+          if (track.rotationZExpr) {
+            node.rotation.z = (track.rotationZExpr(elapsed) * Math.PI) / 180;
+          }
+          if (track.positionYExpr) {
+            node.position.y = originalPosition.y + track.positionYExpr(elapsed);
+          }
           if (track.positionKeys) {
             const pos = this._sampleVectorKeyframes(track.positionKeys, t);
             if (pos) node.position.set(pos[0], pos[1], pos[2]);
@@ -1726,6 +1862,9 @@
           if (track.scaleExpr) {
             const s = track.scaleExpr(elapsed);
             node.scaling.set(s, s, s);
+          }
+          if (track.scaleXExpr) {
+            node.scaling.x = track.scaleXExpr(elapsed);
           }
         });
       });
@@ -1742,11 +1881,20 @@
       if (entry && this.scene) {
         this.scene.onBeforeRenderObservable.remove(entry.observer);
         entry.boneEntries.forEach(
-          ({ node, originalRotationY, originalRotationZ, originalScale }) => {
+          ({
+            node,
+            originalRotationX,
+            originalRotationY,
+            originalRotationZ,
+            originalScale,
+            originalPosition,
+          }) => {
             try {
+              node.rotation.x = originalRotationX;
               node.rotation.y = originalRotationY;
               node.rotation.z = originalRotationZ;
               node.scaling.copyFrom(originalScale);
+              node.position.copyFrom(originalPosition);
             } catch {}
           },
         );
