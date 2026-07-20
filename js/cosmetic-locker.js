@@ -84,6 +84,18 @@
   // costume's own helmet/hood/hair geometry.
   const HELMET_NODE_NAME = "helmet";
 
+  // Bone/node name (case-insensitive) that some hats (e.g. the Propeller
+  // hat) use for a spinning-prop idle animation. These models don't ship a
+  // baked glTF animation clip — the spin only exists in the source
+  // Blockbench project as a Bedrock-style Molang animation:
+  //   rotation.y = anim_time * 360° / s, looped forever
+  // Since that never gets exported into the .glb's `animations` array, we
+  // reproduce the same motion procedurally here: any loaded slot model with
+  // a node/bone by this name gets spun continuously for as long as it's
+  // equipped (see _startPropellerSpin / _stopPropellerSpin).
+  const PROPELLER_SPIN_NODE_NAME = "propeller";
+  const PROPELLER_SPIN_DEGREES_PER_SECOND = 360;
+
   // Node names (case-insensitive) inside a costume's hierarchy that should
   // be hidden whenever a Cape (not a Backbling) is equipped, so shoulder/back
   // armor doesn't clip through the cape geometry.
@@ -176,6 +188,16 @@
       this.camera = null;
       this.loadedNodes = { costume: [], hat: [], cape_backbling: [] };
       this.loadedSkeletons = { costume: [], hat: [], cape_backbling: [] };
+      // scene.onBeforeRenderObservable handle for each slot's idle-spin
+      // loop (see _startPropellerSpin), or null if that slot has no
+      // spinning part currently equipped. Tracked per-slot so equipping a
+      // new hat/costume/cape cleanly stops any previous slot's spin
+      // without touching a spin running in a different slot.
+      this._propellerSpinObservers = {
+        costume: null,
+        hat: null,
+        cape_backbling: null,
+      };
       // Original (unscaled) bone scaling cache, keyed by bone name, restored
       // when the corresponding hide condition (hat/cape) no longer applies.
       this._boneOriginalScales = null;
@@ -953,7 +975,76 @@
       );
     }
 
+    // Finds a node named PROPELLER_SPIN_NODE_NAME (case-insensitive) among
+    // a slot's loaded nodes and/or skeleton bones, preferring an actual
+    // TransformNode over a bare Bone since Babylon rotates a TransformNode
+    // directly, while a Bone needs its linked TransformNode for that.
+    _findPropellerSpinNode(slot) {
+      const nodes = this.loadedNodes[slot] || [];
+      const direct = nodes.find(
+        (n) => n.name && n.name.toLowerCase() === PROPELLER_SPIN_NODE_NAME,
+      );
+      if (direct) return direct;
+
+      const skeletons = this.loadedSkeletons[slot] || [];
+      for (const skeleton of skeletons) {
+        const bone = skeleton.bones.find(
+          (b) => b.name && b.name.toLowerCase() === PROPELLER_SPIN_NODE_NAME,
+        );
+        if (!bone) continue;
+        const node =
+          typeof bone.getTransformNode === "function"
+            ? bone.getTransformNode()
+            : null;
+        if (node) return node;
+      }
+      return null;
+    }
+
+    // Starts (or restarts) the idle spin for whatever's currently loaded in
+    // `slot`, if it has a "propeller" node/bone. Reproduces the hat's
+    // source Molang animation (continuous 360°/s Y-axis spin, looped
+    // forever) since that never made it into the .glb as a real glTF
+    // animation clip — see PROPELLER_SPIN_NODE_NAME above. Safe to call
+    // even when nothing matches; it's then just a no-op.
+    _startPropellerSpin(slot) {
+      this._stopPropellerSpin(slot);
+      if (!this.scene) return;
+
+      const node = this._findPropellerSpinNode(slot);
+      if (!node) return;
+
+      // Ensure rotation.y (Euler) is actually what drives orientation —
+      // _loadSlotModel clears rotationQuaternion on root nodes for the
+      // 180° face-camera flip, but a nested bone's transform node might
+      // still have one set by the glTF importer.
+      node.rotationQuaternion = null;
+
+      const radiansPerSecond =
+        (PROPELLER_SPIN_DEGREES_PER_SECOND * Math.PI) / 180;
+
+      const observer = this.scene.onBeforeRenderObservable.add(() => {
+        const deltaSeconds = this.scene.getEngine().getDeltaTime() / 1000;
+        node.rotation.y += radiansPerSecond * deltaSeconds;
+      });
+
+      this._propellerSpinObservers[slot] = observer;
+    }
+
+    // Stops and detaches the idle-spin observer for `slot`, if one is
+    // running. Called before re-loading a slot's model (so a stale
+    // observer never spins a disposed/replaced node) and whenever the slot
+    // is cleared/unequipped.
+    _stopPropellerSpin(slot) {
+      const observer = this._propellerSpinObservers[slot];
+      if (observer && this.scene) {
+        this.scene.onBeforeRenderObservable.remove(observer);
+      }
+      this._propellerSpinObservers[slot] = null;
+    }
+
     _clearSlotModel(slot) {
+      this._stopPropellerSpin(slot);
       // If we're about to dispose the costume's skeleton/nodes, detach any
       // currently-equipped shared cape first. The cape is parented (via
       // its chain-top wrapper node) to a TransformNode linked to a bone on
@@ -1354,6 +1445,7 @@
           this._syncHelmetVisibility();
           this._syncCapeArmorVisibility();
           if (slot === "costume") this._reattachSharedCape();
+          this._startPropellerSpin(slot);
           this._refitCamera();
         })
         .catch((exception) => {
