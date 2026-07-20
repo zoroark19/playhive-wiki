@@ -430,7 +430,7 @@
 .locker__slot-info {
   flex: 1;
   min-width: 0;
-  padding: 5px 8px;
+  padding: 4px 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;

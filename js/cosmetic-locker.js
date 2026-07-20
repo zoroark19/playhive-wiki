@@ -439,6 +439,11 @@
         },
       },
     },
+    "angel-wings": {
+      bones: {
+        ...GENERIC_WING_IDLE_BONES,
+      },
+    },
   };
 
   // Tuning for the "reset view" stage button (see _resetView). Beta is
@@ -456,6 +461,15 @@
   // their own unique per-item .glb via item.model as before.
   const SHARED_CAPE_MODEL_URL = "store/cape.glb";
 
+  // Fallback costume shown in the Costume slot whenever nothing is
+  // actually equipped there (first load with no costumes available, or
+  // the user explicitly unequips their costume) — same folder as
+  // cape.glb. Keeps the stage from ever showing a completely empty
+  // costume slot; equipped.costume itself stays null in this state (see
+  // _loadFallbackCostume), so hat/cape bone-hiding logic and the equipped
+  // panel still correctly show "Empty" / no costume equipped.
+  const FALLBACK_COSTUME_MODEL_URL = "store/soon.glb";
+
   // Derive a cape item's texture URL, mirroring player.html's
   // getCapeTextureUrl(): "/models/{name}.png". Prefers an explicit
   // item.texture field if the data provides one.
@@ -463,6 +477,42 @@
     if (item.texture) return item.texture;
     const name = item.slug || item.name;
     return name ? `/models/${encodeURIComponent(name)}.png` : null;
+  }
+
+  // ------------------------------------------------------------------
+  // Per-item texture variants (ITEM_TEXTURE_VARIANTS)
+  // ------------------------------------------------------------------
+  // Some hats/backblings ship as ONE glb whose look is retextured per
+  // variant (e.g. Cuddle Bear: blue / brown / pink), the same underlying
+  // technique as capes (see SHARED_CAPE_MODEL_URL/_applyCapeTexture) —
+  // just applied to an item's own unique model instead of one shared
+  // mesh. Rather than the person picking a color, each *equip* advances
+  // to the next variant in this list, wrapping back to the start —
+  // tracked per-slug in _variantCycleIndex (see _nextItemVariant).
+  //
+  // Texture URL convention: "/backblings/{slug}-{variant}.png" (e.g.
+  // "/backblings/cuddle-bear-blue.png") — same folder each item's own
+  // .glb already lives in (see hats.json/backblings.json `model` paths).
+  // An item can override this by giving each variant an explicit path
+  // instead of a bare name — see getItemVariantTextureUrl below.
+  const ITEM_TEXTURE_VARIANTS = {
+    "cuddle-bear": ["blue", "brown", "pink"],
+    "angel-wings": ["black", "pink", "white"],
+    "axolotl-plush": ["endolotl", "pink", "sunflower"],
+  };
+
+  // Resolves the texture URL for one variant of an item. `variant` may
+  // be a bare name ("blue") or, if an item ever needs a fully custom path
+  // per variant, an object like { name: "blue", texture: "some/other/path.png" }.
+  function getItemVariantTextureUrl(item, variant) {
+    if (variant && typeof variant === "object") {
+      if (variant.texture) return variant.texture;
+      variant = variant.name;
+    }
+    const slug = item.slug || item.name;
+    return slug
+      ? `/backblings/${encodeURIComponent(slug)}-${encodeURIComponent(variant)}.png`
+      : null;
   }
 
   function el(tag, className, html) {
@@ -569,6 +619,15 @@
         hat: null,
         cape_backbling: null,
       };
+
+      // Tracks which texture variant to apply NEXT for each item slug
+      // that has an ITEM_TEXTURE_VARIANTS entry — e.g. Cuddle Bear cycles
+      // blue → brown → pink → blue... on every equip (not a color the
+      // person picks). Keyed by slug rather than per-slot, since the same
+      // item could in principle be equipped again later after other
+      // items and should resume the cycle where it left off for the
+      // session. See _nextItemVariant / _applyItemVariantTexture.
+      this._variantCycleIndex = {};
 
       // The shared cape.glb is loaded once and reused for every Cape;
       // texture swaps happen on the same mesh instance instead of
@@ -735,6 +794,10 @@
         if (costumes.length) {
           const pick = costumes[Math.floor(Math.random() * costumes.length)];
           this._equip(pick);
+        } else {
+          // No costumes in the catalog at all — still show something
+          // rather than an empty stage.
+          this._loadFallbackCostume();
         }
       }
       this._renderEquippedPanel();
@@ -973,6 +1036,11 @@
       if (slot === "cape_backbling") this._clearSharedCape();
       if (slot === "hat") this._syncHelmetVisibility();
       if (slot === "cape_backbling") this._syncCapeArmorVisibility();
+      // Costume slot never shows fully empty — load the placeholder
+      // model in its place. equipped.costume itself correctly stays
+      // null, so the equipped panel still shows "Empty" and this doesn't
+      // count as a real costume for hat/cape bone-hiding or the share URL.
+      if (slot === "costume") this._loadFallbackCostume();
 
       if (syncURL) this._syncURL();
     }
@@ -2010,6 +2078,79 @@
       this.loadedNodes.cape_backbling = this._sharedCapeMeshes;
     }
 
+    // Loads the "coming soon" placeholder model into the Costume slot.
+    // Used whenever the costume slot would otherwise be left completely
+    // empty — first load with no costumes in the catalog, or the user
+    // explicitly unequipping their costume — so the stage always shows
+    // something in that slot. Deliberately goes through the exact same
+    // _loadSlotModel path as a real costume (bone hiding, propeller/bob/
+    // item-bone-animation hooks all still run correctly against it) but
+    // with a synthetic item that isn't backed by any catalog entry, so it
+    // never shows up as "equipped" in the UI or the shareable URL.
+    _loadFallbackCostume() {
+      this._loadSlotModel("costume", {
+        slug: "__fallback_costume__",
+        name: "Coming Soon",
+        model: FALLBACK_COSTUME_MODEL_URL,
+        category: "costume",
+      });
+    }
+
+    // Advances and returns the texture variant to use for THIS equip of
+    // `item`, if it has an ITEM_TEXTURE_VARIANTS entry — cycling forward
+    // through the list each time (wrapping back to the start), rather
+    // than letting the person choose a color. Returns null for items
+    // with no variant entry, so callers can no-op cleanly. The index is
+    // advanced (not just read) here, so calling this is itself "using
+    // up" this equip's turn in the cycle — don't call it more than once
+    // per equip.
+    _nextItemVariant(item) {
+      const variants = ITEM_TEXTURE_VARIANTS[item.slug];
+      if (!variants || !variants.length) return null;
+
+      const current = this._variantCycleIndex[item.slug] || 0;
+      const variant = variants[current % variants.length];
+      this._variantCycleIndex[item.slug] = current + 1;
+      return variant;
+    }
+
+    // If `item` has a texture-variant entry, advances its cycle and
+    // applies the resulting texture to every mesh just loaded for it in
+    // `slot` — same underlying technique as _applyCapeTexture (swap the
+    // color texture, keep nearest-neighbor sampling, add a matching
+    // emissive fill), just targeting the item's own PBRMaterial
+    // (albedoTexture) instead of forcing a shared StandardMaterial like
+    // capes do, since these items load their own unique glb with its own
+    // imported material rather than reusing one shared mesh. No-ops
+    // quietly for items with no ITEM_TEXTURE_VARIANTS entry.
+    _applyItemVariantIfAny(slot, item, meshes) {
+      const variant = this._nextItemVariant(item);
+      if (!variant || !this.scene) return;
+
+      const textureUrl = getItemVariantTextureUrl(item, variant);
+      if (!textureUrl) return;
+
+      const tex = new BABYLON.Texture(
+        resolveAsset(this.dataRoot, textureUrl),
+        this.scene,
+        true, // noMipmap — pixel art shouldn't blend across mip levels
+        false,
+        BABYLON.Texture.NEAREST_SAMPLINGMODE,
+      );
+      tex.hasAlpha = true;
+
+      meshes.forEach((mesh) => {
+        if (!mesh.material) return;
+        // PBRMaterial (the glTF importer's default) uses albedoTexture as
+        // its base color map — mirrors the albedoTexture handling just
+        // above in _loadSlotModel's own texture pass, not
+        // diffuseTexture/StandardMaterial like the shared cape mesh.
+        mesh.material.albedoTexture = tex;
+        mesh.material.emissiveTexture = tex;
+        mesh.material.emissiveColor = new BABYLON.Color3(0.45, 0.45, 0.45);
+      });
+    }
+
     _loadSlotModel(slot, item) {
       if (!this.scene) return;
       this._clearSlotModel(slot);
@@ -2086,6 +2227,7 @@
           });
           this.loadedNodes[slot] = meshes;
           this.loadedSkeletons[slot] = skeletons;
+          this._applyItemVariantIfAny(slot, item, meshes);
           this._updateStageEmptyState();
           this._syncHelmetVisibility();
           this._syncCapeArmorVisibility();
