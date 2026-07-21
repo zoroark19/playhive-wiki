@@ -2,9 +2,9 @@ name: Update changelog data
 
 on:
   schedule:
-    # Runs every 3 hours. GitHub may delay scheduled runs slightly under load.
-    - cron: "0 */3 * * *"
-  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+    # Runs every 24 hours. GitHub may delay scheduled runs slightly under load.
+    - cron: "0 0 * * *"
+  workflow_dispatch: {} # lets you trigger it manually from the Actions tab
   push:
     branches: [main]
     paths:

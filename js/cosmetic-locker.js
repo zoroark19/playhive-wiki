@@ -513,7 +513,21 @@
         },
       },
     },
-    // Book of Souls — "animation.hive.backbling.book_of_souls.idle".
+    // Cape idle sway — "animation.cape.idle". Unlike everything else in
+    // this table (keyed per-item slug), every cape shares one model
+    // (cape.glb) and only swaps texture, so this is keyed by category
+    // instead and applies to whichever cape is currently equipped. No
+    // custom anim_time_update in the source, so `t` is used directly
+    // (1:1 with real time). The rotation is a constant -5° rest tilt
+    // plus a small continuous back-and-forth sway on top.
+    "category:cape": {
+      bones: {
+        cape: {
+          rotationXExpr: (t) =>
+            -5 + Math.cos((t + 2) * 120 * (Math.PI / 180)) * 1,
+        },
+      },
+    },
     // No custom anim_time_update in the source, so Bedrock's anim_time
     // runs 1:1 with real time (unlike bittersweet-wings above) — `t` is
     // used directly with no speed-factor scaling. Every bone here just
@@ -566,6 +580,42 @@
         },
         tailLeft2: {
           rotationXExpr: (t) => Math.cos((t + 2) * 120 * (Math.PI / 180)) * 3,
+        },
+      },
+    },
+    // Backroom Buddy — "animation.hive.backbling.backroom_buddy.idle":
+    // balloon strings/balloons gently sway via Molang cosine expressions,
+    // no animation_length — runs forever, no wrap. Balloon exprs are
+    // swapped left/right vs. the source's bone naming, since the model's
+    // leftballoon/rightballoon bones are mirrored from what the source
+    // clip assumes.
+    "backroom-buddy": {
+      bones: {
+        leftstring: {
+          rotationXExpr: (t) =>
+            -(Math.cos((t + 4.9) * 40 * (Math.PI / 180)) * 3.5),
+          rotationZExpr: (t) =>
+            Math.cos((t + 4.1) * 85 * (Math.PI / 180)) * 3.5,
+        },
+        leftballoon: {
+          rotationXExpr: (t) =>
+            -(Math.cos((t + 5.3) * 40 * (Math.PI / 180)) * 2.5),
+          rotationYExpr: (t) => -(Math.cos((t + 4) * 68 * (Math.PI / 180)) * 4),
+          rotationZExpr: (t) =>
+            Math.cos((t + 3.2) * 85 * (Math.PI / 180)) * 6 + 5,
+        },
+        rightstring: {
+          rotationXExpr: (t) =>
+            -(Math.cos((t + 4.3) * 40 * (Math.PI / 180)) * 3.5),
+          rotationZExpr: (t) =>
+            -(Math.cos((t + 2.9) * 85 * (Math.PI / 180)) * 2.5),
+        },
+        rightballoon: {
+          rotationXExpr: (t) =>
+            -(Math.cos((t + 5.3) * 40 * (Math.PI / 180)) * 1.5),
+          rotationYExpr: (t) => -(Math.cos((t + 4) * 65 * (Math.PI / 180)) * 4),
+          rotationZExpr: (t) =>
+            -(Math.cos((t + 3.8) * 85 * (Math.PI / 180)) * 6) - 15,
         },
       },
     },
@@ -1733,6 +1783,22 @@
     // references (star1..star6, spineDecor, etc), not just "propeller".
     _findSlotBoneNode(slot, boneName) {
       const target = boneName.toLowerCase();
+
+      // Special case: the shared cape's "cape" track targets the sway
+      // hinge (_sharedCapeHinge), not the cape mesh itself. The mesh's
+      // own local origin sits below its geometry (see
+      // _fetchSharedCapeModel), so rotating it directly swings the cape
+      // around the wrong point; the hinge is a TransformNode placed at
+      // the mesh's authored top edge instead, with the mesh re-parented
+      // underneath it.
+      if (
+        slot === "cape_backbling" &&
+        target === "cape" &&
+        this._sharedCapeHinge
+      ) {
+        return this._sharedCapeHinge;
+      }
+
       const nodes = this.loadedNodes[slot] || [];
       const direct = nodes.find(
         (n) => n.name && n.name.toLowerCase() === target,
@@ -1793,7 +1859,9 @@
       this._stopItemBoneAnimations(slot);
       if (!this.scene || !item) return;
 
-      const config = ITEM_BONE_ANIMATIONS[item.slug];
+      const config =
+        ITEM_BONE_ANIMATIONS[item.slug] ||
+        ITEM_BONE_ANIMATIONS[`category:${item.category}`];
       if (!config || !config.bones) return;
 
       const boneEntries = Object.entries(config.bones)
@@ -1907,20 +1975,28 @@
       this._stopItemBoneAnimations(slot);
       if (slot === "costume") this._stopBob();
       // If we're about to dispose the costume's skeleton/nodes, detach any
-      // currently-equipped shared cape first. The cape is parented (via
-      // its chain-top wrapper node) to a TransformNode linked to a bone on
-      // THIS skeleton (see _showSharedCape/_reattachSharedCape); disposing
-      // the skeleton out from under it orphans the cape and it silently
-      // stops rendering. Un-parenting (rather than disposing) keeps it
-      // alive so _reattachSharedCape() can re-parent it onto the next
-      // costume once that finishes loading.
+      // currently-equipped shared cape first. The cape's sway hinge is
+      // parented to a TransformNode linked to a bone on THIS skeleton
+      // (see _fetchSharedCapeModel/_reattachSharedCape); disposing the
+      // skeleton out from under it would dispose the hinge too (Babylon
+      // disposes children along with their parent), which silently drops
+      // the cape mesh hanging off it as well. Un-parenting (rather than
+      // disposing) keeps everything alive so _reattachSharedCape() can
+      // re-home the hinge onto the next costume once that finishes
+      // loading.
       //
-      // Important: un-parent the tracked chain-top wrapper, NOT the leaf
-      // meshes directly — the leaf's local position is only meaningful
-      // relative to that wrapper (see _showSharedCape), so detaching the
-      // leaf itself would silently corrupt the same offset this whole
-      // chain-top approach exists to preserve.
-      if (slot === "costume" && this._sharedCapeChainTop) {
+      // Important: un-parent the hinge itself, NOT the cape mesh or the
+      // old chain-top wrapper directly — the mesh's local position is
+      // only meaningful relative to the hinge (see _fetchSharedCapeModel),
+      // and the hinge (not the mesh) is what's actually attached to this
+      // skeleton's body bone since the sway-pivot fix.
+      if (slot === "costume" && this._sharedCapeHinge) {
+        try {
+          this._sharedCapeHinge.parent = null;
+        } catch {}
+      } else if (slot === "costume" && this._sharedCapeChainTop) {
+        // Fallback for any cape somehow still on the pre-hinge parenting
+        // scheme (shouldn't normally happen, but keeps this defensive).
         try {
           this._sharedCapeChainTop.parent = null;
         } catch {}
@@ -2004,6 +2080,7 @@
         // whether a costume load happens to be in flight right now.
         this._applyCapeTexture(textureUrl);
         this.loadedNodes.cape_backbling = this._sharedCapeMeshes;
+        this._startItemBoneAnimations("cape_backbling", item);
         this._updateStageEmptyState();
         this._refitCamera();
         return;
@@ -2145,6 +2222,41 @@
             }
           });
 
+          // cape.glb's "cape" node/mesh has its own local origin (0,0,0)
+          // sitting BELOW its geometry (the collar/top edge is at local Y
+          // = boundingBox.maximum.y, not at the origin) — so rotating the
+          // mesh's own rotation.x swings the whole cape around a point
+          // beneath it, which looks inverted (the sway reads backwards
+          // instead of hanging naturally from the shoulders). To hinge it
+          // correctly, insert a TransformNode ("capeSwayHinge") at the
+          // mesh's authored top-edge offset, parent it in the mesh's
+          // place, then re-parent the mesh under the hinge preserving its
+          // world transform (setParent adjusts local position for us).
+          // ITEM_BONE_ANIMATIONS' "cape" track then rotates this hinge —
+          // see _findSlotBoneNode's cape_backbling special case below.
+          this._stopItemBoneAnimations("cape_backbling");
+          if (this._sharedCapeHinge) {
+            try {
+              this._sharedCapeHinge.dispose();
+            } catch {}
+            this._sharedCapeHinge = null;
+          }
+          const capeMesh = this._sharedCapeChainTop;
+          if (capeMesh) {
+            const capeBbox = capeMesh.getBoundingInfo().boundingBox;
+            const topLocalY = capeBbox.maximum.y;
+            const hinge = new BABYLON.TransformNode(
+              "capeSwayHinge",
+              this.scene,
+            );
+            hinge.parent = capeMesh.parent;
+            hinge.position = capeMesh.position.add(
+              new BABYLON.Vector3(0, topLocalY, 0),
+            );
+            capeMesh.setParent(hinge);
+            this._sharedCapeHinge = hinge;
+          }
+
           // _applyCapeTexture / _refitCamera / etc. still operate on the
           // flat list of leaf meshes (they need actual Mesh instances for
           // materials and bounding boxes) — only the parenting/positioning
@@ -2152,6 +2264,7 @@
           this._sharedCapeMeshes = meshes;
           this.loadedNodes.cape_backbling = meshes;
           this._applyCapeTexture(textureUrl);
+          this._startItemBoneAnimations("cape_backbling", item);
           this._updateStageEmptyState();
           this._refitCamera();
         })
@@ -2167,9 +2280,15 @@
 
     _clearSharedCape() {
       this._pendingCapeItem = null;
+      this._stopItemBoneAnimations("cape_backbling");
       if (this._sharedCapeChainTop) {
         try {
           this._sharedCapeChainTop.dispose();
+        } catch {}
+      }
+      if (this._sharedCapeHinge) {
+        try {
+          this._sharedCapeHinge.dispose();
         } catch {}
       }
       if (this._sharedCapeMeshes) {
@@ -2181,6 +2300,7 @@
       }
       this._sharedCapeMeshes = null;
       this._sharedCapeChainTop = null;
+      this._sharedCapeHinge = null;
       this._sharedCapeLoading = false;
       this.loadedNodes.cape_backbling = [];
       this._updateStageEmptyState();
@@ -2199,12 +2319,17 @@
         null;
       const parentedToBone = !!this._getCostumeBoneTransformNode("body");
 
-      // Re-parent the tracked chain-top wrapper (not the leaf meshes) so
-      // the cape's authored local offset — baked into the wrapper -> leaf
-      // relationship inside cape.glb — stays intact across costume swaps.
-      // See _showSharedCape for why re-parenting the leaf mesh directly
-      // would be wrong here.
-      const node = this._sharedCapeChainTop || this._sharedCapeMeshes[0];
+      // Re-parent the tracked hinge node (not the mesh or the old
+      // chain-top wrapper) onto the new costume's body bone, so the
+      // cape's authored local offset — baked into the
+      // hinge -> mesh relationship set up in _fetchSharedCapeModel —
+      // stays intact across costume swaps. See _showSharedCape for why
+      // re-parenting the mesh directly would put it at the wrong sway
+      // pivot again.
+      const node =
+        this._sharedCapeHinge ||
+        this._sharedCapeChainTop ||
+        this._sharedCapeMeshes[0];
       node.parent = parentNode;
       // See _showSharedCape: leave the cape's authored local position
       // untouched when parented to the body bone; only the no-bone
