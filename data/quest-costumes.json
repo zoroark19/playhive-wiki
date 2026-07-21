@@ -29,7 +29,7 @@
       "thumbnail": "costumes/quest/sushi-head/assistant-sushi-head.png",
       "model": "costumes/quest/sushi-head/model.glb",
       "page": "costumes/quest/sushi-head/",
-      "tags": [],
+      "tags": []
     },
     {
       "slug": "bubblez",
@@ -39,7 +39,7 @@
       "thumbnail": "costumes/quest/bubblez/assistant-bubblez.png",
       "model": "costumes/quest/bubblez/model.glb",
       "page": "costumes/quest/bubblez/",
-      "tags": [],
+      "tags": []
     },
     {
       "slug": "top-ghast",
@@ -49,7 +49,7 @@
       "thumbnail": "costumes/quest/top-ghast/assistant-top-ghast.png",
       "model": "costumes/quest/top-ghast/model.glb",
       "page": "costumes/quest/top-ghast/",
-      "tags": [],
+      "tags": []
     },
     {
       "slug": "granny-ghosty",
@@ -69,7 +69,7 @@
       "thumbnail": "costumes/quest/frost-bjorn/assistant-frost-bjorn.png",
       "model": "costumes/quest/frost-bjorn/model.glb",
       "page": "costumes/quest/frost-bjorn/",
-      "tags": [],
+      "tags": []
     },
     {
       "slug": "ghosty-claus",
@@ -79,7 +79,7 @@
       "thumbnail": "costumes/quest/ghosty-claus/assistant-ghosty-claus.png",
       "model": "costumes/quest/ghosty-claus/model.glb",
       "page": "costumes/quest/ghosty-claus/",
-      "tags": [],
+      "tags": []
     },
     {
       "slug": "amethyst",
@@ -89,7 +89,7 @@
       "thumbnail": "costumes/quest/amethyst/assistant-amethyst.png",
       "model": "costumes/quest/amethyst/model.glb",
       "page": "costumes/quest/amethyst/",
-      "tags": [],
+      "tags": []
     },
     {
       "slug": "skull-mage",
@@ -99,7 +99,7 @@
       "thumbnail": "costumes/quest/skull-mage/assistant-skull-mage.png",
       "model": "costumes/quest/skull-mage/model.glb",
       "page": "costumes/quest/skull-mage/",
-      "tags": [],
+      "tags": []
     },
     {
       "slug": "toxic-meltdown",
@@ -109,7 +109,7 @@
       "thumbnail": "costumes/quest/toxic-meltdown/assistant-toxic-meltdown.png",
       "model": "costumes/quest/toxic-meltdown/model.glb",
       "page": "costumes/quest/toxic-meltdown/",
-      "tags": [],
+      "tags": []
     },
     {
       "slug": "spartan-wraith",
@@ -119,7 +119,7 @@
       "thumbnail": "costumes/quest/spartan-wraith/assistant-spartan-wraith.png",
       "model": "costumes/quest/spartan-wraith/model.glb",
       "page": "costumes/quest/spartan-wraith/",
-      "tags": [],
+      "tags": []
     },
     {
       "slug": "sandstone",
