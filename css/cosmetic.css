@@ -299,6 +299,16 @@
 .rank-yt {
   color: #ff5555 !important;
 }
+/* §i violet — Ultimate */
+.rank-ultimate {
+  color: #d460ff !important;
+}
+.rank-plus {
+  color: #55ff55 !important;
+}
+.rank-none {
+  color: #aaaaaa !important;
+}
 
 /* ---------------------------------------------------------
    Navbox — category rows + head-icon links
