@@ -2,6 +2,16 @@
   "description": "Hat cosmetics available on the marketplace.",
   "items": [
     {
+      "slug": "starfire-crown",
+      "name": "Sstarfire Crown",
+      "date": "October 16, 2023",
+      "availability": "unobtainable",
+      "thumbnail": "https://cdn.playhive.com/avatars/hat-starfire-crown.png",
+      "model": "hats/starfire-crown.glb",
+      "page": "hats/starfire-crown/",
+      "tags": []
+    },
+    {
       "slug": "5th-beeday-cake",
       "name": "5th Beeday Cake",
       "date": "October 16, 2023",

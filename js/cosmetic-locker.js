@@ -621,6 +621,99 @@
     },
   };
 
+  // ------------------------------------------------------------------
+  // Per-item idle particle effects (ITEM_PARTICLE_EFFECTS)
+  // ------------------------------------------------------------------
+  // Some cosmetics ship a Bedrock particle_effect JSON (an emitter that
+  // spawns/animates little sprites) alongside their model — e.g. the
+  // Starfire Crown's flame wisps. Bedrock's particle format can't run
+  // directly in a browser, so each entry here is a hand-translated
+  // Babylon.js ParticleSystem that reproduces the *look* of the source
+  // effect (spawn rate, sphere emitter around the head, flipbook
+  // texture, color-over-life gradient, upward drift + drag), keyed by
+  // item slug. Applied generically via _startItemParticleEffect, mirroring
+  // _startItemBoneAnimations/_startPropellerSpin above — the emitter is
+  // started when the item is loaded into its slot and stopped/disposed
+  // the moment that slot is cleared or swapped to something else.
+  //
+  // Entry shape:
+  //   {
+  //     textureUrl: "path/relative/to/data-root.png",
+  //     spriteWidth / spriteHeight: sprite sheet frame size in px,
+  //     frameCount: number of flipbook frames, played once per particle
+  //                 lifetime (matches Bedrock's stretch_to_lifetime),
+  //     startCellY: pixel row in the sprite sheet where frame 0 begins
+  //                 (default 0) — lets a flipbook start partway down a
+  //                 shared sheet instead of always at the very top.
+  //     capacity: max simultaneous particles,
+  //     emitRate: particles spawned per second,
+  //     minLifeTime / maxLifeTime: seconds,
+  //     minSize / maxSize: world-space sprite size,
+  //     direction: [x,y,z] world-space drift applied as gravity (matches
+  //                the source's upward drift + drag),
+  //     dragFactor: exponential velocity damping per second (source uses
+  //                 a flat linear_drag_coefficient; this is close enough
+  //                 for the visual read at preview scale),
+  //     colorGradient: [[stop 0-1, "#RRGGBBAA"], ...] — sampled the same
+  //                    way as the source's color-over-life gradient,
+  //     emitBox: [x, y, z] half-extents of the emission volume, centered
+  //              on the emitter's local origin (approximates the source's
+  //              small offset sphere without needing the full per-frame
+  //              head-rotation Molang math — the crown itself already
+  //              tracks head rotation since it's parented to the head).
+  //     emitterBone: name of a bone/node (case-insensitive) within the
+  //                  slot's loaded skeleton/nodes to parent the emitter
+  //                  to, e.g. "head" for a Bedrock locator defined on
+  //                  the head bone rather than the item's own bone.
+  //                  Falls back to the slot's own parentless root node
+  //                  if omitted.
+  //     emitterOffset: [x, y, z] local offset from emitterBone (or the
+  //                    slot root, if no emitterBone) to the emission
+  //                    point, in the model's own local space units —
+  //                    e.g. a Bedrock locator's [x,y,z] divided by 16.
+  //   }
+  const ITEM_PARTICLE_EFFECTS = {
+    "starfire-crown": {
+      textureUrl: "store/particles/starfire_crown_flame.png",
+      spriteWidth: 16,
+      spriteHeight: 16,
+      frameCount: 14,
+      // Flipbook playback starts at pixel row 32 of the sheet (frame
+      // index 2 at 16px/frame) rather than row 0 — matches the source
+      // JSON's base_UV being offset from the top of the strip.
+      startCellY: 32,
+      capacity: 60,
+      emitRate: 10,
+      minLifeTime: 1.4,
+      maxLifeTime: 1.75,
+      minSize: 0.25,
+      maxSize: 0.35,
+      direction: [0, 1, 0],
+      dragFactor: 4,
+      colorGradient: [
+        [0.17, "#FFF0E2FF"],
+        [0.69, "#B02D2939"],
+        [1.0, "#66000000"],
+      ],
+      emitBox: [0.05, 0.05, 0.05],
+      // The source geometry (starfire_crown.json) defines this effect's
+      // spawn point as a named locator on the "head" bone, NOT on the
+      // crown mesh's own bone: "head": { "pivot": [0,24,0], "locators":
+      // { "locator": [0, 32, 0] } }. Locator/cube coordinates inside a
+      // bone are given in the SAME absolute model-space frame as that
+      // bone's own pivot (not a further offset from it) — confirmed by
+      // the crown bone itself (pivot Y=30) showing up in the exported
+      // glb as a mere +0.375 (=6 Bedrock units = 30-24) translation
+      // relative to its head parent. So the locator's offset relative
+      // to the head bone's own local origin is 32-24 = 8 Bedrock units
+      // = 0.5 in the glTF's model-space units — that's what
+      // emitterOffset needs to be, applied relative to the head bone
+      // (see emitterBone below), not the crown mesh.
+      emitterBone: "head",
+      emitterOffset: [0, 0.5, 0],
+    },
+  };
+
   // Tuning for the "reset view" stage button (see _resetView). Beta is
   // Babylon's polar angle from the top pole, so a positive offset tilts
   // the camera to look down at the model a bit more than the camera's
@@ -790,6 +883,18 @@
       // _stopItemBoneAnimations), or null if the currently equipped item
       // in that slot has no entry in the table.
       this._itemBoneAnimObservers = {
+        costume: null,
+        hat: null,
+        cape_backbling: null,
+      };
+
+      // Babylon ParticleSystem instance currently playing for each slot
+      // (see _startItemParticleEffect / _stopItemParticleEffect), or null
+      // if the currently equipped item in that slot has no entry in
+      // ITEM_PARTICLE_EFFECTS. Tracked per-slot for the same reason as
+      // _propellerSpinObservers/_itemBoneAnimObservers — so clearing one
+      // slot's effect never touches a different slot's.
+      this._itemParticleSystems = {
         costume: null,
         hat: null,
         cape_backbling: null,
@@ -1970,9 +2075,194 @@
       this._itemBoneAnimObservers[slot] = null;
     }
 
+    // Starts (or restarts) the idle particle effect for `item` in `slot`,
+    // if it has an entry in ITEM_PARTICLE_EFFECTS — e.g. the Starfire
+    // Crown's flame wisps. Reproduces the source Bedrock particle_effect
+    // JSON as a Babylon ParticleSystem (see the table's own comment
+    // above for why this can't just run the Bedrock file directly).
+    // Safe to call even when the item has no configured effect; it's
+    // then just a no-op, same convention as _startPropellerSpin/
+    // _startItemBoneAnimations.
+    _startItemParticleEffect(slot, item) {
+      this._stopItemParticleEffect(slot);
+      if (!this.scene || !item) return;
+
+      const config = ITEM_PARTICLE_EFFECTS[item.slug];
+      if (!config) return;
+
+      // Bedrock's source model defines this effect's spawn point as a
+      // named locator on the "head" bone (locators: { locator: [0,32,0] }
+      // in the crown's geometry JSON) — NOT on the crown mesh's own bone.
+      // So the emitter needs to attach to the head node specifically,
+      // using the same case-insensitive bone/node lookup as
+      // _findSlotBoneNode, rather than just grabbing whatever loaded
+      // node happens to have no parent (which is the crown mesh itself,
+      // and has the wrong local origin for this offset).
+      const emitterBoneName = config.emitterBone || null;
+      const emitterNode = emitterBoneName
+        ? this._findSlotBoneNode(slot, emitterBoneName)
+        : (this.loadedNodes[slot] || []).find((n) => !n.parent) ||
+          (this.loadedNodes[slot] || [])[0];
+      if (!emitterNode) return;
+
+      const textureUrl = resolveAsset(this.dataRoot, config.textureUrl);
+      const particleSystem = new BABYLON.ParticleSystem(
+        `itemParticles_${slot}`,
+        config.capacity || 60,
+        this.scene,
+      );
+      particleSystem.particleTexture = new BABYLON.Texture(
+        textureUrl,
+        this.scene,
+        true, // noMipmap — matches the pixel-art sampling used elsewhere
+        false,
+        BABYLON.Texture.NEAREST_SAMPLINGMODE,
+      );
+
+      // Flipbook playback: one full pass through the sprite sheet's
+      // frames stretched across each particle's own lifetime, matching
+      // the source's stretch_to_lifetime flag.
+      if (config.frameCount && config.frameCount > 1) {
+        particleSystem.spriteCellWidth = config.spriteWidth;
+        particleSystem.spriteCellHeight = config.spriteHeight;
+        const startCell = Math.round(
+          (config.startCellY || 0) / config.spriteHeight,
+        );
+        particleSystem.startSpriteCellID = startCell;
+        particleSystem.endSpriteCellID = startCell + config.frameCount - 1;
+        particleSystem.spriteCellChangeSpeed = 0; // driven by lifetime below
+        particleSystem.spriteCellLoop = false;
+        particleSystem.isAnimationSheetEnabled = true;
+      }
+
+      const emitBox = config.emitBox || [0.05, 0.05, 0.05];
+      particleSystem.emitter = emitterNode;
+      particleSystem.particleEmitterType = new BABYLON.SphereParticleEmitter(
+        Math.max(emitBox[0], emitBox[1], emitBox[2]) || 0.05,
+      );
+      if (config.emitterOffset) {
+        particleSystem.minEmitBox = new BABYLON.Vector3(
+          ...config.emitterOffset,
+        );
+        particleSystem.maxEmitBox = new BABYLON.Vector3(
+          ...config.emitterOffset,
+        );
+      }
+
+      particleSystem.minLifeTime = config.minLifeTime ?? 1;
+      particleSystem.maxLifeTime = config.maxLifeTime ?? 1.5;
+      particleSystem.minSize = config.minSize ?? 0.2;
+      particleSystem.maxSize = config.maxSize ?? 0.3;
+      particleSystem.emitRate = config.emitRate ?? 10;
+      particleSystem.minEmitPower = 1;
+      particleSystem.maxEmitPower = 1;
+      particleSystem.updateSpeed = 1 / 60;
+
+      const [gx, gy, gz] = config.direction || [0, 1, 0];
+      particleSystem.gravity = new BABYLON.Vector3(gx, gy, gz);
+      // Babylon has no built-in exponential drag; approximate the
+      // source's linear_drag_coefficient by damping velocity a little
+      // every update tick instead.
+      const dragFactor = config.dragFactor ?? 0;
+      const startCell = Math.round(
+        (config.startCellY || 0) / (config.spriteHeight || 1),
+      );
+      particleSystem.updateFunction = (particles) => {
+        const dt = particleSystem.updateSpeed * this.scene.getAnimationRatio();
+        particles.forEach((particle) => {
+          particle.age += dt;
+          if (particle.age >= particle.lifeTime) {
+            particleSystem.recycleParticle(particle);
+            return;
+          }
+          if (dragFactor > 0) {
+            const damping = Math.max(0, 1 - dragFactor * dt);
+            particle.direction.scaleInPlace(damping);
+          }
+          particle.direction.addInPlace(particleSystem.gravity.scale(dt));
+          particle.position.addInPlace(particle.direction.scale(dt));
+
+          const ratio = particle.age / particle.lifeTime;
+          if (config.colorGradient) {
+            particle.color = this._sampleColorGradient(
+              config.colorGradient,
+              ratio,
+            );
+          }
+          if (config.frameCount && config.frameCount > 1) {
+            particle.cellIndex =
+              startCell +
+              Math.min(
+                config.frameCount - 1,
+                Math.floor(ratio * config.frameCount),
+              );
+          }
+        });
+      };
+
+      particleSystem.start();
+      this._itemParticleSystems[slot] = particleSystem;
+    }
+
+    // Reads a Babylon Color4 out of a [[stop, "#RRGGBBAA"], ...] gradient
+    // at `ratio` (0-1 through the particle's life), linearly interpolating
+    // between the two surrounding stops — same convention as the source
+    // Bedrock gradient's "interpolant" sampling.
+    _sampleColorGradient(gradient, ratio) {
+      if (!gradient || !gradient.length) {
+        return new BABYLON.Color4(1, 1, 1, 1);
+      }
+      const toColor4 = (hex) => {
+        const clean = hex.replace("#", "");
+        const r = parseInt(clean.slice(0, 2), 16) / 255;
+        const g = parseInt(clean.slice(2, 4), 16) / 255;
+        const b = parseInt(clean.slice(4, 6), 16) / 255;
+        const a = clean.length >= 8 ? parseInt(clean.slice(6, 8), 16) / 255 : 1;
+        return new BABYLON.Color4(r, g, b, a);
+      };
+
+      if (ratio <= gradient[0][0]) return toColor4(gradient[0][1]);
+      const last = gradient[gradient.length - 1];
+      if (ratio >= last[0]) return toColor4(last[1]);
+
+      for (let i = 0; i < gradient.length - 1; i++) {
+        const [t0, c0] = gradient[i];
+        const [t1, c1] = gradient[i + 1];
+        if (ratio < t0 || ratio > t1) continue;
+        const span = t1 - t0;
+        const localRatio = span > 0 ? (ratio - t0) / span : 0;
+        const color0 = toColor4(c0);
+        const color1 = toColor4(c1);
+        return new BABYLON.Color4(
+          color0.r + (color1.r - color0.r) * localRatio,
+          color0.g + (color1.g - color0.g) * localRatio,
+          color0.b + (color1.b - color0.b) * localRatio,
+          color0.a + (color1.a - color0.a) * localRatio,
+        );
+      }
+      return toColor4(last[1]);
+    }
+
+    // Stops and disposes the running particle effect for `slot` (if any).
+    // Called before re-loading a slot's model (so a stale emitter never
+    // keeps spawning particles off a disposed node) and whenever the slot
+    // is cleared/unequipped — same lifecycle as _stopPropellerSpin/
+    // _stopItemBoneAnimations.
+    _stopItemParticleEffect(slot) {
+      const particleSystem = this._itemParticleSystems[slot];
+      if (particleSystem) {
+        try {
+          particleSystem.stop();
+          particleSystem.dispose();
+        } catch {}
+      }
+      this._itemParticleSystems[slot] = null;
+    }
+
     _clearSlotModel(slot) {
       this._stopPropellerSpin(slot);
       this._stopItemBoneAnimations(slot);
+      this._stopItemParticleEffect(slot);
       if (slot === "costume") this._stopBob();
       // If we're about to dispose the costume's skeleton/nodes, detach any
       // currently-equipped shared cape first. The cape's sway hinge is
@@ -2508,6 +2798,7 @@
           if (slot === "costume") this._startBob();
           this._startPropellerSpin(slot);
           this._startItemBoneAnimations(slot, item);
+          this._startItemParticleEffect(slot, item);
           this._refitCamera();
         })
         .catch((exception) => {
