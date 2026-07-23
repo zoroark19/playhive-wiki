@@ -709,7 +709,7 @@
       // = 0.5 in the glTF's model-space units — that's what
       // emitterOffset needs to be, applied relative to the head bone
       // (see emitterBone below), not the crown mesh.
-      emitterBone: "head",
+      emitterBone: "locator",
       emitterOffset: [0, 0.5, 0],
     },
   };
