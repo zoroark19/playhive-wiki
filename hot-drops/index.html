@@ -18,7 +18,7 @@
           &nbsp;›&nbsp; Starfire Crown
         </div>
 
-        <div class="with-infobox--flow">
+        <div class="with-infobox">
           <aside class="infobox">
             <div class="infobox__header">Starfire Crown</div>
             <div class="infobox__image">
@@ -45,6 +45,110 @@
                 <td>The Hive</td>
               </tr>
             </table>
+
+            <div class="color-card">
+              <div class="color-card__grid">
+                <button
+                  class="color-card__swatch"
+                  type="button"
+                  style="background: #2f2e3a"
+                  data-hex="#2f2e3a"
+                >
+                  <span class="color-card__hex"
+                    ><span class="color-card__hex-value">#2f2e3a</span
+                    ><span class="color-card__hex-copied">Copied!</span></span
+                  >
+                </button>
+                <button
+                  class="color-card__swatch"
+                  type="button"
+                  style="background: #3c3c4a"
+                  data-hex="#3c3c4a"
+                >
+                  <span class="color-card__hex"
+                    ><span class="color-card__hex-value">#3c3c4a</span
+                    ><span class="color-card__hex-copied">Copied!</span></span
+                  >
+                </button>
+                <button
+                  class="color-card__swatch"
+                  type="button"
+                  style="background: #4a4d5a"
+                  data-hex="#4a4d5a"
+                >
+                  <span class="color-card__hex"
+                    ><span class="color-card__hex-value">#4a4d5a</span
+                    ><span class="color-card__hex-copied">Copied!</span></span
+                  >
+                </button>
+                <button
+                  class="color-card__swatch"
+                  type="button"
+                  style="background: #5a6070"
+                  data-hex="#5a6070"
+                >
+                  <span class="color-card__hex"
+                    ><span class="color-card__hex-value">#5a6070</span
+                    ><span class="color-card__hex-copied">Copied!</span></span
+                  >
+                </button>
+                <button
+                  class="color-card__swatch"
+                  type="button"
+                  style="background: #70798a"
+                  data-hex="#70798a"
+                >
+                  <span class="color-card__hex"
+                    ><span class="color-card__hex-value">#70798a</span
+                    ><span class="color-card__hex-copied">Copied!</span></span
+                  >
+                </button>
+                <button
+                  class="color-card__swatch"
+                  type="button"
+                  style="background: #a064ff"
+                  data-hex="#a064ff"
+                >
+                  <span class="color-card__hex"
+                    ><span class="color-card__hex-value">#a064ff</span
+                    ><span class="color-card__hex-copied">Copied!</span></span
+                  >
+                </button>
+                <button
+                  class="color-card__swatch"
+                  type="button"
+                  style="background: #bf88ff"
+                  data-hex="#bf88ff"
+                >
+                  <span class="color-card__hex"
+                    ><span class="color-card__hex-value">#bf88ff</span
+                    ><span class="color-card__hex-copied">Copied!</span></span
+                  >
+                </button>
+                <button
+                  class="color-card__swatch"
+                  type="button"
+                  style="background: #eca6ff"
+                  data-hex="#eca6ff"
+                >
+                  <span class="color-card__hex"
+                    ><span class="color-card__hex-value">#eca6ff</span
+                    ><span class="color-card__hex-copied">Copied!</span></span
+                  >
+                </button>
+                <button
+                  class="color-card__swatch"
+                  type="button"
+                  style="background: #ffd7fb"
+                  data-hex="#ffd7fb"
+                >
+                  <span class="color-card__hex"
+                    ><span class="color-card__hex-value">#ffd7fb</span
+                    ><span class="color-card__hex-copied">Copied!</span></span
+                  >
+                </button>
+              </div>
+            </div>
           </aside>
 
           <h1 class="page-title">Starfire Crown</h1>
@@ -883,6 +987,17 @@
             <span class="mc-render mc-font">
               <a
                 class="rank-ultimate"
+                href="https://playhive.com/profile/keiiityw"
+                >keiiityw</a
+              ><span class="mc-dark-gray">[</span
+              ><span class="rank-ultimate">U</span
+              ><span class="mc-dark-gray">]</span>
+              <span class="mc-yellow">#202</span>
+            </span>
+
+            <span class="mc-render mc-font">
+              <a
+                class="rank-ultimate"
                 href="https://playhive.com/profile/BehaviorPack"
                 >BehaviorPack</a
               ><span class="mc-dark-gray">[</span
@@ -898,6 +1013,17 @@
               ><span class="rank-ultimate">U</span
               ><span class="mc-dark-gray">]</span>
               <span class="mc-yellow">#206</span>
+            </span>
+
+            <span class="mc-render mc-font">
+              <a
+                class="rank-ultimate"
+                href="https://playhive.com/profile/SupremeCrown999"
+                >SupremeCrown999</a
+              ><span class="mc-dark-gray">[</span
+              ><span class="rank-ultimate">U</span
+              ><span class="mc-dark-gray">]</span>
+              <span class="mc-yellow">#216</span>
             </span>
 
             <span class="mc-render mc-font">
@@ -1538,5 +1664,27 @@
     <div data-include="footer"></div>
 
     <script src="../js/partials.js"></script>
+    <script>
+      document.querySelectorAll(".color-card__swatch").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const hex = btn.dataset.hex;
+          navigator.clipboard.writeText(hex).catch(() => {
+            const ta = document.createElement("textarea");
+            ta.value = hex;
+            ta.style.position = "fixed";
+            ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand("copy");
+            document.body.removeChild(ta);
+          });
+          btn.classList.add("is-copied");
+          clearTimeout(btn._copyTimeout);
+          btn._copyTimeout = setTimeout(() => {
+            btn.classList.remove("is-copied");
+          }, 1200);
+        });
+      });
+    </script>
   </body>
 </html>

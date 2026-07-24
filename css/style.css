@@ -584,6 +584,9 @@ img {
      variable-length article text. Works the same on every page
      regardless of how much content is above/below it. */
 }
+.with-infobox .color-card {
+  margin-top: 0;
+}
 .with-infobox > .page-title {
   grid-area: title;
 }
