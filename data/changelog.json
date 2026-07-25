@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-07-24T03:30:58.661Z",
+  "fetchedAt": "2026-07-25T03:28:27.167Z",
   "items": [
+    {
+      "title": "Cosmetic Drop: Seal Pup Pet, Capybara Mount, Dino Hat & Parrot Wings Back Bling",
+      "link": "https://updates.playhive.com/changelog/cosmetic-drop-seal-pup-pet-capybara-mount-dino-hat-and",
+      "pubDate": "2026-07-24T17:56:49.000Z",
+      "excerpt": "Calm, cute, colourful, and prehistoric - check out all of the newest arrivals on The Hive Store! ## Seal Pup Pet - 830 Minecoins Fresh from the frozen shores…"
+    },
     {
       "title": "🔥 Hot Drops: Coming Soon",
       "link": "https://updates.playhive.com/changelog/fire-hot-drops-coming-soon",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/50percent-off-all-ranks-free-uncle-banana-costume-with-your",
       "pubDate": "2026-07-03T13:42:57.000Z",
       "excerpt": "This July 4th weekend, benefit from amazing deals on The Hive store! ## 50% Off All Premium Ranks From now until July 6th, get 50% off Hive+, Hive Ultimate,…"
-    },
-    {
-      "title": "July Quest Costume Released",
-      "link": "https://updates.playhive.com/changelog/july-quest-costume-released-8",
-      "pubDate": "2026-07-01T00:00:00.000Z",
-      "excerpt": "A desert outlaw with some serious points to make... The Cacti Bandit costume can now be purchased from the Quest Store!…"
     }
   ]
 }
