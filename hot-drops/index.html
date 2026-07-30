@@ -309,15 +309,35 @@
       // A value of null means no bracket is rendered at all (matches "NONE" rank).
       const RANK_LABELS = {
         HIVE: "HIVE",
+        HIVE_TEAM: "HIVE",
         ULTIMATE: "U",
         PLUS: "+",
         VIP: "VIP",
         YT: "YT",
+        YOUTUBER: "YT",
         NONE: null,
+        REGULAR: null,
       };
 
-      function renderOwner(edition, owner) {
-        const rankClass = "rank-" + owner.rank.toLowerCase();
+      // CSS class to use for each rank key. Kept separate from RANK_LABELS
+      // because the API's rank string doesn't always match the site's
+      // existing class names 1:1 (e.g. the API returns "HIVE_TEAM" but the
+      // stylesheet's class is "rank-hive", not "rank-hive_team"; likewise
+      // "YOUTUBER" maps to "rank-yt", and "REGULAR" - a player with no paid
+      // rank - maps to the plain "rank-none" class with no [] label).
+      // Any rank not listed here falls back to "rank-" + lowercased key.
+      const RANK_CLASSES = {
+        HIVE_TEAM: "rank-hive",
+        YOUTUBER: "rank-yt",
+        REGULAR: "rank-none",
+      };
+
+      function classForRank(rank) {
+        return RANK_CLASSES[rank] || "rank-" + rank.toLowerCase();
+      }
+
+      function renderOwner(edition, owner, uuid) {
+        const rankClass = classForRank(owner.rank);
         const label = RANK_LABELS[owner.rank];
 
         const wrapper = document.createElement("span");
@@ -328,7 +348,7 @@
         if (owner.xuid !== null && owner.xuid !== undefined) {
           link.setAttribute("xuid", owner.xuid);
         }
-        link.href = "https://playhive.com/profile/" + encodeURIComponent(owner.username);
+        link.href = "https://playhive.com/profile/" + encodeURIComponent(uuid);
         link.textContent = owner.username;
         wrapper.appendChild(link);
 
@@ -349,7 +369,9 @@
           wrapper.appendChild(closeBracket);
         }
 
-        wrapper.appendChild(document.createTextNode(" "));
+        if (label !== null) {
+          wrapper.appendChild(document.createTextNode(" "));
+        }
 
         const editionSpan = document.createElement("span");
         editionSpan.className = "mc-yellow";
@@ -371,7 +393,7 @@
           Object.keys(owners)
             .sort((a, b) => Number(a) - Number(b))
             .forEach((key) => {
-              fragment.appendChild(renderOwner(owners[key].edition, owners[key]));
+              fragment.appendChild(renderOwner(owners[key].edition, owners[key], key));
             });
 
           container.innerHTML = "";
