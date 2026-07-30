@@ -22,7 +22,7 @@ TEMPLATE = '''            <span class="mc-render mc-font">
                 href="https://playhive.com/profile/{href_user}"
                 >{username}</a>
               <span class="mc-dark-gray">[</span><span class="{rank}">{rankLetter}</span><span class="mc-dark-gray">]</span>
-              <span class="mc-yellow">#{position}</span>
+              <span class="mc-yellow">#{edition}</span>
             </span>
 '''
 
@@ -33,7 +33,7 @@ def render(p):
     href_user=quote(p["username"]),
     username=p["username"],
     rankLetter=p["rankLetter"],
-    position=p["position"],
+    edition=p["edition"],
   )
 
 blocks = "\n".join(render(p) for p in players)
