@@ -1,0 +1,17 @@
+{
+    "buttons": [
+        {
+            "image": {
+                "data": "https://hive-public-assets.b-cdn.net/summer-2026-incentive.jpg",
+                "type": "url"
+            },
+            "text": "§m§a115"
+        },
+        {
+            "text": "Browse Store"
+        }
+    ],
+    "content": "§jGet extra rewards with your purchase! §fFree Uncle Banana costume with your first purchase, and 1 Gift Token for each purchase of 830 Minecoins or more! §u§oExcludes consumables (gift tokens, XP boosters). Gift Token only granted if a SINGLE purchase is priced 830 or more Minecoins. Offer ends end-of-day July 6th, UTC timezone.",
+    "title": "§rSUPER SUMMER SALE!§m§f",
+    "type": "form"
+}

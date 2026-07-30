@@ -1,0 +1,17 @@
+{
+    "buttons": [
+        {
+            "image": {
+                "data": "https://hive-public-assets.b-cdn.net/marketplace-summer-sale.jpg",
+                "type": "url"
+            },
+            "text": "§m§a115"
+        },
+        {
+            "text": "View Ranks Sale"
+        }
+    ],
+    "content": "§jALL HIVE RANKS - HALF PRICE! §fGet 50%% off Hive+, Hive Ultimate, or the Plus to Ultimate upgrade! Sale ends end-of-day July 6th, UTC timezone.",
+    "title": "§r50% off ALL Hive Ranks!§m§f",
+    "type": "form"
+}
