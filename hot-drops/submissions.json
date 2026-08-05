@@ -73,21 +73,22 @@
   },
   "882298337544531988": {
     "username": "queengoldyy",
-    "total": 146,
+    "total": 204,
     "by_hat": {
       "Soulfire Crown": 10,
       "Buzztastic Creator": 1,
-      "Beeday Builder": 12,
+      "Beeday Builder": 18,
       "Parkour Picasso": 1,
-      "Ender Wings": 30,
-      "Ghosty": 20,
+      "Ender Wings": 33,
+      "Ghosty": 23,
       "Translator": 4,
-      "Snowflake Sculptor": 8,
-      "The Shipwright": 18,
-      "Disco Dynamo": 14,
-      "Award Winning Director": 7,
-      "Cubee": 20,
-      "The Bargain Hunter": 1
+      "Snowflake Sculptor": 11,
+      "The Shipwright": 25,
+      "Disco Dynamo": 17,
+      "Award Winning Director": 8,
+      "Cubee": 46,
+      "The Bargain Hunter": 2,
+      "Hive Bee": 5
     }
   },
   "1273635612095938590": {
@@ -129,21 +130,22 @@
   },
   "934518960550973460": {
     "username": "wglfy",
-    "total": 188,
+    "total": 221,
     "by_hat": {
       "Starfire Crown": 3,
       "Soulfire Crown": 52,
-      "Ghosty": 27,
-      "Ender Wings": 33,
-      "Cubee": 26,
-      "The Bargain Hunter": 1,
-      "The Shipwright": 8,
-      "Disco Dynamo": 6,
-      "Beeday Builder": 9,
-      "Award Winning Director": 4,
-      "Snowflake Sculptor": 9,
+      "Ghosty": 28,
+      "Ender Wings": 36,
+      "Cubee": 35,
+      "The Bargain Hunter": 4,
+      "The Shipwright": 11,
+      "Disco Dynamo": 8,
+      "Beeday Builder": 11,
+      "Award Winning Director": 5,
+      "Snowflake Sculptor": 12,
       "Translator": 5,
-      "Buzztastic Creator": 5
+      "Buzztastic Creator": 5,
+      "Hive Bee": 6
     }
   },
   "1272956878435123265": {
@@ -162,24 +164,24 @@
   },
   "690253596964815015": {
     "username": "gyrraa",
-    "total": 516,
+    "total": 526,
     "by_hat": {
       "Soulfire Crown": 346,
       "Translator": 7,
-      "The Shipwright": 16,
-      "Disco Dynamo": 8,
+      "The Shipwright": 17,
+      "Disco Dynamo": 9,
       "Buzztastic Creator": 4,
-      "Beeday Builder": 15,
-      "Snowflake Sculptor": 17,
+      "Beeday Builder": 17,
+      "Snowflake Sculptor": 18,
       "Cake Connoisseur": 1,
       "Spooky Snapper": 1,
-      "Award Winning Director": 5,
+      "Award Winning Director": 6,
       "Starfire Crown": 46,
-      "Cubee": 13,
-      "Ender Wings": 13,
+      "Cubee": 14,
+      "Ender Wings": 14,
       "The Bargain Hunter": 3,
       "Ghosty": 15,
-      "Hive Bee": 6
+      "Hive Bee": 8
     }
   },
   "1163369490717888552": {
@@ -319,10 +321,11 @@
   },
   "909432504673505290": {
     "username": "mmousaa",
-    "total": 2,
+    "total": 3,
     "by_hat": {
       "Beeday Builder": 1,
-      "Snowflake Sculptor": 1
+      "Snowflake Sculptor": 1,
+      "Soulfire Crown": 1
     }
   },
   "464733837176340481": {
@@ -350,6 +353,16 @@
       "Ender Wings": 1,
       "Ghosty": 1,
       "Hive Bee": 1
+    }
+  },
+  "1218506984509411369": {
+    "username": "pr1nceinsxct",
+    "total": 4,
+    "by_hat": {
+      "Beeday Builder": 1,
+      "Ghosty": 1,
+      "Hive Bee": 1,
+      "Snowflake Sculptor": 1
     }
   }
 }
