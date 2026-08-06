@@ -781,7 +781,18 @@ async def suggest_similar_usernames(client, message, gamertag):
         return
 
     usernames = usernames[:MAX_SEARCH_SUGGESTIONS]
-    suggestion_list = "\n".join(f"* {name}" for name in usernames)
+    all_items = HATS + TITLES + PLUSHIES + COSTUMES
+
+    lines = []
+    for name in usernames:
+        emojis = await client.loop.run_in_executor(
+            None, lookup_username_item_emojis, name, all_items)
+        if emojis:
+            lines.append(f"* {name} {' '.join(emojis)}")
+        else:
+            lines.append(f"* {name} {EMOJI_NOT_FOUND}")
+
+    suggestion_list = "\n".join(lines)
     try:
         await message.reply(f"Did you mean?\n{suggestion_list}")
         print(
@@ -791,6 +802,37 @@ async def suggest_similar_usernames(client, message, gamertag):
             f"[suggest] missing permission to reply in channel {message.channel.id}")
     except discord.HTTPException as e:
         print(f"[suggest] failed to send suggestion reply: {e}")
+
+
+def lookup_username_item_emojis(username, all_items):
+    """Fetch a suggested username's profile and return the emoji list for
+    every tracked item they already own (checking both saved owners files
+    and a live API lookup), so suggestions show at a glance what a
+    candidate player already has."""
+    emojis = []
+
+    for item in all_items:
+        owners = load_item_owners(item)
+        _, existing = find_username_match(owners, username)
+        if existing is not None:
+            emojis.append(item_emoji(item))
+
+    remaining_items = [item for item in all_items
+                       if item_emoji(item) not in emojis]
+    if not remaining_items:
+        return emojis
+
+    data = fetch_profile(username)
+    if data is None or is_misspelled_name_response(data):
+        return emojis
+
+    main_data = data.get("main", {})
+    for item in remaining_items:
+        matched, _ = find_item_match(main_data, item)
+        if matched:
+            emojis.append(item_emoji(item))
+
+    return emojis
 
 
 async def handle_message(client, message):
