@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-08-06T03:23:46.525Z",
+  "fetchedAt": "2026-08-07T03:10:18.584Z",
   "items": [
+    {
+      "title": "Hide and Seek: Mischief Update",
+      "link": "https://updates.playhive.com/changelog/hide-and-seek-mischief-update",
+      "pubDate": "2026-08-07T01:33:15.000Z",
+      "excerpt": "The Mischief update is here, and it brings a brand-new microhub, challenges, new features, quality-of-life changes, and a whole load of epic new cosmetics to…"
+    },
     {
       "title": "August Quest Costume Released",
       "link": "https://updates.playhive.com/changelog/august-quest-costume-released-8",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/cosmetic-drop-seal-pup-pet-capybara-mount-dino-hat-and",
       "pubDate": "2026-07-24T17:56:49.000Z",
       "excerpt": "Calm, cute, colourful, and prehistoric - check out all of the newest arrivals on The Hive Store! ## Seal Pup Pet - 830 Minecoins Fresh from the frozen shores…"
-    },
-    {
-      "title": "🔥 Hot Drops: Coming Soon",
-      "link": "https://updates.playhive.com/changelog/fire-hot-drops-coming-soon",
-      "pubDate": "2026-07-13T18:33:57.000Z",
-      "excerpt": "Hot Drops are here, and it’s your chance to get your hands on exclusive, limited-edition cosmetics! Mark your calendars! The first Hot Drop will take place on…"
     }
   ]
 }
