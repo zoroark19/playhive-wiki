@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-08-13T02:33:29.529Z",
+  "fetchedAt": "2026-08-14T02:32:37.530Z",
   "items": [
+    {
+      "title": "Hide and Seek: Mischief Update - Patch 1",
+      "link": "https://updates.playhive.com/changelog/hide-and-seek-mischief-update-patch-1",
+      "pubDate": "2026-08-13T20:43:23.000Z",
+      "excerpt": "An update for Hide and Seek is deploying to all regions. This balancing patch includes various bug fixes and balancing changes. ## Balancing Changes ### Nearby…"
+    },
     {
       "title": "Hide and Seek: Mischief Update",
       "link": "https://updates.playhive.com/changelog/hide-and-seek-mischief-update",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/fire-hot-drop-soulfire-crown",
       "pubDate": "2026-07-29T14:18:36.000Z",
       "excerpt": "You voted, and the results are in! The next Hot Drop will take place on Friday, July 31st and feature the Soulfire Crown!…"
-    },
-    {
-      "title": "Cosmetic Drop: Seal Pup Pet, Capybara Mount, Dino Hat & Parrot Wings Back Bling",
-      "link": "https://updates.playhive.com/changelog/cosmetic-drop-seal-pup-pet-capybara-mount-dino-hat-and",
-      "pubDate": "2026-07-24T17:56:49.000Z",
-      "excerpt": "Calm, cute, colourful, and prehistoric - check out all of the newest arrivals on The Hive Store! ## Seal Pup Pet - 830 Minecoins Fresh from the frozen shores…"
     }
   ]
 }
