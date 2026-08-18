@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-08-17T01:47:03.466Z",
+  "fetchedAt": "2026-08-18T01:41:52.586Z",
   "items": [
+    {
+      "title": "Auto friend-hub joining returns!",
+      "link": "https://updates.playhive.com/changelog/auto-friend-hub-joining-returns",
+      "pubDate": "2026-08-17T02:27:30.000Z",
+      "excerpt": "The automatic joining of the hub that contains the most number of your online friends, a feature that existed before the release of the Ultimate rank, has…"
+    },
     {
       "title": "Hide and Seek: Mischief Update - Patch 1",
       "link": "https://updates.playhive.com/changelog/hide-and-seek-mischief-update-patch-1",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/august-quest-costume-released-8",
       "pubDate": "2026-08-01T00:00:00.000Z",
       "excerpt": "Too cool to melt under pressure... The Sundae costume can now be purchased from the Quest Store!…"
-    },
-    {
-      "title": "🔥 Hot Drop: Soulfire Crown",
-      "link": "https://updates.playhive.com/changelog/fire-hot-drop-soulfire-crown",
-      "pubDate": "2026-07-29T14:18:36.000Z",
-      "excerpt": "You voted, and the results are in! The next Hot Drop will take place on Friday, July 31st and feature the Soulfire Crown!…"
     }
   ]
 }
