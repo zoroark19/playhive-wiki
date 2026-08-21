@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-08-20T01:42:42.602Z",
+  "fetchedAt": "2026-08-21T01:47:44.744Z",
   "items": [
+    {
+      "title": "BedWars: Season 4 Ending Soon",
+      "link": "https://updates.playhive.com/changelog/bedwars-season-4-ending-soon",
+      "pubDate": "2026-08-20T16:07:02.000Z",
+      "excerpt": "Season 4 of BedWars will be coming to an end in the next few weeks. ### **Season 4 Challenges - Last Chance! ** If you haven’t completed your Season 4…"
+    },
     {
       "title": "Auto friend-hub joining returns!",
       "link": "https://updates.playhive.com/changelog/auto-friend-hub-joining-returns",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/hide-and-seek-mischief-update",
       "pubDate": "2026-08-07T01:33:15.000Z",
       "excerpt": "The Mischief update is here, and it brings a brand-new microhub, challenges, new features, quality-of-life changes, and a whole load of epic new cosmetics to…"
-    },
-    {
-      "title": "August Quest Costume Released",
-      "link": "https://updates.playhive.com/changelog/august-quest-costume-released-8",
-      "pubDate": "2026-08-01T00:00:00.000Z",
-      "excerpt": "Too cool to melt under pressure... The Sundae costume can now be purchased from the Quest Store!…"
     }
   ]
 }
