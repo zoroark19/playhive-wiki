@@ -66,8 +66,7 @@ TITLES = [
     },
     {
         "name": "Spooky Snapper",
-        "emoji_name": "ghost",
-        "emoji_id": 1532838406718099697,
+        "emoji": "📸",
         "kind": "title",
     },
     {
@@ -83,14 +82,12 @@ TITLES = [
     },
     {
         "name": "Beeday Builder",
-        "emoji_name": "cake1",
-        "emoji_id": 1532848420325425362,
+        "emoji": "🎂",
         "kind": "title",
     },
     {
         "name": "Legendary Shipwright",
-        "emoji_name": "skull",
-        "emoji_id": 1532838419116327002,
+        "emoji": "☠️",
         "kind": "title",
     },
     {
@@ -106,8 +103,7 @@ TITLES = [
     },
     {
         "name": "Deadly Designer",
-        "emoji_name": "paintbrush",
-        "emoji_id": 1532838416109146112,
+        "emoji": "🖌️",
         "kind": "title",
     },
     {
