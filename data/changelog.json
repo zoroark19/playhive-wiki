@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-08-31T05:14:04.051Z",
+  "fetchedAt": "2026-09-01T04:49:31.135Z",
   "items": [
+    {
+      "title": "September Quest Costume Released",
+      "link": "https://updates.playhive.com/changelog/september-quest-costume-released-5",
+      "pubDate": "2026-09-01T00:58:51.000Z",
+      "excerpt": "Feeling hungry? The Sandwich Head costume can now be purchased from the Quest Store!…"
+    },
     {
       "title": "Jimothy Pet 🦝",
       "link": "https://updates.playhive.com/changelog/jimothy-pet-raccoon",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/auto-friend-hub-joining-returns",
       "pubDate": "2026-08-17T02:27:30.000Z",
       "excerpt": "The automatic joining of the hub that contains the most number of your online friends, a feature that existed before the release of the Ultimate rank, has…"
-    },
-    {
-      "title": "Hide and Seek: Mischief Update - Patch 1",
-      "link": "https://updates.playhive.com/changelog/hide-and-seek-mischief-update-patch-1",
-      "pubDate": "2026-08-13T20:43:23.000Z",
-      "excerpt": "An update for Hide and Seek is deploying to all regions. This balancing patch includes various bug fixes and balancing changes. ## Balancing Changes ### Nearby…"
     }
   ]
 }
