@@ -1,7 +1,19 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-09-04T04:13:29.869Z",
+  "fetchedAt": "2026-09-05T04:09:37.950Z",
   "items": [
+    {
+      "title": "BedWars: Season 5",
+      "link": "https://updates.playhive.com/changelog/bedwars-season-5",
+      "pubDate": "2026-09-04T18:18:09.000Z",
+      "excerpt": "Howdy partner! It's time to saddle up, a brand new BedWars season is rollin' into town! BedWars: Season 5 is here! Get ready to ride into rip-roarin' new…"
+    },
+    {
+      "title": "BedWars: Season 5 Ticket 🎟️",
+      "link": "https://updates.playhive.com/changelog/bedwars-season-5-ticket-tickets",
+      "pubDate": "2026-09-04T03:31:25.000Z",
+      "excerpt": "Saddle up for Season 5 with the exclusive BedWars Season 5 Ticket, your key to the Wild West! This bundle grants instant access to frontier-worthy cosmetics,…"
+    },
     {
       "title": "September Quest Costume Released",
       "link": "https://updates.playhive.com/changelog/september-quest-costume-released-5",
@@ -13,18 +25,6 @@
       "link": "https://updates.playhive.com/changelog/jimothy-pet-raccoon",
       "pubDate": "2026-08-21T16:16:58.000Z",
       "excerpt": "It’s the internet’s favourite trash panda! This mischievous little bandit is now available in The Hive Store for 830 Minecoins. Want to share the chaos? Gift…"
-    },
-    {
-      "title": "BedWars: Season 4 Ending Soon",
-      "link": "https://updates.playhive.com/changelog/bedwars-season-4-ending-soon",
-      "pubDate": "2026-08-20T16:07:02.000Z",
-      "excerpt": "Season 4 of BedWars will be coming to an end in the next few weeks. ### **Season 4 Challenges - Last Chance! ** If you haven’t completed your Season 4…"
-    },
-    {
-      "title": "Auto friend-hub joining returns!",
-      "link": "https://updates.playhive.com/changelog/auto-friend-hub-joining-returns",
-      "pubDate": "2026-08-17T02:27:30.000Z",
-      "excerpt": "The automatic joining of the hub that contains the most number of your online friends, a feature that existed before the release of the Ultimate rank, has…"
     }
   ]
 }
