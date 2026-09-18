@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-09-17T04:38:56.571Z",
+  "fetchedAt": "2026-09-18T04:24:23.113Z",
   "items": [
+    {
+      "title": "Cosmetics Drop: Pumpkitty Pet, Nightfang Mount, Pirate Hat & Moth Wings Back Bling",
+      "link": "https://updates.playhive.com/changelog/cosmetics-drop-pumpkitty-pet-nightfang-mount-pirate-hat-and-moth",
+      "pubDate": "2026-09-17T20:38:46.000Z",
+      "excerpt": "From haunted skies to the high seas, the latest cosmetics drop is here, just in time for spooky season! Check out all the new arrivals in The Hive Store! ##…"
+    },
     {
       "title": "BedWars: Season 5",
       "link": "https://updates.playhive.com/changelog/bedwars-season-5",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/september-quest-costume-released-5",
       "pubDate": "2026-09-01T00:58:51.000Z",
       "excerpt": "Feeling hungry? The Sandwich Head costume can now be purchased from the Quest Store!…"
-    },
-    {
-      "title": "Jimothy Pet 🦝",
-      "link": "https://updates.playhive.com/changelog/jimothy-pet-raccoon",
-      "pubDate": "2026-08-21T16:16:58.000Z",
-      "excerpt": "It’s the internet’s favourite trash panda! This mischievous little bandit is now available in The Hive Store for 830 Minecoins. Want to share the chaos? Gift…"
     }
   ]
 }
