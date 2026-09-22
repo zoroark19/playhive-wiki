@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-09-21T04:38:14.114Z",
+  "fetchedAt": "2026-09-22T04:34:11.485Z",
   "items": [
+    {
+      "title": "BedWars: Season 4 Rewards",
+      "link": "https://updates.playhive.com/changelog/bedwars-season-4-rewards",
+      "pubDate": "2026-09-21T16:49:48.000Z",
+      "excerpt": "BedWars: Season 4 hub title rewards have now been awarded to eligible players. The following hub titles have been awarded to eligible players: All BedWars…"
+    },
     {
       "title": "Cosmetics Drop: Pumpkitty Pet, Nightfang Mount, Pirate Hat & Moth Wings Back Bling",
       "link": "https://updates.playhive.com/changelog/cosmetics-drop-pumpkitty-pet-nightfang-mount-pirate-hat-and-moth",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/bedwars-season-5-ticket-tickets",
       "pubDate": "2026-09-04T03:31:25.000Z",
       "excerpt": "Saddle up for Season 5 with the exclusive BedWars Season 5 Ticket, your key to the Wild West! This bundle grants instant access to frontier-worthy cosmetics,…"
-    },
-    {
-      "title": "September Quest Costume Released",
-      "link": "https://updates.playhive.com/changelog/september-quest-costume-released-5",
-      "pubDate": "2026-09-01T00:58:51.000Z",
-      "excerpt": "Feeling hungry? The Sandwich Head costume can now be purchased from the Quest Store!…"
     }
   ]
 }
