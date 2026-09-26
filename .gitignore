@@ -691,3 +691,4 @@ costumes/quest/make-a-lotl/skin.png
 costumes/quest/\!organize_avatars.bat
 .DS_Store
 hot-drops/.env
+hot-drops/__pycache__/owners_bot.cpython-312.pyc

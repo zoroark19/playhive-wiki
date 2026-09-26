@@ -1,0 +1,50 @@
+/* =========================================================
+   Profile Viewer — static 3D preview of a player's currently
+   equipped costume / hat / cape&backbling. Stripped-down
+   sibling of .locker__stage (see cosmetic-locker.css): same
+   visual language, no browse grid, no filters, no equipped
+   panel — just the stage.
+   ========================================================= */
+
+.profile-viewer {
+  margin: 0 0 22px;
+}
+
+.profile-viewer__stage {
+  position: relative;
+  background: #0a0714;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 360px;
+  box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.6);
+}
+
+.profile-viewer__empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hg-ink-dim);
+  font-size: 13px;
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-viewer__stage canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+  cursor: grab;
+}
+.profile-viewer__stage canvas:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 800px) {
+  .profile-viewer__stage {
+    height: 280px;
+  }
+}

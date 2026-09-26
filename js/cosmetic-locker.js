@@ -34,29 +34,38 @@
  *   availability, price?, thumbnail, model, page?, tags? }, ... ] }
  *
  * Usage: drop a single element in the page —
+ *   <script src="../js/cosmetic-shared.js"></script>
  *   <div id="cosmeticLocker" data-root="../"></div>
  * — after Babylon core + loaders are included, then include this script.
+ *
+ * The per-category data/*.json file lists, resolveAsset/fetchJSON, and the
+ * .glb import/flip/texture-filter sequence in _loadSlotModel are shared
+ * with profile-viewer.js via cosmetic-shared.js — see that file for what's
+ * actually doing the fetching/loading work. This file layers everything
+ * that's specific to the interactive editor on top: variant textures,
+ * bob/propeller/particle animation, the shared reusable cape mesh, and the
+ * browse/filter/equip UI itself.
  */
 (function () {
+  const {
+    CATEGORY_FILES: SHARED_CATEGORY_FILES,
+    resolveAsset,
+    fetchJSON,
+    loadCosmeticModel,
+  } = window.CosmeticShared;
+
+  // costume now loads from several files instead of one — each file
+  // corresponds to a costume availability tier. All are merged into a
+  // single "costume" category at runtime; the availability filter (see
+  // AVAILABILITY_OPTIONS) is what actually distinguishes them for the
+  // user, not which file they came from. The file lists themselves live
+  // in cosmetic-shared.js (shared with profile-viewer.js); only the
+  // sidebar `label` per category is specific to this file.
   const CATEGORY_FILES = {
-    // costume now loads from several files instead of one — each file
-    // corresponds to a costume availability tier. All are merged into a
-    // single "costume" category at runtime; the availability filter (see
-    // AVAILABILITY_OPTIONS) is what actually distinguishes them for the
-    // user, not which file they came from.
-    costume: {
-      files: [
-        "store-costumes.json",
-        "quest-costumes.json",
-        "unlockable-costumes.json",
-        "unobtainable-costumes.json",
-        "misc-costumes.json",
-      ],
-      label: "Costumes",
-    },
-    hat: { files: ["hats.json"], label: "Hats" },
-    cape: { files: ["capes.json"], label: "Capes" },
-    backbling: { files: ["backblings.json"], label: "Backblings" },
+    costume: { files: SHARED_CATEGORY_FILES.costume, label: "Costumes" },
+    hat: { files: SHARED_CATEGORY_FILES.hat, label: "Hats" },
+    cape: { files: SHARED_CATEGORY_FILES.cape, label: "Capes" },
+    backbling: { files: SHARED_CATEGORY_FILES.backbling, label: "Backblings" },
   };
 
   // Availability tiers shown in the filter sidebar. Value is the lowercase
@@ -802,31 +811,6 @@
           "'": "&#39;",
         })[c],
     );
-  }
-
-  // Resolve an asset path against the page's data root — but leave it
-  // untouched if it's already an absolute URL (http(s)://, protocol-relative
-  // //, or a root-relative /path), since those shouldn't be prefixed.
-  function resolveAsset(dataRoot, path) {
-    if (!path) return path;
-    if (
-      /^(https?:)?\/\//i.test(path) ||
-      path.startsWith("/") ||
-      path.startsWith("data:")
-    ) {
-      return path;
-    }
-    return dataRoot + path;
-  }
-
-  async function fetchJSON(url) {
-    try {
-      const res = await fetch(url);
-      if (!res.ok) return null;
-      return await res.json();
-    } catch {
-      return null;
-    }
   }
 
   class CosmeticLocker {
@@ -2718,10 +2702,6 @@
       if (!this.scene) return;
       this._clearSlotModel(slot);
 
-      const url = resolveAsset(this.dataRoot, item.model);
-      const dir = url.slice(0, url.lastIndexOf("/") + 1);
-      const file = url.slice(url.lastIndexOf("/") + 1);
-
       // If this is a costume load, open a new gate that _showSharedCape
       // waits on before fetching cape.glb — see _costumeLoadPromise.
       let resolveCostumeLoad = null;
@@ -2731,63 +2711,10 @@
         });
       }
 
-      BABYLON.SceneLoader.ImportMeshAsync(
-        null,
-        dir,
-        file,
-        this.scene,
-        null,
-        ".glb",
-      )
+      loadCosmeticModel(this.scene, this.dataRoot, item)
         .then((result) => {
-          const meshes = result.meshes;
-          const skeletons = result.skeletons || [];
-          if (!meshes || !meshes.length) return;
-          // Source models face away from the camera by default; flip every
-          // top-level (parentless) node 180° around Y so they face forward
-          // instead. We rotate ALL root-level nodes rather than assuming
-          // meshes[0] is a single shared "__root__" wrapper, since that
-          // isn't guaranteed across every exported glb.
-          meshes.forEach((mesh) => {
-            if (!mesh.parent) {
-              mesh.rotationQuaternion = null;
-              mesh.rotation.y += Math.PI;
-            }
-          });
-          meshes.forEach((mesh) => {
-            if (!mesh.material) return;
-            // Pixel-art textures need nearest-neighbor sampling with no
-            // mipmaps — Babylon's glTF loader defaults every imported
-            // texture to trilinear filtering + generated mipmaps, which
-            // blends neighboring texels (including across UV island
-            // seams) into soft color bleed as the camera moves back.
-            // Wrap mode is also clamped so the GPU can't sample from the
-            // opposite edge of a texture at a UV seam, which is the
-            // other common source of stray color fringing.
-            [
-              mesh.material.albedoTexture,
-              mesh.material.bumpTexture,
-              mesh.material.emissiveTexture,
-              mesh.material.metallicTexture,
-              mesh.material.opacityTexture,
-            ].forEach((texture) => {
-              if (!texture) return;
-              texture.updateSamplingMode(BABYLON.Texture.NEAREST_SAMPLINGMODE);
-              texture.wrapU = BABYLON.Texture.CLAMP_ADDRESSMODE;
-              texture.wrapV = BABYLON.Texture.CLAMP_ADDRESSMODE;
-            });
-            if (mesh.material.albedoTexture) {
-              // Emissive fill keeps the texture near its true color —
-              // matches Blockbench's bright, evenly-lit viewport rather
-              // than a high-contrast lit scene.
-              mesh.material.emissiveTexture = mesh.material.albedoTexture;
-              mesh.material.emissiveColor = new BABYLON.Color3(
-                0.45,
-                0.45,
-                0.45,
-              );
-            }
-          });
+          if (!result) return;
+          const { meshes, skeletons } = result;
           this.loadedNodes[slot] = meshes;
           this.loadedSkeletons[slot] = skeletons;
           this._applyItemVariantIfAny(slot, item, meshes);
@@ -2802,7 +2729,11 @@
           this._refitCamera();
         })
         .catch((exception) => {
-          console.warn("cosmetic-locker: failed to load model", url, exception);
+          console.warn(
+            "cosmetic-locker: failed to load model",
+            item.model,
+            exception,
+          );
         })
         .finally(() => {
           // Open the gate whether the costume load succeeded or failed,

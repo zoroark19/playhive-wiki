@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Player Profile — The Hive Wiki</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/profile.css" />
+    <link rel="stylesheet" href="../css/profile-viewer.css" />
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+  </head>
+  <body data-root="../" data-page="profile">
+    <div data-include="header"></div>
+
+    <div class="wiki-shell">
+      <main class="content">
+        <div class="breadcrumb">
+          <a href="../">Home</a> &nbsp;›&nbsp; Player Profile
+        </div>
+
+        <div id="profileWidget" data-root="../"></div>
+      </main>
+    </div>
+
+    <div data-include="footer"></div>
+
+    <script src="../js/partials.js"></script>
+    <script src="../js/cosmetic-shared.js"></script>
+    <script src="../js/profile-viewer.js"></script>
+    <script src="../js/profile.js"></script>
+  </body>
+</html>

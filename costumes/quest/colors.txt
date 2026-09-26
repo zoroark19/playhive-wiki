@@ -1,0 +1,77 @@
+al-the-alien `#9bb2d7` `#bfd1ed` `#f54949` `#e7f0ff` `#e43535` `#cd2727` `#253351` `#384a70` `#162035` `#06bd1f` `#ffffff` `#c1e4ff` `#16dc30` `#34fd4f`
+amethyst `#efe9f9` `#cec5e3` `#cf86f7` `#a8a1c5` `#a167e1` `#f5abfd` `#2f2743` `#46395e` `#a46246` `#ffd9f5` `#855ac8` `#be7e5a` `#ffffff` `#5c4c78`
+arctic-fox `#d4e7ed` `#ffffff` `#963642` `#505c5b` `#10151f` `#d2b384` `#3a4646` `#eace9d` `#a9c3d5` `#ba4343` `#772a3a` `#5c3725` `#764b31` `#212938` `#2f394d` `#966541` `#6a7775` `#ffeabf`
+baguette `#ffffff` `#d4e8f0` `#ffb047` `#a3c2d4` `#e07929` `#c37834` `#6c4026` `#ffde9b` `#7092a5` `#d63131` `#e0a75a` `#a51029` `#a46a43` `#e1812c` `#432315` `#161e20` `#9dbcce` `#2f3a3c` `#6f3011` `#ff746a`
+battle-beans `#00bebe` `#2f3a3c` `#0098a8` `#161e20` `#acc4d2` `#e0eef6` `#506063` `#35ece5` `#f15a1d` `#db3117` `#ff9437` `#7e9aab` `#ecf8fd`
+battle-gnome `#e04d4d` `#f1ecc3` `#1a1f24` `#377149` `#ddc797` `#204738` `#ad293f` `#569f57` `#fffef5` `#ff7b64` `#2f3d40` `#4d6162` `#e8a987` `#c56d37` `#76502d` `#492d20` `#ffd9b5` `#f1e5b1` `#9c4325` `#cb614a` `#281a13` `#e8f1f4`
+bee-plush `#3d231f` `#241512` `#1b463c` `#5b3828` `#4da668` `#2d724c` `#fbbe23` `#121920` `#fff53c` `#132e2c` `#f08c11` `#213543` `#ccf1fb` `#ffffff` `#2b7ebf` `#0b1a1a` `#48b4e3` `#f0e7c0` `#7ae3ff`
+buff-axolotl `#feaac6` `#f96e9f` `#ffd2e1` `#e74784` `#0e141f` `#ff336d` `#d00068` `#223649`
+buff-doge `#edac4d` `#f5e9c9` `#d48234` `#ffcb6a` `#ffffff` `#e4c898`
+burrito-buddy `#eecb88` `#925029` `#ffebb2` `#6f381d` `#394955` `#d7a867` `#ed991f` `#f9c130` `#b37140` `#fff646` `#576c7d` `#252f3a` `#9cf353` `#5cd33d` `#ff7968` `#e04d4d` `#ffffff` `#cce9f3` `#20a337`
+business-monkey `#eaa97c` `#7b4a2c` `#a96f44` `#ffd2a5` `#daaa48` `#f1ca65` `#5c321b` `#c18b39` `#3d372c` `#6f6858` `#504b3f` `#c07152` `#9d7f5c` `#fceab9` `#ffffff` `#7b5e40` `#cee3e9`
+business-pumpkin `#405860` `#869ca6` `#ffab1b` `#5f7c85` `#ffd426` `#f6750c` `#0b0f19` `#1a2637` `#2f4b5d` `#bf4800` `#ffffff` `#aa1b33` `#ffa013`
+cacti-bandit `#484b36` `#353927` `#73a134` `#272a20` `#92bd50` `#528520` `#375e4f` `#70854d` `#892c23` `#465a29` `#28483e` `#c5b69d` `#5a6e3a` `#fdf8e0` `#e5dbc0` `#b54132` `#d25d45` `#203732` `#b7aea6`
+cat-musketeer `#2d201d` `#51362e` `#3e2b27` `#cc675a` `#78878f` `#a6474b` `#a8b5ba` `#803845` `#4f5b67` `#f59713` `#ffe017` `#a56d44` `#5c3421` `#7c4c2f` `#ffffff` `#dbe6ee`
+cheeky-monkey `#8b4a2a` `#d28e6b` `#9b5836` `#7d4021` `#6c361a` `#efb293`
+copper-golem `#ffa67c` `#c76551` `#e8835f` `#964338` `#7fc58d` `#fff494` `#6c2d29` `#5c9f85` `#fdbb6c` `#4d201d` `#447b6e` `#fcb663`
+corn-dog `#e27544` `#f49357` `#ecb119` `#e76659` `#a9323f` `#cc4248` `#f3d12d` `#d98c11` `#da6a18` `#ca5d3c` `#ffa96a` `#452317` `#1b242f` `#d2e8ec` `#3a505e` `#293947` `#f58c25` `#ffffff` `#643521` `#dda154`
+dragon-fruit `#e2526d` `#f87a87` `#95cf43` `#b8335f` `#cdf361` `#60a834` `#ffffff` `#2a7e29` `#c6e5f1` `#ff9d9f`
+drowned `#6ac4b4` `#b2ffe0` `#dd9a6c` `#a8674d` `#7a4339` `#51daa8` `#e46f91` `#a5ffd4` `#a2eb6c` `#3d7c7d` `#f9970e` `#ffa8b3` `#3fb157` `#ee9d4a` `#81e0ea` `#ffda72` `#509bc2` `#ffe632` `#141619` `#364148`
+enchanter `#39474d` `#745bca` `#29333a` `#b594fc` `#586d73` `#241e3c` `#b06538` `#f99c08` `#fee32b` `#e08c4c` `#ea4646` `#17132b` `#483a97` `#69c7ee` `#3d3154` `#ff785c` `#ffffff` `#874728` `#fff6dd` `#ccfaff` `#b6233c`
+fish-in-a-suit `#3e5881` `#3cb575` `#324a6d` `#299c5f` `#4d6d9a` `#52d18e` `#243652` `#198049` `#d3eeff` `#a5ddff` `#0a121c` `#213249` `#ffffff` `#64eda4` `#304460` `#ffa114`
+flippy `#b8243c` `#95b6cd` `#d28532` `#f2b34e` `#121419` `#ffffff` `#ff5151` `#d3e9f2` `#9f5a27` `#ffdf8d` `#74351b` `#2d323a` `#ff9081` `#576068`
+flompa `#ae8c63` `#90684c` `#c3a978` `#e8dcb5` `#ffffff` `#42abf1` `#3e322c` `#276acf` `#704b35` `#64d6ff` `#494f57` `#636c72` `#8f979b`
+frost-bjorn `#92a5bd` `#7885a1` `#ffffff` `#e2eef3` `#bbcee1` `#674537` `#2c3b54` `#875a42` `#3e5374` `#a57455` `#baced7` `#536b8b` `#c9e0f4` `#65afda` `#4988b9` `#202c3f`
+ghosty-claus `#622aac` `#401f7b` `#2e363e` `#d4e5f3` `#8c31e7` `#ffffff` `#404d55` `#a3c0dc` `#1d2328` `#efad04` `#ffe21f`
+ghoul-bandit `#603030` `#411d1d` `#250d0d` `#c52f2f` `#7b4242` `#9f1a1a` `#12111a` `#53d98b` `#e44343` `#85ffc4` `#c1d4e6` `#2bab4e` `#86a9ca` `#710b0b` `#557a9e` `#292736` `#271313` `#413f51`
+gingerbread-man `#ee9315` `#d26f06` `#e07f0c` `#c05d00` `#ffffff` `#d5e7f4` `#773704` `#e43426` `#ff483a`
+gobbles `#8b4a36` `#6e2f28` `#64c4d1` `#ac6e47` `#e26f22` `#ffa62f` `#4f97b5` `#af2a40` `#e24e4e` `#cb935b` `#def2f7` `#92ece2` `#ffd165` `#f77d64` `#ffffff` `#397097` `#913a1a` `#502121`
+granny-ghosty `#ef4f63` `#c93b54` `#ffdfe2` `#ff6c6c` `#a42b47` `#ffffff` `#ffbac8` `#802846` `#5f213b` `#43162e` `#ec99ab`
+hammy-the-hamster `#ff9340` `#e1721d` `#f0802a` `#edddb4` `#ffffff` `#c96214` `#ffb0be` `#f8f0dc` `#f490a2` `#ffc4ce` `#dcca9b` `#f98432` `#f3e3bb`
+heart-hoodie `#f49512` `#ffc300` `#e36479` `#ffe500` `#c44361` `#244761` `#fb8b81` `#d2610b` `#336787` `#97264d` `#cee9f3` `#ffffff` `#4184a5`
+heart-teddy `#d44141` `#ac2e41` `#ed6855` `#ffffff` `#def0f5` `#b1cedc` `#f59713` `#ffe017` `#7f1a36`
+heartolotl `#ba4143` `#9b2f3d` `#7c1f3a` `#f25378` `#ff798c` `#ffa9b5`
+hopper `#d5f3f8` `#b1c7dc` `#ffffff` `#fbbe23` `#7692b4` `#e4f0f5` `#fff53c` `#f08c11` `#9fd3e6` `#391707` `#9d5b1f` `#d2ef4f` `#6a360a`
+hot-cocoa `#ffffff` `#e8dbb5` `#f7f3dd` `#ddecf4` `#824f38` `#a56e47` `#aec8d9` `#5d3328` `#172334` `#3b7168` `#273d51` `#0b101c` `#549282` `#ea4646` `#905738` `#81412e` `#ff785c` `#b6233c` `#255354` `#ffe017` `#f59713`
+mailbot `#aad1ea` `#d9ecf8` `#353c42` `#7bb2d6` `#1f2328` `#4e5760` `#ffffff` `#2d84e8` `#ffb70e` `#4da6ff` `#ffd817` `#205dce` `#a3efff`
+make-a-lotl `#ffc130` `#302622` `#231b19` `#f29a24` `#43362c` `#ffe852` `#654d32` `#4b3828` `#80653e` `#e68913` `#e2d7c0` `#cc6212` `#ffffff`
+mimic `#76311f` `#388e96` `#f59713` `#ffe017` `#99522c` `#c17a3f` `#1f5869` `#60c9ba` `#ffffff` `#3d110f` `#ea4646` `#141b22` `#b6233c` `#96253e` `#445961` `#45555c` `#6d8686` `#c74c00` `#c54249` `#a4b8af` `#ff785c` `#2a3a44` `#6f1531`
+minotaur `#853f1f` `#642716` `#42170f` `#a65f2f` `#a2b2bb` `#ffa21f` `#6d7988` `#dbe6eb` `#090c12` `#210a07` `#ffe91f` `#fff6e7` `#2c231d` `#1d232d` `#e2c09b` `#e64646`
+moai `#a2acae` `#757d81` `#39ade8` `#097ddd` `#65d9f7` `#4e545b` `#c3e8ef` `#ffffff` `#ea4646`
+moobloom `#ffd721` `#faaf0d` `#fff468` `#613c1f` `#3b1f12` `#ffffff` `#fb9fab` `#cfe4f6` `#ffc5cc` `#009d27` `#211008` `#f0800a` `#007228` `#27da27`
+moss-knight `#4f5b67` `#78878f` `#5d7b30` `#839c3f` `#b6bf52` `#a8b5ba` `#313847`
+neon-tiger `#3b3e47` `#2a2d36` `#0c0d10` `#ffffff` `#dff2f9` `#181b21` `#ade0f1` `#29bbff` `#0a9bf5` `#007eec`
+pinchy `#f03535` `#ff4949` `#d81e1e` `#ff6868` `#ffe345` `#ffae45` `#ffc745`
+pizza-box `#c08350` `#e3b880` `#d74021` `#f8e2bf` `#f99a54` `#eb6e38` `#418d5a` `#613429` `#ffd53a` `#9a5f3d` `#ffffff` `#c88a5c` `#ffa425` `#74c28b` `#c3fcca` `#bce4ff` `#cb534d` `#763a18`
+present-head `#d32424` `#f44e42` `#c7e7f3` `#1488e2` `#ff7b0f` `#2ebdff` `#0e7d50` `#ff825f` `#ffc919` `#0453bb` `#030916` `#ffffff` `#2aaf47` `#ffef64` `#102136` `#59dd5b` `#213c57`
+pumpkin-farmer `#8d4a32` `#b46b49` `#0b0f19` `#4ca341` `#84d055` `#f08c11` `#5f2f1f` `#1a2637` `#dd5a11` `#2f4b5d` `#fbbe23` `#2e783b` `#82190a` `#d0dee3` `#e6ab65` `#8ea7b2` `#fad896`
+pumpkin-spice `#f5a60f` `#e7740c` `#ffd829` `#f0e28f` `#ffffbf` `#2f2216` `#dcbf70` `#504025` `#b2c22b` `#efee4d` `#72941f` `#19130d` `#a2c747` `#701801` `#689031`
+ram `#f2e5bf` `#5b2617` `#8d4925` `#fffbee` `#b9743b` `#191e24` `#3d7771` `#dcc095` `#4e6368` `#68b89e` `#3aa42b` `#24474d` `#402f21` `#221913` `#5f462f` `#28417a` `#2f3e44` `#8bda48` `#16191d` `#4276ad` `#1f7430` `#ffe017` `#2b393f` `#1a2856` `#f59713`
+red-bot `#b4cfd9` `#86a1b5` `#e3eff2` `#ea4646` `#b6233c` `#ff8a62` `#181e23` `#2f3d43` `#d99e62` `#20313e`
+richard `#84b244` `#231a18` `#cae167` `#443129` `#468231` `#6f5544` `#ffffff` `#c54249` `#96253e` `#d8eff7` `#562e9c` `#8743c1` `#f9e6be` `#cb67f2` `#ffe017`
+robo-hammy `#a1ae9d` `#e6ebd7` `#ef911b` `#e04d4d` `#ff8c6b` `#ffc448` `#f5d7a9` `#6c7a75` `#d35c09` `#47585f` `#262c36` `#ad293f` `#fff4de` `#ec6a4e`
+rocky `#798692` `#a0b4bc` `#41201c` `#65382a` `#d1dde0` `#935d44` `#4e5663` `#31373f` `#090b11` `#df7d68`
+rubber-chicken `#f6c02c` `#e78312` `#b6233c` `#fff15a` `#ea4646` `#ff785c` `#fffcd9` `#cef0f8` `#161b1f` `#f08c11` `#303e44` `#447871` `#7d4124` `#da500b` `#fbbe23` `#ffffff`
+rubber-ducky `#ffe609` `#ffce09` `#ffb909` `#ff9c09` `#ff5309` `#ff7009` `#ff8809` `#37d11a` `#47f427`
+runic-golem `#859996` `#627174` `#b6cabe` `#3e4339` `#51594a` `#7cf7ff` `#32c3f9` `#4b555b` `#d1ddd6` `#6a785d` `#231f19` `#1e8dd6`
+sandstone `#ebbe73` `#d4a15c` `#fdd687` `#5d4d34` `#746343` `#bc864c` `#887952` `#9c8d62` `#4c3d2b` `#3c3223` `#eea11d` `#ffe69d` `#ffe032`
+sandstorm `#e8d4b5` `#fffbea` `#ca8f52` `#985d39` `#c8a889` `#f0be75` `#170f0d` `#442a23` `#f28e4a` `#c65536` `#6f4738` `#ffe319` `#f6940a`
+sea-bandit `#422820` `#4e8456` `#325e46` `#424c5b` `#61717f` `#883847` `#7a553b` `#5f3c2c` `#244439` `#b1575c` `#c6dbe5` `#ffe017` `#e3d3ab` `#f59713` `#8899a8` `#f2ead0` `#2d3644` `#c5a884` `#5f2838` `#f8fdff` `#ffffff` `#91afc3`
+sentai `#7ea1c5` `#0a3994` `#008dea` `#2c68c1` `#242831` `#171a21` `#1753ac` `#aec9e5` `#46cfff` `#383e49` `#21aefa` `#78f0ff` `#dae7f6` `#002074` `#6282a3`
+skull-mage `#4b637c` `#dceef4` `#34435c` `#ffffff` `#aef6ff` `#65d9f7` `#212c3e` `#4b4759` `#b1d2e2` `#635f6b` `#afc1cc` `#3a343f` `#382d37` `#39ade8` `#61525d`
+snailly `#944937` `#62bd49` `#a9e272` `#3b1612` `#931329` `#bf6f55` `#cf3c3c` `#3a62a4` `#e6ff9b` `#6b2e24` `#ee7357` `#0d1118` `#528dc8` `#2a8334` `#69b6e2` `#ffe330` `#293239` `#72519a`
+soda-can `#afc1cc` `#ff825f` `#f44e42` `#ffffff` `#d63131` `#dbe6ee` `#0876d5` `#8099ad` `#d9ecf8` `#0448a0` `#9cc2db` `#a5162e` `#0b0f19` `#1bb0f0` `#1a2637` `#2f4b5d` `#56657a`
+spartan-wraith `#ded1c3` `#b64141` `#c3b4a6` `#f3ebe1` `#953640` `#d65948` `#875d46` `#976948` `#694939` `#a39489` `#897c74` `#50372d` `#111213` `#ad7b55` `#3c2a23` `#181a1b` `#b5875c`
+spectral-seafarer `#38614c` `#99af9f` `#204034` `#507e5e` `#728e7c` `#b8cebf` `#cedfd3` `#17302a` `#7fa059` `#b0c477` `#618745` `#cdffe7` `#9ff7cd`
+stinky `#3d5569` `#648594` `#232f3d` `#b48b49` `#ffffff` `#e2bc70` `#7e9b6e` `#476c4c` `#c2d7a0` `#2cc62e` `#845d3a` `#bbff46` `#231816` `#40312a` `#bedae0` `#71a161`
+straw-barry `#ffffff` `#ffd6ce` `#e04d4d` `#a76241` `#cf8155` `#ff876c` `#e8a96f` `#ad293f` `#ffd597` `#d68f59` `#ffc7b2` `#f99789` `#71382e` `#4787c2` `#64bce0` `#de6c6c` `#a7f6ff` `#791d38` `#4d0c2b`
+summer-skelly `#eeead6` `#ffffff` `#fbbe23` `#fff53c` `#f99213` `#8ceaff` `#45bdf0` `#d6c7a7` `#218739` `#42ab34` `#80d64c` `#de5815` `#1d83d7` `#d45706` `#19222f` `#d1ebf2` `#d75d0d`
+the-secretary `#fff36f` `#ffda55` `#ffc235` `#ff90ab` `#f0a420` `#f67293` `#673a23` `#546f85` `#ffffff` `#935c40` `#7d482f` `#a1cef8` `#445c6f` `#e45378` `#d4eaff` `#304555` `#518eff` `#fffce3` `#206af1`
+the-warden `#131b29` `#01050e` `#179ea0` `#313d4c` `#c89e5f` `#096978` `#40d2c6` `#e6c884` `#fcefb7` `#013547`
+toucan `#192230` `#0c0f18` `#273748` `#384f5d` `#d5ecf3` `#ffffff` `#ffbc2b` `#ff8c11` `#ed5716` `#1c7ee9` `#3aaef7` `#ffe347` `#81e3ff`
+toxic `#8a9ca9` `#2d3137` `#1f2227` `#3f444a` `#9eb1bd` `#becdd7` `#88ff5d` `#64ea33` `#4ad119` `#6f818d` `#31b600` `#50555c` `#d6e3eb`
+toxic-meltdown `#413a37` `#59534e` `#261f1e` `#7e7a70` `#41ce03` `#c7ff1c` `#06a028` `#ccddd4` `#95b1ad`
+treasure-goblin `#bedb67` `#7d3823` `#88af49` `#4d1f13` `#578533` `#ab5034` `#8c9baf` `#ffb619` `#fff426` `#d0dae2` `#575c74` `#542316` `#fffee6` `#1a1a24`
+ugly-sweater-bee `#663121` `#26b7f2` `#ffbf00` `#1e2c3b` `#394d62` `#ffffff` `#ad7248` `#ffec1a` `#65e2ff` `#0a1118` `#aad1ea` `#177ed2` `#8a4e36` `#f88500` `#d9ecf8` `#f59713` `#ff785c` `#ea4646` `#b6233c`
+whippy `#fffae5` `#da9c38` `#ffeb95` `#f2b34e` `#fff4c6` `#ffc870` `#f13939` `#dd2929` `#ff5858` `#b01414`
+winter-ferret `#ffffff` `#e7daca` `#5a4434` `#493629` `#1e69b9` `#f4efe8` `#6c5241` `#3e93ef` `#e2f0ff` `#35261c` `#bad4ef` `#2c80db`

@@ -1,0 +1,251 @@
+/* =========================================================
+   Player Profile widget — fetches api.playhive.com/v0/game/all/main/{name}
+   and renders a stat page for that player.
+   Pairs with /js/profile.js. Reuses the shared tokens from
+   style.css (--hg-*, --border-soft, --radius, --radius-sm) and
+   follows the same visual language as .stat-card / .panel /
+   .data-table / .pill, plus a bit of its own vocabulary for
+   parts those don't cover (avatar header, equipped-loadout
+   slots).
+   ========================================================= */
+
+/* ---------- Lookup bar ---------- */
+.profile-search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.profile-search__input {
+  flex: 1;
+  background: var(--hg-masthead);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  color: var(--hg-ink);
+  font-size: 14px;
+  padding: 11px 14px;
+}
+.profile-search__input::placeholder {
+  color: var(--hg-ink-dim);
+}
+.profile-search__input:focus {
+  outline: none;
+  border-color: var(--hg-title);
+}
+
+/* ---------- States ---------- */
+.profile-state {
+  background: var(--hg-card-bg-alt);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--hg-ink-dim);
+  font-size: 14px;
+  font-weight: 500;
+}
+.profile-state.is-error {
+  color: #ffb3b3;
+}
+.profile-state__title {
+  font-family: var(--font-display);
+  color: var(--hg-title-dark);
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 8px;
+}
+.profile-state.is-error .profile-state__title {
+  color: #ff8a8a;
+}
+
+/* ---------- Header ---------- */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--hg-card-bg-alt);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.profile-header__avatar {
+  width: 84px;
+  height: 84px;
+  flex: 0 0 84px;
+  border-radius: var(--radius-sm);
+  background: #2d2c2f;
+  border: 2px solid var(--border-soft);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-header__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.profile-header__avatar-fallback {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--hg-title-dark);
+}
+
+.profile-header__main {
+  flex: 1;
+  min-width: 200px;
+}
+.profile-header__name-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.profile-header__name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--hg-text);
+  margin: 0;
+}
+.profile-header__title {
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hg-ink-dim);
+}
+.profile-header__meta {
+  margin-top: 10px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--hg-ink-dim);
+}
+.profile-header__meta strong {
+  color: var(--hg-ink);
+  font-weight: 700;
+}
+
+.pill.rank-NONE {
+  color: var(--hg-ink-dim);
+}
+.pill.rank-PLUS {
+  color: #8fe08f;
+  border-color: rgba(143, 224, 143, 0.35);
+  background: rgba(143, 224, 143, 0.12);
+}
+.pill.rank-ULTIMATE {
+  color: #ffe28a;
+  border-color: rgba(252, 226, 103, 0.35);
+  background: rgba(252, 226, 103, 0.12);
+}
+.pill.rank-MVP,
+.pill.rank-HIVE {
+  color: #d3a9ff;
+  border-color: rgba(211, 169, 255, 0.35);
+  background: rgba(211, 169, 255, 0.12);
+}
+
+/* ---------- Equipped loadout ---------- */
+.profile-loadout {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 26px;
+}
+@media (max-width: 800px) {
+  .profile-loadout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.profile-slot {
+  background: var(--hg-card-bg-alt);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+.profile-slot__label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--hg-ink-dim);
+}
+.profile-slot__thumb {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  background: #2d2c2f;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-slot__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.profile-slot__name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--hg-ink);
+  line-height: 1.25;
+}
+.profile-slot__empty {
+  color: var(--hg-ink-dim);
+  font-size: 20px;
+}
+.profile-slot__rarity {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.rarity-COMMON {
+  color: var(--hg-ink-dim);
+}
+.rarity-UNCOMMON {
+  color: #8fe08f;
+}
+.rarity-RARE {
+  color: #6fb8ff;
+}
+.rarity-EPIC {
+  color: #c98fff;
+}
+.rarity-LEGENDARY {
+  color: #ffb15c;
+}
+.rarity-MYTHIC {
+  color: #ff8ac6;
+}
+
+/* ---------- Hub parkour ---------- */
+.profile-parkour-table {
+  width: 100%;
+}
+.profile-parkour-stars {
+  color: #ffe28a;
+  font-weight: 700;
+}
