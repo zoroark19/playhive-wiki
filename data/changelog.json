@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-09-25T04:39:06.976Z",
+  "fetchedAt": "2026-09-26T04:42:18.840Z",
   "items": [
+    {
+      "title": "BedWars Custom Server Bots: Update 1",
+      "link": "https://updates.playhive.com/changelog/bedwars-custom-server-bots-update-1",
+      "pubDate": "2026-09-25T08:23:07.000Z",
+      "excerpt": "Thank you to everyone that tried Custom Server bots and left feedback! A lot of these improvements are a direct result from community feedback on the [feedback…"
+    },
     {
       "title": "BedWars Custom Servers: Bot Opponents",
       "link": "https://updates.playhive.com/changelog/bedwars-custom-servers-bot-opponents",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/cosmetics-drop-pumpkitty-pet-nightfang-mount-pirate-hat-and-moth",
       "pubDate": "2026-09-17T20:38:46.000Z",
       "excerpt": "From haunted skies to the high seas, the latest cosmetics drop is here, just in time for spooky season! Check out all the new arrivals in The Hive Store! ##…"
-    },
-    {
-      "title": "BedWars: Season 5",
-      "link": "https://updates.playhive.com/changelog/bedwars-season-5",
-      "pubDate": "2026-09-04T18:18:09.000Z",
-      "excerpt": "Howdy partner! It's time to saddle up, a brand new BedWars season is rollin' into town! BedWars: Season 5 is here! Get ready to ride into rip-roarin' new…"
     }
   ]
 }
