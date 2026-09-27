@@ -33,6 +33,7 @@ EMOJI_PLAYER_NOT_FOUND = "❓"
 SUBMISSIONS_PATH = "submissions.json"
 
 STATS_STATE_PATH = "stats_message.json"
+CATEGORY_LEADERS_STATE_PATH = "category_leaders_message.json"
 
 HATS = [
     {
@@ -153,6 +154,11 @@ TITLES = [
         "name": "The Bargain Hunter",
         "emoji": "🏷",
         "kind": "title",
+    },
+    {
+        "name": "Sandy Sculptor",
+        "emoji": "🏰",
+        "kind": "title",
     }
 ]
 
@@ -191,9 +197,6 @@ COSTUMES = [
     },
 ]
 
-ARTIST_CANVAS_AUTHORIZED_USER_ID = 1120916116328435812
-ARTIST_CANVAS_TRIGGER_PREFIX = "!"
-
 ARTIST_CANVAS_ITEM = {
     "name": "Artist's Canvas",
     "owners_path": "artist_canvas_owners.json",
@@ -201,23 +204,74 @@ ARTIST_CANVAS_ITEM = {
     "kind": "manual",
 }
 
-OTHER_TRACKED_ITEMS = PLUSHIES + COSTUMES + [ARTIST_CANVAS_ITEM]
+TROPICAL_TIDE_CAPE_ITEM = {
+    "name": "Tropical Tide Cape",
+    "owners_path": "tropical_tide_cape_owners.json",
+    "emoji_name": "tropical_tide",
+    "emoji_id": 1543332223514841098,
+    "kind": "manual",
+}
+
+# Manual items are only added when a trusted submitter posts a message
+# starting with the item's trigger prefix (e.g. "!Someone" or "%Someone"),
+# rather than being auto-detected from the Hive API like hats/titles/etc.
+# Each item lists which Discord user IDs are allowed to add it.
+MANUAL_ITEMS = [
+    {
+        "item": ARTIST_CANVAS_ITEM,
+        "trigger_prefix": "!",
+        "authorized_user_ids": {1120916116328435812},  # zoroark19
+    },
+    {
+        "item": TROPICAL_TIDE_CAPE_ITEM,
+        "trigger_prefix": "%",
+        "authorized_user_ids": {
+            1120916116328435812,  # zoroark19
+            690253596964815015,   # gyrraa
+        },
+    },
+]
+
+DELETE_COMMAND_PREFIX = "!del "
+DELETE_AUTHORIZED_USER_IDS = {
+    1120916116328435812,  # zoroark19
+    690253596964815015,   # gyrraa
+}
+
+OTHER_TRACKED_ITEMS = PLUSHIES + COSTUMES + \
+    [manual["item"] for manual in MANUAL_ITEMS]
 
 DISCORD_BOT_TOKEN = os.environ.get("DISCORD_BOT_TOKEN")
 
 _owners_lock = threading.Lock()
 
 
-def load_owners(path):
-    with _owners_lock:
+def _read_json_unlocked(path, default=None):
+    """Read JSON from `path`. Caller must hold _owners_lock.
+    Returns `default` if the file doesn't exist and `default` was given."""
+    try:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
+    except FileNotFoundError:
+        if default is not None:
+            return default
+        raise
+
+
+def _write_json_unlocked(path, data):
+    """Write JSON to `path`. Caller must hold _owners_lock."""
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+
+def load_owners(path):
+    with _owners_lock:
+        return _read_json_unlocked(path)
 
 
 def save_owners(path, owners):
     with _owners_lock:
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(owners, f, indent=2, ensure_ascii=False)
+        _write_json_unlocked(path, owners)
 
 
 def load_hub_titles_file():
@@ -331,18 +385,18 @@ def record_submission_credit(discord_user_id, discord_display_name, hat_name):
     return entry["total"]
 
 
-def load_stats_state():
+def load_stats_state_file(path):
     with _owners_lock:
         try:
-            with open(STATS_STATE_PATH, "r", encoding="utf-8") as f:
+            with open(path, "r", encoding="utf-8") as f:
                 return json.load(f)
         except (FileNotFoundError, json.JSONDecodeError):
             return {}
 
 
-def save_stats_state(state):
+def save_stats_state_file(path, state):
     with _owners_lock:
-        with open(STATS_STATE_PATH, "w", encoding="utf-8") as f:
+        with open(path, "w", encoding="utf-8") as f:
             json.dump(state, f, indent=2, ensure_ascii=False)
 
 
@@ -390,6 +444,98 @@ def compute_top_submitters(limit=5):
     )
     return [(entry.get("username", "unknown"), entry.get("total", 0))
             for entry in ranked[:limit]]
+
+
+def category_leader_groups():
+    """The tracked items, grouped for the per-category leaders message,
+    in the order/sections they should be displayed."""
+    return [
+        ("Crowns", HATS),
+        ("Rare Titles", TITLES),
+        ("Other Trackers", PLUSHIES + COSTUMES),
+        ("Manual Items", [manual["item"] for manual in MANUAL_ITEMS]),
+    ]
+
+
+def compute_category_leaders():
+    """For each item name (across every tracked category), find whoever
+    has submitted the most of it, based on submissions.json's per-item
+    (by_hat) credit counts. Ties are all included."""
+    submissions = load_submissions()
+    per_item_leaders = {}
+
+    for entry in submissions.values():
+        username = entry.get("username", "unknown")
+        for item_name, count in entry.get("by_hat", {}).items():
+            if not count:
+                continue
+            current = per_item_leaders.get(item_name)
+            if current is None or count > current[0][1]:
+                per_item_leaders[item_name] = [(username, count)]
+            elif count == current[0][1]:
+                current.append((username, count))
+
+    return per_item_leaders
+
+
+def format_category_leaders_message(per_item_leaders):
+    sections = []
+    for group_name, items in category_leader_groups():
+        if not items:
+            continue
+        lines = []
+        for item in items:
+            leaders = per_item_leaders.get(item["name"])
+            emoji = item_emoji(item)
+            if not leaders:
+                lines.append(f"{item['name']} {emoji} - no submissions yet")
+                continue
+            names = ", ".join(f"{name} ({count})" for name, count in leaders)
+            lines.append(f"{item['name']} {emoji} - {names}")
+        sections.append(f"**{group_name}**\n" + "\n".join(lines))
+
+    header = "**Top Submitter by Category**"
+    return header + "\n\n" + "\n\n".join(sections)
+
+
+async def update_category_leaders_message(client):
+    channel = client.get_channel(WATCHED_CHANNEL_ID)
+    if channel is None:
+        print(f"[category-leaders] couldn't find channel {WATCHED_CHANNEL_ID}, "
+              f"skipping update")
+        return
+
+    per_item_leaders = compute_category_leaders()
+    content = format_category_leaders_message(per_item_leaders)
+
+    state = load_stats_state_file(CATEGORY_LEADERS_STATE_PATH)
+    message_id = state.get("message_id")
+
+    if message_id is not None:
+        try:
+            existing = await channel.fetch_message(message_id)
+            await existing.edit(content=content)
+            print(f"[category-leaders] updated pinned message {message_id}")
+            return
+        except discord.NotFound:
+            print(f"[category-leaders] previous message {message_id} no "
+                  f"longer exists, posting a new one")
+        except discord.Forbidden:
+            print("[category-leaders] missing permissions to edit the "
+                  "message, posting a new one")
+
+    new_message = await channel.send(content)
+    try:
+        await new_message.pin()
+    except discord.Forbidden:
+        print("[category-leaders] missing 'Manage Messages' permission, "
+              "couldn't pin message")
+    except discord.HTTPException as e:
+        print(f"[category-leaders] failed to pin message: {e}")
+
+    save_stats_state_file(CATEGORY_LEADERS_STATE_PATH, {
+        "message_id": new_message.id})
+    print(f"[category-leaders] posted and pinned new message {new_message.id}")
 
 
 def format_stats_message(stats, title_stats, other_stats, top_submitters):
@@ -448,7 +594,7 @@ async def update_stats_message(client):
     content = format_stats_message(
         stats, title_stats, other_stats, top_submitters)
 
-    state = load_stats_state()
+    state = load_stats_state_file(STATS_STATE_PATH)
     message_id = state.get("message_id")
 
     if message_id is not None:
@@ -472,7 +618,7 @@ async def update_stats_message(client):
     except discord.HTTPException as e:
         print(f"[stats] failed to pin stats message: {e}")
 
-    save_stats_state({"message_id": new_message.id})
+    save_stats_state_file(STATS_STATE_PATH, {"message_id": new_message.id})
     print(f"[stats] posted and pinned new stats message {new_message.id}")
 
 
@@ -612,6 +758,7 @@ def build_client():
             f"Watching guild {WATCHED_GUILD_ID}, channel {WATCHED_CHANNEL_ID}")
         client.loop.create_task(status_watchdog(client))
         await update_stats_message(client)
+        await update_category_leaders_message(client)
 
     @client.event
     async def on_disconnect():
@@ -675,6 +822,48 @@ def save_item_owners(item, owners):
         save_owners(item["owners_path"], owners)
 
 
+def record_item_owner(item, api_uuid, entry):
+    """Atomically add/update a single owner entry for `item`.
+
+    This does the read -> modify -> write as ONE transaction under
+    _owners_lock, so two messages processed concurrently (e.g. two people
+    submitting around the same time) can't clobber each other's write.
+    Using load_item_owners()/save_item_owners() as two *separate* locked
+    calls (the old approach) left a window where a second writer could
+    load stale data, then save it back and silently erase the first
+    writer's entry - with no exception raised. Returns True if api_uuid
+    wasn't already present (i.e. this is a brand new owner)."""
+    kind = item.get("kind")
+    with _owners_lock:
+        if kind == "title":
+            data = _read_json_unlocked(HUB_TITLES_PATH, default={})
+            owners = data.get(item["name"], {})
+            is_new = api_uuid not in owners
+            owners[api_uuid] = entry
+            data[item["name"]] = owners
+            _write_json_unlocked(HUB_TITLES_PATH, data)
+        elif kind == "plushie":
+            data = _read_json_unlocked(PLUSHIES_PATH, default={})
+            owners = data.get(item["name"], {})
+            is_new = api_uuid not in owners
+            owners[api_uuid] = entry
+            data[item["name"]] = owners
+            _write_json_unlocked(PLUSHIES_PATH, data)
+        elif kind == "costume":
+            data = _read_json_unlocked(COSTUMES_PATH, default={})
+            owners = data.get(item["name"], {})
+            is_new = api_uuid not in owners
+            owners[api_uuid] = entry
+            data[item["name"]] = owners
+            _write_json_unlocked(COSTUMES_PATH, data)
+        else:
+            owners = _read_json_unlocked(item["owners_path"], default={})
+            is_new = api_uuid not in owners
+            owners[api_uuid] = entry
+            _write_json_unlocked(item["owners_path"], owners)
+    return is_new
+
+
 def item_source_label(item):
     if item.get("kind") == "title":
         return f"{HUB_TITLES_PATH} ({item['name']})"
@@ -706,18 +895,60 @@ def find_item_match(main_data, item):
     return edition is not None, edition
 
 
-async def handle_artist_canvas_submission(client, message, raw_content):
-    gamertag = raw_content[len(ARTIST_CANVAS_TRIGGER_PREFIX):].strip()
+async def handle_delete_command(client, message, stripped):
+    """!del <message-id> - lets a trusted submitter clean up a message the
+    bot posted (e.g. a bad reaction spam or a leftover pinned message),
+    without giving them the ability to delete anyone else's messages."""
+    arg = stripped[len(DELETE_COMMAND_PREFIX):].strip()
+
+    if not arg.isdigit():
+        await message.reply(f"Usage: `{DELETE_COMMAND_PREFIX}<message-id>`")
+        return
+
+    target_id = int(arg)
+
+    try:
+        target = await message.channel.fetch_message(target_id)
+    except discord.NotFound:
+        await message.reply(f"Couldn't find a message with ID `{target_id}` in this channel.")
+        return
+    except discord.Forbidden:
+        await message.reply("Missing permission to look up that message.")
+        return
+    except discord.HTTPException as e:
+        await message.reply(f"Failed to look up that message: {e}")
+        return
+
+    if target.author.id != client.user.id:
+        await message.reply("I can only delete my own messages.")
+        return
+
+    try:
+        await target.delete()
+        print(f"[del] {message.author} (id={message.author.id}) deleted "
+              f"bot message {target_id} in channel {message.channel.id}")
+        await message.add_reaction("🗑️")
+    except discord.NotFound:
+        await message.reply("That message is already gone.")
+    except discord.Forbidden:
+        await message.reply("Missing permission to delete that message.")
+    except discord.HTTPException as e:
+        await message.reply(f"Failed to delete that message: {e}")
+
+
+async def handle_manual_item_submission(client, message, raw_content, manual):
+    item = manual["item"]
+    gamertag = raw_content[len(manual["trigger_prefix"]):].strip()
 
     if not gamertag or len(gamertag) > MAX_GAMERTAG_LENGTH:
         await message.add_reaction(EMOJI_NOT_FOUND)
         return
 
-    owners = load_item_owners(ARTIST_CANVAS_ITEM)
+    owners = load_item_owners(item)
     _, existing = find_username_match(owners, gamertag)
     if existing is not None:
         await message.add_reaction(EMOJI_ALREADY_OWNED)
-        await message.add_reaction(item_emoji(ARTIST_CANVAS_ITEM))
+        await message.add_reaction(item_emoji(item))
         return
 
     data = await client.loop.run_in_executor(None, fetch_profile, gamertag)
@@ -741,26 +972,24 @@ async def handle_artist_canvas_submission(client, message, raw_content):
         await message.add_reaction(EMOJI_PLAYER_NOT_FOUND)
         return
 
-    owners = load_item_owners(ARTIST_CANVAS_ITEM)
-    is_new = api_uuid not in owners
-    owners[api_uuid] = {
+    is_new = record_item_owner(item, api_uuid, {
         "rank": api_rank,
         "username": api_username,
         "xuid": api_xuid,
-    }
-    save_item_owners(ARTIST_CANVAS_ITEM, owners)
+    })
 
     print(f"[owners] manually added {api_username} to "
-          f"{item_source_label(ARTIST_CANVAS_ITEM)} via {message.author} "
+          f"{item_source_label(item)} via {message.author} "
           f"(id={message.author.id}), uuid={api_uuid}")
-    await message.add_reaction(item_emoji(ARTIST_CANVAS_ITEM))
+    await message.add_reaction(item_emoji(item))
 
     if is_new:
         total = record_submission_credit(
-            message.author.id, str(message.author), ARTIST_CANVAS_ITEM["name"])
-        print(f"[submissions] +1 credit ({ARTIST_CANVAS_ITEM['name']}) to "
+            message.author.id, str(message.author), item["name"])
+        print(f"[submissions] +1 credit ({item['name']}) to "
               f"{message.author} (id={message.author.id}), new total={total}")
         await update_stats_message(client)
+        await update_category_leaders_message(client)
 
 
 async def suggest_similar_usernames(client, message, gamertag):
@@ -842,10 +1071,16 @@ async def handle_message(client, message):
 
     stripped = message.content.strip()
 
-    if (message.author.id == ARTIST_CANVAS_AUTHORIZED_USER_ID
-            and stripped.startswith(ARTIST_CANVAS_TRIGGER_PREFIX)):
-        await handle_artist_canvas_submission(client, message, stripped)
+    if (message.author.id in DELETE_AUTHORIZED_USER_IDS
+            and stripped.startswith(DELETE_COMMAND_PREFIX)):
+        await handle_delete_command(client, message, stripped)
         return
+
+    for manual in MANUAL_ITEMS:
+        if (message.author.id in manual["authorized_user_ids"]
+                and stripped.startswith(manual["trigger_prefix"])):
+            await handle_manual_item_submission(client, message, stripped, manual)
+            return
 
     gamertag = stripped
 
@@ -898,14 +1133,13 @@ async def handle_message(client, message):
         return
 
     found_any = False
+    credited_any = False
     for item in items_to_check:
         matched, edition = find_item_match(main_data, item)
         if not matched:
             continue
 
         found_any = True
-        owners = load_item_owners(item)
-        is_new = api_uuid not in owners
         entry = {
             "rank": api_rank,
             "username": api_username,
@@ -913,8 +1147,7 @@ async def handle_message(client, message):
         }
         if edition is not None:
             entry["edition"] = edition
-        owners[api_uuid] = entry
-        save_item_owners(item, owners)
+        is_new = record_item_owner(item, api_uuid, entry)
 
         edition_note = f" (edition #{edition})" if edition is not None else ""
         print(f"[owners] added {api_username} to {item_source_label(item)}"
@@ -926,12 +1159,15 @@ async def handle_message(client, message):
                 message.author.id, str(message.author), item["name"])
             print(f"[submissions] +1 credit ({item['name']}) to "
                   f"{message.author} (id={message.author.id}), new total={total}")
+            credited_any = True
 
     if not found_any and not already_matched_items:
         await message.add_reaction(EMOJI_NOT_FOUND)
 
     if found_any:
         await update_stats_message(client)
+    if credited_any:
+        await update_category_leaders_message(client)
 
 
 def ensure_owners_file_exists(item):
@@ -968,7 +1204,8 @@ def main():
                 f"Error: {hat['owners_path']} (for {hat['name']}) is not valid JSON: {e}")
             sys.exit(1)
 
-    ensure_owners_file_exists(ARTIST_CANVAS_ITEM)
+    for manual in MANUAL_ITEMS:
+        ensure_owners_file_exists(manual["item"])
 
     if PLUSHIES:
         try:
