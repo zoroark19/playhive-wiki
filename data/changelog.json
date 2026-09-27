@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-09-26T04:42:18.840Z",
+  "fetchedAt": "2026-09-27T05:03:35.718Z",
   "items": [
+    {
+      "title": "BedWars Custom Server Bots: Update 2",
+      "link": "https://updates.playhive.com/changelog/bedwars-custom-server-bots-update-2",
+      "pubDate": "2026-09-26T15:07:37.000Z",
+      "excerpt": "We’ve made additional changes and improvements to Bots in BedWars Custom Servers based on feedback left on the [feedback…"
+    },
     {
       "title": "BedWars Custom Server Bots: Update 1",
       "link": "https://updates.playhive.com/changelog/bedwars-custom-server-bots-update-1",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/bedwars-season-4-rewards",
       "pubDate": "2026-09-21T16:49:48.000Z",
       "excerpt": "BedWars: Season 4 hub title rewards have now been awarded to eligible players. The following hub titles have been awarded to eligible players: All BedWars…"
-    },
-    {
-      "title": "Cosmetics Drop: Pumpkitty Pet, Nightfang Mount, Pirate Hat & Moth Wings Back Bling",
-      "link": "https://updates.playhive.com/changelog/cosmetics-drop-pumpkitty-pet-nightfang-mount-pirate-hat-and-moth",
-      "pubDate": "2026-09-17T20:38:46.000Z",
-      "excerpt": "From haunted skies to the high seas, the latest cosmetics drop is here, just in time for spooky season! Check out all the new arrivals in The Hive Store! ##…"
     }
   ]
 }
