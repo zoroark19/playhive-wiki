@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-09-28T05:05:23.885Z",
+  "fetchedAt": "2026-09-29T05:29:24.257Z",
   "items": [
+    {
+      "title": "BedWars Custom Server Bots: Update 3",
+      "link": "https://updates.playhive.com/changelog/bedwars-custom-server-bots-update-3",
+      "pubDate": "2026-09-28T11:38:41.000Z",
+      "excerpt": "We’ve made additional changes and improvements to Bots in BedWars Custom Servers based on feedback left on the [feedback…"
+    },
     {
       "title": "BedWars Custom Server Bots: Update 2",
       "link": "https://updates.playhive.com/changelog/bedwars-custom-server-bots-update-2",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/bedwars-custom-servers-bot-opponents",
       "pubDate": "2026-09-23T21:33:13.000Z",
       "excerpt": "You can now play against non-human players (bots) in BedWars: Solo custom servers. To enable bot players, simply create a BedWars: Solo custom server and…"
-    },
-    {
-      "title": "BedWars: Season 4 Rewards",
-      "link": "https://updates.playhive.com/changelog/bedwars-season-4-rewards",
-      "pubDate": "2026-09-21T16:49:48.000Z",
-      "excerpt": "BedWars: Season 4 hub title rewards have now been awarded to eligible players. The following hub titles have been awarded to eligible players: All BedWars…"
     }
   ]
 }
