@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-09-30T05:17:18.930Z",
+  "fetchedAt": "2026-10-01T05:32:16.999Z",
   "items": [
+    {
+      "title": "October Quest Costume Released",
+      "link": "https://updates.playhive.com/changelog/october-quest-costume-released-7",
+      "pubDate": "2026-09-30T23:00:00.000Z",
+      "excerpt": "Sailing the seven seas from beyond the grave… The Captain Marrow costume can now be purchased from the Quest Store!…"
+    },
     {
       "title": "BedWars Custom Server Bots: Update 3",
       "link": "https://updates.playhive.com/changelog/bedwars-custom-server-bots-update-3",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/bedwars-custom-server-bots-update-1",
       "pubDate": "2026-09-25T08:23:07.000Z",
       "excerpt": "Thank you to everyone that tried Custom Server bots and left feedback! A lot of these improvements are a direct result from community feedback on the [feedback…"
-    },
-    {
-      "title": "BedWars Custom Servers: Bot Opponents",
-      "link": "https://updates.playhive.com/changelog/bedwars-custom-servers-bot-opponents",
-      "pubDate": "2026-09-23T21:33:13.000Z",
-      "excerpt": "You can now play against non-human players (bots) in BedWars: Solo custom servers. To enable bot players, simply create a BedWars: Solo custom server and…"
     }
   ]
 }
