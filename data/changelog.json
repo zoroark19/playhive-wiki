@@ -1,7 +1,19 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-10-09T05:50:35.247Z",
+  "fetchedAt": "2026-10-10T05:33:28.879Z",
   "items": [
+    {
+      "title": "Void Bundle - Available Now!",
+      "link": "https://updates.playhive.com/changelog/void-bundle-available-now",
+      "pubDate": "2026-10-09T16:19:16.000Z",
+      "excerpt": "Turns out the void isn't so empty after all... The Void Bundle is here! This otherworldly collection is available now in The Hive Store, for 990 Minecoins.…"
+    },
+    {
+      "title": "Happy Hive-o-ween! 🎃",
+      "link": "https://updates.playhive.com/changelog/happy-hive-o-ween-jackolantern",
+      "pubDate": "2026-10-09T15:13:40.000Z",
+      "excerpt": "Spooky season is back, Hive-o-ween is here! ### The Haunting Returns The ghosts are back! Strange readings have started showing up across the hub again, and…"
+    },
     {
       "title": "October Quest Costume Released",
       "link": "https://updates.playhive.com/changelog/october-quest-costume-released-7",
@@ -13,18 +25,6 @@
       "link": "https://updates.playhive.com/changelog/bedwars-custom-server-bots-update-3",
       "pubDate": "2026-09-28T11:38:41.000Z",
       "excerpt": "We’ve made additional changes and improvements to Bots in BedWars Custom Servers based on feedback left on the [feedback…"
-    },
-    {
-      "title": "BedWars Custom Server Bots: Update 2",
-      "link": "https://updates.playhive.com/changelog/bedwars-custom-server-bots-update-2",
-      "pubDate": "2026-09-26T15:07:37.000Z",
-      "excerpt": "We’ve made additional changes and improvements to Bots in BedWars Custom Servers based on feedback left on the [feedback…"
-    },
-    {
-      "title": "BedWars Custom Server Bots: Update 1",
-      "link": "https://updates.playhive.com/changelog/bedwars-custom-server-bots-update-1",
-      "pubDate": "2026-09-25T08:23:07.000Z",
-      "excerpt": "Thank you to everyone that tried Custom Server bots and left feedback! A lot of these improvements are a direct result from community feedback on the [feedback…"
     }
   ]
 }
