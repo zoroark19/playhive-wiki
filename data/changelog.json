@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-10-15T04:19:11.685Z",
+  "fetchedAt": "2026-10-16T04:14:46.554Z",
   "items": [
+    {
+      "title": "It's The Hive's 8th Beeday! 🎂",
+      "link": "https://updates.playhive.com/changelog/its-the-hives-8th-beeday-birthday",
+      "pubDate": "2026-10-16T00:10:13.000Z",
+      "excerpt": "It's time to celebrate The Hive's 8th anniversary! Join The Hive this week and complete a special quest to unlock the Veteran hub title, which displays the…"
+    },
     {
       "title": "Void Bundle - Available Now!",
       "link": "https://updates.playhive.com/changelog/void-bundle-available-now",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/october-quest-costume-released-7",
       "pubDate": "2026-09-30T23:00:00.000Z",
       "excerpt": "Sailing the seven seas from beyond the grave… The Captain Marrow costume can now be purchased from the Quest Store!…"
-    },
-    {
-      "title": "BedWars Custom Server Bots: Update 3",
-      "link": "https://updates.playhive.com/changelog/bedwars-custom-server-bots-update-3",
-      "pubDate": "2026-09-28T11:38:41.000Z",
-      "excerpt": "We’ve made additional changes and improvements to Bots in BedWars Custom Servers based on feedback left on the [feedback…"
     }
   ]
 }
