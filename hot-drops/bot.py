@@ -21,7 +21,11 @@ PLAYER_SEARCH_URL_TEMPLATE = "https://api.playhive.com/v0/player/search/{gamerta
 MAX_SEARCH_SUGGESTIONS = 10
 
 MAX_GAMERTAG_LENGTH = 15
+MAX_BATCH_GAMERTAGS = 15
 REQUEST_TIMEOUT_SECONDS = 15
+API_REQUESTS_PER_MINUTE = 120
+API_MAX_ATTEMPTS = 3
+API_RETRY_BASE_DELAY_SECONDS = 2
 
 STATUS_CHECK_INTERVAL_SECONDS = 30
 RECONNECT_STALE_SECONDS = 120
@@ -29,6 +33,8 @@ RECONNECT_STALE_SECONDS = 120
 EMOJI_ALREADY_OWNED = "✅"
 EMOJI_NOT_FOUND = "❌"
 EMOJI_PLAYER_NOT_FOUND = "❓"
+EMOJI_API_ERROR = "⚠️"
+EMOJI_BATCH_DONE = "👍"
 
 SUBMISSIONS_PATH = "submissions.json"
 
@@ -216,8 +222,9 @@ TROPICAL_TIDE_CAPE_ITEM = {
     "kind": "manual",
 }
 
-OTHER_TRACKED_ITEMS = PLUSHIES + COSTUMES + \
-    [ARTIST_CANVAS_ITEM, TROPICAL_TIDE_CAPE_ITEM]
+MANUAL_ITEMS = [ARTIST_CANVAS_ITEM, TROPICAL_TIDE_CAPE_ITEM]
+
+OTHER_TRACKED_ITEMS = PLUSHIES + COSTUMES + MANUAL_ITEMS
 
 DISCORD_BOT_TOKEN = os.environ.get("DISCORD_BOT_TOKEN")
 
@@ -559,17 +566,62 @@ def is_misspelled_name_response(data):
     return data.get("message", None) == "" and not data.get("main")
 
 
+_api_rate_lock = threading.Lock()
+_api_next_request_at = 0.0
+
+
+def wait_for_api_slot():
+    """Space Hive API requests evenly so the bot never goes over
+    API_REQUESTS_PER_MINUTE, no matter how many lookups run at once."""
+    global _api_next_request_at
+    interval = 60.0 / API_REQUESTS_PER_MINUTE
+    with _api_rate_lock:
+        now = time.monotonic()
+        start_at = max(now, _api_next_request_at)
+        _api_next_request_at = start_at + interval
+    if start_at > now:
+        time.sleep(start_at - now)
+
+
+def api_get(url, label):
+    """GET a Hive API URL and return the raw body. Retries rate limits
+    (429), server errors (5xx) and network failures, and raises the last
+    error once every attempt has failed."""
+    for attempt in range(1, API_MAX_ATTEMPTS + 1):
+        wait_for_api_slot()
+        req = urllib.request.Request(
+            url, headers={"User-Agent": "owners-bot/1.0"})
+        delay = API_RETRY_BASE_DELAY_SECONDS * 2 ** (attempt - 1)
+        try:
+            with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT_SECONDS) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as e:
+            if e.code != 429 and e.code < 500:
+                raise
+            if attempt == API_MAX_ATTEMPTS:
+                raise
+            retry_after = e.headers.get("Retry-After") if e.headers else None
+            if retry_after and retry_after.isdigit():
+                delay = max(delay, int(retry_after))
+            print(f"[api] HTTP {e.code} for {label}, retrying in {delay}s "
+                  f"(attempt {attempt}/{API_MAX_ATTEMPTS})")
+        except (urllib.error.URLError, TimeoutError) as e:
+            if attempt == API_MAX_ATTEMPTS:
+                raise
+            print(f"[api] network error for {label} ({e}), retrying in {delay}s "
+                  f"(attempt {attempt}/{API_MAX_ATTEMPTS})")
+        time.sleep(delay)
+
+
 def fetch_profile(gamertag):
     url = API_URL_TEMPLATE.format(gamertag=urllib.parse.quote(gamertag))
-    req = urllib.request.Request(url, headers={"User-Agent": "owners-bot/1.0"})
 
     try:
-        with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT_SECONDS) as resp:
-            body = resp.read()
-            data = json.loads(body)
-            print(
-                f"[api] profile lookup for {gamertag} -> keys={list(data.keys()) if isinstance(data, dict) else type(data)}")
-            return data
+        body = api_get(url, gamertag)
+        data = json.loads(body)
+        print(
+            f"[api] profile lookup for {gamertag} -> keys={list(data.keys()) if isinstance(data, dict) else type(data)}")
+        return data
     except urllib.error.HTTPError as e:
         if e.code == 404:
             print(f"[api] 404 for {gamertag}, treating as not-found")
@@ -579,6 +631,9 @@ def fetch_profile(gamertag):
     except urllib.error.URLError as e:
         print(f"[api] network error for {gamertag}: {e.reason}")
         return None
+    except TimeoutError:
+        print(f"[api] timed out looking up {gamertag}")
+        return None
     except json.JSONDecodeError:
         print(f"[api] bad JSON response for {gamertag}")
         return None
@@ -587,19 +642,17 @@ def fetch_profile(gamertag):
 def search_players(gamertag):
     url = PLAYER_SEARCH_URL_TEMPLATE.format(
         gamertag=urllib.parse.quote(gamertag))
-    req = urllib.request.Request(url, headers={"User-Agent": "owners-bot/1.0"})
 
     try:
-        with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT_SECONDS) as resp:
-            body = resp.read()
-            result = json.loads(body)
-            if not isinstance(result, list):
-                print(
-                    f"[api] search for {gamertag} returned non-list JSON: {result!r}")
-                return []
+        body = api_get(url, f"search {gamertag}")
+        result = json.loads(body)
+        if not isinstance(result, list):
             print(
-                f"[api] search for {gamertag} returned {len(result)} result(s)")
-            return result
+                f"[api] search for {gamertag} returned non-list JSON: {result!r}")
+            return []
+        print(
+            f"[api] search for {gamertag} returned {len(result)} result(s)")
+        return result
     except urllib.error.HTTPError as e:
         if e.code == 404:
             return []
@@ -608,6 +661,9 @@ def search_players(gamertag):
         return []
     except urllib.error.URLError as e:
         print(f"[api] network error searching for {gamertag}: {e.reason}")
+        return []
+    except TimeoutError:
+        print(f"[api] timed out searching for {gamertag}")
         return []
     except json.JSONDecodeError:
         print(f"[api] bad JSON search response for {gamertag}")
@@ -691,6 +747,86 @@ def save_item_owners(item, owners):
         save_owners(item["owners_path"], owners)
 
 
+_owner_updates_lock = threading.Lock()
+
+
+def item_key(item):
+    return (item.get("kind"), item["name"])
+
+
+def load_owners_or_empty(path):
+    try:
+        return load_owners(path)
+    except FileNotFoundError:
+        return {}
+
+
+def load_all_item_owners(items):
+    """Read each owners file once and return {item_key: owners} for every
+    item, instead of re-reading a shared file (like hub-titles.json) once
+    per item."""
+    titles = load_hub_titles_file()
+    plushies = load_plushies_file()
+    costumes = load_costumes_file()
+    files = {}
+
+    snapshot = {}
+    for item in items:
+        kind = item.get("kind")
+        if kind == "title":
+            owners = titles.get(item["name"], {})
+        elif kind == "plushie":
+            owners = plushies.get(item["name"], {})
+        elif kind == "costume":
+            owners = costumes.get(item["name"], {})
+        else:
+            path = item["owners_path"]
+            if path not in files:
+                files[path] = load_owners_or_empty(path)
+            owners = files[path]
+        snapshot[item_key(item)] = owners
+    return snapshot
+
+
+def apply_owner_updates(updates):
+    """Merge (item, uuid, fields) updates into the owners files, reading
+    and writing each file once. Files are re-read here rather than reusing
+    an earlier snapshot, so writes made during the API lookup aren't lost."""
+    with _owner_updates_lock:
+        shared = {"title": None, "plushie": None, "costume": None}
+        files = {}
+
+        for item, uuid, fields in updates:
+            kind = item.get("kind")
+            if kind == "title":
+                if shared["title"] is None:
+                    shared["title"] = load_hub_titles_file()
+                owners = shared["title"].setdefault(item["name"], {})
+            elif kind == "plushie":
+                if shared["plushie"] is None:
+                    shared["plushie"] = load_plushies_file()
+                owners = shared["plushie"].setdefault(item["name"], {})
+            elif kind == "costume":
+                if shared["costume"] is None:
+                    shared["costume"] = load_costumes_file()
+                owners = shared["costume"].setdefault(item["name"], {})
+            else:
+                path = item["owners_path"]
+                if path not in files:
+                    files[path] = load_owners_or_empty(path)
+                owners = files[path]
+            owners[uuid] = {**owners.get(uuid, {}), **fields}
+
+        if shared["title"] is not None:
+            save_hub_titles_file(shared["title"])
+        if shared["plushie"] is not None:
+            save_plushies_file(shared["plushie"])
+        if shared["costume"] is not None:
+            save_costumes_file(shared["costume"])
+        for path, owners in files.items():
+            save_owners(path, owners)
+
+
 def item_source_label(item):
     if item.get("kind") == "title":
         return f"{HUB_TITLES_PATH} ({item['name']})"
@@ -738,7 +874,7 @@ async def handle_artist_canvas_submission(client, message, raw_content):
 
     data = await client.loop.run_in_executor(None, fetch_profile, gamertag)
     if data is None:
-        await message.add_reaction(EMOJI_PLAYER_NOT_FOUND)
+        await message.add_reaction(EMOJI_API_ERROR)
         return
 
     if is_misspelled_name_response(data):
@@ -795,7 +931,7 @@ async def handle_tropical_tide_cape_submission(client, message, raw_content):
 
     data = await client.loop.run_in_executor(None, fetch_profile, gamertag)
     if data is None:
-        await message.add_reaction(EMOJI_PLAYER_NOT_FOUND)
+        await message.add_reaction(EMOJI_API_ERROR)
         return
 
     if is_misspelled_name_response(data):
@@ -880,9 +1016,9 @@ def lookup_username_item_emojis(username, all_items):
     candidate player already has."""
     emojis = []
 
+    snapshot = load_all_item_owners(all_items)
     for item in all_items:
-        owners = load_item_owners(item)
-        _, existing = find_username_match(owners, username)
+        _, existing = find_username_match(snapshot[item_key(item)], username)
         if existing is not None:
             emojis.append(item_emoji(item))
 
@@ -925,43 +1061,93 @@ async def handle_message(client, message):
         await handle_tropical_tide_cape_submission(client, message, stripped)
         return
 
+    gamertags = [line.strip() for line in stripped.splitlines() if line.strip()]
+    if len(gamertags) > 1:
+        await handle_batch_submission(client, message, gamertags)
+        return
+
     gamertag = stripped
 
     if not gamertag or len(gamertag) > MAX_GAMERTAG_LENGTH:
         return
 
-    all_items = HATS + TITLES + PLUSHIES + COSTUMES
+    result = await process_gamertag(client, message.author, gamertag)
 
-    already_matched_items = []
+    if result["already_matched_items"]:
+        await message.add_reaction(EMOJI_ALREADY_OWNED)
+        for item in result["already_matched_items"]:
+            await message.add_reaction(item_emoji(item))
+
+    status = result["status"]
+    if status == "lookup_failed":
+        await message.add_reaction(EMOJI_API_ERROR)
+        return
+
+    if status == "player_not_found":
+        if not result["already_matched_items"]:
+            await message.add_reaction(EMOJI_PLAYER_NOT_FOUND)
+        return
+
+    if status == "misspelled":
+        if not result["already_matched_items"]:
+            await message.add_reaction(EMOJI_PLAYER_NOT_FOUND)
+        await suggest_similar_usernames(client, message, gamertag)
+        return
+
+    for item, _ in result["cached"]:
+        await message.add_reaction(item_emoji(item))
+
+    if not result["cached"] and not result["already_matched_items"]:
+        await message.add_reaction(EMOJI_NOT_FOUND)
+
+    if result["cached"]:
+        if result["old_usernames"]:
+            await send_reply(message, format_cached_line(result, bullet=False))
+        await update_stats_message(client)
+
+
+async def process_gamertag(client, author, gamertag):
+    """Look a gamertag up against every tracked item, cache any newly found
+    ownership, and report what happened without touching the message.
+
+    "cached" holds (item, is_new) for every item written this call.
+    "old_usernames" is filled when the player's UUID was already stored
+    under a different name, i.e. a name change rather than a new cache;
+    the new name is then written to every owners file holding that UUID,
+    including the manually assigned items."""
+    all_items = HATS + TITLES + PLUSHIES + COSTUMES
+    result = {
+        "status": "ok",
+        "gamertag": gamertag,
+        "api_username": gamertag,
+        "already_matched_items": [],
+        "cached": [],
+        "old_usernames": [],
+    }
+
+    snapshot = await client.loop.run_in_executor(
+        None, load_all_item_owners, all_items + MANUAL_ITEMS)
+
     items_to_check = []
     for item in all_items:
-        owners = load_item_owners(item)
-        _, existing = find_username_match(owners, gamertag)
+        _, existing = find_username_match(snapshot[item_key(item)], gamertag)
         if existing is not None:
-            already_matched_items.append(item)
+            result["already_matched_items"].append(item)
         else:
             items_to_check.append(item)
 
-    if already_matched_items:
-        await message.add_reaction(EMOJI_ALREADY_OWNED)
-        for item in already_matched_items:
-            await message.add_reaction(item_emoji(item))
-
     if not items_to_check:
-        return
+        return result
 
     data = await client.loop.run_in_executor(None, fetch_profile, gamertag)
 
     if data is None:
-        if not already_matched_items:
-            await message.add_reaction(EMOJI_PLAYER_NOT_FOUND)
-        return
+        result["status"] = "lookup_failed"
+        return result
 
     if is_misspelled_name_response(data):
-        if not already_matched_items:
-            await message.add_reaction(EMOJI_PLAYER_NOT_FOUND)
-        await suggest_similar_usernames(client, message, gamertag)
-        return
+        result["status"] = "misspelled"
+        return result
 
     main_data = data.get("main", {})
     api_uuid = main_data.get("UUID")
@@ -969,21 +1155,19 @@ async def handle_message(client, message):
     api_username = main_data.get(
         "username_cc") or main_data.get("username") or gamertag
     api_rank = main_data.get("rank")
+    result["api_username"] = api_username
 
     if api_uuid is None:
-        if not already_matched_items:
-            await message.add_reaction(EMOJI_PLAYER_NOT_FOUND)
-        return
+        result["status"] = "player_not_found"
+        return result
 
-    found_any = False
+    updates = []
     for item in items_to_check:
         matched, edition = find_item_match(main_data, item)
         if not matched:
             continue
 
-        found_any = True
-        owners = load_item_owners(item)
-        is_new = api_uuid not in owners
+        is_new = api_uuid not in snapshot[item_key(item)]
         entry = {
             "rank": api_rank,
             "username": api_username,
@@ -991,25 +1175,115 @@ async def handle_message(client, message):
         }
         if edition is not None:
             entry["edition"] = edition
-        owners[api_uuid] = entry
-        save_item_owners(item, owners)
+        updates.append((item, api_uuid, entry))
+        result["cached"].append((item, is_new))
 
         edition_note = f" (edition #{edition})" if edition is not None else ""
         print(f"[owners] added {api_username} to {item_source_label(item)}"
               f"{edition_note}, uuid={api_uuid}")
-        await message.add_reaction(item_emoji(item))
 
+    cached_keys = {item_key(item) for item, _ in result["cached"]}
+    for item in all_items + MANUAL_ITEMS:
+        stored = snapshot[item_key(item)].get(api_uuid)
+        if stored is None:
+            continue
+        stored_name = stored.get("username", "")
+        if not stored_name or stored_name.lower() == api_username.lower():
+            continue
+
+        if stored_name not in result["old_usernames"]:
+            result["old_usernames"].append(stored_name)
+        if item_key(item) not in cached_keys:
+            updates.append((item, api_uuid, {"username": api_username}))
+            result["cached"].append((item, False))
+        print(f"[owners] name change {stored_name} -> {api_username} in "
+              f"{item_source_label(item)}, uuid={api_uuid}")
+
+    if updates:
+        await client.loop.run_in_executor(None, apply_owner_updates, updates)
+
+    for item, is_new in result["cached"]:
         if is_new:
             total = record_submission_credit(
-                message.author.id, str(message.author), item["name"])
+                author.id, str(author), item["name"])
             print(f"[submissions] +1 credit ({item['name']}) to "
-                  f"{message.author} (id={message.author.id}), new total={total}")
+                  f"{author} (id={author.id}), new total={total}")
 
-    if not found_any and not already_matched_items:
-        await message.add_reaction(EMOJI_NOT_FOUND)
+    return result
 
-    if found_any:
+
+def format_cached_line(result, bullet=True):
+    emojis = " ".join(item_emoji(item) for item, _ in result["cached"])
+    name = result["api_username"]
+    if result["old_usernames"]:
+        old_names = ", ".join(result["old_usernames"])
+        text = f"Name change: {old_names} → {name} {emojis}"
+    else:
+        text = f"New cache: {name} {emojis}"
+    return f"* {text}" if bullet else text
+
+
+async def send_reply(message, content):
+    try:
+        await message.reply(content)
+    except discord.Forbidden:
+        print(
+            f"[reply] missing permission to reply in channel {message.channel.id}")
+    except discord.HTTPException as e:
+        print(f"[reply] failed to send reply: {e}")
+
+
+async def handle_batch_submission(client, message, gamertags):
+    """Several gamertags, one per line: look each one up and reply once,
+    listing what was cached plus any names that couldn't be found."""
+    stopped_after = None
+    if len(gamertags) > MAX_BATCH_GAMERTAGS:
+        print(f"[batch] {message.author} sent {len(gamertags)} gamertags, "
+              f"only checking the first {MAX_BATCH_GAMERTAGS}")
+        gamertags = gamertags[:MAX_BATCH_GAMERTAGS]
+        stopped_after = gamertags[-1]
+
+    lines = []
+    not_found = []
+    failed = []
+    seen = set()
+    async with message.channel.typing():
+        for gamertag in gamertags:
+            if gamertag.lower() in seen:
+                continue
+            seen.add(gamertag.lower())
+
+            if len(gamertag) > MAX_GAMERTAG_LENGTH:
+                not_found.append(gamertag)
+                continue
+
+            result = await process_gamertag(client, message.author, gamertag)
+            if result["status"] in ("misspelled", "player_not_found"):
+                not_found.append(gamertag)
+            elif result["status"] == "lookup_failed":
+                failed.append(gamertag)
+            elif result["cached"]:
+                lines.append(format_cached_line(result))
+
+    print(f"[batch] {message.author} checked {len(seen)} gamertag(s), "
+          f"cached {len(lines)}, not found {len(not_found)}, "
+          f"failed {len(failed)}")
+    await message.add_reaction(EMOJI_BATCH_DONE)
+
+    reply_lines = list(lines)
+    if not_found:
+        reply_lines.append(f"{EMOJI_PLAYER_NOT_FOUND} Not found: "
+                           f"{', '.join(not_found)}")
+    if failed:
+        reply_lines.append(f"{EMOJI_API_ERROR} Couldn't check (Hive API "
+                           f"error, try again later): {', '.join(failed)}")
+    if reply_lines:
+        await send_reply(message, "\n".join(reply_lines))
+    if lines:
         await update_stats_message(client)
+
+    if stopped_after is not None:
+        await send_reply(message, f"I stopped searching after {stopped_after} 🤭")
 
 
 def ensure_owners_file_exists(item):
