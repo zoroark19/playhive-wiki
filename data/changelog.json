@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-10-20T04:32:39.969Z",
+  "fetchedAt": "2026-10-25T04:22:31.432Z",
   "items": [
+    {
+      "title": "🔥 Hot Drop: Chroma Crown",
+      "link": "https://updates.playhive.com/changelog/fire-hot-drop-chroma-crown",
+      "pubDate": "2026-10-23T13:58:56.000Z",
+      "excerpt": "The next Hot Drop will take place on Saturday, October 31st and feature the Chroma Crown! The Chroma Crown will be the final cosmetic in the crown collection,…"
+    },
     {
       "title": "It's The Hive's 8th Beeday! 🎂",
       "link": "https://updates.playhive.com/changelog/its-the-hives-8th-beeday-birthday",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/happy-hive-o-ween-jackolantern",
       "pubDate": "2026-10-09T15:13:40.000Z",
       "excerpt": "Spooky season is back, Hive-o-ween is here! ### The Haunting Returns The ghosts are back! Strange readings have started showing up across the hub again, and…"
-    },
-    {
-      "title": "October Quest Costume Released",
-      "link": "https://updates.playhive.com/changelog/october-quest-costume-released-7",
-      "pubDate": "2026-09-30T23:00:00.000Z",
-      "excerpt": "Sailing the seven seas from beyond the grave… The Captain Marrow costume can now be purchased from the Quest Store!…"
     }
   ]
 }
