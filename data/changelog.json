@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-10-30T05:29:21.844Z",
+  "fetchedAt": "2026-10-31T05:15:19.660Z",
   "items": [
+    {
+      "title": "New Player Setting: Default join region",
+      "link": "https://updates.playhive.com/changelog/new-player-setting-default-join-region",
+      "pubDate": "2026-10-31T03:00:48.000Z",
+      "excerpt": "Scientists reveal the new Hive player setting! You can now set your default region without needing to add a special server entry, across all platforms. Run…"
+    },
     {
       "title": "🔥 Hot Drop: Chroma Crown",
       "link": "https://updates.playhive.com/changelog/fire-hot-drop-chroma-crown",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/void-bundle-available-now",
       "pubDate": "2026-10-09T16:19:16.000Z",
       "excerpt": "Turns out the void isn't so empty after all... The Void Bundle is here! This otherworldly collection is available now in The Hive Store, for 990 Minecoins.…"
-    },
-    {
-      "title": "Happy Hive-o-ween! 🎃",
-      "link": "https://updates.playhive.com/changelog/happy-hive-o-ween-jackolantern",
-      "pubDate": "2026-10-09T15:13:40.000Z",
-      "excerpt": "Spooky season is back, Hive-o-ween is here! ### The Haunting Returns The ghosts are back! Strange readings have started showing up across the hub again, and…"
     }
   ]
 }
