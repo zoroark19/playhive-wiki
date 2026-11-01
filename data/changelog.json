@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-10-31T05:15:19.660Z",
+  "fetchedAt": "2026-11-01T05:44:12.359Z",
   "items": [
+    {
+      "title": "November Quest Costume Released",
+      "link": "https://updates.playhive.com/changelog/november-quest-costume-released-4",
+      "pubDate": "2026-11-01T00:00:00.000Z",
+      "excerpt": "Don't make eye contact. Seriously... The Ender Assassin costume can now be purchased from the Quest Store!…"
+    },
     {
       "title": "New Player Setting: Default join region",
       "link": "https://updates.playhive.com/changelog/new-player-setting-default-join-region",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/its-the-hives-8th-beeday-birthday",
       "pubDate": "2026-10-16T00:10:13.000Z",
       "excerpt": "It's time to celebrate The Hive's 8th anniversary! Join The Hive this week and complete a special quest to unlock the Veteran hub title, which displays the…"
-    },
-    {
-      "title": "Void Bundle - Available Now!",
-      "link": "https://updates.playhive.com/changelog/void-bundle-available-now",
-      "pubDate": "2026-10-09T16:19:16.000Z",
-      "excerpt": "Turns out the void isn't so empty after all... The Void Bundle is here! This otherworldly collection is available now in The Hive Store, for 990 Minecoins.…"
     }
   ]
 }
