@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-11-02T05:42:25.448Z",
+  "fetchedAt": "2026-11-03T06:23:30.685Z",
   "items": [
+    {
+      "title": "Hive-o-ween Ending Soon",
+      "link": "https://updates.playhive.com/changelog/hive-o-ween-ending-soon",
+      "pubDate": "2026-11-02T21:35:40.000Z",
+      "excerpt": "Spooky season is almost over, and Hive-o-ween festivities will end on Friday, 6th November. If you haven't yet found all of the ghosts in the hub, reached the…"
+    },
     {
       "title": "November Quest Costume Released",
       "link": "https://updates.playhive.com/changelog/november-quest-costume-released-4",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/fire-hot-drop-chroma-crown",
       "pubDate": "2026-10-23T13:58:56.000Z",
       "excerpt": "The next Hot Drop will take place on Saturday, October 31st and feature the Chroma Crown! The Chroma Crown will be the final cosmetic in the crown collection,…"
-    },
-    {
-      "title": "It's The Hive's 8th Beeday! 🎂",
-      "link": "https://updates.playhive.com/changelog/its-the-hives-8th-beeday-birthday",
-      "pubDate": "2026-10-16T00:10:13.000Z",
-      "excerpt": "It's time to celebrate The Hive's 8th anniversary! Join The Hive this week and complete a special quest to unlock the Veteran hub title, which displays the…"
     }
   ]
 }
