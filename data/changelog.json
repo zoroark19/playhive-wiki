@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-11-10T06:59:17.942Z",
+  "fetchedAt": "2026-11-11T05:51:02.934Z",
   "items": [
+    {
+      "title": "Hub Cosmetics Visual Overhaul, and Cosmetic Wishlisting!",
+      "link": "https://updates.playhive.com/changelog/hub-cosmetics-visual-overhaul-and-cosmetic-wishlisting",
+      "pubDate": "2026-11-10T20:38:27.000Z",
+      "excerpt": "[*paws at you* New hub cosmetics menu?](https://clank.pics/2e3305d05227ef2d96ca1ccf.png?k=bb5e64fd8a6d8bf306d167a33e5d9b30) [*paws at you* New hub cosmetics…"
+    },
     {
       "title": "Hive-o-ween Ending Soon",
       "link": "https://updates.playhive.com/changelog/hive-o-ween-ending-soon",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/new-player-setting-default-join-region",
       "pubDate": "2026-10-31T03:00:48.000Z",
       "excerpt": "Scientists reveal the new Hive player setting! You can now set your default region without needing to add a special server entry, across all platforms. Run…"
-    },
-    {
-      "title": "🔥 Hot Drop: Chroma Crown",
-      "link": "https://updates.playhive.com/changelog/fire-hot-drop-chroma-crown",
-      "pubDate": "2026-10-23T13:58:56.000Z",
-      "excerpt": "The next Hot Drop will take place on Saturday, October 31st and feature the Chroma Crown! The Chroma Crown will be the final cosmetic in the crown collection,…"
     }
   ]
 }
