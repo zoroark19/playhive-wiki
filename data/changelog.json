@@ -1,7 +1,19 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-11-11T05:51:02.934Z",
+  "fetchedAt": "2026-11-12T06:55:58.507Z",
   "items": [
+    {
+      "title": "SkyBlock Horizons Founder rank pre-sale starts this Friday - get your Fynx walking pet!",
+      "link": "https://updates.playhive.com/changelog/skyblock-horizons-founder-rank-pre-sale-starts-this-friday-get",
+      "pubDate": "2026-11-11T19:29:16.000Z",
+      "excerpt": "*Hive SkyBlock rank before… you know the drill. *SkyBlock Horizons, our brand new MMO, launches this year(*)! Become a Founder and get exclusive rewards.…"
+    },
+    {
+      "title": "Hub Cosmetics Menu: Favoriting and Home tab improvements",
+      "link": "https://updates.playhive.com/changelog/hub-cosmetics-menu-favoriting-and-home-tab-improvements",
+      "pubDate": "2026-11-11T14:56:20.000Z",
+      "excerpt": "Thank you for all the feedback regarding the new Hub Cosmetics menu! We’ve made additional improvements based on community feedback: - You can now favorite…"
+    },
     {
       "title": "Hub Cosmetics Visual Overhaul, and Cosmetic Wishlisting!",
       "link": "https://updates.playhive.com/changelog/hub-cosmetics-visual-overhaul-and-cosmetic-wishlisting",
@@ -13,18 +25,6 @@
       "link": "https://updates.playhive.com/changelog/hive-o-ween-ending-soon",
       "pubDate": "2026-11-02T21:35:40.000Z",
       "excerpt": "Spooky season is almost over, and Hive-o-ween festivities will end on Friday, 6th November. If you haven't yet found all of the ghosts in the hub, reached the…"
-    },
-    {
-      "title": "November Quest Costume Released",
-      "link": "https://updates.playhive.com/changelog/november-quest-costume-released-4",
-      "pubDate": "2026-11-01T00:00:00.000Z",
-      "excerpt": "Don't make eye contact. Seriously... The Ender Assassin costume can now be purchased from the Quest Store!…"
-    },
-    {
-      "title": "New Player Setting: Default join region",
-      "link": "https://updates.playhive.com/changelog/new-player-setting-default-join-region",
-      "pubDate": "2026-10-31T03:00:48.000Z",
-      "excerpt": "Scientists reveal the new Hive player setting! You can now set your default region without needing to add a special server entry, across all platforms. Run…"
     }
   ]
 }
