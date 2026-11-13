@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-11-12T06:55:58.507Z",
+  "fetchedAt": "2026-11-13T06:18:15.619Z",
   "items": [
+    {
+      "title": "SkyBlock Horizons Founder rank pre-sale starts NOW - get your Fynx walking pet!",
+      "link": "https://updates.playhive.com/changelog/skyblock-horizons-founder-rank-pre-sale-starts-now-get-your",
+      "pubDate": "2026-11-12T21:59:47.000Z",
+      "excerpt": "SkyBlock Horizons, our brand new MMO, launches this year(*)! Become a Founder and get exclusive rewards. Pre-purchase the SkyBlock Horizons Founder rank on the…"
+    },
     {
       "title": "SkyBlock Horizons Founder rank pre-sale starts this Friday - get your Fynx walking pet!",
       "link": "https://updates.playhive.com/changelog/skyblock-horizons-founder-rank-pre-sale-starts-this-friday-get",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/hub-cosmetics-visual-overhaul-and-cosmetic-wishlisting",
       "pubDate": "2026-11-10T20:38:27.000Z",
       "excerpt": "[*paws at you* New hub cosmetics menu?](https://clank.pics/2e3305d05227ef2d96ca1ccf.png?k=bb5e64fd8a6d8bf306d167a33e5d9b30) [*paws at you* New hub cosmetics…"
-    },
-    {
-      "title": "Hive-o-ween Ending Soon",
-      "link": "https://updates.playhive.com/changelog/hive-o-ween-ending-soon",
-      "pubDate": "2026-11-02T21:35:40.000Z",
-      "excerpt": "Spooky season is almost over, and Hive-o-ween festivities will end on Friday, 6th November. If you haven't yet found all of the ghosts in the hub, reached the…"
     }
   ]
 }
