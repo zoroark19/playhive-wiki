@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-11-16T06:02:58.404Z",
+  "fetchedAt": "2026-11-17T07:39:57.512Z",
   "items": [
+    {
+      "title": "Version Support Update",
+      "link": "https://updates.playhive.com/changelog/version-support-update-18",
+      "pubDate": "2026-11-16T15:32:22.000Z",
+      "excerpt": "Starting today, the oldest Minecraft version supported by The Hive is **26\\.30**. Additionally, The Hive now supports preview versions of Minecraft. ###…"
+    },
     {
       "title": "SkyBlock Horizons Founder rank pre-sale starts NOW - get your Fynx walking pet!",
       "link": "https://updates.playhive.com/changelog/skyblock-horizons-founder-rank-pre-sale-starts-now-get-your",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/hub-cosmetics-menu-favoriting-and-home-tab-improvements",
       "pubDate": "2026-11-11T14:56:20.000Z",
       "excerpt": "Thank you for all the feedback regarding the new Hub Cosmetics menu! We’ve made additional improvements based on community feedback: - You can now favorite…"
-    },
-    {
-      "title": "Hub Cosmetics Visual Overhaul, and Cosmetic Wishlisting!",
-      "link": "https://updates.playhive.com/changelog/hub-cosmetics-visual-overhaul-and-cosmetic-wishlisting",
-      "pubDate": "2026-11-10T20:38:27.000Z",
-      "excerpt": "[*paws at you* New hub cosmetics menu?](https://clank.pics/2e3305d05227ef2d96ca1ccf.png?k=bb5e64fd8a6d8bf306d167a33e5d9b30) [*paws at you* New hub cosmetics…"
     }
   ]
 }
