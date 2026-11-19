@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-11-18T07:02:09.310Z",
+  "fetchedAt": "2026-11-19T07:02:58.772Z",
   "items": [
+    {
+      "title": "Replay Cinema: First Person POV & Access Changes",
+      "link": "https://updates.playhive.com/changelog/replay-cinema-first-person-pov-and-access-changes",
+      "pubDate": "2026-11-18T20:55:21.000Z",
+      "excerpt": "First-person POV is now available in the Replay Cinema, and players without a Replay Pass or Hive Ultimate can now view a limited number of replays per day for…"
+    },
     {
       "title": "Version Support Update",
       "link": "https://updates.playhive.com/changelog/version-support-update-18",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/skyblock-horizons-founder-rank-pre-sale-starts-this-friday-get",
       "pubDate": "2026-11-11T19:29:16.000Z",
       "excerpt": "*Hive SkyBlock rank before… you know the drill. *SkyBlock Horizons, our brand new MMO, launches this year(*)! Become a Founder and get exclusive rewards.…"
-    },
-    {
-      "title": "Hub Cosmetics Menu: Favoriting and Home tab improvements",
-      "link": "https://updates.playhive.com/changelog/hub-cosmetics-menu-favoriting-and-home-tab-improvements",
-      "pubDate": "2026-11-11T14:56:20.000Z",
-      "excerpt": "Thank you for all the feedback regarding the new Hub Cosmetics menu! We’ve made additional improvements based on community feedback: - You can now favorite…"
     }
   ]
 }
