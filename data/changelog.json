@@ -1,7 +1,13 @@
 {
   "source": "https://updates.playhive.com/api/v1/changelog/feed.rss",
-  "fetchedAt": "2026-11-26T07:57:40.239Z",
+  "fetchedAt": "2026-11-27T07:58:45.493Z",
   "items": [
+    {
+      "title": "Block Friday 2026 - WISH GRANTED!",
+      "link": "https://updates.playhive.com/changelog/block-friday-2026-wish-granted",
+      "pubDate": "2026-11-26T17:04:00.000Z",
+      "excerpt": "Wishlist Hive items during Block Friday 2026 for a chance to get your wished-for items for FREE! On December 1st, we will randomly draw 100 players and grant…"
+    },
     {
       "title": "Block Friday 2026 Bundle",
       "link": "https://updates.playhive.com/changelog/block-friday-2026-bundle",
@@ -19,12 +25,6 @@
       "link": "https://updates.playhive.com/changelog/replay-cinema-first-person-pov-and-access-changes",
       "pubDate": "2026-11-18T20:55:21.000Z",
       "excerpt": "First-person POV is now available in the Replay Cinema, and players without a Replay Pass or Hive Ultimate can now view a limited number of replays per day for…"
-    },
-    {
-      "title": "Version Support Update",
-      "link": "https://updates.playhive.com/changelog/version-support-update-18",
-      "pubDate": "2026-11-16T15:32:22.000Z",
-      "excerpt": "Starting today, the oldest Minecraft version supported by The Hive is **26\\.30**. Additionally, The Hive now supports preview versions of Minecraft. ###…"
     }
   ]
 }
